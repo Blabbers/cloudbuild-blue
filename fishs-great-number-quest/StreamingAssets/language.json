@@ -406,6 +406,10 @@
   "70,000": "70,000",
   "205": "Two hundred five.",
   "n100000": "100,000",
-  "a8e2a491": "20"
+  "a8e2a491": "20",
+  "Billions": "Billions ",
+  "Millions": "Millions",
+  "Thousands    ": "Thousands",
+  "Ones": "Ones"
  }
 }
