@@ -131,7 +131,7 @@
   "b9f11d1b": "Vinegar",
   "db2484b4": "Foam Water",
   "titleDidYouKnow": "Did you know?\n",
-  "3f841428": "Finally! I’m home for real now! Yay!",
+  "3f841428": "Thanks to math I'm back home!",
   "a8def6c7": "Amazing work rookie, you'll be an excelent firefighter! ",
   "ea88f101": "Right! Foam is one of the things we will test",
   "a6057132": "Yes, the fire is essential for the experiment!",
@@ -319,7 +319,7 @@
   "d629ff3f": "Eight hundred fifty thousand",
   "813dce2a": "Four million",
   "f2939df7": "Tip: Think First Name Last Name\n",
-  "79940be1": "Oh no, I need to go that way to get back home!",
+  "79940be1": "Ok, I need to go that way to get back home!",
   "52001e68": "Yeah that's right! Now, drag me in the direction of the fish you think I can make the right comparison with the number I have!",
   "317cbc25": "Oh look at that, I have this symbol now instead of the words",
   "0a6631a8": "I think I remember what it means...but let's double check",
@@ -410,6 +410,9 @@
   "Billions": "Billions ",
   "Millions": "Millions",
   "Thousands    ": "Thousands",
-  "Ones": "Ones"
+  "Ones": "Ones",
+  "a0caaf3a": "What a long journey! But finally I’m almost home!",
+  "e653ff27": "Oh no! There's a shark here, I have to learn math to kick him out of here.",
+  "193b8c6b": "Finally, I can enjoy swimming around here!"
  }
 }
