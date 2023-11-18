@@ -55,7 +55,7 @@
   "72149c28": "Release when you're ready!",
   "92c0c3fa": "We are running out of birds and these barriers keep coming! What do we do?",
   "32322043": "Don’t worry I have a secret weapon!",
-  "36243daf": "Multiplying portal? What’s that?",
+  "36243daf": "Multiplication portal? What’s that?",
   "97cb9ea2": "Instead of adding the birds to the sling we will multiply them by shooting through the portal! It will give us the same result as adding them up! \n\nIf we shoot a group of 2 birds by x2 portal we will come out with 4 birds! Because:\r\n\r\n2 times 2 = 4 like 2+2 = 4 (visual representation of the groups is needed)",
   "3dac115e": "Let’s try it out? Shoot the birds through the portal and you will see them multiplicate!",
   "456a45f8": "Instead of adding the birds to the sling we will multiply them by shooting through the portal! \nIt will give us the same result as adding them up!",
@@ -112,9 +112,10 @@
   "c32d52f1": "times",
   "9216591f": "equals",
   "DynamicError1": "Oh no, It doesn't seem quite right...",
-  "DynamicError2": "Let's take a closer look to the multiplacation you just did!",
+  "DynamicError2": "Let's take a closer look at the multiplication you just did!",
   "DynamicError3": "Try something like this instead! \nDon't worry you got this!",
-  "3249283a": "This is the multiplying portal!",
-  "tryAgainMessage": "Oops, you missed it. Try aiming at the barrier"
+  "3249283a": "This is the multiplication portal!",
+  "tryAgainMessage": "Oops, you missed it. Try aiming at the barrier",
+  "defeatTitle": "DEFEAT:"
  }
 }
