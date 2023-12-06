@@ -49,14 +49,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Get last commit message
         run: |
           LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%B)
           echo "LAST_COMMIT_MESSAGE=$LAST_COMMIT_MESSAGE" >> $GITHUB_ENV
+
       - name: Send Discord notification
         run: |
           DISCORD_MESSAGE='{
             "content": "@here \n>Build finished successfully!\n\n>Check the build at: https://blabbers.games/web-builds/\n\n >**'"$LAST_COMMIT_MESSAGE"'**"
           }'
           curl -X POST -H "Content-Type: application/json" -d "$DISCORD_MESSAGE" ${{ secrets.DISCORD_WEBHOOK_URL_LLBUILDS_CHANNEL }}
-
