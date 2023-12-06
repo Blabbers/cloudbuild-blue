@@ -61,6 +61,6 @@ jobs:
       - name: Send Discord notification
         run: |
           DISCORD_MESSAGE='{
-            "content": "@here \n>Build finished successfully!\n\n>Check the build at: https://blabbers.games/web-builds/\n\n >**'"$LAST_COMMIT_MESSAGE"'**"
+            "content": "\n> :white_check_mark: **Build finished successfully!** :sparkles: \n> https://blabbers.games/web-builds/\n>\n>Message: *Build test for all games and new message test*"
           }'
           curl -X POST -H "Content-Type: application/json" -d "$DISCORD_MESSAGE" ${{ secrets.DISCORD_WEBHOOK_URL_LLBUILDS_CHANNEL }}
