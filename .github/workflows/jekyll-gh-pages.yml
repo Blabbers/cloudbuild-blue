@@ -58,9 +58,18 @@ jobs:
           LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%B)
           echo "LAST_COMMIT_MESSAGE=$LAST_COMMIT_MESSAGE" >> $GITHUB_ENV
 
-      - name: Send Discord notification
+      - name: Send Discord notification on success
+        if: success()
         run: |
           DISCORD_MESSAGE='{
-            "content": "\n> :white_check_mark: **Build finished successfully!** :sparkles: \n> https://blabbers.games/web-builds/\n>\n>Message: *Build test for all games and new message test*"
+            "content": "\n> :white_check_mark: **Build finished successfully!** :sparkles: \n> https://blabbers.games/web-builds/\n> \n> :speech_balloon: ***'"$LAST_COMMIT_MESSAGE"'***"
+          }'
+          curl -X POST -H "Content-Type: application/json" -d "$DISCORD_MESSAGE" ${{ secrets.DISCORD_WEBHOOK_URL_LLBUILDS_CHANNEL }}
+
+      - name: Send Discord notification on failure
+        if: failure()
+        run: |
+          DISCORD_MESSAGE='{
+            "content": "\n> :x: **Build failed!** :boom: \n> \n> :speech_balloon: ***'"$LAST_COMMIT_MESSAGE"'***"
           }'
           curl -X POST -H "Content-Type: application/json" -d "$DISCORD_MESSAGE" ${{ secrets.DISCORD_WEBHOOK_URL_LLBUILDS_CHANNEL }}
