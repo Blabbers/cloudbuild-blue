@@ -49,3 +49,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+      - name: Send Discord notification
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{
+            "content": "Build finished successfully! ESPERA AI QUE TO VENDO COMO FAZ PRA COLOCAR + INFOS BONITINHO ETC"
+          }' ${{ secrets.DISCORD_WEBHOOK_URL_LLBUILDS_CHANNEL }}
