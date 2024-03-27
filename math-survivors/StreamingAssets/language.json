@@ -13,14 +13,7 @@
     }
   },
   "en": {
-    "welcome": "Welcome! Let me activate this Runestone and see what happens...",
-    "instructions": "Alright!! Looks like we're going to space! Answer questions to charge up the power and see how high we can fly!",
-    "begin": "A wrong answer with decrease the countdown to launch, Good luck!",
-    "quit": "Do you want to Quit the game?",
-    "quit_yes": "Yes",
-    "quit_no": "No",
-    "replay": "Ready to try another launch?",
-    "replay_yes": "Yes",
-    "replay_no": "No"
+    "title_continue": "Continue",
+    "title_play": "Play" 
   }
 }
