@@ -15,6 +15,7 @@
   "en": {
     "title_continue": "Continue",
     "title_play": "Play",
+    "title_newgame": "New Game",
     "titlePopUpLevelUp": "Choose an upgrade:",
     "textPopUpLevelUpCardLevel" : "LEVEL",
     "textPopUpLevelUpCardAtcSpeed" : "ATTACK SPEED",
@@ -27,9 +28,11 @@
     "btnResumePaused": "Resume",
     "titleReturnBonus": "Thanks for coming back!",
     "btnClaimReturnBonus": "CLAIM",
-    "textCompletedReturnBonus" : "You've completed $ levels in your last playthrough.",
-    "textBonusReturnBonus": "Your bonus is: $ power up points!",
-    "textWrongAnswer" : "Oops! It seems you got the answer wrong but don't worry! Let's try again!",
+    "textCompletedReturnBonus" : "Oh you are back? It's seems you played a few levels last time.\nHere! Have a present for your return:",
+    "textLevelPlayedReturnBonus": " Levels",
+    "textBonusWonReturnBonus": " Bonus Upgrades",
+    "textWrongAnswer" : "Oops! It seems you got the answer wrong and lost a chance to upgrade! You can try again next time!",
+    "textRightAnswer" : "Nice one! By answering that right you got a chance to upgrade your character!",
     "btnPopUpSimpleInfo" : "CONTINUE",
     "textHealRight" : "Nice one! You healed by answering that right.",
     "textHealWrong" : "Oh no! You could have healed by answering that right. But you can try again later.",
@@ -49,7 +52,8 @@
     "textTutorialUpgratedTierLife" : "Congrats! By tiering up you won a pencil that will circle around you, damaging all blocks that touch it!",
     "textQuestionPopUp" : "Oh no! Your health is getting low, would you like to answser a question to heal a bit?",
     "btnYes" : "YES",
-    "btnNo" : "NO"
+    "btnNo" : "NO",
+    "RecordLvl" : "Record Level: "
 
 
   }
