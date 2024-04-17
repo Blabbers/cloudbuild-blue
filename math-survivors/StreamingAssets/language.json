@@ -17,6 +17,7 @@
     "title_play": "Play",
     "title_newgame": "New Game",
     "titlePopUpLevelUp": "Choose an upgrade:",
+    "titlePopUpTierUp": "Tier up!",
     "textPopUpLevelUpCardLevel" : "LEVEL",
     "textPopUpLevelUpCardAtcSpeed" : "ATTACK SPEED",
     "textPopUpLevelUpCardMoveSpeed" : "MOVEMENT SPEED",
@@ -54,8 +55,8 @@
     "btnYes" : "YES",
     "btnNo" : "NO",
     "RecordLvl" : "Highest Level: ",
-    "skipTutorial" : "Skip Tutorials"
-
-
+    "skipTutorial" : "Skip Tutorials",
+    "textDeathWrong" : "Oh no!\nYou will have a new chance to play this level but with only a little life because of that wrong answer.",
+    "textDeathRight" : "Great answer!\nYou will have a new chance to play this level and with a full life by answering that right!"
   }
 }
