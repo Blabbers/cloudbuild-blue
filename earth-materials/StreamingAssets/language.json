@@ -122,7 +122,9 @@
   "ff34b718": "Biosphere",
   "c8660922": "Hydrosphere",
   "db4c4f53": "Geosphere",
-  "7b4e4c63": "Atmosphere"
+  "7b4e4c63": "Atmosphere",
+  "061566ee": "PRESS SPACE TO DASH!",
+  "f004a16f": "PRESS THE BLUE BUTTON TO DASH!"
  },
  "es": {
   "titleHowToPlay": "How to play",
