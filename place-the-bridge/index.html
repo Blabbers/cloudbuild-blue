@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Legends of Learning | place-the-bridge</title>
+    <link rel="stylesheet" href="https://game-cdn.legendsoflearning.com/assets/lol.css" />
+    <script src="https://game-cdn.legendsoflearning.com/assets/lol.js"></script>
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/a0eb54968f12b724932ff61ec1f2137c.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/748ec6d157fd8d142a95655057af20f0.data",
+        frameworkUrl: buildUrl + "/2bdba3e130c94d6f4306895f4e5b73bf.framework.js",
+        codeUrl: buildUrl + "/ca59ab18790f2fc32dee412637fdc773.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Blabbers",
+        productName: "place-the-bridge",
+        productVersion: "1.0",
+      };
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "1024px";
+        canvas.style.height = "576px";
+      }
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+        }).then((unityInstance) => {
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
