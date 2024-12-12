@@ -80,16 +80,16 @@
   "68905f75": "Did you know? When we multiply in the base 10 system, each zero in the number will represent an extra zero to the immediate right in the result.",
   "7a37fee7": "0\n",
   "5afcba32": "We already know what happens when we multiply numbers in the base of 10 system. But what happens when we divide?",
-  "8e3fd009": "That’s right! When diving a number in the base of 10 it will subtract an zero to the left. If there’s only one number to the left it will become a decimal.",
+  "8e3fd009": "That’s right! When dividing a number in the base of 10 it will subtract an zero to the left. If there’s only one number to the left it will become a decimal.",
   "e89d70ea": "2000/10 = 200\n2000/100 = 20\n2000/1000 = 2",
   "020b33d6": "Urg, it gave me too much this time…",
   "aacd263b": "Decimals have their dots in the middle of them see? This means multiplication and division will move that dot either to the left or the right.",
   "0408016a": "0.5",
   "a6265afd": "x 10 = 5",
   "4ae8a897": "÷ 10 = 0.05",
-  "3d8b2bf3": "Look! Decimals! Let’s see how they react to multiplying and division.",
+  "3d8b2bf3": "Look! Decimals! Let’s see how they react to multiplying and dividing.",
   "b6cf2b40": "What can I do with 0.5 of a plank? I will need to multiply this…",
-  "250bdffe": "The same numbers can be represented in diferent ways! 50 can be 5 x 10 and also 500 / 10. Let’s see how that works?",
+  "250bdffe": "The same numbers can be represented in diferent ways! 50 can be 5 x 10 and also 500 ÷ 10. Let’s see how that works?",
   "38b81b80": "0.5",
   "312b9b97": "5 x 10",
   "1a2e26e1": "/ 10 = 0.05",
@@ -113,6 +113,10 @@
   "49c28733": "I’m getting used to this!",
   "8648b220": "Now let’s see if we remember those names.",
   "c714730a": "You did it! Amazing!",
-  "175ee669": "Last one for the day! I will nail this!"
+  "175ee669": "Last one for the day! I will nail this!",
+  "titleScore": "Your score",
+  "efff479b": "Restart",
+  "280cdc44": "Connect the correct information!",
+  "ce3bc762": "Let's connect the number that represents the names in the number above."
  }
 }
