@@ -1,0 +1,130 @@
+{
+  "version": "1.0",
+  "_meta": {
+    "maxChars": {
+		"titlePlay": 550,
+		"titleClose": 550,
+		"titleOkay": 550,
+		"titleLevelSelect": 550,
+		"titleContinue": 550,
+		"titleDone": 550,
+		"titleLevelComplete":550,
+		"titleScore":550,	
+		"titleCongratulations": 550,	
+		"titleFinalScore": 550,
+		"titleConfirm": 550,
+		
+		"titleHowToPlay": 550,	
+		"bodyHowToPlay": 550,
+		
+		"titleLevelInfo":550,
+		"titleDidYouKnow":550,
+		
+		"bodyLevelInfo_1":550,
+		"bodyFinalQuestion_1":550,
+		"bodyDidYouKnow_1":550,
+		
+		"bodyLevelInfo_2":550,
+		"bodyFinalQuestion_2":550,
+		"bodyDidYouKnow_2":550,
+		
+		"bodyLevelInfo_3":550,
+		"bodyFinalQuestion_3":550,
+		"bodyDidYouKnow_3":550,
+		
+		"bodyLevelInfo_4":550,
+		"bodyFinalQuestion_4":550,
+		"bodyDidYouKnow_4":550,
+		
+		"bodyLevelInfo_5":550,
+		"bodyFinalQuestion_5":550,
+		"bodyDidYouKnow_5":550,
+		
+		"bodyLevelInfo_6":550,
+		"bodyFinalQuestion_6":550,
+		"bodyDidYouKnow_6":550,
+		
+		"bodyLevelInfo_7":550,
+		"bodyFinalQuestion_7":550,
+		"bodyDidYouKnow_7":550,
+		
+		"bodyLevelInfo_8":550,
+		"bodyFinalQuestion_8":550,
+		"bodyDidYouKnow_8":550,
+		
+		"bodyLevelInfo_9":550,
+		"bodyFinalQuestion_9":550,
+		"bodyDidYouKnow_9":550,
+		
+		"titleStage":550,
+		"titleYes":550,
+		"titleNo":550,
+		"titleReplay":550,
+		"titleWrongAnswer":550,
+		"titleTryAgain": 550
+    }
+  },
+  "en": {
+    "titlePlay": "Play",
+	"titleClose": "Close",
+	"titleOkay": "Okay",
+	"titleLevelSelect": "Level Select",
+	"titleContinue": "Continue",
+	"titleDone": "Done",
+	"titleLevelComplete":"Level complete!",
+	"titleScore":"Your score",	
+	"titleCongratulations": "Congratulations!",	
+	"titleFinalScore": "Your final score",
+	"titleConfirm": "Confirm",
+	
+	"titleHowToPlay": "How to play",	
+	"bodyHowToPlay": "Click on the COLORED BUTTONS located on the keyboard to the right. You must open the door by choosing the right order to solve the multi-step expression.\n\nThe order of operations is:\n\n- Brackets\n\n- Exponents\n\n- Divide and Multiply\n\n- Add and Subtract\n\n- And always from the LEFT to the RIGHT",
+	
+	"titleLevelInfo":"Level information",	
+	"titleDidYouKnow":"Review",
+	
+	"bodyLevelInfo_1":"Click on the COLORED BUTTONS located on the keyboard to the right. You must open the door by choosing the right order to solve the multi-step expression.\n\nThe order of operations is:\n\n- Brackets\n\n- Exponents\n\n- Divide and Multiply\n\n- Add and Subtract\n\n- And always from the LEFT to the RIGHT ",	
+	"bodyFinalQuestion_1":"...",
+	"bodyDidYouKnow_1":"Information from one step in problems is needed for additional steps. A single mistake on a multi-step expression may compromise the final result.",
+	
+	"bodyLevelInfo_2":"...",	
+	"bodyFinalQuestion_2":"...",
+	"bodyDidYouKnow_2":"...",
+	
+	"bodyLevelInfo_3":"Remember: Solve exponents first, then multiply or divide, then add or subtract.",	
+	"bodyFinalQuestion_3":"...",
+	"bodyDidYouKnow_3":"The end of the next levels will have questions about a situation the agent will face in the room. You can use estimation to get a rough idea of a calculation. Round the numbers to make it easier. Then do the calculation. If it's really different to the estimation it will probably be wrong.",
+	
+	"bodyLevelInfo_4":"...",	
+	"bodyFinalQuestion_4":"You see a clue leading to the Villain that says the answer of the equation (99) represents 5% of the Villain’s birth year (1980). Was this clue correct?  ",
+	"bodyDidYouKnow_4":"To estimate percentual results we can try to round numbers first. It is easy to find 10% out of 1980, it is: 198 (just take 1 zero out). So, in order to discover 5%, we know it will be half that same number. Which is 99. And of course if we had rounded those numbers we would have had the half of 200, which is 100, and that also would help us to estimate the answer.",	
+	
+	"bodyLevelInfo_5":"...",
+	"bodyFinalQuestion_5":"On the elevator you notice that the building you are in has 30 floors. Each floor has 4 rooms. Is the TOTAL amount of rooms on the building LESS than the result of the equation (629)?",
+	"bodyDidYouKnow_5":"...",
+	
+	"bodyLevelInfo_6":"Remember: Operations inside brackets always come first.",
+	"bodyFinalQuestion_6":"All the way through this room you counted 593 footsteps on the floor. Knowing a person has 2 feet, and that the footsteps were all from the same person, is the result of the equation (318) MORE than the number of footsteps you found for ONE foot alone? ",
+	"bodyDidYouKnow_6":"If we want to know if 318 is MORE than the half of 593, we can round 593 to 600. With that, we can now check that the half of 600 is 300, which already gives us a good estimated number to know the answer is true.",
+	
+	"bodyLevelInfo_7":"...",
+	"bodyFinalQuestion_7":"You found a clue saying that the Villain is hiding in this place for MORE than 3 years. Knowing that 1 year has 365 days and that the answer to the equation (742) represents the total time, in days, he has been hiding, was this clue correct?",
+	"bodyDidYouKnow_7":"...",
+	
+	"bodyLevelInfo_8":"...",
+	"bodyFinalQuestion_8":"You saw a calendar paper on the wall with a scratch over exactly 12 weeks of the year. You know that a week has 7 days. Is the amount of days scratched on the calendar LESS than the result of the equation (91)? ",
+	"bodyDidYouKnow_8":"To estimate if 12 times 7 is LESS than 91, we can round 12 to 10, and make it times 7 instead, having 70 as a result. Then we sum the rest, which is 7 times 2. As the final result we have 84. And that is indeed less than 91.",
+	
+	"bodyLevelInfo_9":"...",
+	"bodyFinalQuestion_9":"You hear the voice of 1 person talking on the phone on the other side of the wall. Is the number of people talking on the other side of the wall higher as the result of the equation bellow?",
+	"bodyDidYouKnow_9":"Nice job! You have gone through the last door, and then found and arrested the Villain. You are awesome! ",
+		
+	"titleStage": "Stage",
+	"titleYes": "Yes",
+	"titleNo": "No",
+	"titleReplay": "Replay",
+	"titleWrongAnswer": "Wrong Answer,\nBut don't Give up",
+	
+	"titleTryAgain": "Try Again"
+  }
+}
