@@ -123,6 +123,7 @@
   "7941d434": "Connect the names to the number representing them.",
   "tutorialJoystick": "Use the joystick to control the character!",
   "tutorialArrowKeys": "Use WASD or the arrow keys to control the character!\n",
-  "9be9d019": "Connect the numbers without crossing the lines!"
+  "9be9d019": "Connect the numbers without crossing the lines!",
+  "bodyPlayAgainWarning": "You can play levels again if you want to earn 3 stars!"
  }
 }

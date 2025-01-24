@@ -60,6 +60,7 @@
 	"titleReplay": "Replay",
 	"titleWrongAnswer": "Wrong Answer,\nBut don't Give up",
 	
-	"titleTryAgain": "Try Again"
+	"titleTryAgain": "Try Again",
+	"titleMissionTip": "Mission Tip"
   }
 }
