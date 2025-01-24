@@ -74,10 +74,10 @@
   "cutsceneFinal3": "See you next time.",
   "159a105c": "Did you know? When we multiply in the base 10 system, each zero in the number will represent an extra zero to the immediate right in the result.",
   "68905f75": "Did you know? When we multiply in the base 10 system, each zero in the number will represent an extra zero to the immediate right in the result.",
-  "5afcba32": "We already know what happens when we multiply numbers in the base of 10 system. But what happens when we divide?",
+  "5afcba32": "We already know what happens when we multiply numbers in the base of 10 system. Let's give this puzzle a try!",
   "8e3fd009": "Since multiplying makes digits move to the right, dividing makes them move to the left, making them smaller. To understand how much it will move the same trick applies.\n\nExample: 100 moves 2; 10 moves 1; 1,000 moves 3; and so.",
   "e89d70ea": "2000/10 = 200\n2000/100 = 20\n2000/1000 = 2",
-  "020b33d6": "Urg, it gave me too much this time…",
+  "020b33d6": "Ugh, it gave me too much this time…",
   "aacd263b": "Decimals have their dots in the middle of them see? \nMultiplying by 10 moves the decimal point to the right and dividing by 10 moves the decimal point to the left. \n\nThe higher the multiple of 10, the more it moves.",
   "3d8b2bf3": "Look! Decimals! Let’s see how they react to multiplying and dividing.",
   "b6cf2b40": "What can I do with 0.5 of a plank? I will need to multiply this…",
@@ -122,6 +122,7 @@
   "76c89e00": "Multiplying numbers by multiples of 10, moves their digits to the right, making them bigger.  To understand how much it will move, you can count the quantity of zeros in the multiple of 10. \n\nExample: 100 moves 2; 10 moves 1; 1,000 moves 3; and so.",
   "7941d434": "Connect the names to the number representing them.",
   "tutorialJoystick": "Use the joystick to control the character!",
-  "tutorialArrowKeys": "Use WASD or the arrow keys to control the character!\n"
+  "tutorialArrowKeys": "Use WASD or the arrow keys to control the character!\n",
+  "9be9d019": "Connect the numbers without crossing the lines!"
  }
 }
