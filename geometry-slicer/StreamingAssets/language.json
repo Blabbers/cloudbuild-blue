@@ -1,0 +1,65 @@
+{
+  "en": {
+    "titlePlay": "Play",
+	"titleClose": "Close",
+	"titleOkay": "Okay",
+	"titleLevelSelect": "Level Select",
+	"titleContinue": "Continue",
+	"titleDone": "Done",
+	"titleLevelComplete":"Level complete!",
+	"titleScore":"Your score",	
+	"titleCongratulations": "Congratulations!",	
+	"titleFinalScore": "Your final score",
+	
+	"titleHowToPlay": "How to play",	
+	"bodyHowToPlay": "- CLICK on a 3D geometry to SELECT it.\r\n\r\n- Press the ARROWS on your keyboard to MOVE it.\r\n\r\n- When over a GREEN PLATFORM, click on the button that will popup or simply press SPACEBAR to perform a cut on the 3D object.\r\n\r\n- Win by making every 2D shape in the OBJECTIVE LIST through cross-sections made on the 3D objects.\r\n\r\n- Order of execution of the objectives in the list is not important.",
+	
+	"titleLevelInfo":"Level information",
+	"titleDidYouKnow":"Did you know?",
+	
+	"bodyLevelInfo_1":"Click on a 3D geometry to select it. Then press the arrows on your keyboard to move it. \r\nWhen you reach the green platform, press the button that will popup, to make a 'Horizontal Cut'. Or simply press space, as a shortcut.\r\nYour goal is to make a cross-section that will generate the 2D shape on the objective list.",
+	"bodyDidYouKnow_1":"A plane section of a three-dimensional object is a two-dimensional slice formed by an intersection of the object with a plane.\nAs you just saw the slice formed by a horizontal plane section of a cylinder or a cone is a circle.",
+	
+	"bodyLevelInfo_2":"Be careful! If you cut a piece, it will stay there blocking the way for other pieces. In order to win, you have to make all the 2D objects on the list. So if you realize you made something wrong, press the 'replay' button.",
+	"bodyDidYouKnow_2":"A cross section is a plane section that is a section of a three-dimensional object that is parallel to one of its planes of symmetry or perpendicular to one of its lines of symmetry.\nBoth the parallelepiped and the pyramid's base is a square so the horizontal cross section of these objects are also a square. ",
+	
+	"bodyLevelInfo_3":"Notice that the green platforms have different icons in a shape that represents a specific type of cut. The platform on the center represents a VERTICAL cut. The other two platforms represents a HORIZONTAL cut. Pay attention to the objective to use the right type of cut for each 3D shape.",
+	"bodyDidYouKnow_3":"Good job! You learned how a vertical plane section affects objects. The slice formed by the parallelepiped's vertical intersection is a rectangle shape.",
+	
+	"bodyLevelInfo_4":"...",
+	"bodyDidYouKnow_4":"The slice formed by the pyramid's vertical intersection is a triangle shape.",
+	
+	"bodyLevelInfo_5":"...",
+	"bodyDidYouKnow_5":"The slice formed by the cylinder's vertical intersection is a rectangle shape.",
+	
+	"bodyLevelInfo_6":"Now there is a green platform, on the upper-left side, that will perform a DIAGONAL cut. Pay attention to the objective list to make the right choices.",
+	"bodyDidYouKnow_6":"Good job! You learned how a diagonal plane section affects objects. The slice formed by the cone's diagonal intersection is an ellipse shape.",
+	
+	"bodyLevelInfo_7":"...",
+	"bodyDidYouKnow_7":"The slice formed by the pyramid's diagonal intersection is a trapezium shape.",
+	
+	"bodyLevelInfo_8":"...",
+	"bodyDidYouKnow_8":"The slice formed by the hexagonal prism's horizontal intersection is a hexagon shape.",
+	
+	"bodyLevelInfo_9":"...",
+	"bodyDidYouKnow_9":"The slice formed by the hexagonal prism's diagonal intersection is a squashed hexagon shape. ",
+		
+	"titleReplay": "Replay",
+	"titleObjective": "Objective",
+	"titleMakeCut": "Make Cut",
+	"titleVertical": "Vertical",
+	"titleHorizontal": "Horizontal",
+	"titleDiagonal": "Diagonal",
+	"titleWrongAnswer": "Wrong Answer,\nBut don't Give up",
+	"titleTryAgain": "Try Again",
+	
+	"Square": "Square",
+	"Circle": "Circle",
+	"Rectangle": "Rectangle",
+	"Triangle": "Triangle",
+	"Ellipse": "Ellipse",
+	"Trapezoid": "Trapezoid",
+	"Hexagon": "Hexagon",
+	"SquashedHexagon": "Squashed Hexagon"
+  }
+}
