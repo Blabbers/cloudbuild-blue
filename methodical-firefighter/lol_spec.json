@@ -1,8 +1,8 @@
 {
-    "unity_version": "2020.3.36f1",
-    "lol_sdk_version": "5.3",
-    "build_dir_size": 18387961,
-    "build_uncompressed_dir_size": 45654420,
-    "build_compression_format": "Gzip",
-    "streaming_assets_dir_size": 19050
+    "unity_version": "2022.3.47f1",
+    "lol_sdk_version": "5.4",
+    "build_dir_size": 12549048,
+    "build_uncompressed_dir_size": 29964068,
+    "build_compression_format": "Brotli",
+    "streaming_assets_dir_size": 25675
 }
