@@ -36,7 +36,12 @@ jobs:
           source: ./
           destination: ./_site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: my-artifact-${{ matrix.runs-on }}
+          path: ./_site
+          include-hidden-files: true
+          overwrite: true
 
   # Deployment job
   deploy:
