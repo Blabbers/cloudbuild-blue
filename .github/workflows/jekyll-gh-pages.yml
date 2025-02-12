@@ -40,6 +40,8 @@ jobs:
         with:
           name: github-pages
           path: ./_site
+      - name: Verify artifact upload
+        run: ls -R ./_site
 
   # Deployment job
   deploy:
