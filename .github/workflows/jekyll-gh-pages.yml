@@ -44,6 +44,10 @@ jobs:
         run: |
           echo "Artifacts after upload:"
           ls -R ./_site
+      - name: List uploaded artifacts
+        run: |
+          echo "Uploaded artifacts:"
+          gh api -H "Accept: application/vnd.github.v3+json" /repos/${{ github.repository }}/actions/artifacts
 
   # Deployment job
   deploy:
