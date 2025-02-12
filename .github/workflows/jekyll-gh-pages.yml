@@ -42,6 +42,10 @@ jobs:
           path: ./_site
       - name: Verify artifact upload
         run: ls -R ./_site
+      - name: List artifacts after upload
+        run: |
+          echo "Artifacts after upload:"
+          ls -R ./_site
 
   # Deployment job
   deploy:
@@ -51,6 +55,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: List artifacts before deployment
+        run: |
+          echo "Artifacts before deployment:"
+          ls -R ./_site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
