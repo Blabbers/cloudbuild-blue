@@ -64,8 +64,6 @@ jobs:
         with:
           name: github-pages
           path: ./_site
-      - name: Extract artifact
-        run: tar -xvf ./_site/artifact.tar -C ./_site
       - name: List artifacts before deployment
         run: |
           echo "Artifacts before deployment:"
