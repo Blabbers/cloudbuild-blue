@@ -1,20 +1,28 @@
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -43,6 +51,7 @@ jobs:
           echo "Uploaded artifacts:"
           gh api -H "Accept: application/vnd.github.v3+json" /repos/${{ github.repository }}/actions/artifacts
 
+  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -72,6 +81,7 @@ jobs:
         run: |
           LAST_COMMIT_MESSAGE=$(git log -1 --pretty=%B)
           echo "LAST_COMMIT_MESSAGE=$LAST_COMMIT_MESSAGE" >> $GITHUB_ENV
+
       - name: Send Discord notification on success
         if: success()
         run: |
@@ -79,6 +89,7 @@ jobs:
             "content": "\n> :white_check_mark: **Build finished successfully!** :sparkles: \n> https://blabbers.games/web-builds/\n> \n> :speech_balloon: ***'"$LAST_COMMIT_MESSAGE"'***"
           }'
           curl -X POST -H "Content-Type: application/json" -d "$DISCORD_MESSAGE" ${{ secrets.DISCORD_WEBHOOK_URL_LLBUILDS_CHANNEL }}
+
       - name: Send Discord notification on failure
         if: failure()
         run: |
