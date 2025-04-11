@@ -1,196 +1,14464 @@
-System.register("chunks:///_virtual/Action.ts",["cc"],(function(t){var n,e;return{setters:[function(t){n=t.cclegacy,e=t._decorator}],execute:function(){var i;n._RF.push({},"5fe2cvoUotHiID7b0idGzK7","Action",void 0);var s=e.ccclass;t("Action",s("Action")(i=function(){function t(){this._listeners=[]}var n=t.prototype;return n.addListener=function(t){this._listeners.push(t)},n.removeListener=function(t){var n=this._listeners.indexOf(t);n>=0&&this._listeners.splice(n,1)},n.invoke=function(t){this._listeners.forEach((function(n){return n(t)}))},t}())||i);n._RF.pop()}}}));
+System.register("chunks:///_virtual/Action.ts", ['cc'], function (exports) {
+  var cclegacy, _decorator;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "5fe2cvoUotHiID7b0idGzK7", "Action", undefined);
+      var ccclass = _decorator.ccclass;
+      var Action = exports('Action', (_dec = ccclass('Action'), _dec(_class = /*#__PURE__*/function () {
+        function Action() {
+          this._listeners = [];
+        }
+        var _proto = Action.prototype;
+        // Add a listener
+        _proto.addListener = function addListener(callback) {
+          this._listeners.push(callback);
+        }
 
-System.register("chunks:///_virtual/ArrayUtils.ts",["cc"],(function(){var t;return{setters:[function(r){t=r.cclegacy}],execute:function(){t._RF.push({},"e860dkQNvBKoLGX9hI5lilB","ArrayUtils",void 0),Array.prototype.remove=function(t){var r=this.indexOf(t);r>-1&&this.splice(r,1)},Array.prototype.contains=function(t){return this.indexOf(t)>-1},Array.prototype.clear=function(){this.length=0},t._RF.pop()}}}));
+        // Remove a listener
+        ;
 
-System.register("chunks:///_virtual/AsyncCommand.ts",["./rollupPluginModLoBabelHelpers.js","cc","./Command.ts"],(function(n){var e,i,t,r,o,a,c;return{setters:[function(n){e=n.applyDecoratedDescriptor,i=n.inheritsLoose,t=n.initializerDefineProperty,r=n.assertThisInitialized},function(n){o=n.cclegacy,a=n._decorator},function(n){c=n.Command}],execute:function(){var s,u,l,p;o._RF.push({},"7c4ecurdZpKxLBvjTsWyRf8","AsyncCommand",void 0);var d=a.ccclass,m=a.property;n("AsyncCommand",d("AsyncCommand")((l=e((u=function(n){function e(){for(var e,i=arguments.length,o=new Array(i),a=0;a<i;a++)o[a]=arguments[a];return e=n.call.apply(n,[this].concat(o))||this,t(e,"duration",l,r(e)),t(e,"waitUntilFinished",p,r(e)),e}return i(e,n),e}(c)).prototype,"duration",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),p=e(u.prototype,"waitUntilFinished",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),s=u))||s);o._RF.pop()}}}));
+        _proto.removeListener = function removeListener(callback) {
+          var index = this._listeners.indexOf(callback);
+          if (index >= 0) {
+            this._listeners.splice(index, 1);
+          }
+        }
 
-System.register("chunks:///_virtual/AudioController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Singleton.ts","./Game.ts"],(function(e){var i,r,t,o,u,c,n,s,l,a,p,m,h;return{setters:[function(e){i=e.applyDecoratedDescriptor,r=e.inheritsLoose,t=e.initializerDefineProperty,o=e.assertThisInitialized},function(e){u=e.cclegacy,c=e._decorator,n=e.AudioClip,s=e.AudioSource,l=e.Component,a=e.director,p=e.Director},null,function(e){m=e.Singleton},function(e){h=e.Game}],execute:function(){var f,d,y,S,g,v,T,b,k;u._RF.push({},"14ccdp0335NRrDCo3XRSzZD","AudioController",void 0);var M=c.ccclass,A=c.property;e("AudioController",(f=M("AudioController"),d=A({type:[n]}),y=A({type:s}),S=A({type:s}),f((T=i((v=function(e){function i(){for(var i,r=arguments.length,u=new Array(r),c=0;c<r;c++)u[c]=arguments[c];return i=e.call.apply(e,[this].concat(u))||this,t(i,"musicTracks",T,o(i)),t(i,"musicSource",b,o(i)),t(i,"gameplaySource",k,o(i)),i.currentTrackIndex=0,i.originalMusicVolume=0,i}r(i,e);var u=i.prototype;return u.onLoad=function(){m.set(this)},u.start=function(){this.originalMusicVolume=this.musicSource.volume},u.playMusic=function(){var e=this;0!==this.musicTracks.length&&this.musicSource&&(this.musicSource.clip=this.musicTracks[this.currentTrackIndex],this.musicSource.play(),this.musicSource.node.once(s.EventType.ENDED,(function(){e.currentTrackIndex=(e.currentTrackIndex+1)%e.musicTracks.length,e.playMusic()})))},u.playSFX=function(e,i){this.gameplaySource&&this.gameplaySource.playOneShot(e,i)},u.fadeMusicVolume=function(e,i){var r=this;if(void 0===i&&(i=.5),this.musicSource){var t=this.musicSource.volume,o=e-t,u=0;!function e(){u+=h.deltaTime;var c=Math.min(u/i,1);r.musicSource.volume=t+o*c,c<1&&a.once(p.EVENT_AFTER_UPDATE,e)}()}},u.resetMusicVolume=function(){this.fadeMusicVolume(this.originalMusicVolume,1)},i}(l)).prototype,"musicTracks",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),b=i(v.prototype,"musicSource",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),k=i(v.prototype,"gameplaySource",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),g=v))||g));u._RF.pop()}}}));
+        // Invoke all listeners
+        ;
 
-System.register("chunks:///_virtual/BundleLoad2.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var o,n,t,r,l,a,i,u,s,c,d;return{setters:[function(e){o=e.applyDecoratedDescriptor,n=e.inheritsLoose,t=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){l=e.cclegacy,a=e._decorator,i=e.SpriteFrame,u=e.Texture2D,s=e.assetManager,c=e.JsonAsset,d=e.Component}],execute:function(){var p,f,g,y,b,L,h;l._RF.push({},"104bdtyBtRBz75hx6sbcjAK","BundleLoad2",void 0);var v=a.ccclass,B=a.property;e("BundleLoad2",(p=v("BundleLoad2"),f=B(i),g=B(u),p((L=o((b=function(e){function o(){for(var o,n=arguments.length,l=new Array(n),a=0;a<n;a++)l[a]=arguments[a];return o=e.call.apply(e,[this].concat(l))||this,t(o,"spriteComponent",L,r(o)),t(o,"texture1",h,r(o)),o}n(o,e);var l=o.prototype;return l.start=function(){this.testLoadLanguage()},l.testLoadLanguage=function(){var e="bundle1",o="language";s.loadBundle(e,(function(n,t){n?console.error("Failed to load bundle:",n):(console.log("Bundle loaded successfully:",e),t.load(o,c,(function(e,n){if(e)console.error("Failed to load JSON file:",e);else{console.log("JSON file loaded successfully:",o);var t=n.json;console.log("Loaded language data:",t)}})))}))},o}(d)).prototype,"spriteComponent",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),h=o(b.prototype,"texture1",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),y=b))||y));l._RF.pop()}}}));
+        _proto.invoke = function invoke(data) {
+          this._listeners.forEach(function (callback) {
+            return callback(data);
+          });
+        };
+        return Action;
+      }()) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/BundleLoadTest.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var n,t,o,l,r,i,a,d,u;return{setters:[function(e){n=e.applyDecoratedDescriptor,t=e.inheritsLoose,o=e.initializerDefineProperty,l=e.assertThisInitialized},function(e){r=e.cclegacy,i=e._decorator,a=e.SpriteFrame,d=e.assetManager,u=e.Component}],execute:function(){var c,s,p,h,f;r._RF.push({},"2e1e3oxpKRDDJ1q+mxIrI93","BundleLoadTest",void 0);var B=i.ccclass,y=i.property;e("BundleLoadTest",(c=B("BundleLoadTest"),s=y(a),c((f=n((h=function(e){function n(){for(var n,t=arguments.length,r=new Array(t),i=0;i<t;i++)r[i]=arguments[i];return n=e.call.apply(e,[this].concat(r))||this,o(n,"mySprite",f,l(n)),n.cachedBundle=null,n}t(n,e);var r=n.prototype;return r.start=function(){this.loadBundle("bundle1",this.onBundleLoaded.bind(this))},r.loadBundle=function(e,n){var t=this;this.cachedBundle?n(null,this.cachedBundle):d.loadBundle(e,(function(e,o){e||(t.cachedBundle=o),n(e,o)}))},r.onBundleLoaded=function(e,n){e?console.error("Failed to load bundle: "+e):(console.log("Bundle loaded successfully: "+n.name),this.loadSprite(this.cachedBundle))},r.loadSprite=function(e){var n=this;e.load("loaded",a,(function(e,t){e?console.error(e):(n.mySprite=t,console.log("Sprite loaded successfully: "+t.name))}))},n}(u)).prototype,"mySprite",[s],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),p=h))||p));r._RF.pop()}}}));
+System.register("chunks:///_virtual/ArrayUtils.ts", ['cc'], function () {
+  var cclegacy;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "e860dkQNvBKoLGX9hI5lilB", "ArrayUtils", undefined);
+      /**
+       * Removes an specific element of the array that matches item. It can be a reference or a value, and if there are multiple copies of it, it will only remove the first one. If the item is not found, nothing happens.
+       * @param item element to remove from the array.
+       */
+      Array.prototype.remove = function (item) {
+        var index = this.indexOf(item);
+        if (index > -1) {
+          this.splice(index, 1);
+        }
+      };
 
-System.register("chunks:///_virtual/CameraUtils.ts",["cc"],(function(e){var t,r,o,i,n;return{setters:[function(e){t=e.cclegacy,r=e._decorator,o=e.view,i=e.Vec2,n=e.Vec3}],execute:function(){var c;t._RF.push({},"b923anvDUZJPrVykZaTCJsH","CameraUtils",void 0);var a=r.ccclass;r.property,e("CameraUtils",a("CameraUtils")(c=function(){function e(){}return e.worldToUIPosition=function(e,t,r,c,a){var s=o.getVisibleSize(),u=new i;u.set(s.width,s.height);var l=e.worldPosition,v=t.worldToScreen(l),w=this.convertToRelativeResolution(v,u);return r.convertToNodeSpaceAR(new n(w.x,w.y,0))},e.convertToRelativeResolution=function(e,t){var r=o.getViewportRect().width,n=o.getViewportRect().height,c=e.x/r,a=e.y/n;return new i(c*t.x,a*t.y)},e}())||c);t._RF.pop()}}}));
+      /**
+       * Checks if the array contains an specific element.
+       * @param item element to checked on the array.
+       */
+      Array.prototype.contains = function (item) {
+        var index = this.indexOf(item);
+        return index > -1;
+      };
 
-System.register("chunks:///_virtual/ClassScanner.ts",["./rollupPluginModLoBabelHelpers.js","cc","./WaitCommand.ts","./TweenPositionCommand.ts","./TweenScaleCommand.ts","./SetActiveCommand.ts"],(function(e){var t,n,s,o,r,a,c,i,l,u,f,m,g;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,s=e.initializerDefineProperty,o=e.assertThisInitialized,r=e.createClass},function(e){a=e.cclegacy,c=e._decorator,i=e.js,l=e.Component},function(e){u=e.WaitCommand},function(e){f=e.TweenPositionCommand},function(e){m=e.TweenScaleCommand},function(e){g=e.SetActiveCommand}],execute:function(){var p,d,C,y,h;e("commandclass",(function(e){S||(S=[]);return function(t){console.log('Registering class "'+e+'"...');try{var n=c.ccclass;if(!n)throw new Error("ccclass decorator not available");return n(e)(t),S.some((function(t){return t.name===e}))||(S.push({name:e,classRef:t}),console.log('Successfully registered "'+e+'"'),console.log("Class ID after registration:",i.getClassId(t))),t}catch(n){return console.error('Failed to register "'+e+'":',n),t}}})),a._RF.push({},"1616bqXCy9Pz5pqh03W+F1t","ClassScanner",void 0);var v=c.ccclass,T=c.property,S=[];e("ClassScanner",(p=v("ClassScanner"),d=T({multiline:!0}),p((h=t((y=function(e){function t(){for(var t,n=arguments.length,r=new Array(n),a=0;a<n;a++)r[a]=arguments[a];return t=e.call.apply(e,[this].concat(r))||this,s(t,"test",h,o(t)),t}n(t,e),t.getAllClasses=function(){var e=S.map((function(e){return e.name}));return console.log("User-Defined CCClasses:",e),e};var a=t.prototype;return a.otherTests=function(){this.test=""},a.start=function(){t.getAllClasses()},r(t,[{key:"pressButtonToTest",get:function(){return!1},set:function(e){console.log("-----------Testing registration-----------"),console.log("Current registeredUserClasses length:",S.length),console.log("Registered class names:",S.map((function(e){return e.name}))),[u,g,m,f].forEach((function(e){var t=S.find((function(t){return t.classRef===e})),n=S.find((function(t){return t.name===e.name}));console.log('Class "'+e.name+'":',{registeredByRef:!!t,registeredByName:!!n,classId:i.getClassId(e),constructor:!!e,matchingClass:(null==n?void 0:n.classRef)===e})}))}}]),t}(l)).prototype,"test",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),t(y.prototype,"pressButtonToTest",[T],Object.getOwnPropertyDescriptor(y.prototype,"pressButtonToTest"),y.prototype),C=y))||C));a._RF.pop()}}}));
+      /**
+       * Clears an array without losing reference to the array
+       */
+      Array.prototype.clear = function () {
+        this.length = 0;
+      };
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/ComboController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./HexGridController.ts","./HexSlot.ts","./TurnController.ts","./ObjectivesController.ts","./LevelAsset.ts","./Singleton.ts","./Wait.ts"],(function(e){var o,r,t,n,i,s,l,a,c,u,h,f,p,w,g,C;return{setters:[function(e){o=e.applyDecoratedDescriptor,r=e.inheritsLoose,t=e.initializerDefineProperty,n=e.assertThisInitialized,i=e.asyncToGenerator,s=e.regeneratorRuntime},function(e){l=e.cclegacy,a=e._decorator,c=e.Component},null,function(e){u=e.HexGridController},function(e){h=e.HexSlot},function(e){f=e.TurnController},function(e){p=e.ObjectivesController},function(e){w=e.ObjectiveType},function(e){g=e.Singleton},function(e){C=e.Wait}],execute:function(){var d,m,b,T,y,x,R,v,P,D,z,E,S,A,j;l._RF.push({},"51869EpMABNO6OWaNZjuue2","ComboController",void 0);var G=a.ccclass,O=a.property;e("ComboController",(d=G("ComboController"),m=O(),b=O({type:Boolean,group:"Runtime"}),T=O({type:[h],group:"Runtime"}),y=O({type:[Number],group:"Runtime"}),x=O({type:u,group:"Runtime"}),R=O({type:f,group:"Runtime"}),d((D=o((P=function(e){function o(){for(var o,r=arguments.length,i=new Array(r),s=0;s<r;s++)i[s]=arguments[s];return o=e.call.apply(e,[this].concat(i))||this,t(o,"refreshDelay",D,n(o)),t(o,"isRunningDelay",z,n(o)),t(o,"towers",E,n(o)),t(o,"scores",S,n(o)),t(o,"hexGrid",A,n(o)),t(o,"turnControl",j,n(o)),o.refreshPromise=null,o.isCanceled=!1,o}r(o,e);var l=o.prototype;return l.initialize=function(){g.set(this),this.hexGrid=g.get(u),this.turnControl=g.get(f),this.refreshPromise=null},l.updateTowers=function(e){console.log("ComboController.updateTowers()"),this.towers=e,0!=this.towers.length&&(this.cancelRefresh(),this.refreshPromise=this.waitToRefreshTowers())},l.delayTowerExplosion=function(){this.refreshPromise&&(console.log("ComboController.delayTowerExplosion()"),this.cancelRefresh(),this.refreshPromise=this.waitToRefreshTowers())},l.cancelTowerExplosion=function(){this.refreshPromise&&(console.log("ComboController.delayTowerExplosion()"),this.cancelRefresh())},l.waitToRefreshTowers=function(){var e=i(s().mark((function e(){return s().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return console.log("ComboController.waitToRefreshTowers()"),this.isCanceled=!1,this.isRunningDelay=!0,e.next=5,C.seconds(this.refreshDelay);case 5:if(!this.isCanceled){e.next=8;break}return console.log("ComboController.waitToRefreshTowers() canceled."),e.abrupt("return");case 8:console.log("ComboController.waitToRefreshTowers() explodeTowers() "+this.towers.length),this.explodeTowers();case 10:case"end":return e.stop()}}),e,this)})));return function(){return e.apply(this,arguments)}}(),l.cancelRefresh=function(){this.refreshPromise&&(console.log("ComboController.cancelRefresh()"),this.isCanceled=!0,this.refreshPromise=null,this.isRunningDelay=!1)},l.explodeTowers=function(){var e=this;if(0!=this.towers.length){console.log("ComboController.explodeTowers() "+this.towers.length),this.turnControl.explodeAnimationStarted();for(var o=0;o<this.towers.length;o++){var r=this.towers[o].getTopStack();this.scores.push(r.amount)}this.towers[0].explodeTower((function(){return e.afterTowersExploded()}));for(var t=1;t<this.towers.length;t++)this.towers[t].explodeTower(null)}},l.afterTowersExploded=function(){console.log("ComboController.afterTowersExploded() CALLBACK");for(var e=0;e<this.towers.length;e++)g.get(p).addObjectiveProgress(w.MergePieces,this.scores[e]);this.scores.clear(),this.towers.length>0&&g.get(f).checkMovementAroundSlot(this.towers[0]),this.towers.clear()},o}(c)).prototype,"refreshDelay",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),z=o(P.prototype,"isRunningDelay",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),E=o(P.prototype,"towers",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),S=o(P.prototype,"scores",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),A=o(P.prototype,"hexGrid",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),j=o(P.prototype,"turnControl",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),v=P))||v));l._RF.pop()}}}));
+System.register("chunks:///_virtual/AsyncCommand.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Command.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Command;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }, function (module) {
+      Command = module.Command;
+    }],
+    execute: function () {
+      var _dec, _class, _class2, _descriptor, _descriptor2;
+      cclegacy._RF.push({}, "7c4ecurdZpKxLBvjTsWyRf8", "AsyncCommand", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var AsyncCommand = exports('AsyncCommand', (_dec = ccclass('AsyncCommand'), _dec(_class = (_class2 = /*#__PURE__*/function (_Command) {
+        _inheritsLoose(AsyncCommand, _Command);
+        function AsyncCommand() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Command.call.apply(_Command, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "duration", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "waitUntilFinished", _descriptor2, _assertThisInitialized(_this));
+          return _this;
+        }
+        return AsyncCommand;
+      }(Command), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "duration", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "waitUntilFinished", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/Command.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var n,t,r;return{setters:[function(e){n=e.createClass},function(e){t=e.cclegacy,r=e._decorator}],execute:function(){var c;t._RF.push({},"24864ztrjhM4L5FRYrkdL3F","Command",void 0);var o=r.ccclass,a=(r.property,e("CommandType",function(e){return e[e.Immediate=0]="Immediate",e[e.Async=1]="Async",e}({})));e("Command",o("Command")(c=function(){function e(){}return n(e,[{key:"commandType",get:function(){return a.Immediate}}]),e}())||c);t._RF.pop()}}}));
+System.register("chunks:///_virtual/AudioController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Singleton.ts', './Game.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, AudioClip, AudioSource, Component, director, Director, Singleton, Game;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      AudioClip = module.AudioClip;
+      AudioSource = module.AudioSource;
+      Component = module.Component;
+      director = module.director;
+      Director = module.Director;
+    }, null, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      Game = module.Game;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "14ccdp0335NRrDCo3XRSzZD", "AudioController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var AudioController = exports('AudioController', (_dec = ccclass('AudioController'), _dec2 = property({
+        type: [AudioClip]
+      }), _dec3 = property({
+        type: AudioSource
+      }), _dec4 = property({
+        type: AudioSource
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(AudioController, _Component);
+        function AudioController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //
+          _initializerDefineProperty(_this, "musicTracks", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "musicSource", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "gameplaySource", _descriptor3, _assertThisInitialized(_this));
+          _this.currentTrackIndex = 0;
+          _this.originalMusicVolume = 0;
+          return _this;
+        }
+        var _proto = AudioController.prototype;
+        _proto.onLoad = function onLoad() {
+          Singleton.set(this);
+        };
+        _proto.start = function start() {
+          this.originalMusicVolume = this.musicSource.volume;
+        };
+        _proto.playMusic = function playMusic() {
+          var _this2 = this;
+          if (this.musicTracks.length === 0 || !this.musicSource) return;
+          this.musicSource.clip = this.musicTracks[this.currentTrackIndex];
+          this.musicSource.play();
+          this.musicSource.node.once(AudioSource.EventType.ENDED, function () {
+            _this2.currentTrackIndex = (_this2.currentTrackIndex + 1) % _this2.musicTracks.length;
+            _this2.playMusic();
+          });
+        };
+        _proto.playSFX = function playSFX(clip, volume) {
+          if (this.gameplaySource) {
+            this.gameplaySource.playOneShot(clip, volume);
+          }
+        };
+        _proto.fadeMusicVolume = function fadeMusicVolume(targetVolume, fadeDuration) {
+          var _this3 = this;
+          if (fadeDuration === void 0) {
+            fadeDuration = 0.5;
+          }
+          if (!this.musicSource) return;
+          var initialVolume = this.musicSource.volume;
+          var volumeChange = targetVolume - initialVolume;
+          var elapsedTime = 0;
+          var updateVolume = function updateVolume() {
+            elapsedTime += Game.deltaTime;
+            var progress = Math.min(elapsedTime / fadeDuration, 1);
+            _this3.musicSource.volume = initialVolume + volumeChange * progress;
+            if (progress < 1) {
+              director.once(Director.EVENT_AFTER_UPDATE, updateVolume);
+            }
+          };
+          updateVolume();
+        };
+        _proto.resetMusicVolume = function resetMusicVolume() {
+          this.fadeMusicVolume(this.originalMusicVolume, 1.0);
+        };
+        return AudioController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "musicTracks", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "musicSource", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "gameplaySource", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/CommandSequence.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./WaitCommand.ts","./TweenPositionCommand.ts","./TweenScaleCommand.ts","./Command.ts","./SetActiveCommand.ts","./AsyncCommand.ts","./Polymorphism.ts"],(function(e){var n,t,o,a,r,i,c,m,s,u,d,p,l,f,y,C,h,b,w;return{setters:[function(e){n=e.applyDecoratedDescriptor,t=e.initializerDefineProperty,o=e.inheritsLoose,a=e.assertThisInitialized,r=e.createClass,i=e.asyncToGenerator,c=e.regeneratorRuntime,m=e.createForOfIteratorHelperLoose},function(e){s=e.cclegacy,u=e._decorator,d=e.Enum,p=e.Component},null,function(e){l=e.WaitCommand},function(e){f=e.TweenPositionCommand},function(e){y=e.TweenScaleCommand},function(e){C=e.Command},function(e){h=e.SetActiveCommand},function(e){b=e.AsyncCommand},function(e){w=e.polymorphism}],execute:function(){var v,S,g,q,x,A,L,N,k,O,P,R,E,T,z;s._RF.push({},"16c8263f3xLNaRBL7e4S3EP","CommandSequence",void 0);var D=u.ccclass,F=u.property,_=u.executionOrder,W=(v=D("CommandWrapper"),S=_(1e3),g=F({displayName:"Properties"}),q=w({baseClass:C,types:[f,y,l,h]}),v(x=S((L=n((A=function(){t(this,"command",L,this)}).prototype,"command",[g,q],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new l}}),x=A))||x)||x),j=e("AddSequenceOptions",function(e){return e[e.None=0]="None",e[e.AddNewCommand=1]="AddNewCommand",e[e.RemoveLastCommand=2]="RemoveLastCommand",e}({}));e("CommandSequence",(N=D("CommandSequence"),k=_(1001),O=F({type:[W]}),P=F({type:d(j)}),N(R=k((T=n((E=function(e){function n(){for(var n,o=arguments.length,r=new Array(o),i=0;i<o;i++)r[i]=arguments[i];return n=e.call.apply(e,[this].concat(r))||this,t(n,"playOnEnable",T,a(n)),t(n,"sequence",z,a(n)),n}o(n,e);var s=n.prototype;return s.onEnable=function(){this.playOnEnable&&this.playSequence()},s.playSequence=function(){var e=i(c().mark((function e(){var n,t,o;return c().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:n=m(this.sequence);case 1:if((t=n()).done){e.next=11;break}if(!((o=t.value).command instanceof b&&o.command.waitUntilFinished)){e.next=8;break}return e.next=6,o.command.execute();case 6:e.next=9;break;case 8:o.command.execute();case 9:e.next=1;break;case 11:case"end":return e.stop()}}),e,this)})));return function(){return e.apply(this,arguments)}}(),r(n,[{key:"Action",get:function(){return j.None},set:function(e){switch(e){case j.AddNewCommand:var n=new W;n.command=new l,this.sequence.push(n),console.log("New command added");break;case j.RemoveLastCommand:this.sequence.pop(),console.log("Last command removed")}}}]),n}(p)).prototype,"playOnEnable",[F],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),z=n(E.prototype,"sequence",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[new W]}}),n(E.prototype,"Action",[P],Object.getOwnPropertyDescriptor(E.prototype,"Action"),E.prototype),R=E))||R)||R));s._RF.pop()}}}));
+System.register("chunks:///_virtual/BundleLoad2.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, SpriteFrame, Texture2D, assetManager, JsonAsset, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      SpriteFrame = module.SpriteFrame;
+      Texture2D = module.Texture2D;
+      assetManager = module.assetManager;
+      JsonAsset = module.JsonAsset;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
+      cclegacy._RF.push({}, "104bdtyBtRBz75hx6sbcjAK", "BundleLoad2", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var BundleLoad2 = exports('BundleLoad2', (_dec = ccclass('BundleLoad2'), _dec2 = property(SpriteFrame), _dec3 = property(Texture2D), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(BundleLoad2, _Component);
+        function BundleLoad2() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "spriteComponent", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "texture1", _descriptor2, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = BundleLoad2.prototype;
+        _proto.start = function start() {
+          this.testLoadLanguage();
+        };
+        _proto.testLoadLanguage = function testLoadLanguage() {
+          var bundleName = 'bundle1'; // Name of the bundle
+          var jsonPath = 'language'; // Path within the bundle without the .json extension
 
-System.register("chunks:///_virtual/DragDropComponent.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./HexSlot.ts","./RaycastUtils.ts"],(function(e){var t,r,i,n,o,a,s,l,u,c,g,d,p,h;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.inheritsLoose,i=e.initializerDefineProperty,n=e.assertThisInitialized},function(e){o=e.cclegacy,a=e._decorator,s=e.Enum,l=e.Node,u=e.Layers,c=e.Vec3,g=e.director,d=e.Component},null,function(e){p=e.HexSlot},function(e){h=e.RaycastUtils}],execute:function(){var y,f,b,m,D,P,L,v,N,S,C,E,R,w,M;o._RF.push({},"7b98exEyKxJurhZ8bHxd1Hn","DragDropComponent",void 0);var T=a.ccclass,z=a.property,x=e("DragDropMode",function(e){return e[e.Disabled=0]="Disabled",e[e.Drag=1]="Drag",e[e.Drop=2]="Drop",e[e.Clickable=3]="Clickable",e}({}));e("DragDropComponent",(y=T("DragDropComponent"),f=z({type:s(x),group:{name:"Runtime"}}),b=z({type:Boolean,group:{name:"Runtime"}}),m=z({type:l,group:{name:"Components"}}),D=z({type:p,group:"Components"}),P=z({type:u.Enum,group:{name:"Layers"}}),L=z({type:u.Enum,group:{name:"Layers"}}),y((S=t((N=function(e){function t(){for(var t,r=arguments.length,o=new Array(r),a=0;a<r;a++)o[a]=arguments[a];return t=e.call.apply(e,[this].concat(o))||this,i(t,"currentMode",S,n(t)),i(t,"isSelected",C,n(t)),i(t,"targetNode",E,n(t)),i(t,"currentSlot",R,n(t)),t.originalY=null,t.originalParent=null,t.originalPos=new c,i(t,"draggableLayer",w,n(t)),i(t,"dragSlotLayer",M,n(t)),t}r(t,e);var o=t.prototype;return o.start=function(){this.targetNode||(this.targetNode=this.node),this.currentSlot=this.getComponent(p)},o.setCurrenMode=function(e){this.currentMode=e,this.currentMode==x.Drag||this.currentMode==x.Clickable?this.setLayerRecursively(this.node,this.draggableLayer):this.currentMode==x.Drop?this.setLayerRecursively(this.node,this.dragSlotLayer):this.setLayerRecursively(this.node,u.Enum.DEFAULT)},o.onDragStart=function(e){this.originalY=this.targetNode.worldPosition.y,this.isSelected=!0,this.originalParent=this.targetNode.parent,this.originalPos=this.targetNode.getWorldPosition(),this.targetNode.setParent(g.getScene()),this.targetNode.setWorldPosition(this.originalPos)},o.onDragMovement=function(e){var t=this.getTargetPosition(e);t&&this.targetNode.setWorldPosition(t)},o.onDragEnded=function(e,t){this.isSelected=!1,t?(this.targetNode.setParent(t),this.setTargetPosition(e)):(this.targetNode.setParent(this.originalParent),this.resetOriginalPosition())},o.resetComponent=function(){this.targetNode.setParent(this.originalParent),this.resetOriginalPosition()},o.resetOriginalPosition=function(){this.setTargetPosition(this.originalPos)},o.setTargetPosition=function(e){this.targetNode.setWorldPosition(e)},o.getTargetPosition=function(e){var t=e.o,r=e.d,i=new c(0,1,0),n=new c(0,this.originalY,0),o=h.rayPlaneIntersection(t,r,n,i);return o||(console.log("Ray does not intersect the plane."),null)},o.setLayerRecursively=function(e,t){var r=this;e.layer=t,e.children.forEach((function(e){return r.setLayerRecursively(e,t)}))},t}(d)).prototype,"currentMode",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return x.Disabled}}),C=t(N.prototype,"isSelected",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),E=t(N.prototype,"targetNode",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),R=t(N.prototype,"currentSlot",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),w=t(N.prototype,"draggableLayer",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return u.Enum.DEFAULT}}),M=t(N.prototype,"dragSlotLayer",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return u.Enum.DEFAULT}}),v=N))||v));o._RF.pop()}}}));
+          // Load the bundle
+          assetManager.loadBundle(bundleName, function (err, bundle) {
+            if (err) {
+              console.error('Failed to load bundle:', err);
+              return;
+            }
+            console.log('Bundle loaded successfully:', bundleName);
 
-System.register("chunks:///_virtual/DraggableComponent.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./RaycastUtils.ts"],(function(e){var t,n,o,r,i,a,s,l,c,u,g,m,p,d,h,y,f;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,o=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){i=e.cclegacy,a=e._decorator,s=e.Camera,l=e.Node,c=e.Vec3,u=e.find,g=e.input,m=e.Input,p=e.Layers,d=e.EventMouse,h=e.geometry,y=e.Component},null,function(e){f=e.RaycastUtils}],execute:function(){var b,v,R,C,D,P,E,w,M,N,T;i._RF.push({},"8d58bgogGdJ2JCJ6qxKvPUw","DraggableComponent",void 0);var S=a.ccclass,x=a.property;e("DraggableComponent",(b=S("DraggableComponent"),v=x({type:Boolean,group:{name:"Runtime"}}),R=x({type:Boolean,group:{name:"Runtime"}}),C=x({type:s,group:{name:"Runtime"}}),D=x({type:l,group:{name:"Runtime"}}),b((w=t((E=function(e){function t(){for(var t,n=arguments.length,i=new Array(n),a=0;a<n;a++)i[a]=arguments[a];return t=e.call.apply(e,[this].concat(i))||this,o(t,"canDrag",w,r(t)),o(t,"isSelected",M,r(t)),o(t,"camera",N,r(t)),o(t,"targetNode",T,r(t)),t.originalY=null,t.currentMousePos=new c,t}n(t,e);var i=t.prototype;return i.start=function(){if(!this.camera){var e=u("Main Camera");e?(this.camera=e.getComponent(s),this.camera||console.error("Camera component not found on the node.")):console.error("Camera node not found.")}this.targetNode||(this.targetNode=this.node),g.on(m.EventType.MOUSE_DOWN,this.mouseClick,this),g.on(m.EventType.MOUSE_MOVE,this.mouseMove,this)},i.performRaycastExternal=function(e){if(this.camera){var t={result:null},n=p.Enum.DEFAULT;if(f.mousePositionRaycast3D(e,this.camera,t,500,n)&&t.result){if(t.result.collider.node!==this.node)return void(this.isSelected=!1);var o=t.result.collider;console.log("RaycastExternal - Found obj: "+o.node.name+" in layer "+f.getLayerName(o.node.layer)),this.originalY=this.node.worldPosition.y,this.isSelected=!0}else console.log("RaycastExternal: No object detected."),this.isSelected=!1}else console.error("Camera is not assigned.")},i.update=function(){if(this.isSelected){var e=this.getDragPosition();e&&this.targetNode.setWorldPosition(e)}},i.mouseClick=function(e){e.getButton()===d.BUTTON_LEFT?this.performRaycastExternal(e):e.getButton()===d.BUTTON_RIGHT&&(this.isSelected=!1)},i.mouseMove=function(e){this.currentMousePos.set(e.getLocationX(),e.getLocationY(),0)},i.getDragPosition=function(){if(this.camera){var e=new h.Ray,t=new c(this.currentMousePos.x,this.currentMousePos.y,0);this.camera.screenPointToRay(t.x,t.y,e);var n=e.o,o=e.d,r=new c(0,1,0),i=new c(0,this.originalY,0),a=f.rayPlaneIntersection(n,o,i,r);return a||(console.log("Ray does not intersect the plane."),null)}console.error("Camera is not assigned.")},t}(y)).prototype,"canDrag",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),M=t(E.prototype,"isSelected",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),N=t(E.prototype,"camera",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),T=t(E.prototype,"targetNode",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),P=E))||P));i._RF.pop()}}}));
+            // Load the JSON file from the bundle
+            bundle.load(jsonPath, JsonAsset, function (err, jsonAsset) {
+              if (err) {
+                console.error('Failed to load JSON file:', err);
+                return;
+              }
+              console.log('JSON file loaded successfully:', jsonPath);
 
-System.register("chunks:///_virtual/DraggableItem.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./RaycastUtils.ts"],(function(e){var t,n,r,i,o,a,l,s,c,u;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,r=e.initializerDefineProperty,i=e.assertThisInitialized},function(e){o=e.cclegacy,a=e._decorator,l=e.Node,s=e.Vec3,c=e.Component},null,function(e){u=e.RaycastUtils}],execute:function(){var g,p,d,f,y,h,m,b,D;o._RF.push({},"0ee49OxRrRI05swSAS1RB66","DraggableItem",void 0);var R=a.ccclass,v=a.property;e("DraggableItem",(g=R("DraggableItem"),p=v({type:Boolean,group:{name:"Runtime"}}),d=v({type:Boolean,group:{name:"Runtime"}}),f=v({type:l,group:{name:"Runtime"}}),g((m=t((h=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),a=0;a<n;a++)o[a]=arguments[a];return t=e.call.apply(e,[this].concat(o))||this,r(t,"canDrag",m,i(t)),r(t,"isSelected",b,i(t)),r(t,"targetNode",D,i(t)),t.originalY=null,t}n(t,e);var o=t.prototype;return o.start=function(){this.targetNode||(this.targetNode=this.node)},o.onDragStart=function(e){this.originalY=this.node.worldPosition.y,this.isSelected=!0},o.onDragMovement=function(e){var t=this.getTargetPosition(e);t&&this.targetNode.setWorldPosition(t)},o.onDragEnded=function(e){this.isSelected=!1},o.getTargetPosition=function(e){var t=e.o,n=e.d,r=new s(0,1,0),i=new s(0,this.originalY,0),o=u.rayPlaneIntersection(t,n,i,r);return o||(console.log("Ray does not intersect the plane."),null)},t}(c)).prototype,"canDrag",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),b=t(h.prototype,"isSelected",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),D=t(h.prototype,"targetNode",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),y=h))||y));o._RF.pop()}}}));
+              // Assuming the JSON file is loaded as a JsonAsset
+              var languageData = jsonAsset.json;
+              console.log('Loaded language data:', languageData);
+            });
+          });
+        };
+        return BundleLoad2;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "spriteComponent", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "texture1", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/DraggableSlot.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var r,e,o,n;return{setters:[function(t){r=t.inheritsLoose},function(t){e=t.cclegacy,o=t._decorator,n=t.Component}],execute:function(){var a;e._RF.push({},"cbdb5xAtfFPWbpTvjNjALkt","DraggableSlot",void 0);var c=o.ccclass;o.property,t("DraggableSlot",c("DraggableSlot")(a=function(t){function e(){return t.apply(this,arguments)||this}r(e,t);var o=e.prototype;return o.start=function(){},o.update=function(t){},e}(n))||a);e._RF.pop()}}}));
+System.register("chunks:///_virtual/BundleLoadTest.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, SpriteFrame, assetManager, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      SpriteFrame = module.SpriteFrame;
+      assetManager = module.assetManager;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "2e1e3oxpKRDDJ1q+mxIrI93", "BundleLoadTest", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var BundleLoadTest = exports('BundleLoadTest', (_dec = ccclass('BundleLoadTest'), _dec2 = property(SpriteFrame), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(BundleLoadTest, _Component);
+        function BundleLoadTest() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "mySprite", _descriptor, _assertThisInitialized(_this));
+          _this.cachedBundle = null;
+          return _this;
+        }
+        var _proto = BundleLoadTest.prototype;
+        _proto.start = function start() {
+          this.loadBundle('bundle1', this.onBundleLoaded.bind(this));
+        };
+        _proto.loadBundle = function loadBundle(bundleName, callback) {
+          var _this2 = this;
+          if (this.cachedBundle) {
+            callback(null, this.cachedBundle);
+            return;
+          }
+          assetManager.loadBundle(bundleName, function (err, bundle) {
+            if (!err) {
+              _this2.cachedBundle = bundle;
+            }
+            callback(err, bundle);
+          });
+        };
+        _proto.onBundleLoaded = function onBundleLoaded(err, bundle) {
+          if (err) {
+            console.error("Failed to load bundle: " + err);
+            return;
+          }
+          console.log("Bundle loaded successfully: " + bundle.name);
+          // You can now use the cached bundle
+          this.loadSprite(this.cachedBundle);
+        };
+        _proto.loadSprite = function loadSprite(bundle) {
+          var _this3 = this;
+          var spritePath = 'loaded';
+          bundle.load(spritePath, SpriteFrame, function (err, spriteFrame) {
+            if (err) {
+              console.error(err);
+              return;
+            }
+            _this3.mySprite = spriteFrame;
+            console.log("Sprite loaded successfully: " + spriteFrame.name);
+          });
+        };
+        return BundleLoadTest;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "mySprite", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/DragInputManager.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./DragDropComponent.ts","./HexGridController.ts","./GameplayController.ts","./Singleton.ts","./RaycastUtils.ts"],(function(e){var t,r,n,o,i,a,s,u,l,c,g,h,d,m,p,f,y,M,b,v,D,P;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.inheritsLoose,n=e.initializerDefineProperty,o=e.assertThisInitialized},function(e){i=e.cclegacy,a=e._decorator,s=e.Camera,u=e.Layers,l=e.Vec2,c=e.find,g=e.sys,h=e.input,d=e.Input,m=e.EventMouse,p=e.geometry,f=e.Component},null,function(e){y=e.DragDropComponent,M=e.DragDropMode},function(e){b=e.HexGridController},function(e){v=e.GameplayController},function(e){D=e.Singleton},function(e){P=e.RaycastUtils}],execute:function(){var L,E,T,C,S,I,R,k,w,O,z,F,U,_,B,H,V;i._RF.push({},"37ce76wEnRP8bVrYaKYY9OT","DragInputManager",void 0);var x=a.ccclass,Y=a.property;e("DragInputManager",(L=x("DragInputManager"),E=Y({type:Boolean,group:{name:"Runtime"}}),T=Y({type:Boolean,group:{name:"Runtime"}}),C=Y({type:Boolean,group:{name:"Runtime"}}),S=Y({type:y,group:{name:"Runtime"}}),I=Y({type:s,group:{name:"Runtime"}}),R=Y({type:u.Enum,group:{name:"Layers"},tooltip:"Layer for draggable object"}),k=Y({type:u.Enum,group:{name:"Layers"},tooltip:"Layer for draggable slot"}),L((z=t((O=function(e){function t(){for(var t,r=arguments.length,i=new Array(r),a=0;a<r;a++)i[a]=arguments[a];return t=e.call.apply(e,[this].concat(i))||this,n(t,"isPaused",z,o(t)),n(t,"isMobile",F,o(t)),n(t,"isDragging",U,o(t)),n(t,"currentItem",_,o(t)),n(t,"camera",B,o(t)),t.currentMousePos=new l,n(t,"draggableLayer",H,o(t)),n(t,"dragSlotLayer",V,o(t)),t.onPausedLambda=void 0,t}r(t,e);var i=t.prototype;return i.start=function(){var e=this;if(!this.camera){var t=c("Main Camera");t?(this.camera=t.getComponent(s),this.camera||console.error("Camera component not found on the node.")):console.error("Camera node not found.")}this.checkPlatform(),this.onPausedLambda=function(t){e.handleOnPaused(t)},D.get(v).onPause.addListener(this.onPausedLambda)},i.checkPlatform=function(){g.isMobile?(console.log("Running on a mobile device."),this.isMobile=!0):(console.log("Running on a desktop."),this.isMobile=!1)},i.initialize=function(){this.isMobile?(h.on(d.EventType.TOUCH_START,this.onTouchStart,this),h.on(d.EventType.TOUCH_MOVE,this.onTouchMove,this),h.on(d.EventType.TOUCH_END,this.onTouchEnd,this)):(h.on(d.EventType.MOUSE_DOWN,this.mouseClick,this),h.on(d.EventType.MOUSE_MOVE,this.mouseMove,this))},i.onTouchStart=function(e){var t=e.getLocation();console.log("Touch started at:",t),this.currentMousePos=t,this.dragStart(this.currentMousePos)},i.onTouchMove=function(e){var t=e.getLocation();this.currentMousePos=t,this.dragMovement(this.currentMousePos)},i.onTouchEnd=function(e){console.log("Touch ended");var t=e.getLocation();this.currentMousePos=t,this.dragEnded(this.currentMousePos)},i.mouseClick=function(e){e.getButton()===m.BUTTON_LEFT&&(this.currentMousePos=new l(e.getLocationX(),e.getLocationY()),this.isDragging?this.dragEnded(this.currentMousePos):this.dragStart(this.currentMousePos))},i.mouseMove=function(e){this.currentMousePos=new l(e.getLocationX(),e.getLocationY()),this.dragMovement(this.currentMousePos)},i.dragStart=function(e){var t;this.isPaused||this.checkForValidDrag(this.currentMousePos)&&(this.isDragging=!0,null==(t=this.currentItem)||t.onDragStart(e))},i.dragMovement=function(e){var t;if(!this.isPaused&&this.isDragging){var r=new p.Ray;this.camera.screenPointToRay(e.x,e.y,r),null==(t=this.currentItem)||t.onDragMovement(r);this.checkForDraggableSlot(this.currentMousePos,{result:null})}},i.dragEnded=function(e){if(!this.isPaused){this.isDragging=!1;var t,r,n,o={result:null};if(this.checkForDraggableSlot(this.currentMousePos,o))null==(t=this.currentItem)||t.onDragEnded(o.result.node.getPosition(),o.result.node),D.get(b).placeStacksOnSlot(this.currentItem.currentSlot,o.result.currentSlot),null==(r=this.currentItem)||r.resetComponent();else null==(n=this.currentItem)||n.onDragEnded()}},i.handleOnPaused=function(e){this.isPaused=e},i.clickMethod=function(){this.currentItem.currentSlot.clickSlot()},i.checkForValidDrag=function(e){if(this.camera){var t={result:null},r=this.draggableLayer;if(!P.screenRaycast3D(e,this.camera,t,500,r)||!t.result)return this.currentItem=null,!1;var n=t.result.collider.node;if(!n)return!1;var o=n.getComponent(y);return o||(o=n.parent.getComponent(y)),o?o.currentMode!==M.Drag?(o.currentMode===M.Clickable&&(this.currentItem=o,this.clickMethod()),!1):(this.currentItem=o,!0):!1}console.error("Camera is not assigned.")},i.checkForDraggableSlot=function(e,t){if(!this.camera)return console.error("Camera is not assigned."),!1;var r={result:null},n=this.dragSlotLayer;if(!P.screenRaycast3D(e,this.camera,r,500,n)||!r.result)return!1;var o=r.result.collider.node;return!!o&&(t.result=o.getComponent(y),t.result||(t.result=o.parent.getComponent(y)),!!t.result&&t.result.currentMode===M.Drop)},t}(f)).prototype,"isPaused",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),F=t(O.prototype,"isMobile",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),U=t(O.prototype,"isDragging",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),_=t(O.prototype,"currentItem",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=t(O.prototype,"camera",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),H=t(O.prototype,"draggableLayer",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return u.Enum.DEFAULT}}),V=t(O.prototype,"dragSlotLayer",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return u.Enum.DEFAULT}}),w=O))||w));i._RF.pop()}}}));
+System.register("chunks:///_virtual/CameraUtils.ts", ['cc'], function (exports) {
+  var cclegacy, _decorator, view, Vec2, Vec3;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      view = module.view;
+      Vec2 = module.Vec2;
+      Vec3 = module.Vec3;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "b923anvDUZJPrVykZaTCJsH", "CameraUtils", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var CameraUtils = exports('CameraUtils', (_dec = ccclass('CameraUtils'), _dec(_class = /*#__PURE__*/function () {
+        function CameraUtils() {}
+        CameraUtils.worldToUIPosition = function worldToUIPosition(target, cam, canvas, offsetX, offsetY) {
+          var visibleSize = view.getVisibleSize();
+          var screenRes = new Vec2();
+          screenRes.set(visibleSize.width, visibleSize.height);
+          var worldPosition = target.worldPosition;
+          var screenPosition = cam.worldToScreen(worldPosition);
+          var relativePos = this.convertToRelativeResolution(screenPosition, screenRes);
+          var finalPosition = canvas.convertToNodeSpaceAR(new Vec3(relativePos.x, relativePos.y, 0));
+          return finalPosition;
+        };
+        CameraUtils.convertToRelativeResolution = function convertToRelativeResolution(screenPosition, screenRes) {
+          //This works for editor, but in browser only works for scaling down
+          var viewportWidth = view.getViewportRect().width; // e.g., 1024 (scaled down due to zoom)
+          var viewportHeight = view.getViewportRect().height; // e.g., 576 (scaled down due to zoom)
 
-System.register("chunks:///_virtual/DummyReferenceScript.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Action.ts","./SimplePool.ts","./Wait.ts"],(function(e){var n,t,o,i,r,a,l,s,c,u,p,m,g,b,f,h,y,d,v,A,w,S,C,D,P;return{setters:[function(e){n=e.applyDecoratedDescriptor,t=e.inheritsLoose,o=e.initializerDefineProperty,i=e.assertThisInitialized,r=e.createClass,a=e.asyncToGenerator,l=e.regeneratorRuntime},function(e){s=e.cclegacy,c=e._decorator,u=e.EventHandler,p=e.Node,m=e.Vec2,g=e.Color,b=e.AnimationClip,f=e.SpriteFrame,h=e.CCFloat,y=e.Prefab,d=e.Input,v=e.KeyCode,A=e.director,w=e.Component,S=e.RealCurve},null,function(e){C=e.Action},function(e){D=e.SimplePool},function(e){P=e.Wait}],execute:function(){var k,N,E,B,T,z,L,x,R,I,W,_,F,O,j,H,U,V,q,G,J,K,M,Q,X,Y,Z,$,ee;s._RF.push({},"abc91A32PxP9q1jrl062eT9","DummyReferenceScript",void 0);var ne=c.ccclass,te=c.property;e("DummyReferenceScript",(k=ne("DummyReferenceScript"),N=te(u),E=te({type:p,tooltip:"This is a tooltip I wrote myself!!!"}),B=te({group:{name:"Progression Tab"}}),T=te({step:5,group:{name:"Progression Tab"}}),z=te({type:m,group:{name:"Progression Tab"}}),L=te({group:{name:"Configs Tab"}}),x=te({type:g,group:{name:"Configs Tab"},visible:function(){return this.hasColor}}),R=te({type:b}),I=te({type:f}),W=te({type:[f]}),_=te({type:[h]}),F=te(y),O=te({group:"Debug"}),k((U=n((H=function(e){function n(){for(var n,t=arguments.length,r=new Array(t),a=0;a<t;a++)r[a]=arguments[a];return n=e.call.apply(e,[this].concat(r))||this,o(n,"onSomethingHappened",U,i(n)),o(n,"myNode",V,i(n)),o(n,"myNumber",q,i(n)),o(n,"myNumberStepped",G,i(n)),o(n,"myVector",J,i(n)),o(n,"hasColor",K,i(n)),o(n,"meuColor",M,i(n)),o(n,"realCurve",Q,i(n)),o(n,"animationClip",X,i(n)),o(n,"mySprite",Y,i(n)),o(n,"mySpriteArray",Z,i(n)),o(n,"myPreFilledNumberArray",$,i(n)),o(n,"prefab",ee,i(n)),n.lastSpawnedInstance=void 0,n.onActionA=new C,n.onActionB=new C,n.onActionC=new C,n.onActionD=new C,n.onEventD=void 0,n.inputtt=new d,n}t(n,e);var s=n.prototype;return s.onLoad=function(){console.log("onLoad is like Awake() in Unity, it comes before everything."),D.preload(this.prefab,8),this.actionsExample()},s.onEnable=function(){console.log("onEnable() is called after awake and before start. And is called again everytime the object is re-activated.")},s.start=function(){console.log("start() is the last one before update."),this.actionsExample()},s.keyUp=function(e){e.keyCode==v.ARROW_UP&&(this.lastSpawnedInstance=D.spawn(this.prefab),console.log("Spawn name: "+this.lastSpawnedInstance.name))},s.keyDown=function(e){e.keyCode==v.ARROW_DOWN&&(console.log("Despawn: "+this.lastSpawnedInstance.name),D.despawn(this.lastSpawnedInstance))},s.actionsExample=function(){var e=this,n=function(){return console.log("Event B triggered")},t=function(){console.log(),e.doSomethingNoParameter()};this.onEventD=function(n){console.log(),e.doSomethingNumber(n)},this.onActionA.addListener(this.logSomething),this.onActionB.addListener(n),this.onActionC.addListener(t),this.onActionD.addListener(this.onEventD),this.onActionA.invoke("Event A triggered"),this.onActionB.invoke(),this.onActionC.invoke(),this.onActionD.invoke(10),this.onActionA.removeListener(this.logSomething),this.onActionB.removeListener(n),this.onActionC.removeListener(t),this.onActionD.removeListener(this.onEventD),this.onActionA.invoke("Event A should not be triggered"),this.onActionB.invoke(),this.onActionC.invoke(),this.onActionD.invoke(5)},s.logSomething=function(e){console.log("This is the text:"+e)},s.doSomethingNumber=function(e){var n=e+e;console.log("doSomethingNumber ",n)},s.doSomethingNoParameter=function(){console.log("doSomethingNoParameter "),this.logSomething("doSomethingNoParameter"),this.myDummyFunctionToWriteStuffThatWontBeCalled()},s.myDummyFunctionToWriteStuffThatWontBeCalled=function(){this.realCurve.evaluate(.5)},s.invokeEventHandler=function(){this.onSomethingHappened.Invoke(),console.log("Event invoked!")},s.waitAndLog=function(){var e=a(l().mark((function e(){var n=this;return l().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return console.log("Testing await routines."),e.next=3,P.seconds(2);case 3:return e.next=5,P.until((function(){return n.hasColor}));case 5:console.log("Done because hasColor is true.");case 6:case"end":return e.stop()}}),e)})));return function(){return e.apply(this,arguments)}}(),s.setParentExample=function(){this.myNode.setParent(A.getScene())},s.convertJsonObjectToObjectExample=function(){},r(n,[{key:"debug_PressBooleanButton",get:function(){return!1},set:function(e){console.log("Button was pressed! ")}}]),n}(w)).prototype,"onSomethingHappened",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),V=n(H.prototype,"myNode",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),q=n(H.prototype,"myNumber",[B],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1.5}}),G=n(H.prototype,"myNumberStepped",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 10}}),J=n(H.prototype,"myVector",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),K=n(H.prototype,"hasColor",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),M=n(H.prototype,"meuColor",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),Q=n(H.prototype,"realCurve",[te],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new S}}),X=n(H.prototype,"animationClip",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),Y=n(H.prototype,"mySprite",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),Z=n(H.prototype,"mySpriteArray",[W],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),$=n(H.prototype,"myPreFilledNumberArray",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[4,2,10,50]}}),ee=n(H.prototype,"prefab",[F],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),n(H.prototype,"debug_PressBooleanButton",[O],Object.getOwnPropertyDescriptor(H.prototype,"debug_PressBooleanButton"),H.prototype),j=H))||j));s._RF.pop()}}}));
+          // Convert screen position to percentage
+          var screenPercentageX = screenPosition.x / viewportWidth;
+          var screenPercentageY = screenPosition.y / viewportHeight;
+          var converted = new Vec2(screenPercentageX * screenRes.x, screenPercentageY * screenRes.y);
+          return converted;
+        };
+        return CameraUtils;
+      }()) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/EditorButtonSequence.ts",["./rollupPluginModLoBabelHelpers.js","cc","./EditorSequenceButton.ts","./index.ts","./Action.ts"],(function(t){var n,e,o,i,r,u,c,l,p,a,s;return{setters:[function(t){n=t.applyDecoratedDescriptor,e=t.inheritsLoose,o=t.initializerDefineProperty,i=t.assertThisInitialized},function(t){r=t.cclegacy,u=t._decorator,c=t.Node,l=t.Component,p=t.Button},function(t){a=t.EditorSequenceButton},null,function(t){s=t.Action}],execute:function(){var h,f,d,v,y,g,b;r._RF.push({},"eb2738tLe9JDJCZeNS/7je7","EditorButtonSequence",void 0);var S=u.ccclass,B=u.property;t("EditorButtonSequence",(h=S("EditorButtonSequence"),f=B({type:[a],group:{name:"Components"}}),d=B({type:c,group:{name:"Components"}}),h((g=n((y=function(t){function n(){for(var n,e=arguments.length,r=new Array(e),u=0;u<e;u++)r[u]=arguments[u];return n=t.call.apply(t,[this].concat(r))||this,o(n,"option",g,i(n)),o(n,"layoutParent",b,i(n)),n.onOptionSelected=new s,n}e(n,t);var r=n.prototype;return r.initialize=function(t,n){for(var e=this,o=n.x,i=function(){e.option[r].initialize(r,o);var t=e.option[r].buttonId;e.option[r].button.node.on(p.EventType.CLICK,(function(){return e.selectOption(t)}),e),o++},r=0;r<this.option.length;r++)i();this.setOptionByValue(t)},r.selectOption=function(t){console.log("EditorButtonSequence.selectOption("+t+", value: "+this.option[t].buttonValue+")"),this.setOption(t),this.onOptionSelected.invoke(this.option[t].buttonValue)},r.setOptionByValue=function(t,n){void 0===n&&(n=!1);var e=this.convertValueToId(t);this.setOption(e),n&&this.onOptionSelected.invoke(this.option[e].buttonValue)},r.setOption=function(t){for(var n=0;n<this.option.length;n++)this.option[n].toggleSelection(!1);this.option[t].toggleSelection(!0)},r.convertValueToId=function(t){for(var n=0;n<this.option.length;n++)if(this.option[n].buttonValue==t)return n;return 0},n}(l)).prototype,"option",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),b=n(y.prototype,"layoutParent",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),v=y))||v));r._RF.pop()}}}));
+System.register("chunks:///_virtual/ClassScanner.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './CommandDecorator.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Component, registeredUserClasses;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }, function (module) {
+      registeredUserClasses = module.registeredUserClasses;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "1616bqXCy9Pz5pqh03W+F1t", "ClassScanner", undefined);
+      // import { WaitCommand } from '../../blabbers-modules/command-sequence/commands/WaitCommand';
+      // import { TweenPositionCommand } from '../../blabbers-modules/command-sequence/commands/TweenPositionCommand';
+      // import { TweenScaleCommand } from '../../blabbers-modules/command-sequence/commands/TweenScaleCommand';
+      // import { SetActiveCommand } from '../../blabbers-modules/command-sequence/commands/SetActiveCommand';
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var ClassScanner = exports('ClassScanner', (_dec = ccclass('ClassScanner'), _dec2 = property({
+        multiline: true
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(ClassScanner, _Component);
+        function ClassScanner() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "test", _descriptor, _assertThisInitialized(_this));
+          return _this;
+        }
+        //
+        ClassScanner.getAllClasses = function getAllClasses() {
+          var classNames = registeredUserClasses.map(function (c) {
+            return c.name;
+          });
+          console.log("User-Defined CCClasses:", classNames);
+          return classNames;
+        };
+        var _proto = ClassScanner.prototype;
+        _proto.otherTests = function otherTests() {
+          // For testing in the editor
+          this.test = '';
+          /*var getallClasses = ClassScanner.getAllClasses();
+          getallClasses.map(c => c).forEach(element => {
+              if(js.getClassByName(element) == WaitCommand) {
+                  console.log('ESSE SIM EH WaitCommand');
+              }
+              this.test += element + '\n';
+           });*/
 
-System.register("chunks:///_virtual/EditorColorButton.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var i,e,o,n,r,l,a,u,s,p,c;return{setters:[function(t){i=t.applyDecoratedDescriptor,e=t.inheritsLoose,o=t.initializerDefineProperty,n=t.assertThisInitialized},function(t){r=t.cclegacy,l=t._decorator,a=t.Color,u=t.Node,s=t.Button,p=t.Sprite,c=t.Component}],execute:function(){var b,y,h,d,f,g,m,v,C,z,w,A,V,B,D,E,_;r._RF.push({},"82826papXRJ5KdGa2G6LQVh","EditorColorButton",void 0);var L=l.ccclass,O=l.property;t("EditorColorButton",(b=L("EditorColorButton"),y=O({type:Number}),h=O({type:Boolean}),d=O({type:a}),f=O({type:u,group:{name:"Components"}}),g=O({type:u,group:{name:"Components"}}),m=O({type:s,group:{name:"Components"}}),v=O({type:p,group:{name:"Components"}}),b((w=i((z=function(t){function i(){for(var i,e=arguments.length,r=new Array(e),l=0;l<e;l++)r[l]=arguments[l];return i=t.call.apply(t,[this].concat(r))||this,o(i,"id",w,n(i)),o(i,"isActive",A,n(i)),o(i,"displayColor",V,n(i)),o(i,"disableVisual",B,n(i)),o(i,"enabledVisual",D,n(i)),o(i,"button",E,n(i)),o(i,"colorDisplay",_,n(i)),i}e(i,t);var r=i.prototype;return r.initialize=function(t){this.id=t,this.button||(this.button=this.getComponent(s)),this.colorDisplay&&(this.colorDisplay.color=this.displayColor)},r.toggleOptionButton=function(){this.isActive=!this.isActive,this.toggleOption(this.isActive)},r.toggleOption=function(t){this.isActive=t,this.disableVisual&&(this.disableVisual.active=!this.isActive),this.enabledVisual&&(this.enabledVisual.active=this.isActive)},i}(c)).prototype,"id",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),A=i(z.prototype,"isActive",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),V=i(z.prototype,"displayColor",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new a(0,1,0,1)}}),B=i(z.prototype,"disableVisual",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),D=i(z.prototype,"enabledVisual",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=i(z.prototype,"button",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),_=i(z.prototype,"colorDisplay",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=z))||C));r._RF.pop()}}}));
+          // For testing in the editor
+          /*const allClasses = getClassesForPolymorphism();
+          allClasses.forEach(element => {
+              if(element instanceof WaitCommand) {
+                  console.log('ESSE EH WaitCommand');
+              }
+              console.log(element);
+              this.test += element + '\n';
+          });*/
 
-System.register("chunks:///_virtual/EditorColorSelector.ts",["./rollupPluginModLoBabelHelpers.js","cc","./EditorColorButton.ts"],(function(t){var o,n,e,i,r,l,u,a,s,c;return{setters:[function(t){o=t.applyDecoratedDescriptor,n=t.inheritsLoose,e=t.initializerDefineProperty,i=t.assertThisInitialized},function(t){r=t.cclegacy,l=t._decorator,u=t.Node,a=t.Component,s=t.Button},function(t){c=t.EditorColorButton}],execute:function(){var p,b,f,h,g,d,v,y,C;r._RF.push({},"74948mH2ehOloork/vijBYn","EditorColorSelector",void 0);var m=l.ccclass,B=l.property;t("EditorColorSelector",(p=m("EditorColorSelector"),b=B({type:Boolean,group:{name:"Runtime"}}),f=B({type:[c],group:{name:"Components"}}),h=B({type:u,group:{name:"Components"}}),p((v=o((d=function(t){function o(){for(var o,n=arguments.length,r=new Array(n),l=0;l<n;l++)r[l]=arguments[l];return o=t.call.apply(t,[this].concat(r))||this,e(o,"isExpanded",v,i(o)),e(o,"buttons",y,i(o)),e(o,"expandedBlock",C,i(o)),o.callback=null,o}n(o,t);var r=o.prototype;return r.initialize=function(t,o){var n=this;this.callback=o;for(var e=function(){n.buttons[i].initialize(i);var t=n.buttons[i].id;n.buttons[i].button.node.on(s.EventType.CLICK,(function(){return n.toggleOptionButton(t)}),n)},i=0;i<this.buttons.length;i++)e();this.updateAvailableColors(t)},r.updateAvailableColors=function(t){if(this.resetColorDisplay(),t.length>0)for(var o=0;o<t.length;o++)null!==t[o]&&this.buttons[t[o]].toggleOption(!0)},r.resetColorDisplay=function(){for(var t=0;t<this.buttons.length;t++)this.buttons[t].toggleOption(!1)},r.toggleOptionButton=function(t){this.buttons[t].toggleOptionButton(),this.callback&&this.callback()},r.getSelectedColors=function(){for(var t=[],o=0;o<this.buttons.length;o++)this.buttons[o].isActive&&t.push(o);return t},o}(a)).prototype,"isExpanded",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),y=o(d.prototype,"buttons",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),C=o(d.prototype,"expandedBlock",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),g=d))||g));r._RF.pop()}}}));
+          //this.test = allClasses.toString();
+          /*
+          this.test = '';
+          allClasses.map(c => c).forEach(element => {
+              this.test += element + ' \n\n ';
+           });*/
+        };
 
-System.register("chunks:///_virtual/EditorDropdownOption.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var e,n,i,o,r,l,a,u,p;return{setters:[function(t){e=t.applyDecoratedDescriptor,n=t.inheritsLoose,i=t.initializerDefineProperty,o=t.assertThisInitialized},function(t){r=t.cclegacy,l=t._decorator,a=t.Button,u=t.Label,p=t.Component}],execute:function(){var c,s,b,d,h,f,g,y,m;r._RF.push({},"981551RYfFOdoBrujioRrEJ","EditorDropdownOption",void 0);var v=l.ccclass,w=l.property;t("EditorDropdownOption",(c=v("EditorDropdownOption"),s=w({type:Number}),b=w({type:a,group:{name:"Components"}}),d=w({type:u,group:{name:"Components"}}),c((g=e((f=function(t){function e(){for(var e,n=arguments.length,r=new Array(n),l=0;l<n;l++)r[l]=arguments[l];return e=t.call.apply(t,[this].concat(r))||this,i(e,"id",g,o(e)),i(e,"button",y,o(e)),i(e,"label",m,o(e)),e}n(e,t);var r=e.prototype;return r.initialize=function(t){if(this.id=t,this.button||(this.button=this.getComponent(a)),!this.label&&this.node.children.length>0){var e=this.node.children[0];this.label=e.getComponent(u)}},r.getText=function(){return this.label.string},e}(p)).prototype,"id",[s],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),y=e(f.prototype,"button",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),m=e(f.prototype,"label",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),h=f))||h));r._RF.pop()}}}));
+        _proto.start = function start() {
+          // For testing in preview mode
+          ClassScanner.getAllClasses();
+        };
+        _createClass(ClassScanner, [{
+          key: "pressButtonToTest",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            console.log('-----------Testing registration-----------');
+            // Log the initial state
+            console.log('Current registeredUserClasses length:', registeredUserClasses.length);
+            console.log('Registered class names:', registeredUserClasses.map(function (c) {
+              return c.name;
+            }));
 
-System.register("chunks:///_virtual/EditorExpirationAmount.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Action.ts"],(function(t){var n,e,i,o,r,a,u,l,s,p,c;return{setters:[function(t){n=t.applyDecoratedDescriptor,e=t.inheritsLoose,i=t.initializerDefineProperty,o=t.assertThisInitialized},function(t){r=t.cclegacy,a=t._decorator,u=t.EditBox,l=t.Label,s=t.Node,p=t.Component},null,function(t){c=t.Action}],execute:function(){var d,h,g,m,b,f,y,x,v,E,P;r._RF.push({},"91cc4khVrBHDohJVoTqDrmp","EditorExpirationAmount",void 0);var T=a.ccclass,A=a.property;t("EditorExpirationAmount",(d=T("EditorExpirationAmount"),h=A({type:u,group:{name:"Components"}}),g=A({type:l,group:{name:"Components"}}),m=A({type:s,group:{name:"Runtime"}}),b=A({type:s,group:{name:"Runtime"}}),d((x=n((y=function(t){function n(){for(var n,e=arguments.length,r=new Array(e),a=0;a<e;a++)r[a]=arguments[a];return n=t.call.apply(t,[this].concat(r))||this,i(n,"amount",x,o(n)),i(n,"label",v,o(n)),i(n,"expandedParent",E,o(n)),i(n,"defaultParent",P,o(n)),n.onAmountChanged=new c,n}e(n,t);var r=n.prototype;return r.initialize=function(t,n){this.expandedParent=t,this.defaultParent=n,this.toggleTab(!1),this.amount.node.on(u.EventType.TEXT_CHANGED,this.onValueChanged,this)},r.toggleTab=function(t){this.node.active=t,t?(this.node.setParent(this.expandedParent),this.node.setSiblingIndex(1)):(this.node.setParent(this.defaultParent),this.node.setSiblingIndex(0))},r.onValueChanged=function(){if(0!=this.amount.string.length){var t=Number.parseInt(this.amount.string);this.onAmountChanged.invoke(t)}},r.activateTab=function(t,n){this.amount.string=n.toString(),this.label.string=t,this.toggleTab(!0)},r.disableTab=function(){this.toggleTab(!1)},n}(p)).prototype,"amount",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),v=n(y.prototype,"label",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=n(y.prototype,"expandedParent",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),P=n(y.prototype,"defaultParent",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),f=y))||f));r._RF.pop()}}}));
+            // Test each command
+            // [WaitCommand, SetActiveCommand, TweenScaleCommand, TweenPositionCommand].forEach(cmd => {
+            //     // Try both name and reference comparison
+            //     const byRef = registeredUserClasses.find(c => c.classRef === cmd);
+            //     const byName = registeredUserClasses.find(c => c.name === cmd.name);
 
-System.register("chunks:///_virtual/EditorExpirationDisplay.ts",["./rollupPluginModLoBabelHelpers.js","cc","./SimpleEditorDropdown.ts","./EditorExpirationAmount.ts","./LevelAsset.ts","./EditorExpirationPercent.ts","./EditorExpirationId.ts","./index.ts","./LevelEditorController.ts","./Singleton.ts"],(function(t){var e,n,i,o,r,a,l,s,u,p,c,d,h,C,b;return{setters:[function(t){e=t.applyDecoratedDescriptor,n=t.inheritsLoose,i=t.initializerDefineProperty,o=t.assertThisInitialized},function(t){r=t.cclegacy,a=t._decorator,l=t.Node,s=t.Component},function(t){u=t.SimpleEditorDropdown},function(t){p=t.EditorExpirationAmount},function(t){c=t.RuleExpiritionType},function(t){d=t.EditorExpirationPercent},function(t){h=t.EditorExpirationId},null,function(t){C=t.LevelEditorController},function(t){b=t.Singleton}],execute:function(){var f,m,g,v,y,E,x,A,T,P,D,O,w,S,z,L,N;r._RF.push({},"c31e7x5SKBO9qomdqvvpwb+","EditorExpirationDisplay",void 0);var V=a.ccclass,j=a.property;t("EditorExpirationDisplay",(f=V("EditorExpirationDisplay"),m=j({type:Number}),g=j({type:l,group:{name:"Components"}}),v=j({type:l,group:{name:"Components"}}),y=j({type:u,group:{name:"Components"}}),E=j({type:p,group:{name:"Components"}}),x=j({type:d,group:{name:"Components"}}),A=j({type:h,group:{name:"Components"}}),f((D=e((P=function(t){function e(){for(var e,n=arguments.length,r=new Array(n),a=0;a<n;a++)r[a]=arguments[a];return e=t.call.apply(t,[this].concat(r))||this,i(e,"ruleValue",D,o(e)),i(e,"configsParent",O,o(e)),i(e,"expandedParent",w,o(e)),i(e,"expireCondition",S,o(e)),i(e,"amountControl",z,o(e)),i(e,"percentControl",L,o(e)),i(e,"idControl",N,o(e)),e.onDropdownEvent=void 0,e.saveCallback=null,e.onAmountChanged=void 0,e}n(e,t);var r=e.prototype;return r.initialize=function(t,e,n){this.saveCallback=n,this.expireCondition.initialize(t),this.amountControl.initialize(this.expandedParent,this.configsParent),this.percentControl.initialize(this.expandedParent,this.configsParent),this.idControl.initialize(this.expandedParent,this.configsParent),this.ruleValue=e,this.setStartingTab(t,e),this.setEvents()},r.setEvents=function(){var t=this;this.onDropdownEvent=function(e){t.onDropdownChanged(e)},this.onAmountChanged=function(e){t.onRuleValueChanged(e)},this.expireCondition.onOptionSelected.addListener(this.onDropdownEvent),this.amountControl.onAmountChanged.addListener(this.onAmountChanged),this.percentControl.onAmountChanged.addListener(this.onAmountChanged),this.idControl.onAmountChanged.addListener(this.onAmountChanged)},r.setStartingTab=function(t,e){this.disableAllTabs(),t==c.AfterNumberOfMatchedPieces?this.amountControl.activateTab("Number of Pieces: ",e):t==c.AfterNumberOfOptionTrays?this.amountControl.activateTab("Number of Trays: ",e):t==c.AfterTheObjectiveReacherPercentage?this.percentControl.activateTab("Objective Percent",e):t==c.AfterSpecificObjectiveIsCompleted&&this.idControl.activateTab(e,b.get(C).getListOfObjectives())},r.updateDisplay=function(t,e){this.expireCondition.updateDisplay(t),this.ruleValue=e,this.setStartingTab(t,e)},r.onDestroy=function(){null!==this.expireCondition.onOptionSelected&&this.expireCondition.onOptionSelected.removeListener(this.onDropdownEvent),null!==this.percentControl.onAmountChanged&&this.percentControl.onAmountChanged.removeListener(this.onAmountChanged),null!==this.amountControl.onAmountChanged&&this.amountControl.onAmountChanged.removeListener(this.onAmountChanged)},r.onDropdownChanged=function(t){console.log("EditorExpirationDisplay.onDropdownChanged() ",t),this.updateCurrentTab(t),this.saveCallback()},r.updateCurrentTab=function(t){this.disableAllTabs(),t==c.AfterNumberOfMatchedPieces?this.amountControl.activateTab("Number of Pieces: ",50):t==c.AfterNumberOfOptionTrays?this.amountControl.activateTab("Number of Trays: ",3):t==c.AfterTheObjectiveReacherPercentage?this.percentControl.activateTab("Objective Percent",20):t==c.AfterSpecificObjectiveIsCompleted&&this.idControl.activateTab(1,b.get(C).getListOfObjectives())},r.disableAllTabs=function(){this.amountControl.disableTab(),this.percentControl.disableTab(),this.idControl.disableTab()},r.onRuleValueChanged=function(t){console.log("EditorExpirationDisplay.onRuleValueChanged() ",t),this.ruleValue=t,this.saveCallback()},r.getSelectedId=function(){return this.expireCondition.selectedId},r.getRuleValue=function(){return this.ruleValue},e}(s)).prototype,"ruleValue",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),O=e(P.prototype,"configsParent",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),w=e(P.prototype,"expandedParent",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=e(P.prototype,"expireCondition",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=e(P.prototype,"amountControl",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),L=e(P.prototype,"percentControl",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),N=e(P.prototype,"idControl",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),T=P))||T));r._RF.pop()}}}));
+            //     console.log(`Class "${cmd.name}":`, {
+            //         registeredByRef: !!byRef,
+            //         registeredByName: !!byName,
+            //         classId: js.getClassId(cmd),
+            //         constructor: !!cmd,
+            //         matchingClass: byName?.classRef === cmd
+            //     });
+            // });
+          }
+        }]);
 
-System.register("chunks:///_virtual/EditorExpirationId.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./LevelAsset.ts","./Action.ts"],(function(t){var e,n,i,a,r,o,l,u,s,p,c,d;return{setters:[function(t){e=t.applyDecoratedDescriptor,n=t.inheritsLoose,i=t.initializerDefineProperty,a=t.assertThisInitialized},function(t){r=t.cclegacy,o=t._decorator,l=t.EditBox,u=t.Label,s=t.Node,p=t.Component},null,function(t){c=t.ObjectiveType},function(t){d=t.Action}],execute:function(){var b,h,g,f,m,v,y,E,T,x,I,P,D;r._RF.push({},"642b6j0EI5GLZveSvuFkM7T","EditorExpirationId",void 0);var z=o.ccclass,C=o.property;t("EditorExpirationId",(b=z("EditorExpirationId"),h=C({type:l,group:{name:"Components"}}),g=C({type:u,group:{name:"Components"}}),f=C({type:s,group:{name:"Runtime"}}),m=C({type:s,group:{name:"Runtime"}}),v=C({type:[c],group:{name:"Runtime"}}),b((T=e((E=function(t){function e(){for(var e,n=arguments.length,r=new Array(n),o=0;o<n;o++)r[o]=arguments[o];return e=t.call.apply(t,[this].concat(r))||this,i(e,"amount",T,a(e)),i(e,"label",x,a(e)),i(e,"expandedParent",I,a(e)),i(e,"defaultParent",P,a(e)),i(e,"activeObjectives",D,a(e)),e.onAmountChanged=new d,e}n(e,t);var r=e.prototype;return r.initialize=function(t,e){this.expandedParent=t,this.defaultParent=e,this.toggleTab(!1),this.amount.node.on(l.EventType.TEXT_CHANGED,this.onValueChanged,this)},r.toggleTab=function(t){this.node.active=t,t?(this.node.setParent(this.expandedParent),this.node.setSiblingIndex(1)):(this.node.setParent(this.defaultParent),this.node.setSiblingIndex(0))},r.onValueChanged=function(){if(0!=this.amount.string.length){var t=Number.parseInt(this.amount.string);this.updateDisplay(t),this.onAmountChanged.invoke(t)}},r.activateTab=function(t,e){console.log("EditorExpirationId.activateTab: "+t),this.amount.string=t.toString(),this.refreshTab(e),this.toggleTab(!0)},r.refreshTab=function(t){this.activeObjectives=t;var e=Number.parseInt(this.amount.string);this.updateDisplay(e)},r.updateDisplay=function(t){if(t>this.activeObjectives.length||0==t)this.updateLabelDisplay("Invalid ID!");else{var e=c[t-1];this.updateLabelDisplay(e)}},r.updateLabelDisplay=function(t){this.label.string=t},r.disableTab=function(){this.toggleTab(!1)},e}(p)).prototype,"amount",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),x=e(E.prototype,"label",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),I=e(E.prototype,"expandedParent",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),P=e(E.prototype,"defaultParent",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),D=e(E.prototype,"activeObjectives",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),y=E))||y));r._RF.pop()}}}));
+        return ClassScanner;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "test", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return '';
+        }
+      }), _applyDecoratedDescriptor(_class2.prototype, "pressButtonToTest", [property], Object.getOwnPropertyDescriptor(_class2.prototype, "pressButtonToTest"), _class2.prototype)), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/EditorExpirationPercent.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./EditorSliderControl.ts","./Action.ts"],(function(e){var t,n,i,r,o,a,l,u,s,d,c,p;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){o=e.cclegacy,a=e._decorator,l=e.Label,u=e.Node,s=e.Vec2,d=e.Component},null,function(e){c=e.EditorSliderControl},function(e){p=e.Action}],execute:function(){var h,f,g,b,v,m,y,P,E,S,x;o._RF.push({},"79a30X5AG1BpIFJ9+Qn+YOW","EditorExpirationPercent",void 0);var C=a.ccclass,z=a.property;e("EditorExpirationPercent",(h=C("EditorExpirationPercent"),f=z({type:c,group:{name:"Components"}}),g=z({type:l,group:{name:"Components"}}),b=z({type:u,group:{name:"Runtime"}}),v=z({type:u,group:{name:"Runtime"}}),h((P=t((y=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),a=0;a<n;a++)o[a]=arguments[a];return t=e.call.apply(e,[this].concat(o))||this,i(t,"valuesSlider",P,r(t)),i(t,"label",E,r(t)),i(t,"expandedParent",S,r(t)),i(t,"defaultParent",x,r(t)),t.onAmountChanged=new p,t.onSliderEvent=void 0,t}n(t,e);var o=t.prototype;return o.initialize=function(e,t){this.expandedParent=e,this.defaultParent=t,this.toggleTab(!1),this.valuesSlider.initialize(5,new s(1,99)),this.setEvents()},o.setEvents=function(){var e=this;this.onSliderEvent=function(t){e.onSliderChanged(t)},this.valuesSlider.onValueChanged.addListener(this.onSliderEvent)},o.toggleTab=function(e){this.node.active=e,e?(this.node.setParent(this.expandedParent),this.node.setSiblingIndex(1)):(this.node.setParent(this.defaultParent),this.node.setSiblingIndex(0))},o.onSliderChanged=function(e){this.onAmountChanged.invoke(e)},o.activateTab=function(e,t){this.label.string=e,this.valuesSlider.updateCurrentValue(t),this.toggleTab(!0)},o.disableTab=function(){this.toggleTab(!1)},t}(d)).prototype,"valuesSlider",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=t(y.prototype,"label",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=t(y.prototype,"expandedParent",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),x=t(y.prototype,"defaultParent",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),m=y))||m));o._RF.pop()}}}));
+System.register("chunks:///_virtual/ComboController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './HexGridController.ts', './HexSlot.ts', './TurnController.ts', './ObjectivesController.ts', './LevelAsset.ts', './Singleton.ts', './Wait.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, Component, HexGridController, HexSlot, TurnController, ObjectivesController, ObjectiveType, Singleton, Wait;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }, null, function (module) {
+      HexGridController = module.HexGridController;
+    }, function (module) {
+      HexSlot = module.HexSlot;
+    }, function (module) {
+      TurnController = module.TurnController;
+    }, function (module) {
+      ObjectivesController = module.ObjectivesController;
+    }, function (module) {
+      ObjectiveType = module.ObjectiveType;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      Wait = module.Wait;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+      cclegacy._RF.push({}, "51869EpMABNO6OWaNZjuue2", "ComboController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var ComboController = exports('ComboController', (_dec = ccclass('ComboController'), _dec2 = property(), _dec3 = property({
+        type: Boolean,
+        group: 'Runtime'
+      }), _dec4 = property({
+        type: [HexSlot],
+        group: 'Runtime'
+      }), _dec5 = property({
+        type: [Number],
+        group: 'Runtime'
+      }), _dec6 = property({
+        type: HexGridController,
+        group: 'Runtime'
+      }), _dec7 = property({
+        type: TurnController,
+        group: 'Runtime'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(ComboController, _Component);
+        function ComboController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "refreshDelay", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isRunningDelay", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "towers", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "scores", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "hexGrid", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "turnControl", _descriptor6, _assertThisInitialized(_this));
+          _this.refreshPromise = null;
+          // Store the async operation
+          _this.isCanceled = false;
+          return _this;
+        }
+        var _proto = ComboController.prototype;
+        // Flag to cancel the operation
+        //#endregion
+        _proto.initialize = function initialize() {
+          Singleton.set(this);
+          this.hexGrid = Singleton.get(HexGridController);
+          this.turnControl = Singleton.get(TurnController);
+          this.refreshPromise = null;
+        };
+        _proto.updateTowers = function updateTowers(towers) {
+          console.log("ComboController.updateTowers()");
+          this.towers = towers;
+          if (this.towers.length == 0) return;
 
-System.register("chunks:///_virtual/EditorObjectivesController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./EditorObjectivesDisplay.ts","./LevelAsset.ts","./SimpleEditorDropdown.ts","./index.ts","./LevelEditorController.ts","./UI_ObjectivesDisplay.ts","./Singleton.ts"],(function(e){var t,i,o,n,r,l,a,s,d,c,u,b,v,p,h,f,g;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.inheritsLoose,o=e.initializerDefineProperty,n=e.assertThisInitialized,r=e.createForOfIteratorHelperLoose},function(e){l=e.cclegacy,a=e._decorator,s=e.Prefab,d=e.Node,c=e.instantiate,u=e.Component},function(e){b=e.EditorObjectivesDisplay},function(e){v=e.ObjectiveData},function(e){p=e.SimpleEditorDropdown},null,function(e){h=e.LevelEditorController},function(e){f=e.ObjectiveSprite},function(e){g=e.Singleton}],execute:function(){var m,j,O,y,E,S,w,C,L,k,D,R,P,z,A,B,I,x,F;l._RF.push({},"0b2daqk5/5HPISl09f1UOFN","EditorObjectivesController",void 0);var M=a.ccclass,N=a.property;e("EditorObjectivesController",(m=M("EditorObjectivesController"),j=N({type:Number}),O=N({type:[b]}),y=N({type:[v]}),E=N({type:s,group:{name:"Components"}}),S=N({type:d,group:{name:"Components"}}),w=N({type:d,group:{name:"Components"}}),C=N({type:p,group:{name:"Components"}}),L=N({type:[f]}),m((R=t((D=function(e){function t(){for(var t,i=arguments.length,r=new Array(i),l=0;l<i;l++)r[l]=arguments[l];return t=e.call.apply(e,[this].concat(r))||this,o(t,"selectedId",R,n(t)),o(t,"blocks",P,n(t)),o(t,"loadedObjectives",z,n(t)),o(t,"displayPrefab",A,n(t)),o(t,"addParent",B,n(t)),o(t,"blockParent",I,n(t)),o(t,"dropdown",x,n(t)),o(t,"objectiveSprites",F,n(t)),t.handleDisplaySelected=void 0,t.dropdownEventLambda=void 0,t.editboxEventLambda=void 0,t.removeButtonEventLambda=void 0,t}i(t,e);var l=t.prototype;return l.initialize=function(e){this.loadedObjectives=e,this.dropdown.initialize(0),this.toggleRuleAdditionMode(!1),this.setEvents(),this.createButtons(e)},l.setEvents=function(){var e=this;this.handleDisplaySelected=function(t){e.onObjectiveSelected(t)},this.dropdownEventLambda=function(t){e.onNewRuleSelected(t)},this.editboxEventLambda=function(t){e.onObjectiveAmountChanged(t)},this.removeButtonEventLambda=function(t){e.onDeleteRule(t)},this.dropdown.onOptionSelected.addListener(this.dropdownEventLambda)},l.createButtons=function(e){for(var t=0;t<e.length;t++)this.createObjectiveBlock(t,e[t].type,e[t].amount)},l.createObjectiveBlock=function(e,t,i){var o=c(this.displayPrefab);o.parent=this.blockParent,o.setSiblingIndex(e);var n=o.getComponent(b);n.initialize(e,this.getSpriteFromObjective(t),i),n.onOptionSelected.addListener(this.handleDisplaySelected),n.onAmountChanged.addListener(this.editboxEventLambda),n.onRemovePressed.addListener(this.removeButtonEventLambda),this.blocks.push(n)},l.toggleRuleAdditionMode=function(e){this.dropdown.node.active=e,this.addParent.active=!e},l.addRuleButton=function(){this.toggleRuleAdditionMode(!0)},l.onNewRuleSelected=function(e){this.addRule(e)},l.addRule=function(e){this.dropdown.node.active=!1,console.log("EditorObjectivesController.addRule()");var t=this.blocks.length,i=e,o=new v;o.amount=1,o.type=i,this.loadedObjectives.push(o),this.createObjectiveBlock(t,i,1),this.toggleRuleAdditionMode(!1),this.saveData()},l.onObjectiveSelected=function(e){console.log("EditorObjectivesController.onObjectiveSelected() ",e),this.selectedId=e;for(var t=0;t<this.blocks.length;t++)this.blocks[t].toggleSelection(!1);this.blocks[e].toggleSelection(!0)},l.onObjectiveAmountChanged=function(e){console.log("EditorObjectivesController.onObjectiveAmountChanged(id: "+this.selectedId+" |"+e+") "),this.loadedObjectives[this.selectedId].amount=e,this.saveData()},l.onDeleteRule=function(e){this.loadedObjectives.splice(e,1);for(var t=0;t<this.blocks.length;t++)this.blocks[t].node.destroy();this.blocks=new Array;for(var i=0;i<this.loadedObjectives.length;i++)this.createObjectiveBlock(i,this.loadedObjectives[i].type,this.loadedObjectives[i].amount);this.saveData()},l.getSpriteFromObjective=function(e){for(var t,i=r(this.objectiveSprites);!(t=i()).done;){var o=t.value;if(o.objective===e)return o.sprite}return null},l.saveData=function(){console.log("EditorObjectivesController.saveData()"),g.get(h).updateObjectives(this.loadedObjectives)},l.getListOfObjectives=function(){for(var e=[],t=0;t<this.loadedObjectives.length;t++)e.push(this.loadedObjectives[t].type);return e},t}(u)).prototype,"selectedId",[j],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),P=t(D.prototype,"blocks",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),z=t(D.prototype,"loadedObjectives",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),A=t(D.prototype,"displayPrefab",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=t(D.prototype,"addParent",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),I=t(D.prototype,"blockParent",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),x=t(D.prototype,"dropdown",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),F=t(D.prototype,"objectiveSprites",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),k=D))||k));l._RF.pop()}}}));
+          // Cancel any ongoing refresh operation
+          this.cancelRefresh();
 
-System.register("chunks:///_virtual/EditorObjectivesDisplay.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Action.ts"],(function(t){var e,n,i,o,r,u,a,l,p,s,c;return{setters:[function(t){e=t.applyDecoratedDescriptor,n=t.inheritsLoose,i=t.initializerDefineProperty,o=t.assertThisInitialized},function(t){r=t.cclegacy,u=t._decorator,a=t.Button,l=t.EditBox,p=t.Sprite,s=t.Component},null,function(t){c=t.Action}],execute:function(){var m,d,h,b,y,f,g,v,C,B,I,E,w,z,k,S,D;r._RF.push({},"cc808hXr1lIHbLkXfm0ixF4","EditorObjectivesDisplay",void 0);var j=u.ccclass,T=u.property;t("EditorObjectivesDisplay",(m=j("EditorObjectivesDisplay"),d=T({type:Number,group:{name:"Runtime"}}),h=T({type:Number,group:{name:"Runtime"}}),b=T({type:a,group:{name:"Components"}}),y=T({type:a,group:{name:"Components"}}),f=T({type:l,group:{name:"Components"}}),g=T({type:a,group:{name:"Components"}}),v=T({type:p,group:{name:"Components"}}),m((I=e((B=function(t){function e(){for(var e,n=arguments.length,r=new Array(n),u=0;u<n;u++)r[u]=arguments[u];return e=t.call.apply(t,[this].concat(r))||this,i(e,"id",I,o(e)),i(e,"objectiveId",E,o(e)),i(e,"mainButton",w,o(e)),i(e,"deleteButton",z,o(e)),i(e,"amountInput",k,o(e)),i(e,"inputButton",S,o(e)),i(e,"displaySprite",D,o(e)),e.onOptionSelected=new c,e.onAmountChanged=new c,e.onRemovePressed=new c,e}n(e,t);var r=e.prototype;return r.initialize=function(t,e,n){var i=this;this.id=t,this.displaySprite.spriteFrame=e,this.amountInput.string=n.toString(),this.mainButton.node.on(a.EventType.CLICK,(function(){return i.mainButtonClick()}),this),this.amountInput.node.on(l.EventType.TEXT_CHANGED,this.amountChangedEvent,this),this.inputButton.node.on(a.EventType.CLICK,(function(){return i.mainButtonClick()}),this),this.deleteButton.node.on(a.EventType.CLICK,(function(){return i.removeButtonPressed()}),this)},r.mainButtonClick=function(){console.log("block selected()"),this.onOptionSelected.invoke(this.id)},r.amountChangedEvent=function(){0!=this.amountInput.string.length&&this.onAmountChanged.invoke(Number.parseInt(this.amountInput.string))},r.removeButtonPressed=function(){this.onRemovePressed.invoke(this.id)},r.toggleSelection=function(t){this.deleteButton.node.active=!!t},e}(s)).prototype,"id",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),E=e(B.prototype,"objectiveId",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),w=e(B.prototype,"mainButton",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=e(B.prototype,"deleteButton",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),k=e(B.prototype,"amountInput",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=e(B.prototype,"inputButton",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),D=e(B.prototype,"displaySprite",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=B))||C));r._RF.pop()}}}));
+          // Start a new refresh operation
+          this.refreshPromise = this.waitToRefreshTowers();
+        };
+        _proto.delayTowerExplosion = function delayTowerExplosion() {
+          if (!this.refreshPromise) {
+            return;
+          }
+          console.log("ComboController.delayTowerExplosion()");
+          this.cancelRefresh(); // Cancel any ongoing refresh operation
 
-System.register("chunks:///_virtual/EditorRangeEditbox.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Action.ts"],(function(t){var n,e,i,r,a,u,o,l,s,p,c,h;return{setters:[function(t){n=t.applyDecoratedDescriptor,e=t.inheritsLoose,i=t.initializerDefineProperty,r=t.assertThisInitialized},function(t){a=t.cclegacy,u=t._decorator,o=t.Vec2,l=t.Label,s=t.EditBox,p=t.math,c=t.Component},null,function(t){h=t.Action}],execute:function(){var g,d,y,f,b,m,E,v,C,D,R,V,x;a._RF.push({},"d98164loEZKopn8yOhJPrV9","EditorRangeEditbox",void 0);var I=u.ccclass,w=u.property;t("EditorRangeEditbox",(g=I("EditorRangeEditbox"),d=w({type:o}),y=w({type:Number}),f=w({type:l,group:{name:"Components"}}),b=w({type:l,group:{name:"Components"}}),m=w({type:s,group:{name:"Components"}}),g((C=n((v=function(t){function n(){for(var n,e=arguments.length,a=new Array(e),u=0;u<e;u++)a[u]=arguments[u];return n=t.call.apply(t,[this].concat(a))||this,i(n,"valueRange",C,r(n)),i(n,"currentValue",D,r(n)),i(n,"minDisplay",R,r(n)),i(n,"maxDisplay",V,r(n)),i(n,"input",x,r(n)),n.onInputChanged=new h,n}e(n,t);var a=n.prototype;return a.initialize=function(t,n){this.setValueRange(n.x,n.y),this.setCurrentValue(t),this.input.node.on(s.EventType.TEXT_CHANGED,this.handleInputChanged,this),this.input.node.on(s.EventType.EDITING_DID_ENDED,this.handleEditingEnded,this)},a.setValueRange=function(t,n){this.valueRange=new o(t,n),this.minDisplay.string=t.toString(),this.maxDisplay.string=n.toString()},a.setCurrentValue=function(t){this.currentValue=t,this.input.string=this.currentValue.toString()},a.handleInputChanged=function(){if(0!=this.input.string.length){var t=Number.parseInt(this.input.string);this.currentValue=t,this.onInputChanged.invoke(t)}},a.handleEditingEnded=function(){var t=Number.parseInt(this.input.string);t=p.clamp(t,this.valueRange.x,this.valueRange.y),this.setCurrentValue(t),this.onInputChanged.invoke(t)},a.updateRange=function(t,n){this.setValueRange(t,n)},a.updateCurrentValue=function(t){this.setCurrentValue(t)},n}(c)).prototype,"valueRange",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new o(1,9)}}),D=n(v.prototype,"currentValue",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),R=n(v.prototype,"minDisplay",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),V=n(v.prototype,"maxDisplay",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),x=n(v.prototype,"input",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=v))||E));a._RF.pop()}}}));
+          // Start a new refresh operation
+          this.refreshPromise = this.waitToRefreshTowers();
+        };
+        _proto.cancelTowerExplosion = function cancelTowerExplosion() {
+          if (!this.refreshPromise) {
+            return;
+          }
+          console.log("ComboController.delayTowerExplosion()");
+          this.cancelRefresh(); // Cancel any ongoing refresh operation
+        };
 
-System.register("chunks:///_virtual/EditorRangeSelector.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var n,t,i,o,r,a,l,c,s,u,g;return{setters:[function(e){n=e.applyDecoratedDescriptor,t=e.inheritsLoose,i=e.initializerDefineProperty,o=e.assertThisInitialized},function(e){r=e.cclegacy,a=e._decorator,l=e.EditBox,c=e.Toggle,s=e.Node,u=e.Vec2,g=e.Component}],execute:function(){var p,h,m,d,b,f,B,x,y,k,v,C,E;r._RF.push({},"0fe4bnC8jBBr7MoSi2WG6zL","EditorRangeSelector",void 0);var T=a.ccclass,z=a.property;e("EditorRangeSelector",(p=T("EditorRangeSelector"),h=z({type:l,group:{name:"Components"}}),m=z({type:l,group:{name:"Components"}}),d=z({type:c,group:{name:"Components"}}),b=z({type:s,group:{name:"Components"}}),f=z({type:s,group:{name:"Components"}}),p((y=n((x=function(e){function n(){for(var n,t=arguments.length,r=new Array(t),a=0;a<t;a++)r[a]=arguments[a];return n=e.call.apply(e,[this].concat(r))||this,i(n,"minBox",y,o(n)),i(n,"maxBox",k,o(n)),i(n,"toggle",v,o(n)),i(n,"normalBlock",C,o(n)),i(n,"overrideBlock",E,o(n)),n.callback=null,n}t(n,e);var r=n.prototype;return r.initialize=function(e,n,t,i){this.callback=i,this.minBox.node.on(l.EventType.TEXT_CHANGED,this.onMinChanged,this),this.maxBox.node.on(l.EventType.TEXT_CHANGED,this.onMaxChanged,this),this.toggle.node.on(c.EventType.TOGGLE,this.onToggleChanged,this),this.updateRange(e,n,t)},r.updateRange=function(e,n,t){this.minBox.string=e.toString(),this.maxBox.string=n.toString()},r.getRange=function(){return new u(parseInt(this.minBox.string),parseInt(this.maxBox.string))},r.onMinChanged=function(){0!=this.minBox.string.length&&this.callback&&this.callback()},r.onMaxChanged=function(){0!=this.maxBox.string.length&&this.callback&&this.callback()},r.onToggleChanged=function(){this.toggle.isChecked?(this.normalBlock.active=!1,this.overrideBlock.active=!0):(this.normalBlock.active=!0,this.overrideBlock.active=!1),this.callback&&this.callback()},n}(g)).prototype,"minBox",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),k=n(x.prototype,"maxBox",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),v=n(x.prototype,"toggle",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=n(x.prototype,"normalBlock",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=n(x.prototype,"overrideBlock",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=x))||B));r._RF.pop()}}}));
+        _proto.waitToRefreshTowers = /*#__PURE__*/function () {
+          var _waitToRefreshTowers = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  console.log("ComboController.waitToRefreshTowers()");
+                  this.isCanceled = false; // Reset the cancel flag
+                  this.isRunningDelay = true;
+                  _context.next = 5;
+                  return Wait.seconds(this.refreshDelay);
+                case 5:
+                  if (!this.isCanceled) {
+                    _context.next = 8;
+                    break;
+                  }
+                  console.log("ComboController.waitToRefreshTowers() canceled.");
+                  return _context.abrupt("return");
+                case 8:
+                  console.log("ComboController.waitToRefreshTowers() explodeTowers() " + this.towers.length);
+                  this.explodeTowers();
+                case 10:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee, this);
+          }));
+          function waitToRefreshTowers() {
+            return _waitToRefreshTowers.apply(this, arguments);
+          }
+          return waitToRefreshTowers;
+        }();
+        _proto.cancelRefresh = function cancelRefresh() {
+          if (this.refreshPromise) {
+            console.log("ComboController.cancelRefresh()");
+            this.isCanceled = true; // Set the cancel flag
+            this.refreshPromise = null; // Clear the stored promise
+            this.isRunningDelay = false;
+          }
+        };
+        _proto.explodeTowers = function explodeTowers() {
+          var _this2 = this;
+          if (this.towers.length == 0) return;
+          console.log("ComboController.explodeTowers() " + this.towers.length);
+          //Remove towers from the sortingList
+          this.turnControl.explodeAnimationStarted();
+          for (var i = 0; i < this.towers.length; i++) {
+            var tower = this.towers[i].getTopStack();
+            this.scores.push(tower.amount);
+          }
+          this.towers[0].explodeTower(function () {
+            return _this2.afterTowersExploded();
+          });
+          for (var _i = 1; _i < this.towers.length; _i++) {
+            this.towers[_i].explodeTower(null);
+          }
+        };
+        _proto.afterTowersExploded = function afterTowersExploded() {
+          console.log("ComboController.afterTowersExploded() CALLBACK");
+          for (var i = 0; i < this.towers.length; i++) {
+            Singleton.get(ObjectivesController).addObjectiveProgress(ObjectiveType.MergePieces, this.scores[i]);
+          }
+          this.scores.clear();
 
-System.register("chunks:///_virtual/EditorRuleButton.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,n,i,r,o,l,a,u,c,p;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){o=e.cclegacy,l=e._decorator,a=e.Label,u=e.Button,c=e.Node,p=e.Component}],execute:function(){var s,b,y,m,f,g,h,d,v,D,z;o._RF.push({},"5bacbag4iVHdqNj6ayMTFh4","EditorRuleButton",void 0);var L=l.ccclass,B=l.property;e("EditorRuleButton",(s=L("EditorRuleButton"),b=B({type:a,group:{name:"Components"}}),y=B({type:u,group:{name:"Components"}}),m=B({type:c,group:{name:"Components"}}),f=B({type:c,group:{name:"Components"}}),s((d=t((h=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),l=0;l<n;l++)o[l]=arguments[l];return t=e.call.apply(e,[this].concat(o))||this,i(t,"numberLabel",d,r(t)),i(t,"button",v,r(t)),i(t,"normalDisplay",D,r(t)),i(t,"selectedDisplay",z,r(t)),t}n(t,e);var o=t.prototype;return o.initialize=function(e){this.numberLabel&&(this.numberLabel.string=(e+1).toString())},o.toggleSelection=function(e){e?(this.normalDisplay.active=!1,this.selectedDisplay.active=!0,this.button.interactable=!1):(this.normalDisplay.active=!0,this.selectedDisplay.active=!1,this.button.interactable=!0)},t}(p)).prototype,"numberLabel",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),v=t(h.prototype,"button",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),D=t(h.prototype,"normalDisplay",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=t(h.prototype,"selectedDisplay",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),g=h))||g));o._RF.pop()}}}));
+          //Check the grid again
+          if (this.towers.length > 0) Singleton.get(TurnController).checkMovementAroundSlot(this.towers[0]);
+          this.towers.clear();
+        };
+        return ComboController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "refreshDelay", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "isRunningDelay", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "towers", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "scores", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "hexGrid", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "turnControl", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/EditorRulesController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./LevelAsset.ts","./EditorSingleRuleDisplay.ts","./EditorRuleButton.ts","./index.ts","./LevelEditorController.ts","./OptionsTray.ts","./Singleton.ts"],(function(e){var t,n,l,o,i,r,u,s,a,d,c,p,h,R,f,g,y;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,l=e.initializerDefineProperty,o=e.assertThisInitialized},function(e){i=e.cclegacy,r=e._decorator,u=e.Prefab,s=e.Node,a=e.Button,d=e.instantiate,c=e.Component},function(e){p=e.LevelRuleSet},function(e){h=e.EditorSingleRuleDisplay},function(e){R=e.EditorRuleButton},null,function(e){f=e.LevelEditorController},function(e){g=e.OptionsTray},function(e){y=e.Singleton}],execute:function(){var B,b,v,m,C,w,I,D,E,z,N,S,P,T,L,_,x,A,O;i._RF.push({},"c466cqeplRNH4sN2f144W5f","EditorRulesController",void 0);var F=r.ccclass,H=r.property;e("EditorRulesController",(B=F("EditorRulesController"),b=H({type:Number}),v=H({type:h,group:{name:"Components"}}),m=H({type:u,group:{name:"Components"}}),C=H({type:R,group:{name:"Components"}}),w=H({type:s,group:{name:"Components"}}),I=H({type:g,group:{name:"Components"}}),D=H({type:[p]}),E=H({type:[R]}),B((S=t((N=function(e){function t(){for(var t,n=arguments.length,i=new Array(n),r=0;r<n;r++)i[r]=arguments[r];return t=e.call.apply(e,[this].concat(i))||this,l(t,"selectedId",S,o(t)),l(t,"currentRuleDisplay",P,o(t)),l(t,"ruleButtonPrefab",T,o(t)),l(t,"addRuleButton",L,o(t)),l(t,"sideBarParent",_,o(t)),l(t,"optionsTray",x,o(t)),l(t,"loadedRules",A,o(t)),l(t,"ruleButtons",O,o(t)),t}n(t,e);var i=t.prototype;return i.initialize=function(e){var t=this;this.loadedRules=e,this.createButtons(),this.currentRuleDisplay.initialize(this.loadedRules[0],this.loadedRules.length<=1,(function(){return t.saveData()}),(function(){return t.deleteCurrentRule()})),this.selectedId=0,this.addRuleButton.button.node.on(a.EventType.CLICK,(function(){return t.createNewRule()}),this),this.optionsTray.initialize()},i.createButtons=function(){for(var e=0;e<this.loadedRules.length;e++)this.createNewButton(e);this.ruleButtons[this.selectedId].toggleSelection(!0)},i.createNewButton=function(e){var t=this,n=d(this.ruleButtonPrefab);n.parent=this.sideBarParent,n.name="RuleButton "+(e+1),n.setSiblingIndex(e);var l=n.getComponent(R);l.initialize(e),l.button.node.on(a.EventType.CLICK,(function(){return t.loadRulesById(e)}),this),this.ruleButtons.push(l)},i.saveData=function(){console.log("EditorRulesController.saveData()");var e=this.currentRuleDisplay.getRulesetData();this.loadedRules[this.selectedId]=e,y.get(f).updateRuleset(this.loadedRules)},i.createNewRule=function(){var e=new p;this.loadedRules.push(e),this.createNewButton(this.loadedRules.length-1),y.get(f).updateRuleset(this.loadedRules),this.loadRulesById(this.loadedRules.length-1)},i.deleteCurrentRule=function(){if(console.log("EditorRulesController.deleteCurrentRule()"),!(this.loadedRules.length<=1)){this.loadedRules.splice(this.selectedId,1);for(var e=0;e<this.ruleButtons.length;e++)this.ruleButtons[e].node.destroy();this.ruleButtons=new Array;for(var t=0;t<this.loadedRules.length;t++)this.createNewButton(t);var n=this.selectedId>0?this.selectedId-1:0;y.get(f).updateRuleset(this.loadedRules),this.loadRulesById(n)}},i.generatePreview=function(){this.optionsTray.generateNewOptions(this.loadedRules[this.selectedId])},i.loadRulesById=function(e){console.log("EditorRulesController.loadRulesById: ",e),this.selectedId=e,this.toggleButtonDisplay(e),this.currentRuleDisplay.loadRuleSet(this.loadedRules[e],this.loadedRules.length<=1)},i.toggleButtonDisplay=function(e){for(var t=0;t<this.ruleButtons.length;t++)this.ruleButtons[t].toggleSelection(!1);this.ruleButtons[e].toggleSelection(!0)},t}(c)).prototype,"selectedId",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),P=t(N.prototype,"currentRuleDisplay",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),T=t(N.prototype,"ruleButtonPrefab",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),L=t(N.prototype,"addRuleButton",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),_=t(N.prototype,"sideBarParent",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),x=t(N.prototype,"optionsTray",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),A=t(N.prototype,"loadedRules",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),O=t(N.prototype,"ruleButtons",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),z=N))||z));i._RF.pop()}}}));
+System.register("chunks:///_virtual/Command.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _createClass, cclegacy, _decorator;
+  return {
+    setters: [function (module) {
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "24864ztrjhM4L5FRYrkdL3F", "Command", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var CommandType = exports('CommandType', /*#__PURE__*/function (CommandType) {
+        CommandType[CommandType["Immediate"] = 0] = "Immediate";
+        CommandType[CommandType["Async"] = 1] = "Async";
+        return CommandType;
+      }({})); // Commands that run asynchronously or in parallel
+      //Condition,  // Commands that involve conditions (to be implemented in the future)
+      var Command = exports('Command', (_dec = ccclass('Command'), _dec(_class = /*#__PURE__*/function () {
+        function Command() {}
+        _createClass(Command, [{
+          key: "commandType",
+          get: function get() {
+            return CommandType.Immediate;
+          }
+        }]);
+        return Command;
+      }()) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/EditorSequenceButton.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,n,i,r,o,u,a,l,p,c;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){o=e.cclegacy,u=e._decorator,a=e.Label,l=e.Button,p=e.Node,c=e.Component}],execute:function(){var s,b,m,y,f,g,d,h,D,v,z,L,w,S,B;o._RF.push({},"47577i8ntxMLoojIAADtVIW","EditorSequenceButton",void 0);var I=u.ccclass,C=u.property;e("EditorSequenceButton",(s=I("EditorSequenceButton"),b=C({type:Number,group:{name:"Runtime"}}),m=C({type:Number,group:{name:"Runtime"}}),y=C({type:a,group:{name:"Components"}}),f=C({type:l,group:{name:"Components"}}),g=C({type:p,group:{name:"Components"}}),d=C({type:p,group:{name:"Components"}}),s((v=t((D=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),u=0;u<n;u++)o[u]=arguments[u];return t=e.call.apply(e,[this].concat(o))||this,i(t,"buttonId",v,r(t)),i(t,"buttonValue",z,r(t)),i(t,"numberLabel",L,r(t)),i(t,"button",w,r(t)),i(t,"normalDisplay",S,r(t)),i(t,"selectedDisplay",B,r(t)),t}n(t,e);var o=t.prototype;return o.initialize=function(e,t){this.buttonId=e,this.buttonValue=t,this.numberLabel&&(this.numberLabel.string=t.toString())},o.toggleSelection=function(e){e?(this.normalDisplay.active=!1,this.selectedDisplay.active=!0,this.button.interactable=!1):(this.normalDisplay.active=!0,this.selectedDisplay.active=!1,this.button.interactable=!0)},t}(c)).prototype,"buttonId",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),z=t(D.prototype,"buttonValue",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),L=t(D.prototype,"numberLabel",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),w=t(D.prototype,"button",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=t(D.prototype,"normalDisplay",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=t(D.prototype,"selectedDisplay",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),h=D))||h));o._RF.pop()}}}));
+System.register("chunks:///_virtual/CommandDecorator.ts", ['cc'], function (exports) {
+  var cclegacy, _decorator, js;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      js = module.js;
+    }],
+    execute: function () {
+      exports('commandclass', commandclass);
+      cclegacy._RF.push({}, "97e5aQyJFNBbqPcLylVDOB9", "CommandDecorator", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
 
-System.register("chunks:///_virtual/EditorSingleRuleDisplay.ts",["./rollupPluginModLoBabelHelpers.js","cc","./LevelAsset.ts","./EditorColorSelector.ts","./EditorRangeSelector.ts","./EditorExpirationDisplay.ts"],(function(e){var t,o,l,i,n,r,a,u,s,p,c,d,y;return{setters:[function(e){t=e.applyDecoratedDescriptor,o=e.inheritsLoose,l=e.initializerDefineProperty,i=e.assertThisInitialized},function(e){n=e.cclegacy,r=e._decorator,a=e.Button,u=e.Node,s=e.Component},function(e){p=e.LevelRuleSet},function(e){c=e.EditorColorSelector},function(e){d=e.EditorRangeSelector},function(e){y=e.EditorExpirationDisplay}],execute:function(){var A,m,b,w,f,g,h,D,C,v,R,B,E,S,k,x,z;n._RF.push({},"bbd9f7xA0RPlLUOP4WY+/3t","EditorSingleRuleDisplay",void 0);var L=r.ccclass,P=r.property;e("EditorSingleRuleDisplay",(A=L("EditorSingleRuleDisplay"),m=P({type:y,group:{name:"Components"}}),b=P({type:c,group:{name:"Components"}}),w=P({type:d,group:{name:"Components"}}),f=P({type:d,group:{name:"Components"}}),g=P({type:a,group:{name:"Components"}}),h=P({type:a,group:{name:"Components"}}),D=P({type:u,group:{name:"Components"}}),A((R=t((v=function(e){function t(){for(var t,o=arguments.length,n=new Array(o),r=0;r<o;r++)n[r]=arguments[r];return t=e.call.apply(e,[this].concat(n))||this,l(t,"expireCondition",R,i(t)),l(t,"colorAllowedDisplay",B,i(t)),l(t,"combinationsAllowedDisplay",E,i(t)),l(t,"stackAmountAllowedDisplay",S,i(t)),l(t,"previewBtn",k,i(t)),l(t,"deleteBtn",x,i(t)),l(t,"popupDelete",z,i(t)),t.deleteCallback=null,t}o(t,e);var n=t.prototype;return n.initialize=function(e,t,o,l){var i=this;this.deleteCallback=l,this.deleteBtn.node.on(a.EventType.CLICK,(function(){return i.deleteButton()}),this),this.previewBtn.node.on(a.EventType.CLICK,(function(){return i.previewButton()}),this);for(var n=e.type,r=[],u=0;u<e.colorsAllowed.length;u++)r.push(e.colorsAllowed[u]-1);this.expireCondition.initialize(n,e.ruleValue,o),this.colorAllowedDisplay.initialize(r,o),this.combinationsAllowedDisplay.initialize(e.colorCombinationsAllowed.x,e.colorCombinationsAllowed.y,!1,o),this.stackAmountAllowedDisplay.initialize(e.stackAmountAllowed.x,e.stackAmountAllowed.y,!1,o),this.deleteBtn.interactable=!t},n.loadRuleSet=function(e,t){for(var o=e.type,l=[],i=0;i<e.colorsAllowed.length;i++)l.push(e.colorsAllowed[i]-1);this.expireCondition.updateDisplay(o,e.ruleValue),this.colorAllowedDisplay.updateAvailableColors(l),this.combinationsAllowedDisplay.updateRange(e.colorCombinationsAllowed.x,e.colorCombinationsAllowed.y,!1),this.stackAmountAllowedDisplay.updateRange(e.stackAmountAllowed.x,e.stackAmountAllowed.y,!1),this.deleteBtn.interactable=!t},n.getRulesetData=function(){var e=new p;return e.type=this.expireCondition.getSelectedId(),e.ruleValue=this.expireCondition.getRuleValue(),e.colorsAllowed=this.convertToPieceColorArray(this.colorAllowedDisplay.getSelectedColors()),e.colorCombinationsAllowed=this.combinationsAllowedDisplay.getRange(),e.stackAmountAllowed=this.stackAmountAllowedDisplay.getRange(),e},n.deleteButton=function(){console.log("EditorSingleRuleDisplay.deleteButton()"),this.deleteBtn.interactable=!1,this.popupDelete.active=!0},n.confirmDelete=function(){var e;this.deleteBtn.interactable=!0,this.popupDelete.active=!1,console.log("EditorSingleRuleDisplay.confirmDelete()"),null==(e=this.deleteCallback)||e.call(this)},n.cancelDelete=function(){this.deleteBtn.interactable=!0,this.popupDelete.active=!1},n.previewButton=function(){},n.convertToPieceColorArray=function(e){console.log("numberArray: ",e);for(var t=e.map((function(e){return e})),o=0;o<t.length;o++)t[o]=t[o]+1;return console.log("colorArray: ",t),t},t}(s)).prototype,"expireCondition",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=t(v.prototype,"colorAllowedDisplay",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=t(v.prototype,"combinationsAllowedDisplay",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=t(v.prototype,"stackAmountAllowedDisplay",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),k=t(v.prototype,"previewBtn",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),x=t(v.prototype,"deleteBtn",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=t(v.prototype,"popupDelete",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=v))||C));n._RF.pop()}}}));
+      //TODO: Ta dando quase tudo certo... Vou soh seguir finalizando o CommandSequence em si MESMO.
+      // Mas o que ta faltando eh (e talvez eu nao consiga resolver):
+      // - Fazer as classes que usam o decorator de commandclass serem salvas no editor, como uma lista de string
+      // - O polymorphism.ts hoje JA CONSEGUE ler uma lista de strings no lugar de uma lista de types (pode ser um OU outro) e isso ja FUNCIONA
+      // - Mas a lista de classes em si (registeredUserClasses) nao salva no editor por uma questão de editor time mesmo, e execution order etc etc...
+      // - Entao talvez uma possivel solucao seria salvar num ScriptableAsset e talvez criar um Singleton de scriptable asset e pegar esse asset e salvar as strings nele e carregar dele lol
+      // ---> Mas pode dar errado, entao vou deixar isso pra DEPOIS e soh finalizar a CommandSequence mesmo.
 
-System.register("chunks:///_virtual/EditorSingleStack.ts",["./rollupPluginModLoBabelHelpers.js","cc","./EditorStackObstacleBlock.ts","./EditorStackColorBlock.ts"],(function(o){var t,e,l,i,n,r,a,c,s,u,g,p;return{setters:[function(o){t=o.applyDecoratedDescriptor,e=o.inheritsLoose,l=o.initializerDefineProperty,i=o.assertThisInitialized},function(o){n=o.cclegacy,r=o._decorator,a=o.Toggle,c=o.Label,s=o.Button,u=o.Component},function(o){g=o.EditorStackObstacleBlock},function(o){p=o.EditorStackColorBlock}],execute:function(){var h,b,k,C,d,f,m,v,y,B,S,w,E,T,z,I,D,U,L;n._RF.push({},"30f5dB4H3JINLg1jrTfrsGd","EditorSingleStack",void 0);var O=r.ccclass,M=r.property;o("EditorSingleStack",(h=O("EditorSingleStack"),b=M({type:Number}),k=M({type:Boolean}),C=M({type:a,group:{name:"Components"}}),d=M({type:c,group:{name:"Components"}}),f=M({type:s,group:{name:"Components"}}),m=M({type:s,group:{name:"Components"}}),v=M({type:p,group:{name:"Components"}}),y=M({type:g,group:{name:"Components"}}),h((w=t((S=function(o){function t(){for(var t,e=arguments.length,n=new Array(e),r=0;r<e;r++)n[r]=arguments[r];return t=o.call.apply(o,[this].concat(n))||this,l(t,"id",w,i(t)),l(t,"isColor",E,i(t)),l(t,"toggle",T,i(t)),l(t,"typeTitle",z,i(t)),l(t,"moveUpBtn",I,i(t)),l(t,"moveDownBtn",D,i(t)),l(t,"colorBlock",U,i(t)),l(t,"obstacleBlock",L,i(t)),t.deleteCallback=null,t.moveCallback=null,t.saveCallback=null,t}e(t,o);var n=t.prototype;return n.initialize=function(o,t,e,l,i,n,r,c){var s=this;this.id=o,this.isColor=l,this.deleteCallback=n,this.moveCallback=r,this.saveCallback=c,this.toggle.isChecked=this.isColor,this.toggle.node.on(a.EventType.TOGGLE,this.onToggleChanged,this),this.colorBlock.initialize(t,e,(function(){return s.saveCallback()})),this.obstacleBlock.initialize(i,e,(function(){return s.saveCallback()})),this.toggleIsColor(this.isColor,!1)},n.removeBlock=function(){var o;console.log("EditorSingleStack.removeBlock() ",this.id),null==(o=this.deleteCallback)||o.call(this,this.id)},n.moveUp=function(){var o;console.log("EditorSingleStack.moveUp() ",this.id),null==(o=this.moveCallback)||o.call(this,this.id,!0)},n.moveDown=function(){var o;console.log("EditorSingleStack.moveDown() ",this.id),null==(o=this.moveCallback)||o.call(this,this.id,!1)},n.onToggleChanged=function(){var o;console.log("EditorSingleStack.onToggleChanged()"),this.isColor=!this.isColor,this.toggleIsColor(this.isColor,!0),null==(o=this.saveCallback)||o.call(this)},n.toggleIsColor=function(o,t){console.log("EditorSingleStack.toggleIsColor: "+o),this.isColor=o,this.colorBlock.toggleBlock(o),this.obstacleBlock.toggleBlock(!o),this.isColor?this.typeTitle.string="Is color":this.typeTitle.string="Not color"},n.toggleCanMoveUp=function(o){this.moveUpBtn.interactable=o},n.toggleCanMoveDown=function(o){this.moveDownBtn.interactable=o},n.updateId=function(o){this.id=o},n.getIsColor=function(){return this.isColor},n.getAmount=function(){return this.isColor?this.colorBlock.piecesAmount:Math.max(1,this.obstacleBlock.amount)},n.getColorId=function(){return this.colorBlock.colorId+1},n.getObstacleTypeId=function(){return this.obstacleBlock.getObstacleTypeId()+1},t}(u)).prototype,"id",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),E=t(S.prototype,"isColor",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),T=t(S.prototype,"toggle",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=t(S.prototype,"typeTitle",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),I=t(S.prototype,"moveUpBtn",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),D=t(S.prototype,"moveDownBtn",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),U=t(S.prototype,"colorBlock",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),L=t(S.prototype,"obstacleBlock",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=S))||B));n._RF.pop()}}}));
+      // Make sure the array is initialized before use
+      var registeredUserClasses = exports('registeredUserClasses', []);
 
-System.register("chunks:///_virtual/EditorSliderControl.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Action.ts"],(function(e){var t,n,r,i,a,l,u,o,s,p,c,g;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,r=e.initializerDefineProperty,i=e.assertThisInitialized},function(e){a=e.cclegacy,l=e._decorator,u=e.Vec2,o=e.Slider,s=e.Label,p=e.math,c=e.Component},null,function(e){g=e.Action}],execute:function(){var h,y,d,f,b,m,v,V,C,R,D,S,w,z,x,E,L;a._RF.push({},"101bcgzY45EIayD73GSMZH2","EditorSliderControl",void 0);var P=l.ccclass,_=l.property;e("EditorSliderControl",(h=P("EditorSliderControl"),y=_({type:Number}),d=_({type:u}),f=_({type:Number}),b=_({type:o,group:{name:"Components"}}),m=_({type:s,group:{name:"Components"}}),v=_({type:s,group:{name:"Components"}}),V=_({type:s,group:{name:"Components"}}),h((D=t((R=function(e){function t(){for(var t,n=arguments.length,a=new Array(n),l=0;l<n;l++)a[l]=arguments[l];return t=e.call.apply(e,[this].concat(a))||this,r(t,"startValue",D,i(t)),r(t,"valueRange",S,i(t)),r(t,"currentValue",w,i(t)),r(t,"slider",z,i(t)),r(t,"minDisplay",x,i(t)),r(t,"maxDisplay",E,i(t)),r(t,"currentDisplay",L,i(t)),t.onValueChanged=new g,t}n(t,e);var a=t.prototype;return a.initialize=function(e,t){this.setValueRange(t.x,t.y),this.setCurrentValue(e),this.slider.progress=p.inverseLerp(this.valueRange.x,this.valueRange.y,e),this.slider.node.on("slide",this.onSliderChanged,this)},a.updateRange=function(e,t){this.setValueRange(e,t)},a.updateCurrentValue=function(e){this.setCurrentValue(e),this.slider.progress=p.inverseLerp(this.valueRange.x,this.valueRange.y,e)},a.setCurrentValue=function(e){this.currentValue=e,this.currentDisplay.string=e.toString()},a.setValueRange=function(e,t){this.valueRange=new u(e,t),this.minDisplay.string=e.toString(),this.maxDisplay.string=t.toString()},a.convertPercentageToValue=function(e){var t=!1,n=p.lerp(this.valueRange.x,this.valueRange.y,e);return(n=Math.round(n))!=this.currentValue&&(t=!0),this.setCurrentValue(n),t},a.onSliderChanged=function(){this.convertPercentageToValue(this.slider.progress)&&this.onValueChanged.invoke(this.currentValue)},t}(c)).prototype,"startValue",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),S=t(R.prototype,"valueRange",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new u(1,9)}}),w=t(R.prototype,"currentValue",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),z=t(R.prototype,"slider",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),x=t(R.prototype,"minDisplay",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=t(R.prototype,"maxDisplay",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),L=t(R.prototype,"currentDisplay",[V],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=R))||C));a._RF.pop()}}}));
+      // Custom ccclass decorator to track user-defined classes
+      function commandclass(className) {
+        // Initialize array if it doesn't exist
+        if (!registeredUserClasses) {
+          registeredUserClasses = exports('registeredUserClasses', []);
+        }
+        return function (constructor) {
+          console.log("Registering class \"" + className + "\"...");
+          try {
+            var _ccclass = _decorator.ccclass;
+            if (!_ccclass) {
+              throw new Error('ccclass decorator not available');
+            }
 
-System.register("chunks:///_virtual/EditorStackColorBlock.ts",["./rollupPluginModLoBabelHelpers.js","cc","./SimpleEditorDropdown.ts","./EditorSliderControl.ts","./EditorButtonSequence.ts"],(function(e){var t,n,o,i,r,l,a,u,c,s,d,p;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,o=e.initializerDefineProperty,i=e.assertThisInitialized},function(e){r=e.cclegacy,l=e._decorator,a=e.Vec2,u=e.math,c=e.Component},function(e){s=e.SimpleEditorDropdown},function(e){d=e.EditorSliderControl},function(e){p=e.EditorButtonSequence}],execute:function(){var h,v,S,b,f,g,m,w,y,C,E,D,k,z,B;r._RF.push({},"56605XdEYVDnbL1DWhGO+gA","EditorStackColorBlock",void 0);var L=l.ccclass,A=l.property;e("EditorStackColorBlock",(h=L("EditorStackColorBlock"),v=A({type:Number}),S=A({type:Number}),b=A({type:a}),f=A({type:s,group:{name:"Components"}}),g=A({type:d,group:{name:"Components"}}),m=A({type:p,group:{name:"Components"}}),h((C=t((y=function(e){function t(){for(var t,n=arguments.length,r=new Array(n),l=0;l<n;l++)r[l]=arguments[l];return t=e.call.apply(e,[this].concat(r))||this,o(t,"colorId",C,i(t)),o(t,"piecesAmount",E,i(t)),o(t,"valueRange",D,i(t)),o(t,"colorDropdown",k,i(t)),o(t,"valuesSlider",z,i(t)),o(t,"buttonSequence",B,i(t)),t.saveCallback=null,t.onDropdownEvent=void 0,t.onSliderEvent=void 0,t.buttonSelectionLambda=void 0,t}n(t,e);var r=t.prototype;return r.initialize=function(e,t,n){this.saveCallback=n,this.piecesAmount=t,this.colorId=e,this.colorDropdown.initialize(e),this.valuesSlider.initialize(t,this.valueRange),this.buttonSequence.initialize(t,this.valueRange),this.setEvents()},r.setEvents=function(){var e=this;this.onDropdownEvent=function(t){e.onDropdownChanged(t)},this.onSliderEvent=function(t){e.onSliderChanged(t)},this.buttonSelectionLambda=function(t){e.handleButtonSelected(t)},this.colorDropdown.onOptionSelected.addListener(this.onDropdownEvent),this.valuesSlider.onValueChanged.addListener(this.onSliderEvent),this.buttonSequence.onOptionSelected.addListener(this.buttonSelectionLambda)},r.onDestroy=function(){null!==this.colorDropdown.onOptionSelected&&this.colorDropdown.onOptionSelected.removeListener(this.onDropdownEvent),null!==this.valuesSlider.onValueChanged&&this.valuesSlider.onValueChanged.removeListener(this.onSliderEvent)},r.onDropdownChanged=function(e){var t;console.log("EditorSingleStack.onDropdownChanged() ",e),this.colorId=e,null==(t=this.saveCallback)||t.call(this)},r.onSliderChanged=function(e){var t;this.piecesAmount=e,null==(t=this.saveCallback)||t.call(this)},r.handleButtonSelected=function(e){var t;this.piecesAmount=e,null==(t=this.saveCallback)||t.call(this)},r.toggleBlock=function(e,t){if(void 0===t&&(t=!1),this.node.active=e,e){var n=u.clamp(this.piecesAmount,this.valueRange.x,this.valueRange.y);this.buttonSequence.setOptionByValue(n,t)}},t}(c)).prototype,"colorId",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),E=t(y.prototype,"piecesAmount",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),D=t(y.prototype,"valueRange",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new a(1,9)}}),k=t(y.prototype,"colorDropdown",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=t(y.prototype,"valuesSlider",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=t(y.prototype,"buttonSequence",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),w=y))||w));r._RF.pop()}}}));
+            // Apply ccclass decorator first
+            _ccclass(className)(constructor);
 
-System.register("chunks:///_virtual/EditorStackController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./LevelAsset.ts","./EditorSingleStack.ts","./HexSlot.ts","./HexGridController.ts","./index.ts","./Singleton.ts"],(function(t){var e,o,i,l,n,a,s,r,c,u,k,h,d,b,p,g,S;return{setters:[function(t){e=t.applyDecoratedDescriptor,o=t.inheritsLoose,i=t.initializerDefineProperty,l=t.assertThisInitialized},function(t){n=t.cclegacy,a=t._decorator,s=t.Node,r=t.Prefab,c=t.instantiate,u=t.Component},function(t){k=t.PieceColor,h=t.ObstacleType},function(t){d=t.EditorSingleStack},function(t){b=t.HexSlot,p=t.PieceStack},function(t){g=t.HexGridController},null,function(t){S=t.Singleton}],execute:function(){var f,v,C,y,m,D,w,I,P,x,E,B,z,M,H;n._RF.push({},"52ec2CMeZJO6YqQPCYvmmFI","EditorStackController",void 0);var T=a.ccclass,A=a.property;t("EditorStackController",(f=T("EditorStackController"),v=A({type:b}),C=A({type:[p]}),y=A({type:p}),m=A({type:s,group:{name:"Components"}}),D=A({type:r,group:{name:"Components"}}),w=A({type:[d]}),f((x=e((P=function(t){function e(){for(var e,o=arguments.length,n=new Array(o),a=0;a<o;a++)n[a]=arguments[a];return e=t.call.apply(t,[this].concat(n))||this,i(e,"selectedSlot",x,l(e)),i(e,"piecesStack",E,l(e)),i(e,"currentStack",B,l(e)),i(e,"stackParent",z,l(e)),i(e,"stackPrefab",M,l(e)),i(e,"blocks",H,l(e)),e}o(e,t);var n=e.prototype;return n.initialize=function(t){this.node.active=!1},n.selectSlot=function(t){this.selectedSlot=t;var e=t.data;t.debug_MarkSlotSelected=!0,this.loadData(e.piecesStack),this.node.active=!0,this.refreshStackButtons()},n.addColor=function(){var t=-1;this.blocks.length>0&&(t=this.blocks[this.blocks.length-1].getColorId());var e=t+1;e>=6&&(e=0),console.log("EditorStackController.AddColor() "+e+" | "+k[e+1]),this.createNewBlock(this.blocks.length,e,1,!0,0),console.log("EditorStackController.AddColor() saveData()"),this.saveData()},n.createNewBlock=function(t,e,o,i,l){var n=this;console.log("createNewBlock: "+t+" | colorId: "+e+" |amount: "+o+"| isColor: "+i+"| obstacleId: "+l);var a=c(this.stackPrefab);a.parent=this.stackParent,a.name="StackBlock "+(t+1),a.setSiblingIndex(0);var s=a.getComponent(d);s.initialize(t,e,o,i,l,(function(t){return n.deleteStack(t)}),(function(t,e){return n.moveStack(t,e)}),(function(){return n.saveData()})),this.blocks.push(s),this.refreshStackButtons()},n.saveData=function(){console.log("EditorStackController.saveData()"),this.piecesStack=this.getPiecesStacks(),this.selectedSlot.updateData(!0,this.piecesStack),this.selectedSlot.loadUpdatePiecesVisual(),S.get(g).saveGridData()},n.getPiecesStacks=function(){for(var t=[],e=0;e<this.blocks.length;e++)t.push(this.getCurrentStack(e));return t},n.getCurrentStack=function(t){var e=new p;return e.amount=this.blocks[t].getAmount(),e.pieceColor=this.blocks[t].getColorId(),e.isColor=this.blocks[t].getIsColor(),e.obstacleType=this.blocks[t].getObstacleTypeId(),e},n.refreshStackButtons=function(){for(var t=0;t<this.blocks.length;t++)this.blocks[t].toggleCanMoveDown(!0),this.blocks[t].toggleCanMoveUp(!0);this.blocks.length>0&&(this.blocks[0].toggleCanMoveDown(!1),this.blocks[this.blocks.length-1].toggleCanMoveUp(!1))},n.loadData=function(t){console.log("EditorStackController.loadData() "+t.length);for(var e=0;e<this.blocks.length;e++)this.blocks[e].node.destroy();this.blocks=[];for(e=0;e<t.length;e++)this.createNewBlock(e,t[e].pieceColor-1,t[e].amount,t[e].isColor,t[e].obstacleType-1)},n.deleteStack=function(t){console.log("EditorStackController.deleteStack() ",t),this.blocks[t].node.destroy(),this.blocks.splice(t,1);for(var e=0;e<this.blocks.length;e++)this.blocks[e].updateId(e);this.refreshStackButtons(),this.saveData()},n.moveStack=function(t,e){if(console.log("EditorStackController.moveStack() ",t,e),e){var o=this.blocks[t],i=this.blocks[t+1];this.swapStack(o,i)}else{var l=this.blocks[t],n=this.blocks[t-1];this.swapStack(l,n)}for(var a=0;a<this.blocks.length;a++)this.blocks[a].updateId(a);this.refreshStackButtons(),this.saveData()},n.swapStack=function(t,e){var o=t.id,i=e.id;this.blocks[o]=e,this.blocks[i]=t;var l=t.node.getSiblingIndex(),n=e.node.getSiblingIndex();t.node.setSiblingIndex(n),e.node.setSiblingIndex(l)},n.debugHexSlotData=function(t){var e="";e+="("+t.data.x+" , "+t.data.y+") ",t.data.piecesStack.length>0&&(e+="isColor: "+t.data.piecesStack[0].isColor+" | obstacle: "+h[t.data.piecesStack[0].obstacleType],console.log(""+e))},e}(u)).prototype,"selectedSlot",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=e(P.prototype,"piecesStack",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),B=e(P.prototype,"currentStack",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),z=e(P.prototype,"stackParent",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),M=e(P.prototype,"stackPrefab",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),H=e(P.prototype,"blocks",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),I=P))||I));n._RF.pop()}}}));
+            // Then register our class
+            if (!registeredUserClasses.some(function (c) {
+              return c.name === className;
+            })) {
+              registeredUserClasses.push({
+                name: className,
+                classRef: constructor
+              });
+              console.log("Successfully registered \"" + className + "\"");
+              console.log("Class ID after registration:", js.getClassId(constructor));
+            }
+            return constructor;
+          } catch (error) {
+            console.error("Failed to register \"" + className + "\":", error);
+            return constructor;
+          }
+        };
+      }
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/EditorStackObstacleBlock.ts",["./rollupPluginModLoBabelHelpers.js","cc","./SimpleEditorDropdown.ts","./EditorSliderControl.ts","./LevelAsset.ts","./EditorRangeEditbox.ts"],(function(e){var t,n,o,i,a,r,l,s,c,d,u,h;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,o=e.initializerDefineProperty,i=e.assertThisInitialized},function(e){a=e.cclegacy,r=e._decorator,l=e.Vec2,s=e.Component},function(e){c=e.SimpleEditorDropdown},function(e){d=e.EditorSliderControl},function(e){u=e.ObstacleType},function(e){h=e.EditorRangeEditbox}],execute:function(){var p,b,v,g,f,m,S,C,E,w,y,k,D;a._RF.push({},"e688c5TjcFGWL/fzex7nI8b","EditorStackObstacleBlock",void 0);var B=r.ccclass,L=r.property;e("EditorStackObstacleBlock",(p=B("EditorStackObstacleBlock"),b=L({type:Number}),v=L({type:Number}),g=L({type:c,group:{name:"Components"}}),f=L({type:d,group:{name:"Components"}}),m=L({type:h,group:{name:"Components"}}),p((E=t((C=function(e){function t(){for(var t,n=arguments.length,a=new Array(n),r=0;r<n;r++)a[r]=arguments[r];return t=e.call.apply(e,[this].concat(a))||this,o(t,"obstacleId",E,i(t)),o(t,"amount",w,i(t)),o(t,"obstacleDropdown",y,i(t)),o(t,"valuesSlider",k,i(t)),o(t,"rangeBox",D,i(t)),t.saveCallback=null,t.onDropdownEvent=void 0,t.sliderEventLambda=void 0,t}n(t,e);var a=t.prototype;return a.initialize=function(e,t,n){this.saveCallback=n,this.obstacleId=e,this.amount=t,this.obstacleDropdown.initialize(this.obstacleId),this.valuesSlider.initialize(this.amount,new l(1,200)),this.rangeBox.initialize(this.amount,new l(1,200)),this.setCorrectUI(e+1,this.amount),this.setEvents()},a.setEvents=function(){var e=this;this.onDropdownEvent=function(t){e.onDropdownChanged(t)},this.sliderEventLambda=function(t){e.onSliderChanged(t)},this.valuesSlider.onValueChanged.addListener(this.sliderEventLambda),this.obstacleDropdown.onOptionSelected.addListener(this.onDropdownEvent),this.rangeBox.onInputChanged.addListener(this.sliderEventLambda)},a.onDestroy=function(){null!==this.obstacleDropdown.onOptionSelected&&this.obstacleDropdown.onOptionSelected.removeListener(this.onDropdownEvent),null!==this.valuesSlider.onValueChanged&&this.valuesSlider.onValueChanged.removeListener(this.sliderEventLambda)},a.onDropdownChanged=function(e){var t;console.log("EditorStackObstacleBlock.onDropdownChanged() ",e),this.obstacleId=e,this.setCorrectUI(this.obstacleId+1,this.amount),null==(t=this.saveCallback)||t.call(this)},a.setCorrectUI=function(e,t){e==u.Ad?(this.valuesSlider.node.active=!1,this.rangeBox.node.active=!1):e==u.Lock?(this.valuesSlider.node.active=!1,this.rangeBox.node.active=!0,this.rangeBox.updateRange(1,300),0==t?this.rangeBox.updateCurrentValue(25):this.rangeBox.updateCurrentValue(t)):e==u.Wood&&(this.rangeBox.node.active=!1,this.valuesSlider.node.active=!0,this.valuesSlider.updateRange(1,3),0==t?this.valuesSlider.updateCurrentValue(3):this.valuesSlider.updateCurrentValue(t))},a.onSliderChanged=function(e){var t;console.log("EditorSingleStack.onSliderChanged("+e+")"),this.amount=e,null==(t=this.saveCallback)||t.call(this)},a.toggleBlock=function(e,t){this.node.active=e},a.getObstacleTypeId=function(){return this.obstacleId},a.getLockValue=function(){return this.amount},t}(s)).prototype,"obstacleId",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),w=t(C.prototype,"amount",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),y=t(C.prototype,"obstacleDropdown",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),k=t(C.prototype,"valuesSlider",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),D=t(C.prototype,"rangeBox",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=C))||S));a._RF.pop()}}}));
+System.register("chunks:///_virtual/CommandSequence.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './WaitCommand.ts', './TweenPositionCommand.ts', './TweenScaleCommand.ts', './Command.ts', './SetActiveCommand.ts', './AsyncCommand.ts', './Polymorphism.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _initializerDefineProperty, _inheritsLoose, _assertThisInitialized, _createClass, _asyncToGenerator, _regeneratorRuntime, _createForOfIteratorHelperLoose, cclegacy, _decorator, Enum, Component, WaitCommand, TweenPositionCommand, TweenScaleCommand, Command, SetActiveCommand, AsyncCommand, polymorphism;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _inheritsLoose = module.inheritsLoose;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Enum = module.Enum;
+      Component = module.Component;
+    }, null, function (module) {
+      WaitCommand = module.WaitCommand;
+    }, function (module) {
+      TweenPositionCommand = module.TweenPositionCommand;
+    }, function (module) {
+      TweenScaleCommand = module.TweenScaleCommand;
+    }, function (module) {
+      Command = module.Command;
+    }, function (module) {
+      SetActiveCommand = module.SetActiveCommand;
+    }, function (module) {
+      AsyncCommand = module.AsyncCommand;
+    }, function (module) {
+      polymorphism = module.polymorphism;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _dec5, _dec6, _dec7, _dec8, _class4, _class5, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "16c8263f3xLNaRBL7e4S3EP", "CommandSequence", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property,
+        executionOrder = _decorator.executionOrder;
+      var CommandWrapper = (_dec = ccclass('CommandWrapper'), _dec2 = executionOrder(1000), _dec3 = property({
+        displayName: 'Properties'
+      }), _dec4 = polymorphism({
+        baseClass: Command,
+        //types: ['TweenPositionCommand','TweenScaleCommand','WaitCommand','SetActiveCommand',],
+        //types: getClassesForPolymorphism(),
+        types: [TweenPositionCommand, TweenScaleCommand, WaitCommand, SetActiveCommand]
+      }), _dec(_class = _dec2(_class = (_class2 = function CommandWrapper() {
+        _initializerDefineProperty(this, "command", _descriptor, this);
+      }, _descriptor = _applyDecoratedDescriptor(_class2.prototype, "command", [_dec3, _dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new WaitCommand();
+        }
+      }), _class2)) || _class) || _class);
+      var AddSequenceOptions = exports('AddSequenceOptions', /*#__PURE__*/function (AddSequenceOptions) {
+        AddSequenceOptions[AddSequenceOptions["None"] = 0] = "None";
+        AddSequenceOptions[AddSequenceOptions["AddNewCommand"] = 1] = "AddNewCommand";
+        AddSequenceOptions[AddSequenceOptions["RemoveLastCommand"] = 2] = "RemoveLastCommand";
+        return AddSequenceOptions;
+      }({}));
+      var CommandSequence = exports('CommandSequence', (_dec5 = ccclass('CommandSequence'), _dec6 = executionOrder(1001), _dec7 = property({
+        type: [CommandWrapper]
+      }), _dec8 = property({
+        type: Enum(AddSequenceOptions)
+      }), _dec5(_class4 = _dec6(_class4 = (_class5 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(CommandSequence, _Component);
+        function CommandSequence() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "playOnEnable", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "sequence", _descriptor3, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = CommandSequence.prototype;
+        _proto.onEnable = function onEnable() {
+          if (this.playOnEnable) {
+            this.playSequence();
+          }
+        }
 
-System.register("chunks:///_virtual/EventHandlerUtils.ts",["cc"],(function(){var t,e;return{setters:[function(n){t=n.cclegacy,e=n.EventHandler}],execute:function(){t._RF.push({},"0b760x1LMVLopQgiKYrvoJQ","EventHandlerUtils",void 0),e.prototype.Invoke=function(){for(var t=arguments.length,e=new Array(t),n=0;n<t;n++)e[n]=arguments[n];this.emit(e)},t._RF.pop()}}}));
+        // Play all commands in the sequence
+        ;
 
-System.register("chunks:///_virtual/EventOnDelay.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Wait.ts"],(function(e){var n,t,r,i,a,o,c,l,s,u,p;return{setters:[function(e){n=e.applyDecoratedDescriptor,t=e.inheritsLoose,r=e.initializerDefineProperty,i=e.assertThisInitialized,a=e.asyncToGenerator,o=e.regeneratorRuntime},function(e){c=e.cclegacy,l=e._decorator,s=e.EventHandler,u=e.Component},null,function(e){p=e.Wait}],execute:function(){var y,f,h,v,d,D;c._RF.push({},"803b7MtAh5FQ5cS08hGO+wv","EventOnDelay",void 0);var b=l.ccclass,g=l.property;e("EventOnDelay",(y=b("EventOnDelay"),f=g({type:s}),y((d=n((v=function(e){function n(){for(var n,t=arguments.length,a=new Array(t),o=0;o<t;o++)a[o]=arguments[o];return n=e.call.apply(e,[this].concat(a))||this,r(n,"delay",d,i(n)),r(n,"onDelayFinished",D,i(n)),n}t(n,e);var c=n.prototype;return c.onEnable=function(){this.runAfterDelay(this.delay)},c.runAfterDelay=function(){var e=a(o().mark((function e(n){return o().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,p.seconds(n);case 2:this.onDelayFinished.Invoke();case 3:case"end":return e.stop()}}),e,this)})));return function(n){return e.apply(this,arguments)}}(),n}(u)).prototype,"delay",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),D=n(v.prototype,"onDelayFinished",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new s}}),h=v))||h));c._RF.pop()}}}));
+        _proto.playSequence = /*#__PURE__*/
+        function () {
+          var _playSequence = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+            var _iterator, _step, wrapper;
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  _iterator = _createForOfIteratorHelperLoose(this.sequence);
+                case 1:
+                  if ((_step = _iterator()).done) {
+                    _context.next = 11;
+                    break;
+                  }
+                  wrapper = _step.value;
+                  if (!(wrapper.command instanceof AsyncCommand && wrapper.command.waitUntilFinished)) {
+                    _context.next = 8;
+                    break;
+                  }
+                  _context.next = 6;
+                  return wrapper.command.execute();
+                case 6:
+                  _context.next = 9;
+                  break;
+                case 8:
+                  wrapper.command.execute();
+                case 9:
+                  _context.next = 1;
+                  break;
+                case 11:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee, this);
+          }));
+          function playSequence() {
+            return _playSequence.apply(this, arguments);
+          }
+          return playSequence;
+        }();
+        _createClass(CommandSequence, [{
+          key: "Action",
+          get: function get() {
+            return AddSequenceOptions.None;
+          },
+          set: function set(value) {
+            switch (value) {
+              case AddSequenceOptions.AddNewCommand:
+                var wrapper = new CommandWrapper();
+                wrapper.command = new WaitCommand();
+                this.sequence.push(wrapper);
+                console.log("New command added");
+                break;
+              case AddSequenceOptions.RemoveLastCommand:
+                this.sequence.pop();
+                console.log("Last command removed");
+                break;
+            }
+          }
+        }]);
+        return CommandSequence;
+      }(Component), (_descriptor2 = _applyDecoratedDescriptor(_class5.prototype, "playOnEnable", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class5.prototype, "sequence", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [new CommandWrapper()];
+        }
+      }), _applyDecoratedDescriptor(_class5.prototype, "Action", [_dec8], Object.getOwnPropertyDescriptor(_class5.prototype, "Action"), _class5.prototype)), _class5)) || _class4) || _class4));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/EventOnNodeState.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(n){var e,t,r,i,o,a,u,l;return{setters:[function(n){e=n.applyDecoratedDescriptor,t=n.inheritsLoose,r=n.initializerDefineProperty,i=n.assertThisInitialized},function(n){o=n.cclegacy,a=n._decorator,u=n.EventHandler,l=n.Component}],execute:function(){var p,b,c,s,d,f,h,O,m,y,v,g,E,w,S,z,D,L,U,N,_,F,j;o._RF.push({},"23998jdf2hDF4EmSbKChq2Q","EventOnNodeState",void 0);var C=a.ccclass,H=a.property;n("EventOnNodeState",(p=C("EventOnNodeState"),b=H(),c=H(),s=H(),d=H(),f=H(),h=H({type:u,group:{name:"Event"},visible:function(){return this.runOnLoad}}),O=H({type:u,group:{name:"Event"},visible:function(){return this.runOnEnable}}),m=H({type:u,group:{name:"Event"},visible:function(){return this.runOnStart}}),y=H({type:u,group:{name:"Event"},visible:function(){return this.runOnUpdate}}),v=H({type:u,group:{name:"Event"},visible:function(){return this.runOnDisable}}),p((w=e((E=function(n){function e(){for(var e,t=arguments.length,o=new Array(t),a=0;a<t;a++)o[a]=arguments[a];return e=n.call.apply(n,[this].concat(o))||this,r(e,"runOnLoad",w,i(e)),r(e,"runOnEnable",S,i(e)),r(e,"runOnStart",z,i(e)),r(e,"runOnUpdate",D,i(e)),r(e,"runOnDisable",L,i(e)),r(e,"onLoaded",U,i(e)),r(e,"onEnabled",N,i(e)),r(e,"onStarted",_,i(e)),r(e,"onUpdated",F,i(e)),r(e,"onDisabled",j,i(e)),e}t(e,n);var o=e.prototype;return o.onLoad=function(){this.runOnLoad&&this.onLoaded.emit(null)},o.start=function(){this.runOnStart&&this.onStarted.emit(null)},o.onEnable=function(){this.runOnEnable&&this.onEnabled.emit(null)},o.update=function(){this.runOnUpdate&&this.onUpdated.emit(null)},o.onDisable=function(){this.runOnDisable&&this.onDisabled.emit(null)},e}(l)).prototype,"runOnLoad",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),S=e(E.prototype,"runOnEnable",[c],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),z=e(E.prototype,"runOnStart",[s],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),D=e(E.prototype,"runOnUpdate",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),L=e(E.prototype,"runOnDisable",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),U=e(E.prototype,"onLoaded",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new u}}),N=e(E.prototype,"onEnabled",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new u}}),_=e(E.prototype,"onStarted",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new u}}),F=e(E.prototype,"onUpdated",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new u}}),j=e(E.prototype,"onDisabled",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new u}}),g=E))||g));o._RF.pop()}}}));
+System.register("chunks:///_virtual/DragDropComponent.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './HexSlot.ts', './RaycastUtils.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Enum, Node, Layers, Vec3, director, Component, HexSlot, RaycastUtils;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Enum = module.Enum;
+      Node = module.Node;
+      Layers = module.Layers;
+      Vec3 = module.Vec3;
+      director = module.director;
+      Component = module.Component;
+    }, null, function (module) {
+      HexSlot = module.HexSlot;
+    }, function (module) {
+      RaycastUtils = module.RaycastUtils;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+      cclegacy._RF.push({}, "7b98exEyKxJurhZ8bHxd1Hn", "DragDropComponent", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var DragDropMode = exports('DragDropMode', /*#__PURE__*/function (DragDropMode) {
+        DragDropMode[DragDropMode["Disabled"] = 0] = "Disabled";
+        DragDropMode[DragDropMode["Drag"] = 1] = "Drag";
+        DragDropMode[DragDropMode["Drop"] = 2] = "Drop";
+        DragDropMode[DragDropMode["Clickable"] = 3] = "Clickable";
+        return DragDropMode;
+      }({}));
+      var DragDropComponent = exports('DragDropComponent', (_dec = ccclass('DragDropComponent'), _dec2 = property({
+        type: Enum(DragDropMode),
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec4 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: HexSlot,
+        group: 'Components'
+      }), _dec6 = property({
+        type: Layers.Enum,
+        group: {
+          name: "Layers"
+        }
+      }), _dec7 = property({
+        type: Layers.Enum,
+        group: {
+          name: "Layers"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DragDropComponent, _Component);
+        function DragDropComponent() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variable
+          _initializerDefineProperty(_this, "currentMode", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isSelected", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "targetNode", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentSlot", _descriptor4, _assertThisInitialized(_this));
+          _this.originalY = null;
+          //@property({type: Node,group: { name: "Runtime" }}) 
+          _this.originalParent = null;
+          _this.originalPos = new Vec3();
+          _initializerDefineProperty(_this, "draggableLayer", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "dragSlotLayer", _descriptor6, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = DragDropComponent.prototype;
+        //#endregion
+        _proto.start = function start() {
+          if (!this.targetNode) {
+            this.targetNode = this.node;
+          }
+          this.currentSlot = this.getComponent(HexSlot);
+        };
+        _proto.setCurrenMode = function setCurrenMode(mode) {
+          this.currentMode = mode;
+          if (this.currentMode == DragDropMode.Drag || this.currentMode == DragDropMode.Clickable) {
+            this.setLayerRecursively(this.node, this.draggableLayer);
+          } else if (this.currentMode == DragDropMode.Drop) {
+            this.setLayerRecursively(this.node, this.dragSlotLayer);
+          } else {
+            this.setLayerRecursively(this.node, Layers.Enum.DEFAULT);
+          }
+        };
+        _proto.onDragStart = function onDragStart(pos) {
+          this.originalY = this.targetNode.worldPosition.y; // Store the original y position
+          this.isSelected = true;
+          this.originalParent = this.targetNode.parent;
+          this.originalPos = this.targetNode.getWorldPosition();
+          this.targetNode.setParent(director.getScene());
+          this.targetNode.setWorldPosition(this.originalPos);
+        };
+        _proto.onDragMovement = function onDragMovement(ray) {
+          var worldPos = this.getTargetPosition(ray);
+          if (worldPos) this.targetNode.setWorldPosition(worldPos);
+        };
+        _proto.onDragEnded = function onDragEnded(pos, newParent) {
+          //if(newParent) console.log(`onDragEnded(${pos} , ${newParent.name})`);
+          //else console.log(`onDragEnded(${pos} , ${newParent})`);
 
-System.register("chunks:///_virtual/EventOnProgress.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var n,r,t,s;return{setters:[function(e){n=e.inheritsLoose},function(e){r=e.cclegacy,t=e._decorator,s=e.Component}],execute:function(){var o;r._RF.push({},"e76c6LOf+1KNYHr+2EvHHOt","EventOnProgress",void 0);var c=t.ccclass;e("EventOnProgress",c("EventOnProgress")(o=function(e){function r(){return e.apply(this,arguments)||this}return n(r,e),r}(s))||o);r._RF.pop()}}}));
+          this.isSelected = false;
+          if (newParent) {
+            this.targetNode.setParent(newParent);
+            this.setTargetPosition(pos);
+          } else {
+            this.targetNode.setParent(this.originalParent);
+            this.resetOriginalPosition();
+          }
+        };
+        _proto.resetComponent = function resetComponent() {
+          this.targetNode.setParent(this.originalParent);
+          this.resetOriginalPosition();
+        };
+        _proto.resetOriginalPosition = function resetOriginalPosition() {
+          this.setTargetPosition(this.originalPos);
+        };
+        _proto.setTargetPosition = function setTargetPosition(pos) {
+          this.targetNode.setWorldPosition(pos);
+        };
+        _proto.getTargetPosition = function getTargetPosition(ray) {
+          var rayOrigin = ray.o; // Ray starts at the origin
+          var rayDirection = ray.d; // Ray pointing upwards
 
-System.register("chunks:///_virtual/eventTestTrigger.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,n,o,r,i,a,l,c,u;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,o=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){i=e.cclegacy,a=e._decorator,l=e.EventHandler,c=e.Button,u=e.Component}],execute:function(){var s,p,g,h,v,d,f;i._RF.push({},"ea08fr6/iNCtat0mKyhFXww","eventTestTrigger",void 0);var m=a.ccclass,y=a.property;e("eventTestTrigger",(s=m("eventTestTrigger"),p=y(l),g=y({type:c,group:{name:"Components"}}),s((d=t((v=function(e){function t(){for(var t,n=arguments.length,i=new Array(n),a=0;a<n;a++)i[a]=arguments[a];return t=e.call.apply(e,[this].concat(i))||this,o(t,"onSomethingHappened",d,r(t)),o(t,"testButton",f,r(t)),t}n(t,e);var i=t.prototype;return i.start=function(){var e=this;this.testButton.node.on(c.EventType.CLICK,(function(){return e.deleteButton()}),this),this.onSomethingHappened.target=this.node,this.onSomethingHappened.component="eventTestTrigger",this.onSomethingHappened.handler="callbackFunction"},i.deleteButton=function(){var e;null==(e=this.onSomethingHappened)||e.Invoke()},i.callbackFunction=function(){console.log("CallbackFunction")},i.registerEvent=function(e,t,n,o){},t}(u)).prototype,"onSomethingHappened",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),f=t(v.prototype,"testButton",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),h=v))||h));i._RF.pop()}}}));
+          var planeNormal = new Vec3(0, 1, 0); // Plane facing upwards
+          var pointOnPlane = new Vec3(0, this.originalY, 0); // Any point on the plane
 
-System.register("chunks:///_virtual/FilteredRaycastTest.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var r,t,a,n,o,i,s,c,l,u,y,m,p,f,d,g;return{setters:[function(e){r=e.applyDecoratedDescriptor,t=e.inheritsLoose,a=e.initializerDefineProperty,n=e.assertThisInitialized},function(e){o=e.cclegacy,i=e._decorator,s=e.Layers,c=e.Camera,l=e.find,u=e.input,y=e.Input,m=e.EventMouse,p=e.Vec2,f=e.geometry,d=e.PhysicsSystem,g=e.Component}],execute:function(){var h,L,v,C,F,T,R;o._RF.push({},"202b0LXQJZFq7wMr31JQnq1","FilteredRaycastTest",void 0);var b=i.ccclass,D=i.property;e("FilteredRaycastTest",(h=b("FilteredRaycastTest"),L=D({type:s.Enum,group:{name:"Layers"},tooltip:"Layer for raycasting"}),v=D({type:c,group:{name:"Runtime"}}),h((T=r((F=function(e){function r(){for(var r,t=arguments.length,o=new Array(t),i=0;i<t;i++)o[i]=arguments[i];return r=e.call.apply(e,[this].concat(o))||this,a(r,"raycastLayer",T,n(r)),a(r,"camera",R,n(r)),r}t(r,e);var o=r.prototype;return o.start=function(){if(!this.camera){var e=l("Main Camera");e?(this.camera=e.getComponent(c),this.camera||console.error("Camera component not found on the node.")):console.error("Camera node not found.")}u.on(y.EventType.MOUSE_DOWN,this.mouseClick,this)},o.mouseClick=function(e){if(e.getButton()===m.BUTTON_LEFT){var r=new p(e.getLocationX(),e.getLocationY());this.checkForValidDrag2(r)}},o.checkForValidDrag=function(e){if(this.camera){var r={result:null},t=this.raycastLayer,a=new f.Ray;this.camera.screenPointToRay(e.x,e.y,a);var n=d.instance.raycastClosest(a,t,500,!0),o=this.getLayerIndices(t)[0];if(console.log("RaycastExternal - CurrentLayer: "+t+" | "+s.layerToName(o)),n&&(r.result=d.instance.raycastClosestResult),!n||!r.result)return console.log("No object detected."),!1;var i=r.result.collider.node;return!!i&&(console.log("Found: "+i.name+" in layer "+s.layerToName(i.layer)),!0)}console.error("Camera is not assigned.")},o.checkForValidDrag2=function(e){if(this.camera)return!0;console.error("Camera is not assigned.")},o.getLayerIndices=function(e){for(var r=[],t=0;t<32;t++)e&1<<t&&r.push(t);return r},r}(g)).prototype,"raycastLayer",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return s.Enum.DEFAULT}}),R=r(F.prototype,"camera",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=F))||C));o._RF.pop()}}}));
+          // Calculate the intersection point
+          var intersectionPoint = RaycastUtils.rayPlaneIntersection(rayOrigin, rayDirection, pointOnPlane, planeNormal);
+          if (intersectionPoint) {
+            //console.log("Intersection point:", intersectionPoint);
+            return intersectionPoint;
+          } else {
+            console.log("Ray does not intersect the plane.");
+            return null;
+          }
+        };
+        _proto.setLayerRecursively = function setLayerRecursively(node, layer) {
+          var _this2 = this;
+          node.layer = layer;
+          node.children.forEach(function (child) {
+            return _this2.setLayerRecursively(child, layer);
+          });
+        };
+        return DragDropComponent;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "currentMode", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return DragDropMode.Disabled;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "isSelected", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "targetNode", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "currentSlot", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "draggableLayer", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return Layers.Enum.DEFAULT;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "dragSlotLayer", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return Layers.Enum.DEFAULT;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/FollowWorldTests.ts",["./rollupPluginModLoBabelHelpers.js","cc","./CameraUtils.ts"],(function(e){var t,i,o,n,r,s,l,a,u,c,p,h,P,b,w,m;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.inheritsLoose,o=e.initializerDefineProperty,n=e.assertThisInitialized},function(e){r=e.cclegacy,s=e._decorator,l=e.Vec2,a=e.Vec3,u=e.Camera,c=e.Node,p=e.view,h=e.input,P=e.Input,b=e.UITransform,w=e.Component},function(e){m=e.CameraUtils}],execute:function(){var g,f,v,y,d,R,E,z,T,C,S,x,D,_,F,M,O,V,j,A,L,U,k,I,N,W,B;r._RF.push({},"2c3774Ai5VAyoPAxkifnSAL","FollowWorldTests",void 0);var H=s.ccclass,X=s.property;e("FollowWorldTests",(g=H("FollowWorldTests"),f=X(),v=X({type:l,visible:!0}),y=X({type:l,visible:!0}),d=X({type:l,visible:!0}),R=X({type:a,visible:!0}),E=X({type:a,visible:!0}),z=X({type:l,visible:!0}),T=X({type:l,visible:!0}),C=X({type:a,visible:!0}),S=X({type:u,group:"Components"}),x=X({type:c,group:"Components"}),D=X({type:c,group:"Components"}),g((M=t((F=function(e){function t(){for(var t,i=arguments.length,r=new Array(i),s=0;s<i;s++)r[s]=arguments[s];return t=e.call.apply(e,[this].concat(r))||this,o(t,"updatePosition",M,n(t)),o(t,"screenRes",O,n(t)),o(t,"viewPortRes",V,n(t)),o(t,"currentMousePos",j,n(t)),o(t,"worldPosition",A,n(t)),o(t,"screenPosition",L,n(t)),o(t,"currenPercentage",U,n(t)),o(t,"relativePos",k,n(t)),o(t,"uiPosition",I,n(t)),o(t,"camera",N,n(t)),o(t,"target3DObject",W,n(t)),o(t,"uiElement",B,n(t)),t}i(t,e);var r=t.prototype;return r.start=function(){var e=p.getVisibleSize();this.screenRes.set(e.width,e.height),console.log("Screen Resolution: "+this.screenRes.x+" x "+this.screenRes.y),h.on(P.EventType.MOUSE_MOVE,this.mouseMove,this)},r.mouseMove=function(e){this.currentMousePos=new l(e.getLocationX(),e.getLocationY())},r.update=function(e){this.updateElementPosition_External()},r.checkForComponents=function(){return!!(this.camera&&this.target3DObject&&this.uiElement&&this.updatePosition)},r.updateElementPosition_NotResposive=function(){if(this.checkForComponents()){var e=p.getVisibleSize();this.screenRes.set(e.width,e.height),this.worldPosition=this.target3DObject.worldPosition,this.screenPosition=this.camera.worldToScreen(this.worldPosition),console.log(this.screenPosition.toString()),this.uiElement.parent.getComponent(b).convertToNodeSpaceAR(new a(this.screenPosition.x,this.screenPosition.y,0),this.uiPosition),this.uiElement.setPosition(this.uiPosition)}},r.updateElementPosition_Responsive=function(){this.worldPosition=this.target3DObject.worldPosition,this.screenPosition=this.camera.worldToScreen(this.worldPosition),this.relativePos=this.convertToRelativeResolution(),this.uiElement.parent.getComponent(b).convertToNodeSpaceAR(new a(this.relativePos.x,this.relativePos.y,0),this.uiPosition),this.uiElement.setPosition(this.uiPosition)},r.updateElementPosition_External=function(){var e=this.uiElement.parent.getComponent(b);this.uiElement.setPosition(m.worldToUIPosition(this.target3DObject,this.camera,e))},r.convertToRelativeResolution=function(){var e=p.getViewportRect().width,t=p.getViewportRect().height;this.viewPortRes.set(e,t);var i=this.screenPosition.x/e,o=this.screenPosition.y/t;this.currenPercentage.set(100*i,100*o),console.log(this.screenPosition+" | "+this.viewPortRes+" |"+this.currenPercentage);var n=new l;return n.set(i*this.screenRes.x,o*this.screenRes.y),n},t}(w)).prototype,"updatePosition",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),O=t(F.prototype,"screenRes",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new l}}),V=t(F.prototype,"viewPortRes",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new l}}),j=t(F.prototype,"currentMousePos",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new l}}),A=t(F.prototype,"worldPosition",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new a}}),L=t(F.prototype,"screenPosition",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new a}}),U=t(F.prototype,"currenPercentage",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new l}}),k=t(F.prototype,"relativePos",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new l}}),I=t(F.prototype,"uiPosition",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new a}}),N=t(F.prototype,"camera",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),W=t(F.prototype,"target3DObject",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=t(F.prototype,"uiElement",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),_=F))||_));r._RF.pop()}}}));
+System.register("chunks:///_virtual/DraggableComponent.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './RaycastUtils.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Camera, Node, Vec3, find, input, Input, Layers, EventMouse, geometry, Component, RaycastUtils;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Camera = module.Camera;
+      Node = module.Node;
+      Vec3 = module.Vec3;
+      find = module.find;
+      input = module.input;
+      Input = module.Input;
+      Layers = module.Layers;
+      EventMouse = module.EventMouse;
+      geometry = module.geometry;
+      Component = module.Component;
+    }, null, function (module) {
+      RaycastUtils = module.RaycastUtils;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+      cclegacy._RF.push({}, "8d58bgogGdJ2JCJ6qxKvPUw", "DraggableComponent", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var DraggableComponent = exports('DraggableComponent', (_dec = ccclass('DraggableComponent'), _dec2 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec4 = property({
+        type: Camera,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec5 = property({
+        type: Node,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DraggableComponent, _Component);
+        function DraggableComponent() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "canDrag", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isSelected", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "camera", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "targetNode", _descriptor4, _assertThisInitialized(_this));
+          _this.originalY = null;
+          _this.currentMousePos = new Vec3();
+          return _this;
+        }
+        var _proto = DraggableComponent.prototype;
+        _proto.start = function start() {
+          if (!this.camera) {
+            var cameraNode = find('Main Camera'); // Replace 'Main Camera' with the name of your camera node
+            if (cameraNode) {
+              this.camera = cameraNode.getComponent(Camera);
+              if (!this.camera) {
+                console.error("Camera component not found on the node.");
+              }
+            } else {
+              console.error("Camera node not found.");
+            }
+          }
+          if (!this.targetNode) {
+            this.targetNode = this.node;
+          }
+          input.on(Input.EventType.MOUSE_DOWN, this.mouseClick, this);
+          input.on(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
+        };
+        _proto.performRaycastExternal = function performRaycastExternal(event) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var outResult = {
+            result: null
+          };
+          var distance = 500;
+          var layerMask = Layers.Enum.DEFAULT; // Change this to the desired layer
+          var success = RaycastUtils.mousePositionRaycast3D(event, this.camera, outResult, distance, layerMask);
+          if (success && outResult.result) {
+            if (outResult.result.collider.node !== this.node) {
+              this.isSelected = false;
+              return;
+            }
+            var collider = outResult.result.collider;
+            console.log("RaycastExternal - Found obj: " + collider.node.name + " in layer " + RaycastUtils.getLayerName(collider.node.layer));
+            this.originalY = this.node.worldPosition.y; // Store the original y position
+            this.isSelected = true;
+          } else {
+            console.log("RaycastExternal: No object detected.");
+            this.isSelected = false;
+          }
+        };
+        _proto.update = function update() {
+          if (this.isSelected) {
+            var worldPos = this.getDragPosition();
+            if (worldPos) this.targetNode.setWorldPosition(worldPos);
+          }
+        };
+        _proto.mouseClick = function mouseClick(event) {
+          if (event.getButton() === EventMouse.BUTTON_LEFT) {
+            this.performRaycastExternal(event);
+          } else if (event.getButton() === EventMouse.BUTTON_RIGHT) {
+            this.isSelected = false;
+          }
+        };
+        _proto.mouseMove = function mouseMove(event) {
+          this.currentMousePos.set(event.getLocationX(), event.getLocationY(), 0);
+        };
+        _proto.getDragPosition = function getDragPosition() {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(this.currentMousePos.x, this.currentMousePos.y, 0);
+          this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          var rayOrigin = ray.o; // Ray starts at the origin
+          var rayDirection = ray.d; // Ray pointing upwards
 
-System.register("chunks:///_virtual/Game.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,o,n,r,i;return{setters:[function(e){t=e.inheritsLoose},function(e){o=e.cclegacy,n=e._decorator,r=e.director,i=e.Component}],execute:function(){var c,a;o._RF.push({},"1d891bdUpJOhYGw4HqkvZdJ","Game",void 0);var u=n.ccclass,s=n.executionOrder;e("Game",u("Game")(c=s(-9999)(((a=function(e){function o(){return e.apply(this,arguments)||this}t(o,e);var n=o.prototype;return n.onLoad=function(){},n.start=function(){r.addPersistRootNode(this.node)},n.update=function(e){o.deltaTime=e},o}(i)).deltaTime=void 0,c=a))||c)||c);o._RF.pop()}}}));
+          var planeNormal = new Vec3(0, 1, 0); // Plane facing upwards
+          var pointOnPlane = new Vec3(0, this.originalY, 0); // Any point on the plane
 
-System.register("chunks:///_virtual/GameplayController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./LevelAsset.ts","./OptionsTray.ts","./index.ts","./DragInputManager.ts","./TurnController.ts","./ComboController.ts","./UI_GameplayHUD.ts","./ObjectivesController.ts","./ObstaclesController.ts","./Action.ts","./Singleton.ts"],(function(e){var t,n,o,i,r,l,a,s,u,c,p,C,f,m,y,b,g,h,d,v,z,w,L,P;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,o=e.initializerDefineProperty,i=e.assertThisInitialized,r=e.createClass},function(e){l=e.cclegacy,a=e._decorator,s=e.Camera,u=e.input,c=e.Input,p=e.find,C=e.KeyCode,f=e.Component},function(e){m=e.LevelAsset,y=e.LevelRuleSet},function(e){b=e.OptionsTray},null,function(e){g=e.DragInputManager},function(e){h=e.TurnController},function(e){d=e.ComboController},function(e){v=e.UI_GameplayHUD},function(e){z=e.ObjectivesController},function(e){w=e.ObstaclesController},function(e){L=e.Action},function(e){P=e.Singleton}],execute:function(){var T,A,R,D,_,j,I,O,G,k,K,S,U,x,H,M,E,F,J,N,B,Q,W;l._RF.push({},"49099uog5JHUKRkQaJPPxCp","GameplayController",void 0);var Y=a.ccclass,q=a.property;e("GameplayController",(T=Y("GameplayController"),A=q({type:m}),R=q({type:[y]}),D=q({type:z,group:"Components"}),_=q({type:w,group:"Components"}),j=q({type:b,group:"Components"}),I=q({type:g,group:"Components"}),O=q({type:h,group:"Components"}),G=q({type:d,group:"Components"}),k=q({type:v,group:"Runtime"}),K=q({type:s,group:"Runtime"}),T((x=t((U=function(e){function t(){for(var t,n=arguments.length,r=new Array(n),l=0;l<n;l++)r[l]=arguments[l];return t=e.call.apply(e,[this].concat(r))||this,o(t,"currentLevelAsset",x,i(t)),o(t,"loadedRules",H,i(t)),o(t,"objectivesControl",M,i(t)),o(t,"obstaclesControl",E,i(t)),o(t,"optionsTray",F,i(t)),o(t,"dragInput",J,i(t)),o(t,"turnControl",N,i(t)),o(t,"comboControl",B,i(t)),o(t,"hudControl",Q,i(t)),o(t,"mainCamera",W,i(t)),t.onPause=new L,t._isPaused=!1,t}n(t,e);var l=t.prototype;return l.start=function(){P.set(this)},l.initialize=function(){this.loadedRules=this.currentLevelAsset.optionTrayRules,this.hudControl=P.get(v),this.findComponents(),this.optionsTray.initialize(),this.turnControl.initialize(),this.comboControl.initialize(),this.objectivesControl.initialize(this.currentLevelAsset.objectives),this.obstaclesControl.initialize(this.objectivesControl),this.hudControl.initialize(this.currentLevelAsset.objectives,this.mainCamera,this.obstaclesControl.getLocks()),u.on(c.EventType.KEY_DOWN,this.onKeyDown,this)},l.findComponents=function(){if(!this.mainCamera){var e=p("Main Camera");e?(this.mainCamera=e.getComponent(s),this.mainCamera||console.error("Camera component not found on the node.")):console.error("Camera node not found.")}},l.togglePause=function(e){console.log("GameplayController.togglePause("+e+")"),this.onPause.invoke(e),this.isPaused=e},l.onKeyDown=function(e){e.keyCode===C.SPACE&&this.optionsTray.refreshOptionsTray()},l.startLevel=function(){console.log("GameplayController.startLevel()"),this.initialize(),this.optionsTray.generateNewOptions(this.currentLevelAsset.optionTrayRules[0]),this.dragInput.initialize()},l.nextRound=function(){},r(t,[{key:"isPaused",get:function(){return this._isPaused},set:function(e){this._isPaused=e}}]),t}(f)).prototype,"currentLevelAsset",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),H=t(U.prototype,"loadedRules",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),M=t(U.prototype,"objectivesControl",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=t(U.prototype,"obstaclesControl",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),F=t(U.prototype,"optionsTray",[j],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),J=t(U.prototype,"dragInput",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),N=t(U.prototype,"turnControl",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=t(U.prototype,"comboControl",[G],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),Q=t(U.prototype,"hudControl",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),W=t(U.prototype,"mainCamera",[K],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=U))||S));l._RF.pop()}}}));
+          // Calculate the intersection point
+          var intersectionPoint = RaycastUtils.rayPlaneIntersection(rayOrigin, rayDirection, pointOnPlane, planeNormal);
+          if (intersectionPoint) {
+            //console.log("Intersection point:", intersectionPoint);
+            return intersectionPoint;
+          } else {
+            console.log("Ray does not intersect the plane.");
+            return null;
+          }
+        };
+        return DraggableComponent;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "canDrag", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "isSelected", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "camera", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "targetNode", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/GameProgress.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./ProgressController.ts"],(function(e){var t,i,s;return{setters:[function(e){t=e.createClass},function(e){i=e.cclegacy},null,function(e){s=e.ProgressController}],execute:function(){i._RF.push({},"5811drjdkNNXZQ7Zi7H3UyK","GameProgress",void 0);e("GameProgress",function(){function e(e){this.isNewGame=!0,this.currentLevelId=0,this.reachedLevel=0,this.levels=[],this.customizations=[],this.choices=[],this.initialize(e)}var i=e.prototype;return i.initialize=function(e){this.isNewGame=!0,this.choices=[],this.levels=new Array(e).fill(null).map((function(){return new n}))},i.finishLevel=function(){this.currentLevelId++,this.currentLevelId>this.reachedLevel&&(this.reachedLevel=this.currentLevelId),s.save()},i.addChoice=function(e){var t=this.choices.find((function(t){return t.key===e.key}));t?t.selectedId=e.selectedId:this.choices.push(e),s.save()},i.getChoice=function(e){return this.choices.find((function(t){return t.key===e}))||null},t(e,[{key:"currentLevel",get:function(){return this.levels[this.currentLevelId]}},{key:"hasFinishedTheGame",get:function(){return this.reachedLevel>=this.levels.length}}]),e}());var n=e("Level",(function(){this.score=0,this.starAmount=0,this.duration=0}));e("Customization",(function(){this.name="",this.id=0})),e("Choice",(function(e,t){this.key=void 0,this.selectedId=void 0,this.key=e,this.selectedId=t}));i._RF.pop()}}}));
+System.register("chunks:///_virtual/DraggableItem.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './RaycastUtils.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Vec3, Component, RaycastUtils;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Vec3 = module.Vec3;
+      Component = module.Component;
+    }, null, function (module) {
+      RaycastUtils = module.RaycastUtils;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "0ee49OxRrRI05swSAS1RB66", "DraggableItem", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var DraggableItem = exports('DraggableItem', (_dec = ccclass('DraggableItem'), _dec2 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec4 = property({
+        type: Node,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DraggableItem, _Component);
+        function DraggableItem() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variable
+          _initializerDefineProperty(_this, "canDrag", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isSelected", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "targetNode", _descriptor3, _assertThisInitialized(_this));
+          _this.originalY = null;
+          return _this;
+        }
+        var _proto = DraggableItem.prototype;
+        //#endregion
+        _proto.start = function start() {
+          if (!this.targetNode) {
+            this.targetNode = this.node;
+          }
+        };
+        _proto.onDragStart = function onDragStart(pos) {
+          this.originalY = this.node.worldPosition.y; // Store the original y position
+          this.isSelected = true;
+        };
+        _proto.onDragMovement = function onDragMovement(ray) {
+          var worldPos = this.getTargetPosition(ray);
+          if (worldPos) this.targetNode.setWorldPosition(worldPos);
+        };
+        _proto.onDragEnded = function onDragEnded(pos) {
+          this.isSelected = false;
+        };
+        _proto.getTargetPosition = function getTargetPosition(ray) {
+          var rayOrigin = ray.o; // Ray starts at the origin
+          var rayDirection = ray.d; // Ray pointing upwards
 
-System.register("chunks:///_virtual/HexGridController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./HexSlot.ts","./LevelAsset.ts","./index2.ts","./index.ts","./DragDropComponent.ts","./TurnController.ts","./LockObstacleSlot.ts","./GameplayController.ts","./Singleton.ts","./Wait.ts"],(function(e){var t,r,o,n,i,a,s,c,l,u,p,g,d,b,f,h,y,v,x,S,P,m,w,C,k,A,D,T;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.initializerDefineProperty,o=e.inheritsLoose,n=e.assertThisInitialized,i=e.createForOfIteratorHelperLoose,a=e.createClass,s=e.asyncToGenerator,c=e.regeneratorRuntime},function(e){l=e.cclegacy,u=e._decorator,p=e.Prefab,g=e.Enum,d=e.Vec2,b=e.instantiate,f=e.Component},function(e){h=e.HexData,y=e.PieceStack,v=e.HexSlot},function(e){x=e.PieceColor,S=e.ObstacleType,P=e.LevelAsset},function(e){m=e.bh},null,function(e){w=e.DragDropMode},function(e){C=e.TurnController},function(e){k=e.LockObstacleSlot},function(e){A=e.GameplayController},function(e){D=e.Singleton},function(e){T=e.Wait}],execute:function(){var L,H,O,M,G,_,z,R,I,V,W,j,N,E,U,F,J,B,q,K,Y,Q,X,Z,$,ee,te,re,oe,ne;l._RF.push({},"5d3e9MM/rRBVKeNVD7TnebP","HexGridController",void 0);var ie=u.ccclass,ae=u.property,se=u.executeInEditMode,ce=e("PrefabColor",(L=ie("PrefabColor"),H=ae({type:p}),O=ae({type:g(x)}),L((_=t((G=function(){r(this,"prefab",_,this),r(this,"color",z,this)}).prototype,"prefab",[H],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=t(G.prototype,"color",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return x.Red}}),M=G))||M)),le=e("PrefabObstacle",(R=ie("PrefabObstacle"),I=ae({type:p}),V=ae({type:g(S)}),R((N=t((j=function(){r(this,"prefab",N,this),r(this,"obstacleType",E,this)}).prototype,"prefab",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=t(j.prototype,"obstacleType",[V],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return S.Ad}}),W=j))||W));e("HexGridController",(U=ie("HexGridController"),F=ae({type:p,group:"References"}),J=ae({type:P}),B=ae({type:[ce],group:"References"}),q=ae({type:[le],group:"References"}),K=ae({group:"Debug"}),Y=ae({group:"Debug"}),Q=ae({group:"Debug"}),U(X=se(($=t((Z=function(e){function t(){for(var t,o=arguments.length,i=new Array(o),a=0;a<o;a++)i[a]=arguments[a];return t=e.call.apply(e,[this].concat(i))||this,r(t,"gridWidth",$,n(t)),r(t,"gridHeight",ee,n(t)),r(t,"hexagonPrefab",te,n(t)),t.grid=[],r(t,"currentLevelAsset",re,n(t)),r(t,"piecePrefabColors",oe,n(t)),r(t,"obstaclePrefabs",ne,n(t)),t}o(t,e);var l=t.prototype;return l.onLoad=function(){D.set(this),this.generateGrid()},l.setLevelAsset=function(e){this.currentLevelAsset=e},l.saveGridData=function(){for(var e=[],t=0;t<this.gridHeight;t++)for(var r=0;r<this.gridWidth;r++){var o=this.grid[t][r];e.push(o.data)}this.currentLevelAsset.gridSavedAsJson=JSON.stringify(e),this.currentLevelAsset.saveAsset()},l.loadGridData=function(){for(var e=JSON.parse(this.currentLevelAsset.gridSavedAsJson),t=0;t<this.gridHeight;t++)for(var r=0;r<this.gridWidth;r++){var o=this.grid[t][r],n=new h,i=[],a=e.shift();if(Object.assign(n,a),Object.assign(i,n.piecesStack),n.piecesStack=i,n.isActiveSlot)for(var s=0;s<i.length;s++){var c=new y;Object.assign(c,i[s]),n.piecesStack[s]=c}o.data=n,o.loadUpdatePiecesVisual();var l="",u=o.getData().piecesStack;u.length>0&&(l=u[0].isColor?"["+o.getTopStack().amount.toString()+" - "+x[o.getTopStack().pieceColor]+"]":"["+o.getTopStack().amount.toString()+" - "+S[o.getTopStack().obstacleType]+"]"),o.node.name="("+o.data.x+", "+o.data.y+") HexSlot "+l,o.getData().isActiveSlot||(o.node.name="("+o.data.x+", "+o.data.y+") EMPTY"),o.data.isActiveSlot&&0==o.data.piecesStack.length&&o.setCurrentInteractionMode(w.Drop),o.data.isActiveSlot&&1==o.data.piecesStack.length&&(o.data.piecesStack[0].obstacleType===S.Ad&&o.setCurrentInteractionMode(w.Clickable),o.getTopStack().isColor||o.getTopStack().obstacleType!==S.Lock||o.addComponent(k))}},l.placeStacksOnSlot=function(e,t){var r=e.data.piecesStack;t.setPiecesStack(r),e.data.piecesStack=[],e.setCurrentInteractionMode(w.Disabled),t.setCurrentInteractionMode(w.Disabled),e.loadUpdatePiecesVisual(),t.loadUpdatePiecesVisual(),D.get(C).startPlayerMovement(t)},l.watchAdPlaceholder=function(){var e=s(c().mark((function e(t){return c().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return D.get(A).togglePause(!0),e.next=3,T.seconds(2);case 3:D.get(A).togglePause(!1),t&&t();case 5:case"end":return e.stop()}}),e)})));return function(t){return e.apply(this,arguments)}}(),l.moveTopPiecesToSlot=function(e,t,r){var o=this;console.log("HexGridController.moveTopPiecesToSlot() "+e.node.name+" -> "+t.node.name);var n=e.getTopStack(),i=t.visualControl.getTopPiece().node;e.visualControl.movePieces(n.amount,i,(function(){return o.onMovePieceAnimationEnded(e,t,r)}))},l.onMovePieceAnimationEnded=function(e,t,r){var o=e.getTopStack();e.removeTopStack(),t.addTopStack(o),e.loadUpdatePiecesVisual(),t.loadUpdatePiecesVisual(),e.isEmpty()&&e.setCurrentInteractionMode(w.Drop),t.setCurrentInteractionMode(w.Disabled),r&&r()},l.generateGrid=function(){this.grid=[];for(var e=0;e<this.gridHeight;e++){for(var t=[],r=0;r<this.gridWidth;r++){var o=this.spawnHexagonVisualPrefab(r,e);o.node.name="("+o.data.x+", "+o.data.y+") HexSlot",t.push(o)}this.grid.push(t)}this.assignNeighbors()},l.assignNeighbors=function(){for(var e=new d(-1,-1),t=new d(0,-1),r=new d(1,-1),o=new d(-1,0),n=new d(0,1),a=new d(1,0),s=[e,t,r,o,n,a],c=new d(-1,0),l=new d(0,-1),u=new d(1,0),p=new d(-1,1),g=new d(0,1),b=new d(1,1),f=[c,l,u,p,g,b],h=0;h<this.gridHeight;h++)for(var y=0;y<this.gridWidth;y++){for(var x,S=this.grid[h][y],P=[],m=y%2==0,w=i(m?s:f);!(x=w()).done;){var C=x.value,k=y+C.x,A=h+C.y;if(A>=0&&A<this.gridHeight&&k>=0&&k<this.gridWidth){var D=this.grid[A][k].node.getComponent(v);P.push(D);var T=C;m?(T.x===e.x&&T.y===e.y&&(S.neighbor.topLeft=D),T.x===t.x&&T.y===t.y&&(S.neighbor.top=D),T.x===r.x&&T.y===r.y&&(S.neighbor.topRight=D),T.x===o.x&&T.y===o.y&&(S.neighbor.botLeft=D),T.x===n.x&&T.y===n.y&&(S.neighbor.bot=D),T.x===a.x&&T.y===a.y&&(S.neighbor.botRight=D)):(T.x===c.x&&T.y===c.y&&(S.neighbor.topLeft=D),T.x===l.x&&T.y===l.y&&(S.neighbor.top=D),T.x===u.x&&T.y===u.y&&(S.neighbor.topRight=D),T.x===p.x&&T.y===p.y&&(S.neighbor.botLeft=D),T.x===g.x&&T.y===g.y&&(S.neighbor.bot=D),T.x===b.x&&T.y===b.y&&(S.neighbor.botRight=D))}}S.neighbor.assignAllNeighborsList(P)}},l.getPrefabFromColor=function(e){for(var t,r=i(this.piecePrefabColors);!(t=r()).done;){var o=t.value;if(o.color===e)return o.prefab}return null},l.getPrefabFromObstacle=function(e){for(var t,r=i(this.obstaclePrefabs);!(t=r()).done;){var o=t.value;if(o.obstacleType===e)return o.prefab}return null},l.spawnHexagonVisualPrefab=function(e,t){if(this.hexagonPrefab){var r=b(this.hexagonPrefab),o=r.getComponent(v);o.initilize(e,t),this.node.addChild(r);var n=.5*Math.sqrt(3)*1,i=1*e*.75,a=t*n;return e%2==1?r.setPosition(i,0,a+n/2):r.setPosition(i,0,a),o}console.warn("Hexagon prefab not assigned")},l.createNewLevelAsset=function(){var e=s(c().mark((function e(){var t,r;return c().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return t=m.ScriptableAsset.createInstance(P),r="C:/Projects/gem-sort/assets/scenes/",console.log("Creating asset at path: "+r),e.prev=3,e.next=6,m.ScriptableAsset.createAsset(t,r);case 6:console.log("Asset created with UUID: "+t.uuid),m.ScriptableAsset.saveAsset(t),console.log("Asset saved successfully"),e.next=14;break;case 11:e.prev=11,e.t0=e.catch(3),console.error("Error creating asset:",e.t0);case 14:case"end":return e.stop()}}),e,null,[[3,11]])})));return function(){return e.apply(this,arguments)}}(),a(t,[{key:"debug_Save",get:function(){return!1},set:function(e){this.saveGridData()}},{key:"debug_Load",get:function(){return!1},set:function(e){this.loadGridData()}},{key:"debug_DeselectAll",get:function(){return!1},set:function(e){for(var t=0;t<this.gridHeight;t++)for(var r=0;r<this.gridWidth;r++){this.grid[t][r].debug_MarkSlotNotSelect=!0}}}]),t}(f)).prototype,"gridWidth",[ae],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 7}}),ee=t(Z.prototype,"gridHeight",[ae],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 7}}),te=t(Z.prototype,"hexagonPrefab",[F],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),re=t(Z.prototype,"currentLevelAsset",[J],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),oe=t(Z.prototype,"piecePrefabColors",[B],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),ne=t(Z.prototype,"obstaclePrefabs",[q],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),t(Z.prototype,"debug_Save",[K],Object.getOwnPropertyDescriptor(Z.prototype,"debug_Save"),Z.prototype),t(Z.prototype,"debug_Load",[Y],Object.getOwnPropertyDescriptor(Z.prototype,"debug_Load"),Z.prototype),t(Z.prototype,"debug_DeselectAll",[Q],Object.getOwnPropertyDescriptor(Z.prototype,"debug_DeselectAll"),Z.prototype),X=Z))||X)||X));l._RF.pop()}}}));
+          var planeNormal = new Vec3(0, 1, 0); // Plane facing upwards
+          var pointOnPlane = new Vec3(0, this.originalY, 0); // Any point on the plane
 
-System.register("chunks:///_virtual/HexPiece.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var i,r,t,n,c,o,a,l;return{setters:[function(e){i=e.applyDecoratedDescriptor,r=e.inheritsLoose,t=e.initializerDefineProperty,n=e.assertThisInitialized},function(e){c=e.cclegacy,o=e._decorator,a=e.Node,l=e.Component}],execute:function(){var s,u,p,f,v;c._RF.push({},"26254OpfP5Dq6wpduXazEP3","HexPiece",void 0);var y=o.ccclass,P=o.property;e("HexPiece",(s=y("HexPiece"),u=P(a),s((v=i((f=function(e){function i(){for(var i,r=arguments.length,c=new Array(r),o=0;o<r;o++)c[o]=arguments[o];return i=e.call.apply(e,[this].concat(c))||this,t(i,"visual",v,n(i)),i}return r(i,e),i}(l)).prototype,"visual",[u],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),p=f))||p));c._RF.pop()}}}));
+          // Calculate the intersection point
+          var intersectionPoint = RaycastUtils.rayPlaneIntersection(rayOrigin, rayDirection, pointOnPlane, planeNormal);
+          if (intersectionPoint) {
+            //console.log("Intersection point:", intersectionPoint);
+            return intersectionPoint;
+          } else {
+            console.log("Ray does not intersect the plane.");
+            return null;
+          }
+        };
+        return DraggableItem;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "canDrag", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "isSelected", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "targetNode", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/HexSlot.ts",["./rollupPluginModLoBabelHelpers.js","cc","./NeighborController.ts","./LevelAsset.ts","./HexGridController.ts","./index.ts","./DragDropComponent.ts","./HexVisual.ts","./HexPiece.ts","./Singleton.ts"],(function(t){var e,i,o,n,r,a,s,c,l,u,p,d,h,g,b,f,S,y,m,k,C,v,P,w;return{setters:[function(t){e=t.applyDecoratedDescriptor,i=t.initializerDefineProperty,o=t.inheritsLoose,n=t.assertThisInitialized,r=t.createClass},function(t){a=t.cclegacy,s=t._decorator,c=t.Enum,l=t.Node,u=t.instantiate,p=t.MeshRenderer,d=t.Color,h=t.randomRange,g=t.randomRangeInt,b=t.Component},function(t){f=t.NeighborController},function(t){S=t.PieceColor,y=t.ObstacleType},function(t){m=t.HexGridController},null,function(t){k=t.DragDropComponent,C=t.DragDropMode},function(t){v=t.HexVisual},function(t){P=t.HexPiece},function(t){w=t.Singleton}],execute:function(){var D,A,M,z,N,_,x,T,V,O,H,U,E,L,R,I,j,F,G,W,B,Y,Z,q,J,K,Q,X,$,tt,et,it,ot,nt,rt,at,st,ct,lt,ut,pt,dt,ht,gt,bt,ft,St,yt,mt,kt,Ct;a._RF.push({},"e4a5456GZREe4z7onEgwwEB","HexSlot",void 0);var vt=s.ccclass,Pt=s.property,wt=s.executeInEditMode,Dt=t("PieceStack",(D=vt("PieceStack"),A=Pt(),M=Pt({type:c(S),visible:function(){return this.isColor}}),z=Pt({type:c(y),visible:function(){return!this.isColor}}),N=Pt(),D(_=wt((T=e((x=function(){i(this,"isColor",T,this),i(this,"pieceColor",V,this),i(this,"obstacleType",O,this),i(this,"amount",H,this)}).prototype,"isColor",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),V=e(x.prototype,"pieceColor",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return S.Red}}),O=e(x.prototype,"obstacleType",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return y.Ad}}),H=e(x.prototype,"amount",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),_=x))||_)||_)),At=t("HexData",(U=vt("HexData"),E=Pt(),L=Pt(),R=Pt(),I=Pt({type:[Dt]}),U((G=e((F=function(){i(this,"x",G,this),i(this,"y",W,this),i(this,"isActiveSlot",B,this),i(this,"piecesStack",Y,this)}).prototype,"x",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),W=e(F.prototype,"y",[L],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),B=e(F.prototype,"isActiveSlot",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),Y=e(F.prototype,"piecesStack",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),j=F))||j)),Mt=t("HexSlot",(Z=vt("HexSlot"),q=Pt({type:At}),J=Pt({type:f,group:"Components"}),K=Pt({type:v,group:"Components"}),Q=Pt({type:l,group:"Components"}),X=Pt({type:l,group:"Components"}),$=Pt({type:l,group:"Components"}),tt=Pt({type:k,group:"Components"}),et=Pt({group:"Debug"}),it=Pt({group:"Debug"}),ot=Pt({group:"Debug"}),nt=Pt({group:"Debug"}),rt=Pt({group:"Debug"}),at=Pt({group:"Debug"}),st=Pt({group:"Debug"}),ct=Pt({type:[Mt]}),Z((pt=e((ut=function(t){function e(){for(var e,o=arguments.length,r=new Array(o),a=0;a<o;a++)r[a]=arguments[a];return e=t.call.apply(t,[this].concat(r))||this,i(e,"data",pt,n(e)),i(e,"neighbor",dt,n(e)),i(e,"visualControl",ht,n(e)),i(e,"visual",gt,n(e)),i(e,"inactiveEditorVisual",bt,n(e)),i(e,"childPiecesStackNode",ft,n(e)),i(e,"dragComponent",St,n(e)),i(e,"canMovePieceStack",yt,n(e)),i(e,"isAnimationLocked",mt,n(e)),i(e,"possibleMatches",kt,n(e)),i(e,"hasPossibleMatches",Ct,n(e)),e}o(e,t);var a=e.prototype;return a.initilize=function(t,e){this.data.x=t,this.data.y=e},a.onLoad=function(){this.setSlotActive(!1)},a.loadUpdatePiecesVisual=function(){this.childPiecesStackNode.destroyAllChildren(),this.visualControl.clearVisual();for(var t=!1,e=0,i=0;i<this.data.piecesStack.length;i++){var o=this.data.piecesStack[i];if(null!==o)if(o.isColor)for(var n=0;n<o.amount;n++){var r=w.get(m).getPrefabFromColor(o.pieceColor),a=u(r);e++,this.visualControl.addPiece(a.getComponent(P)),a.setParent(this.childPiecesStackNode),a.setWorldPosition(this.node.worldPosition.x,this.node.worldPosition.y+.1*e,this.node.worldPosition.z),t=!0}else{var s=w.get(m).getPrefabFromObstacle(o.obstacleType),c=u(s);e++,c.setParent(this.childPiecesStackNode),c.setWorldPosition(this.node.worldPosition.x,this.node.worldPosition.y+.1*e,this.node.worldPosition.z),t=!0}}this.updateActiveSlotVisual(this.data.isActiveSlot),t&&(this.setSlotActive(!0),this.updateNodeName())},a.setSlotActive=function(t){this.data.isActiveSlot=t,this.updateActiveSlotVisual(t)},a.updateActiveSlotVisual=function(t){this.visual.active=t},a.setPiecesStack=function(t){this.data.piecesStack=[],this.data.piecesStack=t,this.loadUpdatePiecesVisual()},a.getData=function(){return this.data},a.setData=function(t){this.data=t},a.explodeTower=function(t){var e=this;this.isAnimationLocked=!0,this.setCurrentInteractionMode(C.Disabled),this.visualControl.explodeTower(this.getTopStack().amount,(function(){return e.onExplodeAnimationFinished(t)})),this.updateNodeName()},a.onExplodeAnimationFinished=function(t){this.removeTopStack(),this.isAnimationLocked=!1,0==this.data.piecesStack.length&&this.setCurrentInteractionMode(C.Drop),this.updateNodeName(),t&&t()},a.getTopStack=function(){return this.data.piecesStack[this.data.piecesStack.length-1]},a.removeTopStack=function(){this.data.piecesStack.splice(this.data.piecesStack.length-1),this.updateNodeName()},a.removeLock=function(){this.removeTopStack(),this.loadUpdatePiecesVisual(),0==this.data.piecesStack.length&&this.setCurrentInteractionMode(C.Drop)},a.addTopStack=function(t){this.getTopStack().pieceColor===t.pieceColor?this.getTopStack().amount+=t.amount:this.data.piecesStack.push(t),this.updateNodeName()},a.isSingleColor=function(){return 1==this.data.piecesStack.length},a.isMultiColor=function(){return this.data.piecesStack.length>1},a.getColorAmount=function(){return this.data.piecesStack.length},a.isEmpty=function(){return 0==this.getColorAmount()},a.updatePossibleNeighborMatches=function(){if(this.hasPossibleMatches=!1,this.possibleMatches=[],!this.isAnimationLocked&&null!=this.getTopStack()&&this.getTopStack().isColor)for(var t=this.getTopStack().pieceColor,e=this.neighbor.getAllContainingStacks(),i=0;i<e.length;i++){var o=e[i],n=o.getTopStack(),r=o.isAnimationLocked;n.isColor&&n.pieceColor===t&&!r&&(this.possibleMatches.push(o),this.hasPossibleMatches=!0)}},a.clickSlot=function(){var t=this;console.log("clickSlot() Clicked on slot: "+this.node.name),w.get(m).watchAdPlaceholder((function(){return t.removeAd()}))},a.removeAd=function(){this.data.piecesStack=[],this.loadUpdatePiecesVisual(),this.setCurrentInteractionMode(C.Drop)},a.updateData=function(t,e){this.data.isActiveSlot=t,this.data.piecesStack=[],this.data.piecesStack=e},a.setCurrentInteractionMode=function(t){this.dragComponent.setCurrenMode(t)},a.debugToggleSelection=function(t){var e=this.visual.getComponent(p);if(e){var i=e.material.passes[0],o=i.getHandle("albedo");t?i.setUniform(o,d.CYAN):i.setUniform(o,d.WHITE)}},a.updateNodeName=function(){},r(e,[{key:"debug_RandomizePieces",get:function(){return!1},set:function(t){for(var e=h(2,3),i=0;i<e;i++){var o=new Dt;o.pieceColor=g(1,6),o.amount=g(2,5),this.data.piecesStack.push(o)}this.loadUpdatePiecesVisual()}},{key:"debug_ClearStack",get:function(){return!1},set:function(t){this.data.piecesStack=[],this.loadUpdatePiecesVisual()}},{key:"debug_MarkSlotActive",get:function(){return!1},set:function(t){this.setSlotActive(!0)}},{key:"debug_loadUpdatePiecesVisual",get:function(){return!1},set:function(t){this.loadUpdatePiecesVisual()}},{key:"debug_MarkSlotSelected",get:function(){return!1},set:function(t){}},{key:"debug_MarkSlotNotSelect",get:function(){return!1},set:function(t){}},{key:"debug_ShowData",get:function(){return!1},set:function(t){console.log(this.data)}}]),e}(b)).prototype,"data",[q],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new At}}),dt=e(ut.prototype,"neighbor",[J],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),ht=e(ut.prototype,"visualControl",[K],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),gt=e(ut.prototype,"visual",[Q],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),bt=e(ut.prototype,"inactiveEditorVisual",[X],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),ft=e(ut.prototype,"childPiecesStackNode",[$],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),St=e(ut.prototype,"dragComponent",[tt],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),yt=e(ut.prototype,"canMovePieceStack",[Pt],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),mt=e(ut.prototype,"isAnimationLocked",[Pt],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),e(ut.prototype,"debug_RandomizePieces",[et],Object.getOwnPropertyDescriptor(ut.prototype,"debug_RandomizePieces"),ut.prototype),e(ut.prototype,"debug_ClearStack",[it],Object.getOwnPropertyDescriptor(ut.prototype,"debug_ClearStack"),ut.prototype),e(ut.prototype,"debug_MarkSlotActive",[ot],Object.getOwnPropertyDescriptor(ut.prototype,"debug_MarkSlotActive"),ut.prototype),e(ut.prototype,"debug_loadUpdatePiecesVisual",[nt],Object.getOwnPropertyDescriptor(ut.prototype,"debug_loadUpdatePiecesVisual"),ut.prototype),e(ut.prototype,"debug_MarkSlotSelected",[rt],Object.getOwnPropertyDescriptor(ut.prototype,"debug_MarkSlotSelected"),ut.prototype),e(ut.prototype,"debug_MarkSlotNotSelect",[at],Object.getOwnPropertyDescriptor(ut.prototype,"debug_MarkSlotNotSelect"),ut.prototype),e(ut.prototype,"debug_ShowData",[st],Object.getOwnPropertyDescriptor(ut.prototype,"debug_ShowData"),ut.prototype),kt=e(ut.prototype,"possibleMatches",[ct],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),Ct=e(ut.prototype,"hasPossibleMatches",[Pt],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),lt=ut))||lt));a._RF.pop()}}}));
+System.register("chunks:///_virtual/DraggableSlot.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _inheritsLoose, cclegacy, _decorator, Component;
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "cbdb5xAtfFPWbpTvjNjALkt", "DraggableSlot", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var DraggableSlot = exports('DraggableSlot', (_dec = ccclass('DraggableSlot'), _dec(_class = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DraggableSlot, _Component);
+        function DraggableSlot() {
+          return _Component.apply(this, arguments) || this;
+        }
+        var _proto = DraggableSlot.prototype;
+        _proto.start = function start() {};
+        _proto.update = function update(deltaTime) {};
+        return DraggableSlot;
+      }(Component)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/HexVisual.ts",["./rollupPluginModLoBabelHelpers.js","cc","./HexPiece.ts"],(function(e){var t,n,i,r,o,a,s,c,u,l,p,f,h,d,v;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized,o=e.asyncToGenerator,a=e.regeneratorRuntime,s=e.createForOfIteratorHelperLoose},function(e){c=e.cclegacy,u=e._decorator,l=e.tween,p=e.Vec3,f=e.math,h=e.Component,d=e.director},function(e){v=e.HexPiece}],execute:function(){var x,P,g,m,w,y,b,T,D;c._RF.push({},"afea9ggvM1J9YNwZRyzNVxP","HexVisual",void 0);var H=u.ccclass,k=u.property;e("HexVisual",(x=H("HexVisual"),P=k(),g=k(),m=k({type:[v]}),x((b=t((y=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),a=0;a<n;a++)o[a]=arguments[a];return t=e.call.apply(e,[this].concat(o))||this,i(t,"animationDuration",b,r(t)),i(t,"explodePieceDuration",T,r(t)),i(t,"pieces",D,r(t)),t}n(t,e);var c=t.prototype;return c.clearVisual=function(){this.pieces=[]},c.addPiece=function(e){this.pieces.push(e)},c.getTopPiece=function(){return this.pieces[this.pieces.length-1]},c.explodeTower=function(e,t){for(var n=[],i=this.pieces.length-1,r=0;r<e;r++){var o=this.pieces[i-r].node;n.push(o)}this.explodeTowerAnimation(n,this.explodePieceDuration,t)},c.explodeTowerAnimation=function(){var e=o(a().mark((function e(t,n,i){var r,o,c,u,l,p,f,h;return a().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:r=s(t);case 1:if((o=r()).done){e.next=7;break}return c=o.value,e.next=5,this.explodePiece(c,n);case 5:e.next=1;break;case 7:for(u=s(t);!(l=u()).done;)l.value.destroy();for(p=this.pieces.length-1,f=0;f<t.length;f++)h=this.pieces[p-f],this.pieces.remove(h);i&&i();case 11:case"end":return e.stop()}}),e,this)})));return function(t,n,i){return e.apply(this,arguments)}}(),c.explodePiece=function(e,t){return new Promise((function(n){l(e).parallel(l().to(t,{scale:new p(0,0,0)},{easing:"quadIn"})).call((function(){n()})).start()}))},c.movePieces=function(e,t,n){for(var i=[],r=this.pieces.length-1,o=0;o<e;o++){var a=this.pieces[r-o].node;i.push(a)}this.moveObjectsToPosition(i,t.worldPosition,this.animationDuration,n)},c.moveObjectsToPosition=function(){var e=o(a().mark((function e(t,n,i,r){var o,c,u,l,f,h;return a().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:o=s(t);case 1:if((c=o()).done){e.next=11;break}return(u=c.value).scale=new p(1,1,1),l=u.worldPosition.clone(),u.setParent(d.getScene()),n.y+=.1,e.next=9,this.moveObjectToPosition(u,l,n,i);case 9:e.next=1;break;case 11:for(f=s(t);!(h=f()).done;)h.value.destroy();r&&r();case 13:case"end":return e.stop()}}),e,this)})));return function(t,n,i,r){return e.apply(this,arguments)}}(),c.moveObjectToPosition=function(e,t,n,i){var r=n.clone();r.x=f.lerp(t.x,n.x,.75),r.y+=.3;var o=e.eulerAngles.clone();return o.z-=180,new Promise((function(a){e.setWorldPosition(t),l(e).parallel(l().to(.75*i,{worldPosition:r},{easing:"quadOut"}).to(.25*i,{worldPosition:n},{easing:"quadIn"}),l().to(i,{eulerAngles:o},{easing:"linear"})).call((function(){a()})).start()}))},t}(h)).prototype,"animationDuration",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return.2}}),T=t(y.prototype,"explodePieceDuration",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return.2}}),D=t(y.prototype,"pieces",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),w=y))||w));c._RF.pop()}}}));
+System.register("chunks:///_virtual/DragInputManager.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './DragDropComponent.ts', './HexGridController.ts', './GameplayController.ts', './Singleton.ts', './RaycastUtils.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Camera, Layers, Vec2, find, sys, input, Input, EventMouse, geometry, Component, DragDropComponent, DragDropMode, HexGridController, GameplayController, Singleton, RaycastUtils;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Camera = module.Camera;
+      Layers = module.Layers;
+      Vec2 = module.Vec2;
+      find = module.find;
+      sys = module.sys;
+      input = module.input;
+      Input = module.Input;
+      EventMouse = module.EventMouse;
+      geometry = module.geometry;
+      Component = module.Component;
+    }, null, function (module) {
+      DragDropComponent = module.DragDropComponent;
+      DragDropMode = module.DragDropMode;
+    }, function (module) {
+      HexGridController = module.HexGridController;
+    }, function (module) {
+      GameplayController = module.GameplayController;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      RaycastUtils = module.RaycastUtils;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "37ce76wEnRP8bVrYaKYY9OT", "DragInputManager", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var DragInputManager = exports('DragInputManager', (_dec = ccclass('DragInputManager'), _dec2 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec4 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec5 = property({
+        type: DragDropComponent,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec6 = property({
+        type: Camera,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec7 = property({
+        type: Layers.Enum,
+        group: {
+          name: "Layers"
+        },
+        tooltip: "Layer for draggable object"
+      }), _dec8 = property({
+        type: Layers.Enum,
+        group: {
+          name: "Layers"
+        },
+        tooltip: "Layer for draggable slot"
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DragInputManager, _Component);
+        function DragInputManager() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "isPaused", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isMobile", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isDragging", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentItem", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "camera", _descriptor5, _assertThisInitialized(_this));
+          _this.currentMousePos = new Vec2();
+          _initializerDefineProperty(_this, "draggableLayer", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "dragSlotLayer", _descriptor7, _assertThisInitialized(_this));
+          _this.onPausedLambda = void 0;
+          return _this;
+        }
+        var _proto = DragInputManager.prototype;
+        //#endregion
+        //#region Start
+        _proto.start = function start() {
+          var _this2 = this;
+          if (!this.camera) {
+            var cameraNode = find('Main Camera'); // Replace 'Main Camera' with the name of your camera node
+            if (cameraNode) {
+              this.camera = cameraNode.getComponent(Camera);
+              if (!this.camera) {
+                console.error("Camera component not found on the node.");
+              }
+            } else {
+              console.error("Camera node not found.");
+            }
+          }
+          this.checkPlatform();
+          this.onPausedLambda = function (_boolean) {
+            _this2.handleOnPaused(_boolean);
+          };
+          Singleton.get(GameplayController).onPause.addListener(this.onPausedLambda);
+        };
+        _proto.checkPlatform = function checkPlatform() {
+          if (sys.isMobile) {
+            console.log("Running on a mobile device.");
+            this.isMobile = true;
+          } else {
+            console.log("Running on a desktop.");
+            this.isMobile = false;
+          }
+        }
+        //#endregion
+        ;
 
-System.register("chunks:///_virtual/index.ts",["cc","./Singleton.ts","./Game.ts","./AudioController.ts","./TweenSequence.ts","./EventOnNodeState.ts","./ProgressController.ts","./GameProgress.ts","./SimplePool.ts","./ObjectPool.ts","./LocalizedLabel.ts","./LocalizedRichText.ts","./LocalizationExtensions.ts","./InputKey.ts","./EventOnProgress.ts","./EventOnDelay.ts","./SfxPlayer.ts","./Wait.ts","./RaycastUtils.ts","./JsonUtils.ts","./CameraUtils.ts","./Action.ts","./Polymorphism.ts"],(function(t){var n;return{setters:[function(t){n=t.cclegacy},function(n){t("Singleton",n.Singleton)},function(n){t("Game",n.Game)},function(n){t("AudioController",n.AudioController)},function(n){t("TweenSequence",n.TweenSequence)},function(n){t("EventOnNodeState",n.EventOnNodeState)},function(n){t("ProgressController",n.ProgressController)},function(n){t("GameProgress",n.GameProgress)},function(n){t("SimplePool",n.SimplePool)},function(n){t("ObjectPool",n.ObjectPool)},function(n){t("LocalizedLabel",n.LocalizedLabel)},function(n){t("LocalizedRichText",n.LocalizedRichText)},function(n){t("LocalizationExtensions",n.LocalizationExtensions)},function(n){t("InputKey",n.InputKey)},function(n){t("EventOnProgress",n.EventOnProgress)},function(n){t("EventOnDelay",n.EventOnDelay)},function(n){t("SfxPlayer",n.SfxPlayer)},function(n){t("Wait",n.Wait)},function(n){t("RaycastUtils",n.RaycastUtils)},function(n){t("JsonUtils",n.JsonUtils)},function(n){t("CameraUtils",n.CameraUtils)},function(n){t("Action",n.Action)},function(n){t("polymorphism",n.polymorphism)}],execute:function(){n._RF.push({},"69769WrZ+dEvbUGbcjk0n2t","index",void 0),n._RF.pop()}}}));
+        _proto.initialize = function initialize() {
+          if (this.isMobile) {
+            input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+            input.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
+            input.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
+          } else {
+            input.on(Input.EventType.MOUSE_DOWN, this.mouseClick, this);
+            input.on(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
+          }
 
-System.register("chunks:///_virtual/index2.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,s,r,n,i,a,c,o,p,u,l,f;return{setters:[function(e){t=e.applyDecoratedDescriptor,s=e.inheritsLoose,r=e.initializerDefineProperty,n=e.assertThisInitialized,i=e.createClass,a=e.asyncToGenerator,c=e.regeneratorRuntime},function(e){o=e.cclegacy,p=e._decorator,u=e.Script,l=e.js,f=e.Asset}],execute:function(){e("bh",void 0),o._RF.push({},"92ec6nW85hK3pRCxzJ+nj+u","index",void 0);var b,d=p.serializable,_=p.property,y=p.ccclass;!function(e,o,p,v,A,h){e.scriptable=function(e){var t=y(e);return function(e){var s=t(e);if(l.isChildClassOf(s,b.ScriptableAsset)){var r=cc._RF.peek();r.uuid&&l._setClassId(r.uuid,s)}return s}},e.scriptableAsset=function(e,t,s,r){return r=Object.assign(r||{},{type:b.ScriptableAsset}),e&&t?void _(r)(e,t,s):void 0===e?_(r):"boolean"==typeof e&&e?(r=Object.assign(r||{},{type:[b.ScriptableAsset]}),_(r)):_(r)},e.createAssetMenu=function(e,t,s,r){return function(e){}};var g=(o=y("ScriptableAsset"),p=_({displayName:"Script",type:u,tooltip:"scriptable_asset_script",animatable:!1}),o((t((A=function(e){function t(){for(var t,s=arguments.length,i=new Array(s),a=0;a<s;a++)i[a]=arguments[a];return t=e.call.apply(e,[this].concat(i))||this,r(t,"__scriptUuid",h,n(t)),t}return s(t,e),t.createInstance=function(e){return e?new e:new this},t.saveAsset=function(e){console.warn("env is not in Editor,please use api in Editor")},t.createAsset=function(){var e=a(c().mark((function e(t,s){var r,n,i,a;return c().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:e.next=14;break;case 4:return r=require("../../../package.json"),n=r.name||"scriptable-asset",i=r.__scriptable_asset_ext||".asset",a="db://assets/"+s+i,e.next=10,Editor.Message.request("scene","execute-scene-script",{name:n,method:"createScriptableAsset",args:[a,l.getClassName(t)]});case 10:return e.sent,e.abrupt("return");case 14:console.warn("env is not in Editor,please use api in Editor");case 15:case"end":return e.stop()}}),e)})));return function(t,s){return e.apply(this,arguments)}}(),t.prototype.saveAsset=function(){t.saveAsset(this)},i(t,[{key:"__scriptAsset",get:function(){return null}}]),t}(f)).prototype,"__scriptAsset",[p],Object.getOwnPropertyDescriptor(A.prototype,"__scriptAsset"),A.prototype),h=t(A.prototype,"__scriptUuid",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),v=A))||v);e.ScriptableAsset=g}(b||(b=e("bh",{}))),o._RF.pop()}}}));
+          //Pause events
+        }
 
-System.register("chunks:///_virtual/InputKey.ts",["cc"],(function(n){var t,e;return{setters:[function(n){t=n.cclegacy,e=n.Input}],execute:function(){var u;t._RF.push({},"42306Phc9hKXJUydQByTR3d","InputKey",void 0);var c=n("InputKey",(function(){}));u=c,c.inputInstance=new e,c.Up={on:function(n,t){u.inputInstance.on(e.EventType.KEY_UP,(function(e){e.keyCode===n&&t()}),u)}},c.Down={on:function(n,t){u.inputInstance.on(e.EventType.KEY_DOWN,(function(e){e.keyCode===n&&t()}),u)}},c.Pressing={on:function(n,t){u.inputInstance.on(e.EventType.KEY_PRESSING,(function(e){e.keyCode===n&&t()}),u)}},t._RF.pop()}}}));
+        //#region Touch Events
+        ;
 
-System.register("chunks:///_virtual/JsonUtils.ts",["cc"],(function(t){var s,c;return{setters:[function(t){s=t.cclegacy,c=t._decorator}],execute:function(){var n;s._RF.push({},"2fd5dThZoxBzJIrg3jddLHN","JsonUtils",void 0);var o=c.ccclass;c.property,t("JsonUtils",o("JsonUtils")(n=function(){})||n);s._RF.pop()}}}));
+        _proto.onTouchStart = function onTouchStart(event) {
+          var touchPos = event.getLocation();
+          console.log("Touch started at:", touchPos);
+          this.currentMousePos = touchPos;
+          this.dragStart(this.currentMousePos);
+        };
+        _proto.onTouchMove = function onTouchMove(event) {
+          var touchPos = event.getLocation();
+          this.currentMousePos = touchPos;
+          this.dragMovement(this.currentMousePos);
+          //this.node.position = this.node.parent.convertToNodeSpaceAR(touchPos);
+        };
 
-System.register("chunks:///_virtual/LayerCheckerTest.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var r,t,n,o,a,i,u,c,l,s;return{setters:[function(e){r=e.applyDecoratedDescriptor,t=e.inheritsLoose,n=e.initializerDefineProperty,o=e.assertThisInitialized,a=e.createClass},function(e){i=e.cclegacy,u=e._decorator,c=e.Node,l=e.Layers,s=e.Component}],execute:function(){var p,y,m,f,h,b,g,d,L,C,N;i._RF.push({},"1f4027+dCFAla6NQlMuUfB2","LayerCheckerTest",void 0);var k=u.ccclass,v=u.property;e("LayerCheckerTest",(p=k("LayerCheckerTest"),y=v({type:c,group:{name:"Components"}}),m=v({type:Number,group:{name:"Components"}}),f=v({type:Number,group:{name:"Components"}}),h=v({type:String,group:{name:"Components"}}),p((d=r((g=function(e){function r(){for(var r,t=arguments.length,a=new Array(t),i=0;i<t;i++)a[i]=arguments[i];return r=e.call.apply(e,[this].concat(a))||this,n(r,"currentNode",d,o(r)),n(r,"layerCode",L,o(r)),n(r,"layerNumber",C,o(r)),n(r,"layerName",N,o(r)),r}t(r,e);var i=r.prototype;return i.start=function(){this.checkLayer()},i.checkLayer=function(){var e=this.node.layer,r=this.getLayerIndices(e),t=l.layerToName(r[0]);console.log(this.node.name+" Layer number is: "+e+" |"+r+"| Layer name: "+t),this.layerCode=e,this.layerName=""+t,this.node.name=this.node.name+" ["+t+" - "+e+"]"},i.getLayerName=function(e){for(var r in l.Enum)if(l.Enum[r]===e)return r;return"Unknown"},i.getLayerIndices=function(e){for(var r=[],t=0;t<32;t++)e&1<<t&&r.push(t);return r},a(r,[{key:"pressBooleanButton",get:function(){return!1},set:function(e){this.checkLayer()}}]),r}(s)).prototype,"currentNode",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),L=r(g.prototype,"layerCode",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),C=r(g.prototype,"layerNumber",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),N=r(g.prototype,"layerName",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return"Null"}}),r(g.prototype,"pressBooleanButton",[v],Object.getOwnPropertyDescriptor(g.prototype,"pressBooleanButton"),g.prototype),b=g))||b));i._RF.pop()}}}));
+        _proto.onTouchEnd = function onTouchEnd(event) {
+          console.log("Touch ended");
+          var touchPos = event.getLocation();
+          this.currentMousePos = touchPos;
+          this.dragEnded(this.currentMousePos);
+        }
 
-System.register("chunks:///_virtual/LevelAsset.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index2.ts"],(function(e){var t,r,i,n,o,l,u,a,c,s;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.inheritsLoose,i=e.createClass,n=e.initializerDefineProperty,o=e.assertThisInitialized},function(e){l=e.cclegacy,u=e._decorator,a=e.Enum,c=e.Vec2},function(e){s=e.bh}],execute:function(){var p,f,b,y,d,h,A,v,g,m,w,R,O,N,T,P,z,L,j,S,k,D,M,C,B,E,W,_,x,F,I;l._RF.push({},"7a38eQYqfRFmJyEs+YSnUwu","LevelAsset",void 0);var J=u.ccclass,V=u.property,G=e("AddRule",function(e){return e[e.None=0]="None",e[e.AddNewRule=1]="AddNewRule",e}({})),Y=(e("ObstacleType",function(e){return e[e.Ad=1]="Ad",e[e.Lock=2]="Lock",e[e.Wood=3]="Wood",e}({})),e("ObjectiveType",function(e){return e[e.MergePieces=0]="MergePieces",e[e.DestroyWood=1]="DestroyWood",e}({}))),q=e("ObjectiveData",(p=J("ObjectiveData"),f=V({type:a(Y)}),b=V({type:Number}),p((h=t((d=function(){n(this,"type",h,this),n(this,"amount",A,this)}).prototype,"type",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return Y.MergePieces}}),A=t(d.prototype,"amount",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),y=d))||y)),H=e("PieceColor",function(e){return e[e.Red=1]="Red",e[e.Blue=2]="Blue",e[e.Green=3]="Green",e[e.Purple=4]="Purple",e[e.Orange=5]="Orange",e[e.Black=6]="Black",e}({})),Q=e("RuleExpiritionType",function(e){return e[e.Never=0]="Never",e[e.AfterNumberOfMatchedPieces=1]="AfterNumberOfMatchedPieces",e[e.AfterNumberOfOptionTrays=2]="AfterNumberOfOptionTrays",e[e.AfterTheObjectiveReacherPercentage=3]="AfterTheObjectiveReacherPercentage",e[e.AfterSpecificObjectiveIsCompleted=4]="AfterSpecificObjectiveIsCompleted",e}({})),U=e("LevelRuleSet",(v=J("LevelRuleSet"),g=V({type:a(Q)}),m=V({type:Number}),w=V({type:[a(H)]}),R=V({type:c}),O=V({type:c}),v((P=t((T=function(){n(this,"type",P,this),n(this,"ruleValue",z,this),n(this,"colorsAllowed",L,this),n(this,"colorCombinationsAllowed",j,this),n(this,"stackAmountAllowed",S,this)}).prototype,"type",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return Q.Never}}),z=t(T.prototype,"ruleValue",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),L=t(T.prototype,"colorsAllowed",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[H.Red]}}),j=t(T.prototype,"colorCombinationsAllowed",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new c(1,1)}}),S=t(T.prototype,"stackAmountAllowed",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new c(3,5)}}),N=T))||N));e("LevelAsset",(k=s.createAssetMenu("level-0001","LevelEditor/LevelAsset"),D=s.scriptable("LevelAsset"),M=V({multiline:!0}),C=V({type:[q]}),B=V({type:[U]}),E=V({type:a(G)}),k(W=D((_=function(e){function t(){for(var t,r=arguments.length,i=new Array(r),l=0;l<r;l++)i[l]=arguments[l];return t=e.call.apply(e,[this].concat(i))||this,n(t,"gridSavedAsJson",x,o(t)),n(t,"objectives",F,o(t)),n(t,"optionTrayRules",I,o(t)),t}return r(t,e),i(t,[{key:"Action",get:function(){return G.None},set:function(e){switch(e){case G.AddNewRule:var t=new U;if(this.optionTrayRules.length>0)t=this.optionTrayRules[this.optionTrayRules.length-1];this.optionTrayRules.push(t),console.log("New rule added")}this.saveAsset()}}]),t}(s.ScriptableAsset),x=t(_.prototype,"gridSavedAsJson",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),F=t(_.prototype,"objectives",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[new q]}}),I=t(_.prototype,"optionTrayRules",[B],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),t(_.prototype,"Action",[E],Object.getOwnPropertyDescriptor(_.prototype,"Action"),_.prototype),W=_))||W)||W));l._RF.pop()}}}));
+        //#endregion
 
-System.register("chunks:///_virtual/LevelEditorController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./LevelAsset.ts","./EditorRulesController.ts","./index.ts","./HexSlot.ts","./EditorStackController.ts","./HexGridController.ts","./EditorObjectivesController.ts","./GameplayController.ts","./OptionsTray.ts","./UI_GameplayHUD.ts","./Singleton.ts","./RaycastUtils.ts"],(function(e){var t,r,o,n,i,l,s,a,u,c,p,v,f,h,d,y,C,m,g,b,L,A,E,G,D,R,_;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.inheritsLoose,o=e.initializerDefineProperty,n=e.assertThisInitialized,i=e.createClass},function(e){l=e.cclegacy,s=e._decorator,a=e.Camera,u=e.Node,c=e.input,p=e.Input,v=e.KeyCode,f=e.find,h=e.EventMouse,d=e.Layers,y=e.Component},function(e){C=e.LevelAsset},function(e){m=e.EditorRulesController},null,function(e){g=e.HexSlot},function(e){b=e.EditorStackController},function(e){L=e.HexGridController},function(e){A=e.EditorObjectivesController},function(e){E=e.GameplayController},function(e){G=e.OptionsTray},function(e){D=e.UI_GameplayHUD},function(e){R=e.Singleton},function(e){_=e.RaycastUtils}],execute:function(){var T,x,w,z,O,j,S,k,U,M,P,B,H,N,I,K,F,W,V,J,X,Y;l._RF.push({},"010e1uVH+NGaaJWBZCUd+XU","LevelEditorController",void 0);var Z=s.ccclass,q=s.property;e("LevelEditorController",(T=Z("LevelEditorController"),x=q({type:Boolean,group:"Debug"}),w=q({group:"Debug"}),z=q({type:C}),O=q({type:m,group:{name:"Components"}}),j=q({type:b,group:{name:"Components"}}),S=q({type:A,group:{name:"Components"}}),k=q({type:G,group:{name:"Components"}}),U=q({type:a,group:"Runtime"}),M=q({type:L,group:"Runtime"}),P=q({type:u,group:"Runtime"}),T((N=t((H=function(e){function t(){for(var t,r=arguments.length,i=new Array(r),l=0;l<r;l++)i[l]=arguments[l];return t=e.call.apply(e,[this].concat(i))||this,o(t,"isGameplayMode",N,n(t)),o(t,"currentLevelAsset",I,n(t)),o(t,"rulesController",K,n(t)),o(t,"stackController",F,n(t)),o(t,"objectivesController",W,n(t)),o(t,"previewTray",V,n(t)),o(t,"camera",J,n(t)),o(t,"hexGridController",X,n(t)),o(t,"uiParent",Y,n(t)),t}r(t,e);var l=t.prototype;return l.onLoad=function(){R.set(this)},l.start=function(){this.findComponents(),this.objectivesController.initialize(this.currentLevelAsset.objectives),this.rulesController.initialize(this.currentLevelAsset.optionTrayRules),this.stackController.initialize(this.currentLevelAsset),this.hexGridController.setLevelAsset(this.currentLevelAsset),this.hexGridController.loadGridData(),c.on(p.EventType.MOUSE_DOWN,this.mouseClick,this),c.on(p.EventType.KEY_DOWN,this.onKeyDown,this),this.isGameplayMode?this.start_level=!0:this.uiParent.active=!1},l.onKeyDown=function(e){this.isGameplayMode||e.keyCode===v.SPACE&&(this.start_level=!0)},l.findComponents=function(){if(!this.camera){var e=f("Main Camera");e?(this.camera=e.getComponent(a),this.camera||console.error("Camera component not found on the node.")):console.error("Camera node not found.")}this.hexGridController=R.get(L),this.uiParent=R.get(D).node.parent},l.saveLevelConfigs=function(e){void 0===e&&(e=!1),this.currentLevelAsset&&(console.log("<SAVE> LevelEditorController.saveLevelConfigs()"),e&&R.get(L).saveGridData(),this.currentLevelAsset.saveAsset())},l.updateRuleset=function(e){void 0===e&&(e=[]),this.currentLevelAsset.optionTrayRules=e,this.saveLevelConfigs()},l.updateObjectives=function(e){this.currentLevelAsset.objectives=e,this.saveLevelConfigs()},l.getListOfObjectives=function(){for(var e=[],t=0;t<this.currentLevelAsset.objectives.length;t++)e.push(this.currentLevelAsset.objectives[t].type);return e},l.mouseClick=function(e){if(!this.isGameplayMode)if(e.getButton()===h.BUTTON_LEFT){var t=this.performRaycastExternal(e);if(null!==t){if(t.getData().piecesStack.length>0)return;t.setSlotActive(!t.data.isActiveSlot),this.saveLevelConfigs(!0)}}else if(e.getButton()===h.BUTTON_RIGHT){var r=this.performRaycastExternal(e);null!==r?(this.hexGridController.debug_DeselectAll=!0,this.stackController.selectSlot(r)):this.hexGridController.debug_DeselectAll=!0}else if(e.getButton()===h.BUTTON_MIDDLE){var o=this.performRaycastExternal(e);null!==o&&(o.debug_RandomizePieces=!0)}},l.performRaycastExternal=function(e){if(this.camera){var t={result:null},r=d.Enum.ALL;return _.mousePositionRaycast3D(e,this.camera,t,500,r)&&t.result?t.result.collider.node.parent.getComponent(g):null}console.error("Camera is not assigned.")},i(t,[{key:"start_level",get:function(){return!1},set:function(e){this.isGameplayMode=!0,this.rulesController.node.active=!1,this.stackController.node.active=!1,this.previewTray.node.active=!1,this.objectivesController.node.active=!1,R.get(E).currentLevelAsset=this.currentLevelAsset,R.get(E).startLevel(),this.uiParent.active=!0}}]),t}(y)).prototype,"isGameplayMode",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),t(H.prototype,"start_level",[w],Object.getOwnPropertyDescriptor(H.prototype,"start_level"),H.prototype),I=t(H.prototype,"currentLevelAsset",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),K=t(H.prototype,"rulesController",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),F=t(H.prototype,"stackController",[j],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),W=t(H.prototype,"objectivesController",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),V=t(H.prototype,"previewTray",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),J=t(H.prototype,"camera",[U],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),X=t(H.prototype,"hexGridController",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),Y=t(H.prototype,"uiParent",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),B=H))||B));l._RF.pop()}}}));
+        //#region Mouse Events
+        ;
 
-System.register("chunks:///_virtual/LocalizationExtensions.ts",["cc"],(function(o){var e,n,a,l;return{setters:[function(o){e=o.cclegacy,n=o._decorator,a=o.assetManager,l=o.JsonAsset}],execute:function(){var t,d;e._RF.push({},"e8a0dW9iulH17or5AxbdUPh","LocalizationExtensions",void 0);var s=n.ccclass;n.property,o("LanguageFunctionType",function(o){return o[o.None=0]="None",o[o.Save=1]="Save",o[o.Load=2]="Load",o[o.CreateNewRandomKey=3]="CreateNewRandomKey",o}({})),o("LocalizationExtensions",s("LocalizationExtensions")(((d=function(){function o(){}return o.getLanguageJson=function(e,n){if(void 0===n&&(n="en"),null!==o.loadedLanguage)return console.log("Already Loaded stuff:",o.loadedLanguage),void(e&&e());var t="resources";a.loadBundle(t,(function(a,d){a?console.error("Failed to load bundle:",a):(console.log("Bundle loaded successfully:",t),d.load("language",l,(function(a,l){if(a)console.error("Failed to load JSON file:",a);else{var t=l.json;o.loadedJson=l,o.loadedLanguage=t[n],console.log("Loaded language data:",t),e&&e()}})))}))},o.localizeText=function(e){if(console.log("LocalizationExtensions.localizeText() key "+e),null===o.loadedLanguage)return o.getLanguageJson((function(){return o.localizeText(e)})),"TNF "+e;var n="TNF "+e;return o.loadedLanguage&&o.loadedLanguage[e]&&(n=o.loadedLanguage[e]),console.log("LocalizationExtensions.localizeText() text content: "+n),n},o.editorSaveToLanguageJson=function(e,n,a){void 0===a&&(a="en"),o.getLanguageJson((function(){var l=o.loadedJson.json,t=l[a];t[e]=n,console.log("<color=cyan>File language.json was updated</color>: <color=white>["+e+"]: "+t[e]+"</color>"),o.loadedJson.json=l}),a)},o}()).loadedJson=null,d.loadedLanguage=null,t=d))||t);e._RF.pop()}}}));
+        _proto.mouseClick = function mouseClick(event) {
+          if (event.getButton() === EventMouse.BUTTON_LEFT) {
+            //console.log("Button left pressed");
+            this.currentMousePos = new Vec2(event.getLocationX(), event.getLocationY());
+            if (this.isDragging) {
+              this.dragEnded(this.currentMousePos);
+            } else {
+              this.dragStart(this.currentMousePos);
+            }
+          }
+        };
+        _proto.mouseMove = function mouseMove(event) {
+          this.currentMousePos = new Vec2(event.getLocationX(), event.getLocationY());
+          this.dragMovement(this.currentMousePos);
+        }
+        //#endregion
 
-System.register("chunks:///_virtual/LocalizedLabel.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./LocalizationExtensions.ts"],(function(e){var t,o,n,a,i,r,c,l,s,u,p;return{setters:[function(e){t=e.applyDecoratedDescriptor,o=e.inheritsLoose,n=e.initializerDefineProperty,a=e.assertThisInitialized,i=e.createClass},function(e){r=e.cclegacy,c=e._decorator,l=e.Enum,s=e.Label},null,function(e){u=e.LanguageFunctionType,p=e.LocalizationExtensions}],execute:function(){var g,y,d,L,f,h;r._RF.push({},"9d0eamA2tdEYoRyhY5Gyo6x","LocalizedLabel",void 0);var b=c.ccclass,z=c.property;e("LocalizedLabel",(g=b("LocalizedLabel"),y=z({group:"Localization",tooltip:"The key to use for localization"}),d=z({type:l(u),group:"Localization",tooltip:"Localization and language functions"}),g((h=t((f=function(e){function t(){for(var t,o=arguments.length,i=new Array(o),r=0;r<o;r++)i[r]=arguments[r];return t=e.call.apply(e,[this].concat(i))||this,n(t,"key",h,a(t)),t}o(t,e);var r=t.prototype;return r.onEnable=function(){var t=this;e.prototype.onEnable.call(this),p.getLanguageJson((function(){t.updateText()}))},r.updateText=function(){this.string=p.localizeText(this.key)},r.setKey=function(e){this.key=e,this.updateText()},i(t,[{key:"runLanguageFunction",get:function(){return u.None},set:function(e){switch(e){case u.Save:p.editorSaveToLanguageJson(this.key,this.string),console.log("Saved text!");break;case u.Load:this.updateText(),console.log("Load text!");break;case u.CreateNewRandomKey:console.log("Random Key Created!")}}}]),t}(s)).prototype,"key",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),t(f.prototype,"runLanguageFunction",[d],Object.getOwnPropertyDescriptor(f.prototype,"runLanguageFunction"),f.prototype),L=f))||L));r._RF.pop()}}}));
+        //#region Drag Methods
+        ;
 
-System.register("chunks:///_virtual/LocalizedRichText.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./LocalizationExtensions.ts"],(function(e){var t,o,n,i,a,r,c,s,u,l,p;return{setters:[function(e){t=e.applyDecoratedDescriptor,o=e.inheritsLoose,n=e.initializerDefineProperty,i=e.assertThisInitialized,a=e.createClass},function(e){r=e.cclegacy,c=e._decorator,s=e.Enum,u=e.RichText},null,function(e){l=e.LanguageFunctionType,p=e.LocalizationExtensions}],execute:function(){var g,y,h,d,f,L;r._RF.push({},"2cb59hISJtPCYbmFKDID13+","LocalizedRichText",void 0);var x=c.ccclass,z=c.property;e("LocalizedRichText",(g=x("LocalizedRichText"),y=z({group:"Localization",tooltip:"The key to use for localization"}),h=z({type:s(l),group:"Localization",tooltip:"Localization and language functions"}),g((L=t((f=function(e){function t(){for(var t,o=arguments.length,a=new Array(o),r=0;r<o;r++)a[r]=arguments[r];return t=e.call.apply(e,[this].concat(a))||this,n(t,"key",L,i(t)),t}o(t,e);var r=t.prototype;return r.onEnable=function(){var t=this;e.prototype.onEnable.call(this),p.getLanguageJson((function(){t.updateText()}))},r.updateText=function(){this.string=p.localizeText(this.key)},r.setKey=function(e){this.key=e,this.updateText()},a(t,[{key:"runLanguageFunction",get:function(){return l.None},set:function(e){switch(e){case l.Save:p.editorSaveToLanguageJson(this.key,this.string),console.log("Saved text!");break;case l.Load:this.updateText(),console.log("Load text!");break;case l.CreateNewRandomKey:console.log("Random Key Created!")}}}]),t}(u)).prototype,"key",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return""}}),t(f.prototype,"runLanguageFunction",[h],Object.getOwnPropertyDescriptor(f.prototype,"runLanguageFunction"),f.prototype),d=f))||d));r._RF.pop()}}}));
+        _proto.dragStart = function dragStart(pos) {
+          var _this$currentItem;
+          if (this.isPaused) return;
+          // Check for DraggableItem
+          var isValid = this.checkForValidDrag(this.currentMousePos);
+          if (!isValid) return;
+          this.isDragging = true;
+          (_this$currentItem = this.currentItem) == null || _this$currentItem.onDragStart(pos);
+          //console.log("DragInputManager.Drag Start at: ", pos);
+        };
 
-System.register("chunks:///_virtual/LockObstacleSlot.ts",["./rollupPluginModLoBabelHelpers.js","cc","./HexSlot.ts","./index.ts","./Action.ts"],(function(t){var e,n,r,o,i,u,a,l,c;return{setters:[function(t){e=t.applyDecoratedDescriptor,n=t.inheritsLoose,r=t.initializerDefineProperty,o=t.assertThisInitialized},function(t){i=t.cclegacy,u=t._decorator,a=t.Component},function(t){l=t.HexSlot},null,function(t){c=t.Action}],execute:function(){var s,m,p,A,f,h,g,b,d,y,S;i._RF.push({},"6203ajoAVpOw5Xt+Z+JKYUN","LockObstacleSlot",void 0);var x=u.ccclass,v=u.property;t("LockObstacleSlot",(s=x("LockObstacleSlot"),m=v(),p=v(),A=v(),f=v({type:l}),s((b=e((g=function(t){function e(){for(var e,n=arguments.length,i=new Array(n),u=0;u<n;u++)i[u]=arguments[u];return e=t.call.apply(t,[this].concat(i))||this,r(e,"currentAmount",b,o(e)),r(e,"mergedAmount",d,o(e)),r(e,"maxAmount",y,o(e)),r(e,"targetSlot",S,o(e)),e.onCurrentAmountUpdate=new c,e}n(e,t);var i=e.prototype;return i.initialize=function(t){this.maxAmount=t,this.currentAmount=t,this.mergedAmount=0,this.targetSlot=this.node.getComponent(l)},i.updateCurrentMergedAmount=function(t){this.mergedAmount=t,this.currentAmount=Math.max(0,this.maxAmount-this.mergedAmount),this.onCurrentAmountUpdate.invoke(this.currentAmount)},e}(a)).prototype,"currentAmount",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),d=e(g.prototype,"mergedAmount",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),y=e(g.prototype,"maxAmount",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),S=e(g.prototype,"targetSlot",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),h=g))||h));i._RF.pop()}}}));
+        _proto.dragMovement = function dragMovement(pos) {
+          var _this$currentItem2;
+          if (this.isPaused) return;
+          if (!this.isDragging) return;
+          var ray = new geometry.Ray();
+          this.camera.screenPointToRay(pos.x, pos.y, ray);
+          (_this$currentItem2 = this.currentItem) == null || _this$currentItem2.onDragMovement(ray);
+          var outResult = {
+            result: null
+          };
+          var foundSlot = this.checkForDraggableSlot(this.currentMousePos, outResult);
+        };
+        _proto.dragEnded = function dragEnded(pos) {
+          if (this.isPaused) return;
+          this.isDragging = false;
+          //console.log("DragInputManager.Drag Ended at: ", pos);
 
-System.register("chunks:///_virtual/main",["./AudioController.ts","./SfxPlayer.ts","./CommandSequence.ts","./SetActiveCommand.ts","./TweenPositionCommand.ts","./TweenScaleCommand.ts","./WaitCommand.ts","./AsyncCommand.ts","./Command.ts","./EventOnDelay.ts","./EventOnNodeState.ts","./EventOnProgress.ts","./DummyReferenceScript.ts","./Game.ts","./index.ts","./InputKey.ts","./LocalizationExtensions.ts","./LocalizedLabel.ts","./LocalizedRichText.ts","./Polymorphism.ts","./PolymorphismDemo.ts","./ObjectPool.ts","./SimplePool.ts","./GameProgress.ts","./ProgressController.ts","./Singleton.ts","./TweenSequence.ts","./Action.ts","./ArrayUtils.ts","./CameraUtils.ts","./EventHandlerUtils.ts","./JsonUtils.ts","./NodeUtils.ts","./RaycastUtils.ts","./Wait.ts","./HexGridController.ts","./HexPiece.ts","./HexSlot.ts","./NeighborController.ts","./OptionsTray.ts","./ComboController.ts","./GameplayController.ts","./ObjectivesController.ts","./ObstaclesController.ts","./TurnController.ts","./HexVisual.ts","./LockObstacleSlot.ts","./DragDropComponent.ts","./DragInputManager.ts","./LevelAsset.ts","./LevelEditorController.ts","./EditorObjectivesController.ts","./EditorObjectivesDisplay.ts","./EditorColorButton.ts","./EditorColorSelector.ts","./EditorDropdownOption.ts","./EditorExpirationDisplay.ts","./EditorRangeSelector.ts","./EditorRuleButton.ts","./EditorRulesController.ts","./EditorSingleRuleDisplay.ts","./SimpleEditorDropdown.ts","./EditorExpirationAmount.ts","./EditorExpirationId.ts","./EditorExpirationPercent.ts","./EditorSingleStack.ts","./EditorSliderControl.ts","./EditorStackColorBlock.ts","./EditorStackController.ts","./EditorStackObstacleBlock.ts","./EditorButtonSequence.ts","./EditorSequenceButton.ts","./EditorRangeEditbox.ts","./UI_GameplayHUD.ts","./UI_ObjectivesDisplay.ts","./UI_SingleObjective.ts","./UI_LockDisplay.ts","./BundleLoad2.ts","./BundleLoadTest.ts","./eventTestTrigger.ts","./DraggableItem.ts","./DraggableSlot.ts","./DraggableComponent.ts","./FilteredRaycastTest.ts","./LayerCheckerTest.ts","./PlaneIntersectionExample.ts","./RaycastTests.ts","./SelectNode.ts","./SimpleDragTest.ts","./SimpleMouseTest.ts","./SimpleRaycastTest.ts","./tweenMovementTests.ts","./FollowWorldTests.ts","./WorldToUIPosition.ts","./ClassScanner.ts","./index2.ts"],(function(){return{setters:[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],execute:function(){}}}));
+          var outResult = {
+            result: null
+          };
+          var foundSlot = this.checkForDraggableSlot(this.currentMousePos, outResult);
+          if (foundSlot) {
+            var _this$currentItem3, _this$currentItem4;
+            //console.log("DragInputManager.dragEnded() FoundSlot: ", outResult.result.node.name);
+            (_this$currentItem3 = this.currentItem) == null || _this$currentItem3.onDragEnded(outResult.result.node.getPosition(), outResult.result.node);
 
-System.register("chunks:///_virtual/NeighborController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./HexSlot.ts"],(function(e){var t,r,o,n,i,l,a,c,s,u;return{setters:[function(e){t=e.applyDecoratedDescriptor,r=e.inheritsLoose,o=e.initializerDefineProperty,n=e.assertThisInitialized,i=e.createForOfIteratorHelperLoose},function(e){l=e.cclegacy,a=e._decorator,c=e.MeshRenderer,s=e.Component},function(e){u=e.HexSlot}],execute:function(){var p,f,h,g,v;l._RF.push({},"00372GRf3hAIo0/UDf/Oc7f","NeighborController",void 0);var b=a.ccclass,d=a.property,y=a.executeInEditMode;e("NeighborController",(p=b("NeighborController"),f=d({type:[u]}),p(h=y((v=t((g=function(e){function t(){for(var t,r=arguments.length,i=new Array(r),l=0;l<r;l++)i[l]=arguments[l];return t=e.call.apply(e,[this].concat(i))||this,o(t,"allActive",v,n(t)),t.topLeft=null,t.top=null,t.topRight=null,t.botLeft=null,t.bot=null,t.botRight=null,t}r(t,e);var l=t.prototype;return l.assignAllNeighborsList=function(e){this.allActive=e},l.getAllContainingStacks=function(){for(var e,t=[],r=i(this.allActive);!(e=r()).done;){var o=e.value;o.getData().piecesStack.length>0&&t.push(o)}return t},l.debugNeighbors=function(e){this.allActive.forEach((function(t){if(t){var r=t.getComponentInChildren(c);if(r){var o=r.material.passes[0],n=o.getHandle("albedo");o.setUniform(n,e)}}}))},t}(s)).prototype,"allActive",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),h=g))||h)||h));l._RF.pop()}}}));
+            //Set the values to another slot
+            //Empty the old one
+            //Set Stack values to the new one
+            Singleton.get(HexGridController).placeStacksOnSlot(this.currentItem.currentSlot, outResult.result.currentSlot);
+            (_this$currentItem4 = this.currentItem) == null || _this$currentItem4.resetComponent();
+          } else {
+            var _this$currentItem5;
+            //console.log("ResetPosition for: ", this.currentItem.node.name);    
+            (_this$currentItem5 = this.currentItem) == null || _this$currentItem5.onDragEnded();
+          }
+        }
+        //#endregion
+        ;
 
-System.register("chunks:///_virtual/NodeUtils.ts",["cc"],(function(){var t,e,o;return{setters:[function(i){t=i.cclegacy,e=i.Node,o=i.Vec3}],execute:function(){t._RF.push({},"68bf2ZTUhVCAbkagNMvGu1q","NodeUtils",void 0),e.prototype.move=function(t,e){var i=(new o).set(t.x,t.y,t.z);i.multiplyScalar(e);var s=this.position.clone().add(i);this.setPosition(s)},t._RF.pop()}}}));
+        _proto.handleOnPaused = function handleOnPaused(isPaused) {
+          this.isPaused = isPaused;
+        };
+        _proto.clickMethod = function clickMethod() {
+          this.currentItem.currentSlot.clickSlot();
+        };
+        _proto.checkForValidDrag = function checkForValidDrag(screenPos) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
 
-System.register("chunks:///_virtual/ObjectivesController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./LevelAsset.ts","./index.ts","./Singleton.ts","./Action.ts"],(function(e){var t,i,r,n,o,c,s,u,l,a,b;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.inheritsLoose,r=e.initializerDefineProperty,n=e.assertThisInitialized},function(e){o=e.cclegacy,c=e._decorator,s=e.Component},function(e){u=e.ObjectiveData,l=e.ObjectiveType},null,function(e){a=e.Singleton},function(e){b=e.Action}],execute:function(){var p,d,v,h,f,j,g,O,y,m,A,C,k,w,z,L;o._RF.push({},"7928bDu5TxFBor4qqVHxMy7","ObjectivesController",void 0);var B=c.ccclass,D=c.property,P=e("ActiveObjectiveTracker",(p=B("ActiveObjectiveTracker"),d=D({type:u}),p((f=t((h=function(){function e(e){r(this,"loadedObjectives",f,this),r(this,"currentAmount",j,this),r(this,"isCompleted",g,this),this.onAmountChanged=new b,this.loadedObjectives=e,this.currentAmount=0}return e.prototype.updateCurrentAmount=function(e){this.currentAmount=e,this.onAmountChanged.invoke(this.currentAmount)},e}()).prototype,"loadedObjectives",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),j=t(h.prototype,"currentAmount",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),g=t(h.prototype,"isCompleted",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),v=h))||v));e("ObjectivesController",(O=B("ObjectivesController"),y=D({type:[u]}),m=D({type:[P]}),A=D({type:[Number]}),O((w=t((k=function(e){function t(){for(var t,i=arguments.length,o=new Array(i),c=0;c<i;c++)o[c]=arguments[c];return t=e.call.apply(e,[this].concat(o))||this,r(t,"loadedObjectives",w,n(t)),r(t,"trackedObjectives",z,n(t)),r(t,"progressList",L,n(t)),t}i(t,e);var o=t.prototype;return o.initialize=function(e){a.set(this),this.loadedObjectives=e;for(var t=0;t<e.length;t++)this.trackedObjectives.push(new P(e[t]))},o.addObjectiveProgress=function(e,t){console.log("ObjectivesController.addObjectiveProgress("+l[e]+" , "+t+")");var i=this.getIdByObjective(e),r=this.trackedObjectives[i].currentAmount+t;this.trackedObjectives[i].updateCurrentAmount(r)},o.getIdByObjective=function(e){for(var t=0;t<this.loadedObjectives.length;t++){if(this.loadedObjectives[t].type===e)return t}return-1},o.getProgressById=function(e){return this.progressList[e]},t}(s)).prototype,"loadedObjectives",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),z=t(k.prototype,"trackedObjectives",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),L=t(k.prototype,"progressList",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),C=k))||C));o._RF.pop()}}}));
+          //let number = RaycastUtils.getLayerIndices(this.draggableLayer)[0];
+          //console.log(`checkForValidDrag - CurrentLayer: [${Layers.layerToName(number)}]`);
 
-System.register("chunks:///_virtual/ObjectPool.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var e,n,o;return{setters:[function(t){e=t.createClass},function(t){n=t.cclegacy,o=t.instantiate}],execute:function(){n._RF.push({},"f60bawcN1pBYpA6OoWoUPNh","ObjectPool",void 0);t("ObjectPool",function(){function t(t,e,n,o){this.prefab=void 0,this.parent=void 0,this.pooledObjects=[],this.componentType=void 0,console.log("Component Type:",o),this.prefab=t,this.parent=e,this.componentType=o;for(var i=0;i<n;i++)this.createNew()}var e=t.prototype;return e.spawn=function(){var t=this.pooledObjects.find((function(t){return!t.IsSpawned}));return null!=t?t.spawn():this.createNew().spawn()},e.despawn=function(t){var e=this.pooledObjects.find((function(e){return e.Equals(t)}));if(null==e)throw new Error("Object "+this.prefab.name+" is not a member of the pool");e.despawn()},e.createNew=function(){var t=new i(this.prefab,this.parent,this.componentType);return this.pooledObjects.push(t),t.instancedNode.name=this.prefab.name+" (Pooled "+this.pooledObjects.length+")",t},t}());var i=function(){function t(t,e,n){this.isSpawned=!1,this.defaultParent=void 0,this.instancedNode=void 0,this.instancedComponent=void 0,this.defaultParent=e,this.instancedNode=o(t),this.instancedComponent=this.instancedNode.getComponent(n),this.instancedComponent||console.error("Object "+t.name+" does not have component "+n.name),this.clear()}var n=t.prototype;return n.Equals=function(t){return this.instancedComponent==t},n.spawn=function(){return this.isSpawned=!0,this.instancedNode.active=!0,this.instancedComponent},n.despawn=function(){this.clear()},n.clear=function(){this.instancedNode.active=!1,this.instancedNode.parent=this.defaultParent,this.isSpawned=!1},e(t,[{key:"IsSpawned",get:function(){return this.isSpawned}}]),t}();n._RF.pop()}}}));
+          var outResult = {
+            result: null
+          };
+          var distance = 500;
+          var layerMask = this.draggableLayer; // Change this to the desired layer
+          var success = RaycastUtils.screenRaycast3D(screenPos, this.camera, outResult, distance, layerMask);
+          if (success && outResult.result) {
+            var node = outResult.result.collider.node;
+            if (!node) return false;
+            var draggableItem = node.getComponent(DragDropComponent);
+            if (!draggableItem) {
+              draggableItem = node.parent.getComponent(DragDropComponent);
+            }
+            if (!draggableItem) return false;
+            if (draggableItem.currentMode !== DragDropMode.Drag) {
+              if (draggableItem.currentMode === DragDropMode.Clickable) {
+                this.currentItem = draggableItem;
+                this.clickMethod();
+              }
+              return false;
+            }
 
-System.register("chunks:///_virtual/ObstaclesController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./LockObstacleSlot.ts","./HexGridController.ts","./Singleton.ts","./LevelAsset.ts","./ObjectivesController.ts"],(function(e){var t,i,r,o,n,l,s,a,c,u,p,d,h;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.inheritsLoose,r=e.initializerDefineProperty,o=e.assertThisInitialized},function(e){n=e.cclegacy,l=e._decorator,s=e.Component},function(e){a=e.LockObstacleSlot},function(e){c=e.HexGridController},function(e){u=e.Singleton},function(e){p=e.ObstacleType,d=e.ObjectiveType},function(e){h=e.ObjectivesController}],execute:function(){var g,v,b,f,m,y,C,O,k;n._RF.push({},"e94eerds6ZJ+aE8UM6gcrSZ","ObstaclesController",void 0);var L=l.ccclass,j=l.property;e("ObstaclesController",(g=L("ObstaclesController"),v=j({type:[a]}),b=j({type:c,group:"Runtime"}),f=j({type:h,group:"Runtime"}),g((C=t((y=function(e){function t(){for(var t,i=arguments.length,n=new Array(i),l=0;l<i;l++)n[l]=arguments[l];return t=e.call.apply(e,[this].concat(n))||this,r(t,"locks",C,o(t)),r(t,"hexGrid",O,o(t)),r(t,"objectivesControl",k,o(t)),t.onMergeUpdateLambda=void 0,t}i(t,e);var n=t.prototype;return n.initialize=function(e){this.objectivesControl=e,this.hexGrid=u.get(c),this.initializeObstacles(),this.setEvents()},n.initializeObstacles=function(){for(var e=0;e<this.hexGrid.gridHeight;e++)for(var t=0;t<this.hexGrid.gridWidth;t++){var i=this.hexGrid.grid[e][t];if(i.data.isActiveSlot){var r=i.getTopStack();if(null!=r&&!r.isColor&&r.obstacleType===p.Lock){var o=i.getComponent(a);o.initialize(r.amount),this.locks.push(o)}}}},n.setEvents=function(){var e=this;this.onMergeUpdateLambda=function(t){e.handleOnMergedPiecesAmountUpdate(t)};var t=u.get(h),i=t.getIdByObjective(d.MergePieces);t.trackedObjectives[i].onAmountChanged.addListener(this.onMergeUpdateLambda)},n.handleOnMergedPiecesAmountUpdate=function(e){for(var t=[],i=0;i<this.locks.length;i++){var r=this.locks[i];r.updateCurrentMergedAmount(e),0===r.currentAmount&&t.push(r)}for(var o=0,n=t;o<n.length;o++){var l=n[o],s=l.targetSlot;this.locks.remove(l),s.removeLock()}},n.getLocks=function(){return this.locks},t}(s)).prototype,"locks",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),O=t(y.prototype,"hexGrid",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),k=t(y.prototype,"objectivesControl",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),m=y))||m));n._RF.pop()}}}));
+            //console.log(`RaycastExternal - Found DraggableItem: ${node.name} in layer ${RaycastUtils.getLayerName(node.layer)}`);
+            this.currentItem = draggableItem;
+          } else {
+            //console.log("RaycastExternal: No object detected.");
+            this.currentItem = null;
+            return false;
+          }
+          return true;
+        };
+        _proto.checkForDraggableSlot = function checkForDraggableSlot(screenPos, draggableSlot) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return false;
+          }
+          var outResult = {
+            result: null
+          };
+          var distance = 500;
+          var layerMask = this.dragSlotLayer; // Change this to the desired layer
+          var success = RaycastUtils.screenRaycast3D(screenPos, this.camera, outResult, distance, layerMask);
+          if (success && outResult.result) {
+            var node = outResult.result.collider.node;
+            if (!node) return false;
+            draggableSlot.result = node.getComponent(DragDropComponent);
+            if (!draggableSlot.result) {
+              draggableSlot.result = node.parent.getComponent(DragDropComponent);
+            }
+            if (!draggableSlot.result) return false;
+            if (draggableSlot.result.currentMode !== DragDropMode.Drop) return false;
 
-System.register("chunks:///_virtual/OptionsTray.ts",["./rollupPluginModLoBabelHelpers.js","cc","./HexSlot.ts","./LevelAsset.ts","./DragDropComponent.ts"],(function(e){var t,o,n,r,i,s,a,l,c,p,u,h,f,g,y,m,O;return{setters:[function(e){t=e.applyDecoratedDescriptor,o=e.inheritsLoose,n=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){i=e.cclegacy,s=e._decorator,a=e.Prefab,l=e.Node,c=e.instantiate,p=e.Vec3,u=e.randomRangeInt,h=e.Component},function(e){f=e.HexSlot,g=e.PieceStack},function(e){y=e.LevelRuleSet,m=e.PieceColor},function(e){O=e.DragDropMode}],execute:function(){var v,P,b,d,x,w,S,C,A,k,D;i._RF.push({},"a29787S+uJCfZTj7+SlDqoK","OptionsTray",void 0);var M=s.ccclass,T=s.property;e("OptionsTray",(v=M("OptionsTray"),P=T({type:[f]}),b=T({type:[y]}),d=T({type:a,group:{name:"Components"}}),x=T({type:[l],group:{name:"Components"}}),v((C=t((S=function(e){function t(){for(var t,o=arguments.length,i=new Array(o),s=0;s<o;s++)i[s]=arguments[s];return t=e.call.apply(e,[this].concat(i))||this,n(t,"hexOptions",C,r(t)),n(t,"currentRuleset",A,r(t)),n(t,"slotPrefab",k,r(t)),n(t,"optionsPositions",D,r(t)),t}o(t,e);var i=t.prototype;return i.initialize=function(){this.generateEmptySlots()},i.generateNewOptions=function(e){console.log("OptionsTray.generateNewOptions()"),this.currentRuleset=e;for(var t=0;t<this.hexOptions.length;t++)this.hexOptions[t].setPiecesStack(this.generatePiecesStack(e)),this.hexOptions[t].canMovePieceStack=!0,this.hexOptions[t].setCurrentInteractionMode(O.Drag)},i.refreshOptionsTray=function(){console.log("OptionsTray.refreshOptionsTray()");for(var e=0;e<this.hexOptions.length;e++)this.hexOptions[e].setPiecesStack(this.generatePiecesStack(this.currentRuleset)),this.hexOptions[e].canMovePieceStack=!0,this.hexOptions[e].setCurrentInteractionMode(O.Drag)},i.generateEmptySlots=function(){this.hexOptions=[];for(var e=0;e<this.optionsPositions.length;e++){var t=c(this.slotPrefab);t.parent=this.optionsPositions[e],t.position=new p(0,0,0),this.hexOptions.push(t.getComponent(f))}},i.generatePiecesStack=function(e){for(var t=[],o=u(e.stackAmountAllowed.x,e.stackAmountAllowed.y+1),n=Math.min(e.colorCombinationsAllowed.x,o,e.colorsAllowed.length),r=Math.min(e.colorCombinationsAllowed.y,o,e.colorsAllowed.length),i=u(n,r+1),s=this.generateColorOptions(i,e.colorsAllowed),a=o,l=i,c=0;c<i;c++){var p=new g;p.pieceColor=s[c];var h=1;if(i!=o)h=u(1,a-l+1+1),c==i-1&&(h=a);p.amount=h,a-=h,l--,t.push(p)}return t},i.generateColorOptions=function(e,t){var o=[];t=this.shuffleArray(t);for(var n=0;n<e;n++)o.push(t[n]);return o},i.shuffleArray=function(e){for(var t=e.length-1;t>0;t--){var o=Math.floor(Math.random()*(t+1)),n=[e[o],e[t]];e[t]=n[0],e[o]=n[1]}return e},i.debug_PrintPiecesArray=function(e){for(var t="",o=0;o<e.length;o++)t+=m[e[o].pieceColor]+" - "+e[o].amount+" |";return t},t}(h)).prototype,"hexOptions",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),A=t(S.prototype,"currentRuleset",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),k=t(S.prototype,"slotPrefab",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),D=t(S.prototype,"optionsPositions",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),w=S))||w));i._RF.pop()}}}));
+            //console.log(`RaycastExternal - Found DraggableSlot: ${draggableSlot.result.node.name} in layer ${RaycastUtils.getLayerName(node.layer)}`);
+          } else {
+            //console.log("RaycastExternal: No object detected.");
+            return false;
+          }
+          return true;
+        };
+        return DragInputManager;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "isPaused", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "isMobile", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "isDragging", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "currentItem", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "camera", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "draggableLayer", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return Layers.Enum.DEFAULT;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "dragSlotLayer", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return Layers.Enum.DEFAULT;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/PlaneIntersectionExample.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,n,r,o,i,a,l,s,c,u,p,f,h,m,d;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,r=e.initializerDefineProperty,o=e.assertThisInitialized},function(e){i=e.cclegacy,a=e._decorator,l=e.Prefab,s=e.Camera,c=e.input,u=e.Input,p=e.EventMouse,f=e.Vec3,h=e.geometry,m=e.instantiate,d=e.Component}],execute:function(){var y,g,b,v,P,I,w,E,C;i._RF.push({},"338d7JC1A1OE4d0513IM3rf","PlaneIntersectionExample",void 0);var x=a.ccclass,N=a.property;e("PlaneIntersectionExample",(y=x("PlaneIntersectionExample"),g=N({type:l,group:{name:"Components"}}),b=N({type:s,group:{name:"Components"}}),v=N(Number),y((w=t((I=function(e){function t(){for(var t,n=arguments.length,i=new Array(n),a=0;a<n;a++)i[a]=arguments[a];return t=e.call.apply(e,[this].concat(i))||this,r(t,"simpleNodePrefab",w,o(t)),r(t,"camera",E,o(t)),r(t,"planeHeight",C,o(t)),t}n(t,e);var i=t.prototype;return i.start=function(){console.log("start() is the last one before update."),c.on(u.EventType.MOUSE_DOWN,this.mouseClick,this)},i.mouseClick=function(e){e.getButton()===p.BUTTON_LEFT&&this.checkIntersction(e)},i.checkIntersction=function(e){var t=new f(0,1,0),n=new f(0,this.planeHeight,0),r=new h.Ray,o=new f(e.getLocationX(),e.getLocationY(),0);this.camera.screenPointToRay(o.x,o.y,r);var i=r.o,a=r.d,l=this.rayPlaneIntersection(i,a,n,t);if(l){console.log("Intersection point:",l);var s=m(this.simpleNodePrefab);s.setPosition(l),this.node.scene.addChild(s)}else console.log("Ray does not intersect the plane.")},i.rayPlaneIntersection=function(e,t,n,r){var o=f.dot(t,r);if(Math.abs(o)<1e-6)return null;var i=f.dot(f.subtract(new f,n,e),r)/o;if(i>=0){var a=new f;return f.scaleAndAdd(a,e,t,i),a}return null},t}(d)).prototype,"simpleNodePrefab",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=t(I.prototype,"camera",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=t(I.prototype,"planeHeight",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 10}}),P=I))||P));i._RF.pop()}}}));
+System.register("chunks:///_virtual/DummyReferenceScript.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Action.ts', './SimplePool.ts', './Wait.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, EventHandler, Node, Vec2, Color, AnimationClip, SpriteFrame, CCFloat, Prefab, Input, KeyCode, director, Component, RealCurve, Action, SimplePool, Wait;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EventHandler = module.EventHandler;
+      Node = module.Node;
+      Vec2 = module.Vec2;
+      Color = module.Color;
+      AnimationClip = module.AnimationClip;
+      SpriteFrame = module.SpriteFrame;
+      CCFloat = module.CCFloat;
+      Prefab = module.Prefab;
+      Input = module.Input;
+      KeyCode = module.KeyCode;
+      director = module.director;
+      Component = module.Component;
+      RealCurve = module.RealCurve;
+    }, null, function (module) {
+      Action = module.Action;
+    }, function (module) {
+      SimplePool = module.SimplePool;
+    }, function (module) {
+      Wait = module.Wait;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13;
+      cclegacy._RF.push({}, "abc91A32PxP9q1jrl062eT9", "DummyReferenceScript", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var DummyReferenceScript = exports('DummyReferenceScript', (_dec = ccclass('DummyReferenceScript'), _dec2 = property(EventHandler), _dec3 = property({
+        type: Node,
+        tooltip: "This is a tooltip I wrote myself!!!"
+      }), _dec4 = property({
+        group: {
+          name: "Progression Tab"
+        }
+      }), _dec5 = property({
+        step: 5,
+        group: {
+          name: "Progression Tab"
+        }
+      }), _dec6 = property({
+        type: Vec2,
+        group: {
+          name: "Progression Tab"
+        }
+      }), _dec7 = property({
+        group: {
+          name: "Configs Tab"
+        }
+      }), _dec8 = property({
+        type: Color,
+        group: {
+          name: "Configs Tab"
+        },
+        visible: function visible() {
+          return this.hasColor;
+        } // "visible" is Similar to "ShowIf" in NaughtyAttributes
+      }), _dec9 = property({
+        type: AnimationClip
+      }), _dec10 = property({
+        type: SpriteFrame
+      }), _dec11 = property({
+        type: [SpriteFrame]
+      }), _dec12 = property({
+        type: [CCFloat]
+      }), _dec13 = property(Prefab), _dec14 = property({
+        group: 'Debug'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(DummyReferenceScript, _Component);
+        function DummyReferenceScript() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          // EventHandler => UnityEvent    
+          _initializerDefineProperty(_this, "onSomethingHappened", _descriptor, _assertThisInitialized(_this));
+          // Node => GameObject
+          _initializerDefineProperty(_this, "myNode", _descriptor2, _assertThisInitialized(_this));
+          // number => float/int
+          _initializerDefineProperty(_this, "myNumber", _descriptor3, _assertThisInitialized(_this));
+          // number => float/int
+          _initializerDefineProperty(_this, "myNumberStepped", _descriptor4, _assertThisInitialized(_this));
+          // Vec2 => Vector2
+          _initializerDefineProperty(_this, "myVector", _descriptor5, _assertThisInitialized(_this));
+          // boolean => bool (and it HAS to be initialized)
+          _initializerDefineProperty(_this, "hasColor", _descriptor6, _assertThisInitialized(_this));
+          // Color
+          _initializerDefineProperty(_this, "meuColor", _descriptor7, _assertThisInitialized(_this));
+          // RealCurve => AnimationCurve
+          _initializerDefineProperty(_this, "realCurve", _descriptor8, _assertThisInitialized(_this));
+          // AnimationClip => Animation
+          _initializerDefineProperty(_this, "animationClip", _descriptor9, _assertThisInitialized(_this));
+          // Sprite
+          _initializerDefineProperty(_this, "mySprite", _descriptor10, _assertThisInitialized(_this));
+          // Sprite Array
+          _initializerDefineProperty(_this, "mySpriteArray", _descriptor11, _assertThisInitialized(_this));
+          // Int Array
+          _initializerDefineProperty(_this, "myPreFilledNumberArray", _descriptor12, _assertThisInitialized(_this));
+          // Prefab => in Cocos we don't instantiate a Node (GameObject), we instantiate a Prefab.
+          _initializerDefineProperty(_this, "prefab", _descriptor13, _assertThisInitialized(_this));
+          _this.lastSpawnedInstance = void 0;
+          //#endregion
+          // Example of our custom actions that work like in C#
+          _this.onActionA = new Action();
+          _this.onActionB = new Action();
+          _this.onActionC = new Action();
+          _this.onActionD = new Action();
+          _this.onEventD = void 0;
+          _this.inputtt = new Input();
+          return _this;
+        }
+        var _proto = DummyReferenceScript.prototype;
+        _proto.onLoad = function onLoad() {
+          console.log("onLoad is like Awake() in Unity, it comes before everything.");
+          SimplePool.preload(this.prefab, 8);
+          this.actionsExample();
+        };
+        _proto.onEnable = function onEnable() {
+          console.log('onEnable() is called after awake and before start. And is called again everytime the object is re-activated.');
+        };
+        _proto.start = function start() {
+          console.log("start() is the last one before update.");
 
-System.register("chunks:///_virtual/Polymorphism.ts",["cc"],(function(e){var r,n,t,o;return{setters:[function(e){r=e.cclegacy,n=e.js,t=e.ccenum,o=e._decorator}],execute:function(){e("polymorphism",(function(e){var r=e.types,i=e.displayName,s=e.baseClass;return function(e,u){if("string"!=typeof u)throw new Error("Only string named fields are supported.");var a=r.map((function(e){return"string"==typeof e?n.getClassByName(e):Array.isArray(e)?null:e})).filter((function(e){return e&&"function"==typeof e}));if(a.length){var c=u+"__type",l={get:function(){var e=this[u],r=a.findIndex((function(r){return e.constructor===r}));if(r<0)throw new Error(e+" is not a registered type.");return r},set:function(e){var r=a[e];if(this[u].constructor!==r){var n=new r;this[u]=n}}},f=a.reduce((function(e,r,n){return e[function(e){var r;if(!e)return console.warn("Received undefined class name"),"Unknown";var n=null!=(r=null==s?void 0:s.name)?r:"";return e.replace(n,"").replace(/([A-Z])/g," $1").trim()}(null==r?void 0:r.name)]=n,e}),{});t(f),o.property({displayName:null!=i?i:"Type",type:f})(e,c,l),Object.defineProperty(e,c,l)}else console.warn("No valid types resolved")}})),r._RF.push({},"edea7gkzGRDIrybnBCAOHFw","Polymorphism",void 0),r._RF.pop()}}}));
+          // Register Input get key
+          // this.inputtt.on(Input.EventType.KEY_DOWN, this.keyDown, this);
+          //this.inputtt.on(Input.EventType.KEY_UP, this.keyUp, this);
 
-System.register("chunks:///_virtual/PolymorphismDemo.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var r,t,i,n,o,a,l,u;return{setters:[function(e){r=e.applyDecoratedDescriptor,t=e.inheritsLoose,i=e.initializerDefineProperty,n=e.assertThisInitialized,o=e.createClass},function(e){a=e.cclegacy,l=e._decorator,u=e.Component}],execute:function(){var c,p,s,h,f,y,b,m,w,d,g,A,v,z,C,D,P,j;a._RF.push({},"9eb74BGnaJGaJeqAC5j57Bx","PolymorphismDemo",void 0);var S=l.ccclass,_=l.property,B=function(){},N=S("Circle")((s=r((p=function(e){function r(){for(var r,t=arguments.length,o=new Array(t),a=0;a<t;a++)o[a]=arguments[a];return r=e.call.apply(e,[this].concat(o))||this,i(r,"radius",s,n(r)),r}return t(r,e),r}(B)).prototype,"radius",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),c=p))||c,R=(S("Rectangle")((y=r((f=function(e){function r(){for(var r,t=arguments.length,o=new Array(t),a=0;a<t;a++)o[a]=arguments[a];return r=e.call.apply(e,[this].concat(o))||this,i(r,"width",y,n(r)),i(r,"height",b,n(r)),r}return t(r,e),r}(B)).prototype,"width",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),b=r(f.prototype,"height",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),h=f)),S("CustomCollider")((d=r((w=function(){i(this,"shape",d,this)}).prototype,"shape",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new N}}),m=w))||m);e("PolymorphismDemo",(g=S("PolymorphismDemo"),A=_({type:R}),v=_({type:[R]}),g((D=r((C=function(e){function r(){for(var r,t=arguments.length,o=new Array(t),a=0;a<t;a++)o[a]=arguments[a];return r=e.call.apply(e,[this].concat(o))||this,i(r,"shape",D,n(r)),i(r,"customCollider",P,n(r)),i(r,"shapesArray",j,n(r)),r}return t(r,e),o(r,[{key:"AddNewShape",get:function(){return!1},set:function(e){var r=new R;r.shape=new B,this.shapesArray.push(r),console.log("adsajidsjhai")}}]),r}(u)).prototype,"shape",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new N}}),P=r(C.prototype,"customCollider",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new R}}),j=r(C.prototype,"shapesArray",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[new R]}}),r(C.prototype,"AddNewShape",[_],Object.getOwnPropertyDescriptor(C.prototype,"AddNewShape"),C.prototype),z=C))||z));a._RF.pop()}}}));
+          //this.waitAndLog();
+          this.actionsExample();
+        };
+        _proto.keyUp = function keyUp(event) {
+          if (event.keyCode == KeyCode.ARROW_UP) {
+            this.lastSpawnedInstance = SimplePool.spawn(this.prefab);
+            console.log("Spawn name: " + this.lastSpawnedInstance.name);
+          }
+        };
+        _proto.keyDown = function keyDown(event) {
+          if (event.keyCode == KeyCode.ARROW_DOWN) {
+            console.log("Despawn: " + this.lastSpawnedInstance.name);
+            SimplePool.despawn(this.lastSpawnedInstance);
+          }
+        };
+        _proto.actionsExample = function actionsExample() {
+          var _this2 = this;
+          // Example of a inline callback
+          var onEventB = function onEventB() {
+            return console.log('Event B triggered');
+          };
+          var onEventC = function onEventC() {
+            console.log();
+            _this2.doSomethingNoParameter();
+            //etc etc
+          };
 
-System.register("chunks:///_virtual/ProgressController.ts",["cc","./index.ts","./GameProgress.ts"],(function(e){var o,r,s,n,t;return{setters:[function(e){o=e.cclegacy,r=e.director,s=e.Director,n=e.sys},null,function(e){t=e.GameProgress}],execute:function(){o._RF.push({},"feea3k1EkROS71fhwvMoaiH","ProgressController",void 0);var i=e("ProgressController",function(){function e(){}return e.initialize=function(){console.log(">>> ProgressController: initialized!"),this.gameProgress||(this.gameProgress=this.load()||new t(10),r.on(s.EVENT_AFTER_SCENE_LAUNCH,this.onSceneChanged,this))},e.onSceneChanged=function(){console.log(">>> ProgressController: Scene was changed!")},e.save=function(){this.gameProgress&&(n.localStorage.setItem(this.STORAGE_KEY,JSON.stringify(this.gameProgress)),console.log(">>> ProgressController: SAVE!"))},e.load=function(){var e=n.localStorage.getItem(this.STORAGE_KEY);return console.log(">>> ProgressController: LOAD!"),e?Object.assign(new t(10),JSON.parse(e)):null},e}());i.STORAGE_KEY="gameProgress",i.gameProgress=void 0,r.once(s.EVENT_BEFORE_SCENE_LAUNCH,(function(){i.initialize()})),o._RF.pop()}}}));
+          this.onEventD = function (num) {
+            console.log();
+            _this2.doSomethingNumber(num);
+            //etc etc
+          };
 
-System.register("chunks:///_virtual/RaycastTests.ts",["cc"],(function(e){var t,n,a,r,s,c;return{setters:[function(e){t=e.cclegacy,n=e._decorator,a=e.geometry,r=e.Vec3,s=e.PhysicsSystem,c=e.Layers}],execute:function(){var o;t._RF.push({},"47e71aRxcVBnbEi1zuSHG+G","RaycastTests",void 0);var u=n.ccclass;n.property,e("RaycastTests",u("RaycastTests")(o=function(){function e(){}return e.screenRaycast3D=function(e,t,n,c,o){var u=new a.Ray,i=new r(e.getLocationX(),e.getLocationY(),0);t.screenPointToRay(i.x,i.y,u);var y=s.instance.raycastClosest(u,o,c);if(console.log("Layer mask: "+o+" | Layer name: "+this.getLayerName(o)),y){var l=s.instance.raycastClosestResult;return n.result=l,!0}return console.log("RaycastClosest: No object detected."),n.result=null,!1},e.rayPlaneIntersection=function(e,t,n,a){var s=r.dot(t,a);if(Math.abs(s)<1e-6)return null;var c=r.dot(r.subtract(new r,n,e),a)/s;if(c>=0){var o=new r;return r.scaleAndAdd(o,e,t,c),o}return null},e.getLayerName=function(e){for(var t in c.Enum)if(c.Enum[t]===e)return t;return"Unknown"},e}())||o);t._RF.pop()}}}));
+          // Register callbacks
+          this.onActionA.addListener(this.logSomething);
+          this.onActionB.addListener(onEventB);
+          this.onActionC.addListener(onEventC);
+          this.onActionD.addListener(this.onEventD);
 
-System.register("chunks:///_virtual/RaycastUtils.ts",["cc"],(function(t){var e,n,r,a,s,c;return{setters:[function(t){e=t.cclegacy,n=t._decorator,r=t.geometry,a=t.Vec3,s=t.PhysicsSystem,c=t.Layers}],execute:function(){var u;e._RF.push({},"80cc4YjvXlJ8aVCZZiZBFqm","RaycastUtils",void 0);var i=n.ccclass;n.property,t("RaycastUtils",i("RaycastUtils")(u=function(){function t(){}return t.mousePositionRaycast3D=function(t,e,n,s,c){var u=new r.Ray,i=new a(t.getLocationX(),t.getLocationY(),0);return e.screenPointToRay(i.x,i.y,u),this.filteredRaycast3D(u,n,s,c)},t.screenRaycast3D=function(t,e,n,a,s){var c=new r.Ray;return e.screenPointToRay(t.x,t.y,c),this.filteredRaycast3D(c,n,a,s)},t.raycast3D=function(t,e,n,r){if(s.instance.raycastClosest(t,r,n,!0)){var a=s.instance.raycastClosestResult;return e.result=a,!0}return e.result=null,!1},t.filteredRaycast3D=function(t,e,n,r){if(s.instance.raycast(t,1<<c.Enum.DEFAULT,n,!0)){for(var u=s.instance.raycastResults,i=[],o=0;o<u.length;o++){var l=u[o].collider;this.getLayerIndices(l.node.layer)[0];l.node.layer!=r&&r!=c.Enum.ALL||(e.result=u[o],i.push(u[o])),e.result=u[o]}return 0==i.length?(e.result=null,!1):1==i.length?(e.result=i[0],!0):(i.sort((function(e,n){return a.distance(t.o,e.hitPoint)-a.distance(t.o,n.hitPoint)})),e.result=i[0],!0)}return e.result=null,!1},t.rayPlaneIntersection=function(t,e,n,r){var s=a.dot(e,r);if(Math.abs(s)<1e-6)return null;var c=a.dot(a.subtract(new a,n,t),r)/s;if(c>=0){var u=new a;return a.scaleAndAdd(u,t,e,c),u}return null},t.getLayerName=function(t){for(var e in c.Enum)if(c.Enum[e]===t)return e;return"Unknown"},t.getLayerIndices=function(t){for(var e=[],n=0;n<32;n++)t&1<<n&&e.push(n);return e},t}())||u);e._RF.pop()}}}));
+          // Trigger events
+          this.onActionA.invoke('Event A triggered'); // Logs: "Event A triggered"
+          this.onActionB.invoke(); // Logs: "Event B triggered"
+          this.onActionC.invoke();
+          this.onActionD.invoke(10);
 
-System.register("chunks:///_virtual/SelectNode.ts",["cc"],(function(){var e;return{setters:[function(t){e=t.cclegacy}],execute:function(){e._RF.push({},"df9bai2V+9PPYqVVifFgn2X","SelectNode",void 0),e._RF.pop()}}}));
+          // Unregister callbacks
+          this.onActionA.removeListener(this.logSomething);
+          this.onActionB.removeListener(onEventB);
+          this.onActionC.removeListener(onEventC);
+          this.onActionD.removeListener(this.onEventD);
 
-System.register("chunks:///_virtual/SetActiveCommand.ts",["./rollupPluginModLoBabelHelpers.js","cc","./Command.ts","./ClassScanner.ts"],(function(e){var t,n,i,r,o,c,a,s,u;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){o=e.cclegacy,c=e._decorator,a=e.Node},function(e){s=e.Command},function(e){u=e.commandclass}],execute:function(){var l,p,m,d,f,v;o._RF.push({},"1237eLIpBhHm7yfbUWqsJ6N","SetActiveCommand",void 0);c.ccclass;var y=c.property;e("SetActiveCommand",(l=u("SetActiveCommand"),p=y({type:a}),l((f=t((d=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),c=0;c<n;c++)o[c]=arguments[c];return t=e.call.apply(e,[this].concat(o))||this,i(t,"node",f,r(t)),i(t,"active",v,r(t)),t}return n(t,e),t.prototype.execute=function(){this.node.active=this.active},t}(s)).prototype,"node",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),v=t(d.prototype,"active",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),m=d))||m));o._RF.pop()}}}));
+          // Trigger events again (no output)
+          this.onActionA.invoke('Event A should not be triggered');
+          this.onActionB.invoke();
+          this.onActionC.invoke();
+          this.onActionD.invoke(5);
+        };
+        _proto.logSomething = function logSomething(text) {
+          console.log('This is the text:' + text);
+        };
+        _proto.doSomethingNumber = function doSomethingNumber(number) {
+          var sum = number + number;
+          console.log('doSomethingNumber ', sum);
+        };
+        _proto.doSomethingNoParameter = function doSomethingNoParameter() {
+          console.log('doSomethingNoParameter ');
+          this.logSomething('doSomethingNoParameter');
+          this.myDummyFunctionToWriteStuffThatWontBeCalled();
+        };
+        _proto.myDummyFunctionToWriteStuffThatWontBeCalled = function myDummyFunctionToWriteStuffThatWontBeCalled() {
+          // Curve evaluate
+          this.realCurve.evaluate(0.5);
+        };
+        _proto.invokeEventHandler = function invokeEventHandler() {
+          this.onSomethingHappened.Invoke();
+          console.log('Event invoked!');
+        };
+        _proto.waitAndLog = /*#__PURE__*/function () {
+          var _waitAndLog = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+            var _this3 = this;
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  console.log("Testing await routines.");
 
-System.register("chunks:///_virtual/SfxPlayer.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Singleton.ts","./AudioController.ts"],(function(e){var i,t,l,o,n,r,a,u,s,c,p;return{setters:[function(e){i=e.applyDecoratedDescriptor,t=e.inheritsLoose,l=e.initializerDefineProperty,o=e.assertThisInitialized},function(e){n=e.cclegacy,r=e._decorator,a=e.AudioClip,u=e.randomRangeInt,s=e.Component},null,function(e){c=e.Singleton},function(e){p=e.AudioController}],execute:function(){var f,y,d,h,C,g,b,S;n._RF.push({},"f16c9qsoehL5Zf/CNMW5XkA","SfxPlayer",void 0);var m=r.ccclass,v=r.property;e("SfxPlayer",(f=m("SfxPlayer"),y=v({type:[a],tooltip:"Play() function will choose a random Sfx from this list."}),d=v({type:Number,range:[0,1]}),f((g=i((C=function(e){function i(){for(var i,t=arguments.length,n=new Array(t),r=0;r<t;r++)n[r]=arguments[r];return i=e.call.apply(e,[this].concat(n))||this,l(i,"playOnEnable",g,o(i)),l(i,"audioClips",b,o(i)),l(i,"volumeScale",S,o(i)),i.audioController=void 0,i}t(i,e);var n=i.prototype;return n.onEnable=function(){null!=this.audioController||(this.audioController=c.get(p)),this.playOnEnable&&this.play()},n.play=function(){if(this.audioClips.length>0){var e=this.audioClips[u(0,this.audioClips.length)];console.log("Play "+e.name),this.audioController.playSFX(e,this.volumeScale)}},n.playSelectedIndex=function(e){if(this.audioClips.length>e){var i=this.audioClips[e];this.audioController.playSFX(i,this.volumeScale)}},i}(s)).prototype,"playOnEnable",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),b=i(C.prototype,"audioClips",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),S=i(C.prototype,"volumeScale",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),h=C))||h));n._RF.pop()}}}));
+                  // Wait for 2 seconds
+                  _context.next = 3;
+                  return Wait.seconds(2);
+                case 3:
+                  _context.next = 5;
+                  return Wait.until(function () {
+                    return _this3.hasColor;
+                  });
+                case 5:
+                  console.log("Done because hasColor is true.");
+                case 6:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee);
+          }));
+          function waitAndLog() {
+            return _waitAndLog.apply(this, arguments);
+          }
+          return waitAndLog;
+        }();
+        _proto.setParentExample = function setParentExample() {
+          //Set an object to have no parent, using null causes it to vanish
+          this.myNode.setParent(director.getScene());
+        };
+        _proto.convertJsonObjectToObjectExample = function convertJsonObjectToObjectExample() {
+          //Convert a json object into a HexData object
+          //Is commented because it doesn't work here
+          // let gridData: HexData[] = JSON.parse(this.currentLevelAsset.gridSavedAsJson);
+          // var newData = new HexData();
+          // var jsonData = gridData.shift();
+          // Object.assign(newData, jsonData);     
+        };
+        _createClass(DummyReferenceScript, [{
+          key: "debug_PressBooleanButton",
+          get:
+          // Example of a simple type of "editor button" we can use    
+          //#region DEBUG
+          function get() {
+            return false;
+          },
+          set: function set(v) {
+            console.log('Button was pressed! ');
+          }
+        }]);
+        return DummyReferenceScript;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "onSomethingHappened", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "myNode", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "myNumber", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1.5;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "myNumberStepped", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 10;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "myVector", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "hasColor", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "meuColor", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "realCurve", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new RealCurve();
+        }
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "animationClip", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "mySprite", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "mySpriteArray", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor12 = _applyDecoratedDescriptor(_class2.prototype, "myPreFilledNumberArray", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [4, 2, 10, 50];
+        }
+      }), _descriptor13 = _applyDecoratedDescriptor(_class2.prototype, "prefab", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _applyDecoratedDescriptor(_class2.prototype, "debug_PressBooleanButton", [_dec14], Object.getOwnPropertyDescriptor(_class2.prototype, "debug_PressBooleanButton"), _class2.prototype)), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/SimpleDragTest.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./RaycastUtils.ts"],(function(e){var t,o,n,a,r,i,s,l,c,u,y,m,d,g,p,f,h,b,L;return{setters:[function(e){t=e.applyDecoratedDescriptor,o=e.inheritsLoose,n=e.initializerDefineProperty,a=e.assertThisInitialized},function(e){r=e.cclegacy,i=e._decorator,s=e.Layers,l=e.Camera,c=e.Prefab,u=e.Node,y=e.Vec3,m=e.input,d=e.Input,g=e.EventMouse,p=e.geometry,f=e.PhysicsSystem,h=e.instantiate,b=e.Component},null,function(e){L=e.RaycastUtils}],execute:function(){var v,P,R,w,E,N,T,C,j,D,M,U,x,F,z,S,Y;r._RF.push({},"757eef5KHpIm4Y4R5msoAQs","SimpleDragTest",void 0);var A=i.ccclass,O=i.property;e("SimpleDragTest",(v=A("SimpleDragTest"),P=O({type:s.Enum,group:{name:"Layers"},tooltip:"Layer for raycasting"}),R=O({type:Number,group:{name:"Layers"}}),w=O({type:s.Enum,group:{name:"Layers"},tooltip:"Layer for instantiated objects"}),E=O({type:l,group:{name:"Components"}}),N=O({type:c,group:{name:"Components"}}),T=O({type:u,group:{name:"Components"}}),C=O(u),v((M=t((D=function(e){function t(){for(var t,o=arguments.length,r=new Array(o),i=0;i<o;i++)r[i]=arguments[i];return t=e.call.apply(e,[this].concat(r))||this,n(t,"raycastLayer",M,a(t)),n(t,"layerNumber",U,a(t)),n(t,"instantiateLayer",x,a(t)),n(t,"camera",F,a(t)),n(t,"objectPrefab",z,a(t)),n(t,"heightPlane",S,a(t)),n(t,"selectedNode",Y,a(t)),t.originalY=null,t.currentMousePos=new y,t}o(t,e);var r=t.prototype;return r.start=function(){console.log("start() is the last one before update."),m.on(d.EventType.MOUSE_DOWN,this.mouseClick,this),m.on(d.EventType.MOUSE_MOVE,this.mouseMove,this)},r.mouseClick=function(e){e.getButton()===g.BUTTON_LEFT?this.performRaycastExternal(e):e.getButton()===g.BUTTON_RIGHT&&(this.selectedNode=null)},r.mouseMove=function(e){this.currentMousePos.set(e.getLocationX(),e.getLocationY(),0)},r.performRaycastExternal=function(e){if(this.camera){var t={result:null},o=1<<s.Enum.DEFAULT;if(L.mousePositionRaycast3D(e,this.camera,t,500,o)&&t.result){var n=t.result.collider;console.log("RaycastExternal - Found obj: "+n.node.name+" in layer "+this.getLayerName(n.node.layer)),this.originalY=n.node.worldPosition.y,this.selectedNode=n.node}else console.log("RaycastExternal: No object detected."),this.selectedNode=null}else console.error("Camera is not assigned.")},r.performRaycastClosest=function(e){if(this.camera){var t=new p.Ray,o=new y(e.getLocationX(),e.getLocationY(),0);this.camera.screenPointToRay(o.x,o.y,t);console.log("Layer mask: 1 | Layer name: "+this.getLayerName(1));var n=f.instance;if(n.raycastClosest(t,1,500)){var a=n.raycastClosestResult,r=(a.hitPoint,a.collider);console.log("RaycastClosest - Found obj: "+r.node.name+" in layer "+this.getLayerName(r.node.layer)),this.originalY=r.node.worldPosition.y,this.selectedNode=r.node}else console.log("RaycastClosest: No object detected.")}else console.error("Camera is not assigned.")},r.performLayerRaycast=function(e){if(this.camera){var t=1<<s.Enum.DEFAULT,o=new p.Ray,n=new y(e.getLocationX(),e.getLocationY(),0);this.camera.screenPointToRay(n.x,n.y,o);var a=f.instance.raycast(o,t,500);if(console.log("Layer mask: "+t+" | Layer name: "+this.getLayerName(t)),a){console.log("Found objs.");for(var r=f.instance.raycastResults,i=0;i<r.length;i++){var l=r[i];l.collider.node.layer==t&&console.log("Hit object:",l.collider.node.name)}}else console.log("RaycastAll: No objects detected.")}else console.error("Camera is not assigned.")},r.instantiateObjectAtScreenPosition=function(e){if(this.camera)if(this.objectPrefab){var t=new y(e.getLocationX(),e.getLocationY(),0),o=new y;this.camera.screenToWorld(t,o);o.y=-2.5;var n=h(this.objectPrefab);n.setPosition(o),this.node.scene.addChild(n),console.log("Instantiated object at world position:",o)}else console.error("Object prefab is not assigned.");else console.error("Camera is not assigned.")},r.update=function(){if(this.selectedNode){var e=this.getDragPosition();e&&this.selectedNode.setWorldPosition(e)}},r.getDragPosition=function(){if(this.camera){var e=new p.Ray,t=new y(this.currentMousePos.x,this.currentMousePos.y,0);this.camera.screenPointToRay(t.x,t.y,e);var o=e.o,n=e.d,a=new y(0,1,0),r=new y(0,this.originalY,0),i=L.rayPlaneIntersection(o,n,r,a);return i||(console.log("Ray does not intersect the plane."),null)}console.error("Camera is not assigned.")},r.getLayerName=function(e){for(var t in s.Enum)if(s.Enum[t]===e)return t;return"Unknown"},t}(b)).prototype,"raycastLayer",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return s.Enum.DEFAULT}}),U=t(D.prototype,"layerNumber",[R],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),x=t(D.prototype,"instantiateLayer",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return s.Enum.DEFAULT}}),F=t(D.prototype,"camera",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=t(D.prototype,"objectPrefab",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=t(D.prototype,"heightPlane",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),Y=t(D.prototype,"selectedNode",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),j=D))||j));r._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorButtonSequence.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './EditorSequenceButton.ts', './index.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Component, Button, EditorSequenceButton, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Component = module.Component;
+      Button = module.Button;
+    }, function (module) {
+      EditorSequenceButton = module.EditorSequenceButton;
+    }, null, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
+      cclegacy._RF.push({}, "eb2738tLe9JDJCZeNS/7je7", "EditorButtonSequence", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorButtonSequence = exports('EditorButtonSequence', (_dec = ccclass('EditorButtonSequence'), _dec2 = property({
+        type: [EditorSequenceButton],
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorButtonSequence, _Component);
+        function EditorButtonSequence() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "option", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "layoutParent", _descriptor2, _assertThisInitialized(_this));
+          _this.onOptionSelected = new Action();
+          return _this;
+        }
+        var _proto = EditorButtonSequence.prototype;
+        //#region Debug
+        // @property({ group: 'Debug' })
+        // public get debug_GetOptions() { return false; }
+        // public set debug_GetOptions(v) {
+        //     this.option = [];
+        //     const childCount = this.layoutParent.children.length;
+        //     for (let i = 0; i < childCount; i++) {    
+        //         const current = this.layoutParent.children[i].getComponent(EditorSequenceButton);
+        //         current.name = "Selection Button 00" + (i+1); 
+        //         this.option.push(current);
+        //     }
+        // }
+        //#endregion
+        _proto.initialize = function initialize(currentValue, valueRange) {
+          var _this2 = this;
+          var startValue = valueRange.x;
+          var _loop = function _loop() {
+            _this2.option[i].initialize(i, startValue);
+            var id = _this2.option[i].buttonId;
+            _this2.option[i].button.node.on(Button.EventType.CLICK, function () {
+              return _this2.selectOption(id);
+            }, _this2);
+            startValue++;
+          };
+          for (var i = 0; i < this.option.length; i++) {
+            _loop();
+          }
+          this.setOptionByValue(currentValue);
+        };
+        _proto.selectOption = function selectOption(id) {
+          console.log("EditorButtonSequence.selectOption(" + id + ", value: " + this.option[id].buttonValue + ")");
+          this.setOption(id);
+          this.onOptionSelected.invoke(this.option[id].buttonValue);
+        };
+        _proto.setOptionByValue = function setOptionByValue(value, saveData) {
+          if (saveData === void 0) {
+            saveData = false;
+          }
+          var id = this.convertValueToId(value);
+          this.setOption(id);
+          if (saveData) this.onOptionSelected.invoke(this.option[id].buttonValue);
+        };
+        _proto.setOption = function setOption(id) {
+          for (var i = 0; i < this.option.length; i++) {
+            this.option[i].toggleSelection(false);
+          }
+          this.option[id].toggleSelection(true);
+        };
+        _proto.convertValueToId = function convertValueToId(currentValue) {
+          for (var i = 0; i < this.option.length; i++) {
+            if (this.option[i].buttonValue == currentValue) return i;
+          }
+          return 0;
+        };
+        return EditorButtonSequence;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "option", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "layoutParent", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/SimpleEditorDropdown.ts",["./rollupPluginModLoBabelHelpers.js","cc","./EditorDropdownOption.ts","./index.ts","./Action.ts"],(function(e){var n,t,o,i,r,p,a,d,l,u,s,c,g;return{setters:[function(e){n=e.applyDecoratedDescriptor,t=e.inheritsLoose,o=e.initializerDefineProperty,i=e.assertThisInitialized,r=e.createClass},function(e){p=e.cclegacy,a=e._decorator,d=e.Node,l=e.Label,u=e.Component,s=e.Button},function(e){c=e.EditorDropdownOption},null,function(e){g=e.Action}],execute:function(){var f,b,h,y,x,w,m,D,E,v,k,B,C,O,z,L,S,_,I,T;p._RF.push({},"a465etGkWdMmYX9dp5ECSGu","SimpleEditorDropdown",void 0);var A=a.ccclass,P=a.property;e("SimpleEditorDropdown",(f=A("SimpleEditorDropdown"),b=P({type:Boolean,group:{name:"Runtime"}}),h=P({type:Number,group:{name:"Runtime"}}),y=P({type:Boolean,group:{name:"Configs"}}),x=P({type:d,visible:function(){return this.canExpandLayout},group:{name:"Configs"}}),w=P({type:d,visible:function(){return this.canExpandLayout},group:{name:"Configs"}}),m=P({type:d,group:{name:"Components"}}),D=P({type:l,group:{name:"Components"}}),E=P({type:[c],group:{name:"Components"}}),v=P({group:"Debug"}),f((C=n((B=function(e){function n(){for(var n,t=arguments.length,r=new Array(t),p=0;p<t;p++)r[p]=arguments[p];return n=e.call.apply(e,[this].concat(r))||this,o(n,"isExpanded",C,i(n)),o(n,"selectedId",O,i(n)),o(n,"canExpandLayout",z,i(n)),o(n,"expandedParent",L,i(n)),o(n,"expandAfterNode",S,i(n)),o(n,"expandedBlock",_,i(n)),o(n,"defaultLabel",I,i(n)),o(n,"dropdownOption",T,i(n)),n.onOptionSelected=new g,n}t(n,e);var p=n.prototype;return p.initialize=function(e){for(var n=this,t=function(){n.dropdownOption[o].initialize(o);var e=n.dropdownOption[o].id;n.dropdownOption[o].button.node.on(s.EventType.CLICK,(function(){return n.selectOption(e)}),n)},o=0;o<this.dropdownOption.length;o++)t();this.updateDisplay(e),this.isExpanded=!0,this.toggleDropdownBlock()},p.selectOption=function(e,n,t){void 0===n&&(n=!0),void 0===t&&(t=!0),this.updateDisplay(e),n&&this.toggleDropdownBlock(),t&&this.onOptionSelected.invoke(e)},p.updateDisplay=function(e){this.selectedId=e,this.defaultLabel.string=this.dropdownOption[e].getText()},p.toggleDropdownBlock=function(){this.isExpanded=!this.isExpanded,this.expandedBlock&&(this.expandedBlock.active=this.isExpanded,this.canExpandLayout&&(this.isExpanded?(this.expandedBlock.parent=this.expandedParent,this.expandedBlock.setSiblingIndex(this.expandAfterNode.getSiblingIndex()+1)):this.expandedBlock.parent=this.node))},r(n,[{key:"debug_ToggleCollapseDropdown",get:function(){return!1},set:function(e){console.log("debug_ToggleCollapseDropdown"),this.expandedBlock.active?this.isExpanded=!0:this.isExpanded=!1,this.toggleDropdownBlock()}}]),n}(u)).prototype,"isExpanded",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),O=n(B.prototype,"selectedId",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),z=n(B.prototype,"canExpandLayout",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),L=n(B.prototype,"expandedParent",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),S=n(B.prototype,"expandAfterNode",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),_=n(B.prototype,"expandedBlock",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),I=n(B.prototype,"defaultLabel",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),T=n(B.prototype,"dropdownOption",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),n(B.prototype,"debug_ToggleCollapseDropdown",[v],Object.getOwnPropertyDescriptor(B.prototype,"debug_ToggleCollapseDropdown"),B.prototype),k=B))||k));p._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorColorButton.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Color, Node, Button, Sprite, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Color = module.Color;
+      Node = module.Node;
+      Button = module.Button;
+      Sprite = module.Sprite;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "82826papXRJ5KdGa2G6LQVh", "EditorColorButton", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorColorButton = exports('EditorColorButton', (_dec = ccclass('EditorColorButton'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: Boolean
+      }), _dec4 = property({
+        type: Color
+      }), _dec5 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: Sprite,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorColorButton, _Component);
+        function EditorColorButton() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "id", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isActive", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "displayColor", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "disableVisual", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "enabledVisual", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "button", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "colorDisplay", _descriptor7, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = EditorColorButton.prototype;
+        _proto.initialize = function initialize(id) {
+          this.id = id;
+          if (!this.button) this.button = this.getComponent(Button);
+          if (this.colorDisplay) {
+            this.colorDisplay.color = this.displayColor;
+          }
+        };
+        _proto.toggleOptionButton = function toggleOptionButton() {
+          this.isActive = !this.isActive;
+          this.toggleOption(this.isActive);
+        };
+        _proto.toggleOption = function toggleOption(isActive) {
+          this.isActive = isActive;
+          if (this.disableVisual) {
+            this.disableVisual.active = !this.isActive;
+          }
+          if (this.enabledVisual) {
+            this.enabledVisual.active = this.isActive;
+          }
+        };
+        return EditorColorButton;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "id", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "isActive", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "displayColor", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Color(0, 1, 0, 1);
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "disableVisual", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "enabledVisual", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "button", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "colorDisplay", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/SimpleMouseTest.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,o,s,n,a,i,r,l,c,d,u,y,p,h,f,m,g,b;return{setters:[function(e){t=e.applyDecoratedDescriptor,o=e.inheritsLoose,s=e.initializerDefineProperty,n=e.assertThisInitialized},function(e){a=e.cclegacy,i=e._decorator,r=e.Camera,l=e.Prefab,c=e.input,d=e.Input,u=e.KeyCode,y=e.EventMouse,p=e.geometry,h=e.Vec3,f=e.Layers,m=e.PhysicsSystem,g=e.instantiate,b=e.Component}],execute:function(){var R,v,T,N,A,P,C;a._RF.push({},"e8f80ZNyVtHBLOhzwTem47V","SimpleMouseTest",void 0);var E=i.ccclass,w=i.property;e("SimpleMouseTest",(R=E("SimpleMouseTest"),v=w(r),T=w(l),R((P=t((A=function(e){function t(){for(var t,o=arguments.length,a=new Array(o),i=0;i<o;i++)a[i]=arguments[i];return t=e.call.apply(e,[this].concat(a))||this,s(t,"camera",P,n(t)),s(t,"simpleNodePrefab",C,n(t)),t.rayStart=null,t.rayEnd=null,t}o(t,e);var a=t.prototype;return a.start=function(){console.log("start() is the last one before update."),c.on(d.EventType.KEY_UP,this.keyUp,this),c.on(d.EventType.MOUSE_DOWN,this.mouseClick,this)},a.keyUp=function(e){e.keyCode==u.ARROW_UP&&console.log("Up arrow key is pressed.")},a.mouseClick=function(e){e.getButton()===y.BUTTON_LEFT?(console.log("Left mouse button clicked."),this.performRaycastClosest(e)):e.getButton()===y.BUTTON_RIGHT&&(console.log("Right Mouse button clicked."),this.performRaycastAll(e))},a.performRaycastAll=function(e){if(this.camera){var t=new p.Ray,o=new h(e.getLocationX(),e.getLocationY(),0);this.camera.screenPointToRay(o.x,o.y,t),this.rayStart=t.o.clone(),this.rayEnd=new h;var s=1<<f.Enum.DEFAULT;if(h.scaleAndAdd(this.rayEnd,t.o,t.d,500),m.instance.raycast(t,s,500,!0)){console.log("Found objs.");for(var n=m.instance.raycastResults,a=0;a<n.length;a++){var i=n[a];console.log("Hit object:",i.collider.node.name)}}else console.log("RaycastAll: No objects detected."),this.instantiateNodeAtRayTip(t),this.instantiateNodesAlongRay(t,.5)}else console.error("Camera is not assigned.")},a.performRaycastClosest=function(e){if(this.camera){var t=new p.Ray,o=new h(e.getLocationX(),e.getLocationY(),0);this.camera.screenPointToRay(o.x,o.y,t),this.rayStart=t.o.clone(),this.rayEnd=new h;var s=1<<f.Enum.DEFAULT;if(h.scaleAndAdd(this.rayEnd,t.o,t.d,500),m.instance.raycastClosest(t,s,500,!0)){var n=m.instance.raycastClosestResult,a=(n.hitPoint,n.hitNormal,n.collider);n.distance;console.log("RaycastClosest - Found obj: ",a.node.name)}else console.log("RaycastClosest: No object detected."),this.instantiateNodeAtRayTip(t),this.instantiateNodesAlongRay(t,.5)}else console.error("Camera is not assigned.")},a.instantiateNodeAtRayTip=function(e){if(this.simpleNodePrefab){var t=g(this.simpleNodePrefab),o=g(this.simpleNodePrefab);o.setPosition(e.o),t.setPosition(this.rayEnd),this.node.scene.addChild(t),this.node.scene.addChild(o)}else console.error("Simple node prefab is not assigned.")},a.instantiateNodesAlongRay=function(e,t){if(this.simpleNodePrefab)for(var o=e.d.clone().normalize(),s=Math.floor(1e3/t),n=0;n<=s;n++){var a=new h;h.scaleAndAdd(a,e.o,o,n*t);var i=g(this.simpleNodePrefab);i.setPosition(a),this.node.scene.addChild(i)}else console.error("Simple node prefab is not assigned.")},t}(b)).prototype,"camera",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=t(A.prototype,"simpleNodePrefab",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),N=A))||N));a._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorColorSelector.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './EditorColorButton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Component, Button, EditorColorButton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Component = module.Component;
+      Button = module.Button;
+    }, function (module) {
+      EditorColorButton = module.EditorColorButton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "74948mH2ehOloork/vijBYn", "EditorColorSelector", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorColorSelector = exports('EditorColorSelector', (_dec = ccclass('EditorColorSelector'), _dec2 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: [EditorColorButton],
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorColorSelector, _Component);
+        function EditorColorSelector() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "isExpanded", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "buttons", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expandedBlock", _descriptor3, _assertThisInitialized(_this));
+          _this.callback = null;
+          return _this;
+        }
+        var _proto = EditorColorSelector.prototype;
+        //#endregion
+        _proto.initialize = function initialize(availableColors, callback) {
+          var _this2 = this;
+          this.callback = callback;
+          var _loop = function _loop() {
+            _this2.buttons[i].initialize(i);
+            var id = _this2.buttons[i].id;
+            _this2.buttons[i].button.node.on(Button.EventType.CLICK, function () {
+              return _this2.toggleOptionButton(id);
+            }, _this2);
+          };
+          for (var i = 0; i < this.buttons.length; i++) {
+            _loop();
+          }
+          this.updateAvailableColors(availableColors);
+        };
+        _proto.updateAvailableColors = function updateAvailableColors(availableColors) {
+          this.resetColorDisplay();
+          if (availableColors.length > 0) {
+            for (var i = 0; i < availableColors.length; i++) {
+              if (availableColors[i] !== null) this.buttons[availableColors[i]].toggleOption(true);
+            }
+          }
+        };
+        _proto.resetColorDisplay = function resetColorDisplay() {
+          for (var i = 0; i < this.buttons.length; i++) {
+            this.buttons[i].toggleOption(false);
+          }
+        };
+        _proto.toggleOptionButton = function toggleOptionButton(id) {
+          this.buttons[id].toggleOptionButton();
+          //Set value to the level SA
 
-System.register("chunks:///_virtual/SimplePool.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(o){var e,t,n,i,r;return{setters:[function(o){e=o.createForOfIteratorHelperLoose},function(o){t=o.cclegacy,n=o.Pool,i=o.instantiate,r=o.director}],execute:function(){t._RF.push({},"f8854BpXKRD+JooN98gGgkj","SimplePool",void 0);var a=o("SimplePool",function(){function o(){}return o.init=function(e,t){void 0===t&&(t=o.DEFAULT_POOL_SIZE);var r=e.data.uuid;if(!this._pools.has(r)){var a={pool:null,memberIds:new Set,counter:0};a.pool=new n((function(){var o=i(e);return o.name=e.name+" (Pooled "+(a.counter+1)+")",a.counter++,o}),t),this._pools.set(r,a)}},o.preload=function(o,e){void 0===e&&(e=1),this.init(o,e);for(var t=[],n=0;n<e;n++)t.push(this.spawn(o));for(var i=0;i<e;i++)this.despawn(t[i])},o.spawn=function(o,e,t,n){this.init(o);var i=this._pools.get(o.data.uuid),a=i.pool.alloc();return i.memberIds.add(a.uuid),n||(n=r.getScene()),a.parent=n,e&&(a.position=e),t&&(a.rotation=t),a.active=!0,a},o.despawn=function(o){if(o&&o.isValid){for(var t,n=!1,i=e(this._pools);!(t=i()).done;){var r=t.value,a=(r[0],r[1]);if(a.memberIds.has(o.uuid)){o.active=!1,a.pool.free(o),a.memberIds.delete(o.uuid),n=!0;break}}n||(console.warn("Object '"+o.name+"' wasn't spawned from a pool. Destroying it instead."),o.destroy())}},o}());a.DEFAULT_POOL_SIZE=3,a._pools=new Map,t._RF.pop()}}}));
+          if (this.callback) {
+            this.callback();
+          }
+        };
+        _proto.getSelectedColors = function getSelectedColors() {
+          var availableColors = [];
+          for (var i = 0; i < this.buttons.length; i++) {
+            if (this.buttons[i].isActive) {
+              availableColors.push(i);
+            }
+          }
+          return availableColors;
+        };
+        return EditorColorSelector;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "isExpanded", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "buttons", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "expandedBlock", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/SimpleRaycastTest.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var e,o,n,s,c;return{setters:[function(t){e=t.inheritsLoose},function(t){o=t.cclegacy,n=t._decorator,s=t.Node,c=t.Component}],execute:function(){var i;o._RF.push({},"c2d20ydHtVM2atsCS9URq9P","SimpleRaycastTest",void 0);var r=n.ccclass;n.property,t("SimpleRaycastTest",r("SimpleRaycastTest")(i=function(t){function o(){return t.apply(this,arguments)||this}return e(o,t),o.prototype.start=function(){this.node.on(s.EventType.MOUSE_DOWN,(function(t){console.log("Mouse down")}),this)},o}(c))||i);o._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorDropdownOption.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Button, Label, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Button = module.Button;
+      Label = module.Label;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "981551RYfFOdoBrujioRrEJ", "EditorDropdownOption", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorDropdownOption = exports('EditorDropdownOption', (_dec = ccclass('EditorDropdownOption'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorDropdownOption, _Component);
+        function EditorDropdownOption() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "id", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "button", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "label", _descriptor3, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = EditorDropdownOption.prototype;
+        _proto.initialize = function initialize(id) {
+          this.id = id;
+          if (!this.button) this.button = this.getComponent(Button);
+          if (!this.label && this.node.children.length > 0) {
+            var firstChild = this.node.children[0];
+            this.label = firstChild.getComponent(Label);
+          }
+        };
+        _proto.getText = function getText() {
+          return this.label.string;
+        };
+        return EditorDropdownOption;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "id", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "button", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "label", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/Singleton.ts",["cc"],(function(n){var t,e,i;return{setters:[function(n){t=n.cclegacy,e=n.director,i=n.Node}],execute:function(){t._RF.push({},"803d1pv0ZdLsJdTra2OKgEv","Singleton",void 0),n("Singleton",function(){function n(){}return n.get=function(n){var t,i=this.instances.get(n);if(i&&!i.isValid)return this.instances.delete(n),null;if(i)return i;var s=null==(t=e.getScene())?void 0:t.getComponentInChildren(n);return s?(this.instances.set(n,s),s):null},n.set=function(n){var t=this,e=n.constructor,s=this.instances.get(e);s&&s.isValid||(this.instances.set(e,n),n.node.once(i.EventType.NODE_DESTROYED,(function(){t.instances.delete(e)})))},n}()).instances=new Map,t._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorExpirationAmount.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EditBox, Label, Node, Component, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EditBox = module.EditBox;
+      Label = module.Label;
+      Node = module.Node;
+      Component = module.Component;
+    }, null, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+      cclegacy._RF.push({}, "91cc4khVrBHDohJVoTqDrmp", "EditorExpirationAmount", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorExpirationAmount = exports('EditorExpirationAmount', (_dec = ccclass('EditorExpirationAmount'), _dec2 = property({
+        type: EditBox,
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Node,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec5 = property({
+        type: Node,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorExpirationAmount, _Component);
+        function EditorExpirationAmount() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "amount", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "label", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expandedParent", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "defaultParent", _descriptor4, _assertThisInitialized(_this));
+          _this.onAmountChanged = new Action();
+          return _this;
+        }
+        var _proto = EditorExpirationAmount.prototype;
+        //#endregion
+        _proto.initialize = function initialize(expandedParent, defaultParent) {
+          this.expandedParent = expandedParent;
+          this.defaultParent = defaultParent;
+          this.toggleTab(false);
+          this.amount.node.on(EditBox.EventType.TEXT_CHANGED, this.onValueChanged, this);
+        };
+        _proto.toggleTab = function toggleTab(active) {
+          this.node.active = active;
+          if (active) {
+            this.node.setParent(this.expandedParent);
+            this.node.setSiblingIndex(1);
+          } else {
+            this.node.setParent(this.defaultParent);
+            this.node.setSiblingIndex(0);
+          }
+        };
+        _proto.onValueChanged = function onValueChanged() {
+          if (this.amount.string.length == 0) return;
+          var value = Number.parseInt(this.amount.string);
+          this.onAmountChanged.invoke(value);
+        };
+        _proto.activateTab = function activateTab(title, value) {
+          this.amount.string = value.toString();
+          this.label.string = title;
+          this.toggleTab(true);
+        };
+        _proto.disableTab = function disableTab() {
+          this.toggleTab(false);
+        };
+        return EditorExpirationAmount;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "amount", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "label", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "expandedParent", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "defaultParent", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/TurnController.ts",["./rollupPluginModLoBabelHelpers.js","cc","./HexSlot.ts","./index.ts","./HexGridController.ts","./ComboController.ts","./Singleton.ts"],(function(t){var e,o,i,n,r,l,s,u,a,c,h;return{setters:[function(t){e=t.applyDecoratedDescriptor,o=t.initializerDefineProperty,i=t.inheritsLoose,n=t.assertThisInitialized},function(t){r=t.cclegacy,l=t._decorator,s=t.Component},function(t){u=t.HexSlot},null,function(t){a=t.HexGridController},function(t){c=t.ComboController},function(t){h=t.Singleton}],execute:function(){var g,p,f,d,v,S,b,m,x,M,T,w,y,C,k,H,P,A,E,z,O,G,D,F,L,R,_,N,Q;r._RF.push({},"0e97bYuTPhAk7jPaXZr/V6i","TurnController",void 0);var W=l.ccclass,j=l.property,X=t("SingleMovementData",(g=W("SingleMovementData"),p=j({type:u}),f=j({type:u}),g((S=e((v=function(t,e){o(this,"initialHex",S,this),o(this,"targetHex",b,this),this.initialHex=t,this.targetHex=e}).prototype,"initialHex",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),b=e(v.prototype,"targetHex",[f],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),d=v))||d)),q=function(t,e,o){this.origin=void 0,this.target=void 0,this.contition=function(){return!0},this.origin=e,this.target=o,this.contition=t},B=t("TurnSortingData",(m=W("TurnSortingData"),x=j({type:u}),M=j(),T=j(),m((C=e((y=function(){o(this,"slot",C,this),o(this,"connections",k,this),o(this,"colorAmount",H,this)}).prototype,"slot",[x],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),k=e(y.prototype,"connections",[M],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),H=e(y.prototype,"colorAmount",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),w=y))||w));t("TurnController",(P=W("TurnController"),A=j({type:a,group:"Runtime"}),E=j({type:[u]}),z=j({type:[B]}),O=j({type:[X]}),G=j({type:[u]}),P((L=e((F=function(t){function e(){for(var e,i=arguments.length,r=new Array(i),l=0;l<i;l++)r[l]=arguments[l];return e=t.call.apply(t,[this].concat(r))||this,o(e,"hexGrid",L,n(e)),o(e,"listOfSlotsExpectedToMove",R,n(e)),o(e,"turnSorting",_,n(e)),o(e,"currentMovement",N,n(e)),o(e,"towers",Q,n(e)),e.placedSlotQueue=[],e.lastPlacedSlot=void 0,e}i(e,t);var r=e.prototype;return r.initialize=function(){h.set(this),this.hexGrid=h.get(a)},r.startPlayerMovement=function(t){console.log("TurnController.startPlayerMovement()"),this.turnSorting.length>0?this.placedSlotQueue.push(t):(this.lastPlacedSlot=t,this.checkMovementAroundSlot(this.lastPlacedSlot))},r.checkMovementAroundSlot=function(t){var e=t.getData();console.log("startTurnSequence: ["+e.x+", "+e.y+"]"),this.updateListOfSlotsExpectedToMove();var o=this.decideNextStackToMove(t);null!==o&&this.executeMovement(o)},r.executeMovement=function(t){var e=this;this.currentMovement=t,h.get(a).moveTopPiecesToSlot(this.currentMovement.initialHex,this.currentMovement.targetHex,(function(){return e.movementFinishedCallback(e.currentMovement)})),h.get(c).cancelTowerExplosion()},r.runRules=function(t,e){for(var o=null,i=null,n=this.defineRules(t,e),r=0;r<n.length;r++){var l=n[r];if(l.contition()){o=l.origin,i=l.target;break}}return new X(o,i)},r.defineRules=function(t,e){var o=[],i=new q((function(){return t.isMultiColor()&&e.isSingleColor()}),t,e);o.push(i);var n=new q((function(){return!0}),e,t);return o.push(n),o},r.updateListOfSlotsExpectedToMove=function(){this.listOfSlotsExpectedToMove=[];for(var t=0;t<this.hexGrid.gridHeight;t++)for(var e=0;e<this.hexGrid.gridWidth;e++){var o=this.hexGrid.grid[t][e];o.data.isActiveSlot&&(o.debug_MarkSlotSelected=!1,o.updatePossibleNeighborMatches(),o.hasPossibleMatches&&(o.debug_MarkSlotSelected=!0,this.listOfSlotsExpectedToMove.push(o)))}this.createTurnSortingList(),this.turnSorting.sort((function(t,e){return e.colorAmount-t.colorAmount})),this.turnSorting.sort((function(t,e){return t.connections-e.connections}))},r.createTurnSortingList=function(){console.log("createTurnSortingList()");var t=h.get(e).turnSorting;t.clear();for(var o=h.get(e).listOfSlotsExpectedToMove,i=0;i<o.length;i++){for(var n=o[i],r=n.possibleMatches[0],l=!0,s=0;s<n.possibleMatches.length;s++){var u=n.possibleMatches[s];if(!u.possibleMatches.contains(r)&&u!=r){l=!1;break}}if(l){var a=new B;a.slot=n,a.connections=n.possibleMatches.length,a.colorAmount=n.getColorAmount(),t.push(a)}}t.length>1&&h.get(c).cancelTowerExplosion()},r.decideNextStackToMove=function(t){if(this.listOfSlotsExpectedToMove.length<=1)return this.movementFinishedCallback(null),null;if(2==this.listOfSlotsExpectedToMove.length){var e=this.turnSorting[0].slot,o=this.turnSorting[1].slot;this.lastPlacedSlot===this.turnSorting[1].slot&&(e=this.turnSorting[1].slot,o=this.turnSorting[0].slot);var i=this.runRules(e,o);this.executeMovement(i)}else if(1==this.turnSorting[0].connections){var n=this.turnSorting[0].slot,r=n.possibleMatches[0],l=new X(n,r);this.executeMovement(l)}else{var s=this.turnSorting[0].slot,u=s.possibleMatches[0],a=new X(s,u);this.executeMovement(a)}return null},r.movementFinishedCallback=function(t){this.lastPlacedSlot=this.placedSlotQueue.pop(),this.placedSlotQueue.clear(),this.turnSorting.length>0?this.checkMovementAroundSlot(this.turnSorting[0].slot):(console.log("TurnController.turnFinishedCallback() EXPLODE NOW?"),this.checkForTowers())},r.checkForTowers=function(){this.towers.clear();for(var t=0;t<this.hexGrid.gridHeight;t++)for(var e=0;e<this.hexGrid.gridWidth;e++){var o=this.hexGrid.grid[t][e];o.data.isActiveSlot&&null!=o.getTopStack()&&o.getTopStack().isColor&&o.getTopStack().amount>=10&&this.towers.push(o)}h.get(c).updateTowers(this.towers)},r.explodeAnimationStarted=function(){for(var t=0;t<this.towers.length;t++)this.listOfSlotsExpectedToMove.remove(this.towers[t])},e}(s)).prototype,"hexGrid",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),R=e(F.prototype,"listOfSlotsExpectedToMove",[E],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),_=e(F.prototype,"turnSorting",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),N=e(F.prototype,"currentMovement",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),Q=e(F.prototype,"towers",[G],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),D=F))||D));r._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorExpirationDisplay.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './SimpleEditorDropdown.ts', './EditorExpirationAmount.ts', './LevelAsset.ts', './EditorExpirationPercent.ts', './EditorExpirationId.ts', './index.ts', './LevelEditorController.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Component, SimpleEditorDropdown, EditorExpirationAmount, RuleExpiritionType, EditorExpirationPercent, EditorExpirationId, LevelEditorController, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Component = module.Component;
+    }, function (module) {
+      SimpleEditorDropdown = module.SimpleEditorDropdown;
+    }, function (module) {
+      EditorExpirationAmount = module.EditorExpirationAmount;
+    }, function (module) {
+      RuleExpiritionType = module.RuleExpiritionType;
+    }, function (module) {
+      EditorExpirationPercent = module.EditorExpirationPercent;
+    }, function (module) {
+      EditorExpirationId = module.EditorExpirationId;
+    }, null, function (module) {
+      LevelEditorController = module.LevelEditorController;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "c31e7x5SKBO9qomdqvvpwb+", "EditorExpirationDisplay", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorExpirationDisplay = exports('EditorExpirationDisplay', (_dec = ccclass('EditorExpirationDisplay'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: SimpleEditorDropdown,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: EditorExpirationAmount,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: EditorExpirationPercent,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: EditorExpirationId,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorExpirationDisplay, _Component);
+        function EditorExpirationDisplay() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "ruleValue", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "configsParent", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expandedParent", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expireCondition", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "amountControl", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "percentControl", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "idControl", _descriptor7, _assertThisInitialized(_this));
+          _this.onDropdownEvent = void 0;
+          _this.saveCallback = null;
+          _this.onAmountChanged = void 0;
+          return _this;
+        }
+        var _proto = EditorExpirationDisplay.prototype;
+        //#endregion
+        _proto.initialize = function initialize(id, amount, saveCallback) {
+          //console.log(`EditorExpirationDisplay.initialize(${id})`);
+          this.saveCallback = saveCallback;
+          this.expireCondition.initialize(id);
+          this.amountControl.initialize(this.expandedParent, this.configsParent);
+          this.percentControl.initialize(this.expandedParent, this.configsParent);
+          this.idControl.initialize(this.expandedParent, this.configsParent);
+          this.ruleValue = amount;
+          this.setStartingTab(id, amount);
+          this.setEvents();
+        };
+        _proto.setEvents = function setEvents() {
+          var _this2 = this;
+          this.onDropdownEvent = function (num) {
+            _this2.onDropdownChanged(num);
+          };
+          this.onAmountChanged = function (num) {
+            _this2.onRuleValueChanged(num);
+          };
+          this.expireCondition.onOptionSelected.addListener(this.onDropdownEvent);
+          this.amountControl.onAmountChanged.addListener(this.onAmountChanged);
+          this.percentControl.onAmountChanged.addListener(this.onAmountChanged);
+          this.idControl.onAmountChanged.addListener(this.onAmountChanged);
+        };
+        _proto.setStartingTab = function setStartingTab(id, amount) {
+          this.disableAllTabs();
+          if (id == RuleExpiritionType.AfterNumberOfMatchedPieces) {
+            this.amountControl.activateTab('Number of Pieces: ', amount);
+          } else if (id == RuleExpiritionType.AfterNumberOfOptionTrays) {
+            this.amountControl.activateTab('Number of Trays: ', amount);
+          } else if (id == RuleExpiritionType.AfterTheObjectiveReacherPercentage) {
+            this.percentControl.activateTab('Objective Percent', amount);
+          } else if (id == RuleExpiritionType.AfterSpecificObjectiveIsCompleted) {
+            this.idControl.activateTab(amount, Singleton.get(LevelEditorController).getListOfObjectives());
+          }
+        };
+        _proto.updateDisplay = function updateDisplay(id, amount) {
+          this.expireCondition.updateDisplay(id);
+          this.ruleValue = amount;
+          //this.updateCurrentTab(id);
+          this.setStartingTab(id, amount);
+        };
+        _proto.onDestroy = function onDestroy() {
+          if (this.expireCondition.onOptionSelected !== null) this.expireCondition.onOptionSelected.removeListener(this.onDropdownEvent);
+          if (this.percentControl.onAmountChanged !== null) this.percentControl.onAmountChanged.removeListener(this.onAmountChanged);
+          if (this.amountControl.onAmountChanged !== null) this.amountControl.onAmountChanged.removeListener(this.onAmountChanged);
+        };
+        _proto.onDropdownChanged = function onDropdownChanged(id) {
+          console.log("EditorExpirationDisplay.onDropdownChanged() ", id);
+          this.updateCurrentTab(id);
+          //Add callback
+          this.saveCallback();
+        };
+        _proto.updateCurrentTab = function updateCurrentTab(id) {
+          this.disableAllTabs();
+          if (id == RuleExpiritionType.AfterNumberOfMatchedPieces) {
+            this.amountControl.activateTab('Number of Pieces: ', 50);
+          } else if (id == RuleExpiritionType.AfterNumberOfOptionTrays) {
+            this.amountControl.activateTab('Number of Trays: ', 3);
+          } else if (id == RuleExpiritionType.AfterTheObjectiveReacherPercentage) {
+            this.percentControl.activateTab('Objective Percent', 20);
+          } else if (id == RuleExpiritionType.AfterSpecificObjectiveIsCompleted) {
+            this.idControl.activateTab(1, Singleton.get(LevelEditorController).getListOfObjectives());
+          } else ;
+        };
+        _proto.disableAllTabs = function disableAllTabs() {
+          this.amountControl.disableTab();
+          this.percentControl.disableTab();
+          this.idControl.disableTab();
+        };
+        _proto.onRuleValueChanged = function onRuleValueChanged(amount) {
+          console.log("EditorExpirationDisplay.onRuleValueChanged() ", amount);
+          this.ruleValue = amount;
+          this.saveCallback();
+        }
 
-System.register("chunks:///_virtual/tweenMovementTests.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,n,o,r,i,a,s,l,c,u,p,f,b,v,d;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,o=e.initializerDefineProperty,r=e.assertThisInitialized,i=e.asyncToGenerator,a=e.regeneratorRuntime,s=e.createForOfIteratorHelperLoose},function(e){l=e.cclegacy,c=e._decorator,u=e.Node,p=e.math,f=e.tween,b=e.Component,v=e.RealCurve,d=e.director}],execute:function(){var g,m,h,y,w,j,P,M,T,C,O;l._RF.push({},"80de0r4uf9CMZOrMJndCW94","tweenMovementTests",void 0);var x=c.ccclass,z=c.property;e("tweenMovementTests",(g=x("tweenMovementTests"),m=z({type:u,group:"Components"}),h=z({type:[u],group:"Components"}),y=z({type:u,group:"Components"}),g((P=t((j=function(e){function t(){for(var t,n=arguments.length,i=new Array(n),a=0;a<n;a++)i[a]=arguments[a];return t=e.call.apply(e,[this].concat(i))||this,o(t,"realCurve",P,r(t)),o(t,"duration",M,r(t)),o(t,"singleObj",T,r(t)),o(t,"objects",C,r(t)),o(t,"targetNode",O,r(t)),t}n(t,e);var l=t.prototype;return l.start=function(){var e=this;this.moveObjectsToPosition(this.objects,this.targetNode.worldPosition,this.duration,(function(){return e.afterAnimationMethod()}))},l.moveObjectsToPosition=function(){var e=i(a().mark((function e(t,n,o,r){var i,l,c,u;return a().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:i=s(t);case 1:if((l=i()).done){e.next=11;break}return c=l.value,console.log("Moving object: "+c.name),u=c.worldPosition.clone(),c.setParent(d.getScene()),n.y+=.1,e.next=9,this.moveObjectToPosition(c,u,n,o);case 9:e.next=1;break;case 11:console.log("All objects have been moved in sequence."),r&&r();case 13:case"end":return e.stop()}}),e,this)})));return function(t,n,o,r){return e.apply(this,arguments)}}(),l.moveObjectToPosition=function(e,t,n,o){var r=n.clone();r.x=p.lerp(t.x,n.x,.75),r.y+=.3;var i=e.eulerAngles.clone();return i.z-=180,new Promise((function(a){e.setWorldPosition(t),f(e).parallel(f().to(.75*o,{worldPosition:r},{easing:"quadOut"}).to(.25*o,{worldPosition:n},{easing:"quadIn"}),f().to(o,{eulerAngles:i},{easing:"linear"})).call((function(){return a()})).start()}))},l.afterAnimationMethod=function(){console.log("afterAnimationMethod() All objects have been moved in sequence.")},t}(b)).prototype,"realCurve",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new v}}),M=t(j.prototype,"duration",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 1}}),T=t(j.prototype,"singleObj",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),C=t(j.prototype,"objects",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),O=t(j.prototype,"targetNode",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),w=j))||w));l._RF.pop()}}}));
+        //#region Get / Set
+        ;
 
-System.register("chunks:///_virtual/TweenPositionCommand.ts",["./rollupPluginModLoBabelHelpers.js","cc","./AsyncCommand.ts","./ClassScanner.ts"],(function(n){var e,t,r,o,i,a,c,s,u,l,p;return{setters:[function(n){e=n.applyDecoratedDescriptor,t=n.inheritsLoose,r=n.initializerDefineProperty,o=n.assertThisInitialized,i=n.asyncToGenerator,a=n.regeneratorRuntime},function(n){c=n.cclegacy,s=n._decorator,u=n.Vec3},function(n){l=n.AsyncCommand},function(n){p=n.commandclass}],execute:function(){var m,f,d;c._RF.push({},"5a861RJ+3dHT7Q8Bt15LCPn","TweenPositionCommand",void 0);s.ccclass;var y=s.property;n("TweenPositionCommand",p("TweenPositionCommand")((d=e((f=function(n){function e(){for(var e,t=arguments.length,i=new Array(t),a=0;a<t;a++)i[a]=arguments[a];return e=n.call.apply(n,[this].concat(i))||this,r(e,"targetPosition",d,o(e)),e}return t(e,n),e.prototype.execute=function(){var n=i(a().mark((function n(){return a().wrap((function(n){for(;;)switch(n.prev=n.next){case 0:case"end":return n.stop()}}),n)})));return function(){return n.apply(this,arguments)}}(),e}(l)).prototype,"targetPosition",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new u}}),m=f))||m);c._RF.pop()}}}));
+        _proto.getSelectedId = function getSelectedId() {
+          return this.expireCondition.selectedId;
+        };
+        _proto.getRuleValue = function getRuleValue() {
+          return this.ruleValue;
+        }
 
-System.register("chunks:///_virtual/TweenScaleCommand.ts",["./rollupPluginModLoBabelHelpers.js","cc","./AsyncCommand.ts","./ClassScanner.ts"],(function(e){var n,t,r,a,i,o,u,c,l,s,p,f,d,m;return{setters:[function(e){n=e.applyDecoratedDescriptor,t=e.inheritsLoose,r=e.initializerDefineProperty,a=e.assertThisInitialized,i=e.asyncToGenerator,o=e.regeneratorRuntime},function(e){u=e.cclegacy,c=e._decorator,l=e.RealCurve,s=e.Node,p=e.Vec3,f=e.tween},function(e){d=e.AsyncCommand},function(e){m=e.commandclass}],execute:function(){var g,y,w,T,b,v,h,C,S,A,z,N,F;u._RF.push({},"59ee5ipcOlBY7geSJpHc/2i","TweenScaleCommand",void 0);c.ccclass;var R=c.property;e("TweenScaleCommand",(g=m("TweenScaleCommand"),y=R({type:l}),w=R({type:s}),T=R(),b=R({type:s,visible:function(){return this.useNodeAsTarget}}),v=R({visible:function(){return!this.useNodeAsTarget}}),g((S=n((C=function(e){function n(){for(var n,t=arguments.length,i=new Array(t),o=0;o<t;o++)i[o]=arguments[o];return n=e.call.apply(e,[this].concat(i))||this,r(n,"easeCurve",S,a(n)),r(n,"nodeToTween",A,a(n)),r(n,"useNodeAsTarget",z,a(n)),r(n,"toTarget",N,a(n)),r(n,"targetScale",F,a(n)),n}return t(n,e),n.prototype.execute=function(){var e=i(o().mark((function e(){var n=this;return o().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.abrupt("return",new Promise((function(e){var t=n.useNodeAsTarget?n.toTarget.scale:n.targetScale;f(n.nodeToTween).to(n.duration,{scale:t},{easing:function(e){return n.easeCurve.evaluate(e)}}).call((function(){console.log("Tween scale completed"),e()})).start(),n.waitUntilFinished||e()})));case 1:case"end":return e.stop()}}),e)})));return function(){return e.apply(this,arguments)}}(),n}(d)).prototype,"easeCurve",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return(e=new l).addKeyFrame(0,0),e.addKeyFrame(1,1),e;var e}}),A=n(C.prototype,"nodeToTween",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),z=n(C.prototype,"useNodeAsTarget",[T],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),N=n(C.prototype,"toTarget",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),F=n(C.prototype,"targetScale",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new p}}),h=C))||h));u._RF.pop()}}}));
+        //#endregion
+        ;
 
-System.register("chunks:///_virtual/TweenSequence.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./Wait.ts"],(function(e){var t,n,i,r,a,o,s,u,l,c,p,g,h,d,f,b,w,y;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,r=e.assertThisInitialized,a=e.createClass,o=e.asyncToGenerator,s=e.regeneratorRuntime,u=e.createForOfIteratorHelperLoose},function(e){l=e.cclegacy,c=e._decorator,p=e.Enum,g=e.RealCurve,h=e.Node,d=e.EventHandler,f=e.Vec3,b=e.Component,w=e.tween},null,function(e){y=e.Wait}],execute:function(){var T,v,S,A,N,m,q,V,z,C,k,P,x,E,O,F,R,_,W,U,D,j,H,I,L,M,K,B,G,Y;l._RF.push({},"e35b6aVV7lFibMdNCj8qoiy","TweenSequence",void 0);var J=c.ccclass,Q=c.property,X=c.executeInEditMode,Z=function(e){return e[e.None=0]="None",e[e.Wait=1]="Wait",e[e.Position=2]="Position",e[e.Scale=3]="Scale",e[e.Rotation=4]="Rotation",e[e.Angle=5]="Angle",e}(Z||{}),$=e("Tween",(T=J("Tween"),v=Q({type:p(Z)}),S=Q({visible:function(){return this.tweenType!=Z.None}}),A=Q({visible:function(){return this.tweenType!=Z.None&&this.tweenType!=Z.Wait}}),N=Q({type:g,visible:function(){return this.tweenType!=Z.None&&this.tweenType!=Z.Wait}}),m=Q({visible:function(){return this.canUseNodeAsTarget()}}),q=Q({type:h,visible:function(){return this.useNodeAsTarget&&this.canUseNodeAsTarget()}}),V=Q({visible:function(){return!this.useNodeAsTarget&&(this.tweenType==Z.Position||this.tweenType==Z.Scale||this.tweenType==Z.Rotation)}}),z=Q({visible:function(){return!this.useNodeAsTarget&&this.tweenType==Z.Angle}}),T((P=t((k=function(){function e(){i(this,"tweenType",P,this),i(this,"duration",x,this),i(this,"waitUntilFinished",E,this),i(this,"easeCurve",O,this),i(this,"useNodeAsTarget",F,this),i(this,"targetNode",R,this),i(this,"targetVec3",_,this),i(this,"targetAngle",W,this)}return e.prototype.canUseNodeAsTarget=function(){return this.tweenType==Z.Position||this.tweenType==Z.Scale||this.tweenType==Z.Rotation||this.tweenType==Z.Angle},e}()).prototype,"tweenType",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return Z.None}}),x=t(k.prototype,"duration",[S],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return.25}}),E=t(k.prototype,"waitUntilFinished",[A],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),O=t(k.prototype,"easeCurve",[N],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return(e=new g).addKeyFrame(0,0),e.addKeyFrame(1,1),e;var e}}),F=t(k.prototype,"useNodeAsTarget",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!1}}),R=t(k.prototype,"targetNode",[q],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),_=t(k.prototype,"targetVec3",[V],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new f(1,1,1)}}),W=t(k.prototype,"targetAngle",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),C=k))||C));e("TweenSequence",(U=J("TweenSequence"),D=Q({type:p(Z)}),j=Q({type:p(Z)}),H=Q({type:[$],visible:function(){return this.tweenSequence.length>0}}),I=Q({type:[d],visible:function(){return this.tweenSequence.length>0}}),U(L=X((K=t((M=function(e){function t(){for(var t,n=arguments.length,a=new Array(n),o=0;o<n;o++)a[o]=arguments[o];return t=e.call.apply(e,[this].concat(a))||this,i(t,"playOnEnable",K,r(t)),i(t,"_addToSequence",B,r(t)),i(t,"tweenSequence",G,r(t)),i(t,"onSequenceComplete",Y,r(t)),t.originalValuesSet=!1,t.originalPosition=new f,t.originalScale=new f,t.originalEuler=new f,t.originalAngle=0,t}n(t,e);var l=t.prototype;return l.onEnable=function(){this.cacheOriginalValues(),this.playOnEnable&&this.playTween()},l.cacheOriginalValues=function(){this.originalValuesSet||(this.originalValuesSet=!0,this.originalAngle=this.node.angle,this.originalPosition.set(this.node.position),this.originalScale.set(this.node.scale),this.originalEuler.set(this.node.eulerAngles))},l.resetToOriginalValues=function(){this.cacheOriginalValues(),this.node.angle=this.originalAngle,this.node.position=this.originalPosition,this.node.scale=this.originalScale,this.node.eulerAngles=this.originalEuler},l.playTween=function(){var e=o(s().mark((function e(){var t,n,i,r=this;return s().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:t=s().mark((function e(){var t,n,a,o,u;return s().wrap((function(e){for(;;)switch(e.prev=e.next){case 0:t=i.value,e.t0=t.tweenType,e.next=e.t0===Z.Position?4:e.t0===Z.Scale?7:e.t0===Z.Rotation?10:e.t0===Z.Angle?13:16;break;case 4:return n=t.useNodeAsTarget?t.targetNode.position:t.targetVec3,w(r.node).to(t.duration,{position:n},{easing:function(e){return t.easeCurve.evaluate(e)}}).start(),e.abrupt("break",16);case 7:return a=t.useNodeAsTarget?t.targetNode.scale:t.targetVec3,w(r.node).to(t.duration,{scale:a},{easing:function(e){return t.easeCurve.evaluate(e)}}).start(),e.abrupt("break",16);case 10:return o=t.useNodeAsTarget?t.targetNode.eulerAngles:t.targetVec3,w(r.node).to(t.duration,{eulerAngles:o},{easing:function(e){return t.easeCurve.evaluate(e)}}).start(),e.abrupt("break",16);case 13:return u=t.useNodeAsTarget?t.targetNode.angle:t.targetAngle,w(r.node).to(t.duration,{angle:u},{easing:function(e){return t.easeCurve.evaluate(e)}}).start(),e.abrupt("break",16);case 16:if(t.tweenType!==Z.Wait&&!t.waitUntilFinished){e.next=19;break}return e.next=19,y.seconds(t.duration);case 19:case"end":return e.stop()}}),e)})),n=u(this.tweenSequence);case 2:if((i=n()).done){e.next=6;break}return e.delegateYield(t(),"t0",4);case 4:e.next=2;break;case 6:this.onSequenceComplete.emit([]);case 7:case"end":return e.stop()}}),e,this)})));return function(){return e.apply(this,arguments)}}(),a(t,[{key:"addToSequence",get:function(){return this._addToSequence},set:function(e){var t=new $;t.tweenType=e,this.tweenSequence.push(t),this._addToSequence=Z.None}}]),t}(b)).prototype,"playOnEnable",[Q],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),B=t(M.prototype,"_addToSequence",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return Z.None}}),t(M.prototype,"addToSequence",[j],Object.getOwnPropertyDescriptor(M.prototype,"addToSequence"),M.prototype),G=t(M.prototype,"tweenSequence",[H],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),Y=t(M.prototype,"onSequenceComplete",[I],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new d}}),L=M))||L)||L));l._RF.pop()}}}));
+        return EditorExpirationDisplay;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "ruleValue", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "configsParent", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "expandedParent", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "expireCondition", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "amountControl", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "percentControl", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "idControl", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/UI_GameplayHUD.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./UI_ObjectivesDisplay.ts","./GameplayController.ts","./UI_LockDisplay.ts","./Singleton.ts","./CameraUtils.ts"],(function(e){var t,n,i,a,o,r,l,s,c,u,p,m,f,y,b,h,d;return{setters:[function(e){t=e.applyDecoratedDescriptor,n=e.inheritsLoose,i=e.initializerDefineProperty,a=e.assertThisInitialized},function(e){o=e.cclegacy,r=e._decorator,l=e.Node,s=e.Prefab,c=e.UITransform,u=e.Camera,p=e.instantiate,m=e.Component},null,function(e){f=e.UI_ObjectivesDisplay},function(e){y=e.GameplayController},function(e){b=e.UI_LockDisplay},function(e){h=e.Singleton},function(e){d=e.CameraUtils}],execute:function(){var g,v,k,D,U,P,C,z,I,_,L,w,T,j,G,H,O;o._RF.push({},"51a67KSUQ9Ne5WIFL5B3tJy","UI_GameplayHUD",void 0);var R=r.ccclass,S=r.property;e("UI_GameplayHUD",(g=R("UI_GameplayHUD"),v=S({type:f,group:"Components"}),k=S({type:l,group:"Components"}),D=S({type:s,group:"Components"}),U=S({type:c,group:"Components"}),P=S({type:c,group:"Components"}),C=S({type:u,group:"Runtime"}),z=S({type:[b],group:"Runtime"}),g((L=t((_=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),r=0;r<n;r++)o[r]=arguments[r];return t=e.call.apply(e,[this].concat(o))||this,i(t,"objectivesDisplay",L,a(t)),i(t,"clickblock",w,a(t)),i(t,"lockDisplayPrefab",T,a(t)),i(t,"lockParentTransform",j,a(t)),i(t,"canvasTransform",G,a(t)),i(t,"mainCamera",H,a(t)),i(t,"lockDisplays",O,a(t)),t.onPausedLambda=void 0,t}n(t,e);var o=t.prototype;return o.initialize=function(e,t,n){var i=this;h.set(this),this.mainCamera=t,this.objectivesDisplay.initialize(e),this.onPausedLambda=function(e){i.handleOnPaused(e)},h.get(y).onPause.addListener(this.onPausedLambda),this.setUpLocks(n)},o.handleOnPaused=function(e){this.clickblock.active=e},o.setUpLocks=function(e){for(var t=0;t<e.length;t++){var n=e[t].node,i=p(this.lockDisplayPrefab);i.setParent(this.lockParentTransform.node),i.setPosition(d.worldToUIPosition(n,this.mainCamera,this.canvasTransform));var a=i.getComponent(b);a.initialize(e[t]),this.lockDisplays.push(a)}},t}(m)).prototype,"objectivesDisplay",[v],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),w=t(_.prototype,"clickblock",[k],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),T=t(_.prototype,"lockDisplayPrefab",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),j=t(_.prototype,"lockParentTransform",[U],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),G=t(_.prototype,"canvasTransform",[P],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),H=t(_.prototype,"mainCamera",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),O=t(_.prototype,"lockDisplays",[z],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),I=_))||I));o._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorExpirationId.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './LevelAsset.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EditBox, Label, Node, Component, ObjectiveType, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EditBox = module.EditBox;
+      Label = module.Label;
+      Node = module.Node;
+      Component = module.Component;
+    }, null, function (module) {
+      ObjectiveType = module.ObjectiveType;
+    }, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "642b6j0EI5GLZveSvuFkM7T", "EditorExpirationId", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorExpirationId = exports('EditorExpirationId', (_dec = ccclass('EditorExpirationId'), _dec2 = property({
+        type: EditBox,
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Node,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec5 = property({
+        type: Node,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec6 = property({
+        type: [ObjectiveType],
+        group: {
+          name: "Runtime"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorExpirationId, _Component);
+        function EditorExpirationId() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "amount", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "label", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expandedParent", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "defaultParent", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "activeObjectives", _descriptor5, _assertThisInitialized(_this));
+          _this.onAmountChanged = new Action();
+          return _this;
+        }
+        var _proto = EditorExpirationId.prototype;
+        //#endregion
+        _proto.initialize = function initialize(expandedParent, defaultParent) {
+          this.expandedParent = expandedParent;
+          this.defaultParent = defaultParent;
+          this.toggleTab(false);
+          this.amount.node.on(EditBox.EventType.TEXT_CHANGED, this.onValueChanged, this);
+        };
+        _proto.toggleTab = function toggleTab(active) {
+          this.node.active = active;
+          if (active) {
+            this.node.setParent(this.expandedParent);
+            this.node.setSiblingIndex(1);
+          } else {
+            this.node.setParent(this.defaultParent);
+            this.node.setSiblingIndex(0);
+          }
+        };
+        _proto.onValueChanged = function onValueChanged() {
+          if (this.amount.string.length == 0) return;
+          var value = Number.parseInt(this.amount.string);
+          this.updateDisplay(value);
+          this.onAmountChanged.invoke(value);
+        };
+        _proto.activateTab = function activateTab(value, activeObjectives) {
+          console.log("EditorExpirationId.activateTab: " + value);
+          this.amount.string = value.toString();
+          this.refreshTab(activeObjectives);
+          this.toggleTab(true);
+        }
 
-System.register("chunks:///_virtual/UI_LockDisplay.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var e,i,a,n,r,o,l,s;return{setters:[function(t){e=t.applyDecoratedDescriptor,i=t.inheritsLoose,a=t.initializerDefineProperty,n=t.assertThisInitialized},function(t){r=t.cclegacy,o=t._decorator,l=t.Label,s=t.Component}],execute:function(){var p,c,u,d,y;r._RF.push({},"f3fe050QWBE8qigE1EkDqNa","UI_LockDisplay",void 0);var h=o.ccclass,f=o.property;t("UI_LockDisplay",(p=h("UI_LockDisplay"),c=f({type:l,group:"Components"}),p((y=e((d=function(t){function e(){for(var e,i=arguments.length,r=new Array(i),o=0;o<i;o++)r[o]=arguments[o];return e=t.call.apply(t,[this].concat(r))||this,a(e,"display",y,n(e)),e.onValueUpdatedLambda=void 0,e}i(e,t);var r=e.prototype;return r.initialize=function(t){var e=this;this.display.string=t.currentAmount.toString(),this.onValueUpdatedLambda=function(t){e.handleOnValueUpdate(t)},t.onCurrentAmountUpdate.addListener(this.onValueUpdatedLambda)},r.handleOnValueUpdate=function(t){this.display.string=t.toString(),0===t&&(this.display.node.active=!1)},e}(s)).prototype,"display",[c],{configurable:!0,enumerable:!0,writable:!0,initializer:null}),u=d))||u));r._RF.pop()}}}));
+        //Create refresh tab method
+        ;
 
-System.register("chunks:///_virtual/UI_ObjectivesDisplay.ts",["./rollupPluginModLoBabelHelpers.js","cc","./LevelAsset.ts","./UI_SingleObjective.ts","./ObjectivesController.ts","./index.ts","./Singleton.ts"],(function(e){var t,i,n,r,o,a,c,l,s,u,p,b,v,f,y,d,g,j;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.initializerDefineProperty,n=e.inheritsLoose,r=e.assertThisInitialized,o=e.createForOfIteratorHelperLoose},function(e){a=e.cclegacy,c=e._decorator,l=e.SpriteFrame,s=e.Enum,u=e.Prefab,p=e.Node,b=e.instantiate,v=e.Component},function(e){f=e.ObjectiveType,y=e.ObjectiveData},function(e){d=e.UI_SingleObjective},function(e){g=e.ObjectivesController},null,function(e){j=e.Singleton}],execute:function(){var h,m,O,S,z,I,k,P,_,D,w,C,F,L,U,B,x,A,E,R;a._RF.push({},"ed034FINgpB0LhKhvdIR5Dq","UI_ObjectivesDisplay",void 0);var H=c.ccclass,M=c.property,N=e("ObjectiveSprite",(h=H("ObjectiveSprite"),m=M({type:l}),O=M({type:s(f)}),h((I=t((z=function(){i(this,"sprite",I,this),i(this,"objective",k,this)}).prototype,"sprite",[m],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),k=t(z.prototype,"objective",[O],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return f.MergePieces}}),S=z))||S));e("UI_ObjectivesDisplay",(P=H("UI_ObjectivesDisplay"),_=M({type:[y]}),D=M({type:[d]}),w=M({type:u,group:{name:"Components"}}),C=M({type:p,group:{name:"Components"}}),F=M({type:[N],group:{name:"Components"}}),P((B=t((U=function(e){function t(){for(var t,n=arguments.length,o=new Array(n),a=0;a<n;a++)o[a]=arguments[a];return t=e.call.apply(e,[this].concat(o))||this,i(t,"loadedObjectives",B,r(t)),i(t,"blocks",x,r(t)),i(t,"displayPrefab",A,r(t)),i(t,"blockParent",E,r(t)),i(t,"objectiveSprites",R,r(t)),t}n(t,e);var a=t.prototype;return a.initialize=function(e){this.loadedObjectives=e,this.setEvents(),this.createButtons(e)},a.setEvents=function(){},a.createButtons=function(e){for(var t=0;t<e.length;t++)this.createObjectiveBlock(t,e[t].type,e[t].amount)},a.createObjectiveBlock=function(e,t,i){var n=b(this.displayPrefab);n.parent=this.blockParent,n.setSiblingIndex(e);var r=n.getComponent(d);r.initialize(e,this.getSpriteFromObjective(t),i),j.get(g).trackedObjectives[e].onAmountChanged.addListener(r.amountUpdatedLambda),this.blocks.push(r)},a.getSpriteFromObjective=function(e){for(var t,i=o(this.objectiveSprites);!(t=i()).done;){var n=t.value;if(n.objective===e)return n.sprite}return null},t}(v)).prototype,"loadedObjectives",[_],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),x=t(U.prototype,"blocks",[D],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),A=t(U.prototype,"displayPrefab",[w],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),E=t(U.prototype,"blockParent",[C],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),R=t(U.prototype,"objectiveSprites",[F],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return[]}}),L=U))||L));a._RF.pop()}}}));
+        _proto.refreshTab = function refreshTab(activeObjectives) {
+          this.activeObjectives = activeObjectives;
+          var selectedId = Number.parseInt(this.amount.string);
+          this.updateDisplay(selectedId);
+        };
+        _proto.updateDisplay = function updateDisplay(id) {
+          if (id > this.activeObjectives.length || id == 0) {
+            this.updateLabelDisplay('Invalid ID!');
+          } else {
+            var title = ObjectiveType[id - 1];
+            this.updateLabelDisplay(title);
+          }
+        };
+        _proto.updateLabelDisplay = function updateLabelDisplay(title) {
+          this.label.string = title;
+        };
+        _proto.disableTab = function disableTab() {
+          this.toggleTab(false);
+        };
+        return EditorExpirationId;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "amount", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "label", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "expandedParent", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "defaultParent", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "activeObjectives", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/UI_SingleObjective.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(t){var e,r,n,i,a,o,u,p,s,l,c;return{setters:[function(t){e=t.applyDecoratedDescriptor,r=t.inheritsLoose,n=t.initializerDefineProperty,i=t.assertThisInitialized},function(t){a=t.cclegacy,o=t._decorator,u=t.Sprite,p=t.ProgressBar,s=t.Label,l=t.math,c=t.Component}],execute:function(){var m,g,y,b,h,d,f,v,A,S,C,D,x;a._RF.push({},"b703dlEEGhA777xuJYP5EKZ","UI_SingleObjective",void 0);var z=o.ccclass,_=o.property;t("UI_SingleObjective",(m=z("UI_SingleObjective"),g=_({type:Number,group:{name:"Runtime"}}),y=_({type:u,group:{name:"Components"}}),b=_({type:p,group:{name:"Components"}}),h=_({type:s,group:{name:"Components"}}),d=_({type:s,group:{name:"Components"}}),m((A=e((v=function(t){function e(){for(var e,r=arguments.length,a=new Array(r),o=0;o<r;o++)a[o]=arguments[o];return e=t.call.apply(t,[this].concat(a))||this,n(e,"id",A,i(e)),n(e,"displaySprite",S,i(e)),n(e,"progressBar",C,i(e)),n(e,"minDisplay",D,i(e)),n(e,"maxDisplay",x,i(e)),e.maxAmount=0,e.currentAmount=0,e.amountUpdatedLambda=void 0,e}r(e,t);var a=e.prototype;return a.initialize=function(t,e,r){var n=this;this.id=t,this.displaySprite.spriteFrame=e,this.maxDisplay.string=r.toString(),this.maxAmount=r,this.minDisplay.string=this.currentAmount.toString(),this.updateCurrentAmount(this.currentAmount),this.amountUpdatedLambda=function(t){n.updateCurrentAmount(t)}},a.updateCurrentAmount=function(t){this.currentAmount=t,this.minDisplay.string=t.toString(),this.updateCurrentPercentage()},a.updateCurrentPercentage=function(){var t=l.inverseLerp(0,this.maxAmount,this.currentAmount);this.progressBar.progress=t},e}(c)).prototype,"id",[g],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return 0}}),S=e(v.prototype,"displaySprite",[y],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=e(v.prototype,"progressBar",[b],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),D=e(v.prototype,"minDisplay",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),x=e(v.prototype,"maxDisplay",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),f=v))||f));a._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorExpirationPercent.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './EditorSliderControl.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, Node, Vec2, Component, EditorSliderControl, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      Node = module.Node;
+      Vec2 = module.Vec2;
+      Component = module.Component;
+    }, null, function (module) {
+      EditorSliderControl = module.EditorSliderControl;
+    }, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+      cclegacy._RF.push({}, "79a30X5AG1BpIFJ9+Qn+YOW", "EditorExpirationPercent", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorExpirationPercent = exports('EditorExpirationPercent', (_dec = ccclass('EditorExpirationPercent'), _dec2 = property({
+        type: EditorSliderControl,
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Node,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec5 = property({
+        type: Node,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorExpirationPercent, _Component);
+        function EditorExpirationPercent() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "valuesSlider", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "label", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expandedParent", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "defaultParent", _descriptor4, _assertThisInitialized(_this));
+          _this.onAmountChanged = new Action();
+          _this.onSliderEvent = void 0;
+          return _this;
+        }
+        var _proto = EditorExpirationPercent.prototype;
+        //#endregion
+        _proto.initialize = function initialize(expandedParent, defaultParent) {
+          this.expandedParent = expandedParent;
+          this.defaultParent = defaultParent;
+          this.toggleTab(false);
+          this.valuesSlider.initialize(5, new Vec2(1, 99));
+          this.setEvents();
+        };
+        _proto.setEvents = function setEvents() {
+          var _this2 = this;
+          this.onSliderEvent = function (num) {
+            _this2.onSliderChanged(num);
+          };
+          this.valuesSlider.onValueChanged.addListener(this.onSliderEvent);
+        };
+        _proto.toggleTab = function toggleTab(active) {
+          this.node.active = active;
+          if (active) {
+            this.node.setParent(this.expandedParent);
+            this.node.setSiblingIndex(1);
+          } else {
+            this.node.setParent(this.defaultParent);
+            this.node.setSiblingIndex(0);
+          }
+        };
+        _proto.onSliderChanged = function onSliderChanged(percent) {
+          //if(this.amount.string.length == 0) return;
+          //const value = Number.parseInt(this.amount.string);
+          this.onAmountChanged.invoke(percent);
+        };
+        _proto.activateTab = function activateTab(title, value) {
+          //this.amount.string = value.toString();
+          this.label.string = title;
+          this.valuesSlider.updateCurrentValue(value);
+          this.toggleTab(true);
+        };
+        _proto.disableTab = function disableTab() {
+          this.toggleTab(false);
+        };
+        return EditorExpirationPercent;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "valuesSlider", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "label", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "expandedParent", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "defaultParent", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
-System.register("chunks:///_virtual/Wait.ts",["cc"],(function(n){var t;return{setters:[function(n){t=n.cclegacy}],execute:function(){t._RF.push({},"657060zw8dJbo3z/8IvaK/H","Wait",void 0);n("Wait",function(){function n(){}return n.seconds=function(n){return new Promise((function(t){return setTimeout(t,1e3*n)}))},n.milliseconds=function(n){return new Promise((function(t){return setTimeout(t,n)}))},n.until=function(n,t){return void 0===t&&(t=100),new Promise((function(e){!function i(){n()?e():setTimeout(i,t)}()}))},n}());t._RF.pop()}}}));
+System.register("chunks:///_virtual/EditorObjectivesController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './EditorObjectivesDisplay.ts', './LevelAsset.ts', './SimpleEditorDropdown.ts', './index.ts', './LevelEditorController.ts', './UI_ObjectivesDisplay.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createForOfIteratorHelperLoose, cclegacy, _decorator, Prefab, Node, instantiate, Component, EditorObjectivesDisplay, ObjectiveData, SimpleEditorDropdown, LevelEditorController, ObjectiveSprite, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Prefab = module.Prefab;
+      Node = module.Node;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }, function (module) {
+      EditorObjectivesDisplay = module.EditorObjectivesDisplay;
+    }, function (module) {
+      ObjectiveData = module.ObjectiveData;
+    }, function (module) {
+      SimpleEditorDropdown = module.SimpleEditorDropdown;
+    }, null, function (module) {
+      LevelEditorController = module.LevelEditorController;
+    }, function (module) {
+      ObjectiveSprite = module.ObjectiveSprite;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8;
+      cclegacy._RF.push({}, "0b2daqk5/5HPISl09f1UOFN", "EditorObjectivesController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorObjectivesController = exports('EditorObjectivesController', (_dec = ccclass('EditorObjectivesController'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: [EditorObjectivesDisplay]
+      }), _dec4 = property({
+        type: [ObjectiveData]
+      }), _dec5 = property({
+        type: Prefab,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: SimpleEditorDropdown,
+        group: {
+          name: "Components"
+        }
+      }), _dec9 = property({
+        type: [ObjectiveSprite]
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorObjectivesController, _Component);
+        function EditorObjectivesController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables 
+          _initializerDefineProperty(_this, "selectedId", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "blocks", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "loadedObjectives", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "displayPrefab", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "addParent", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "blockParent", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "dropdown", _descriptor7, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objectiveSprites", _descriptor8, _assertThisInitialized(_this));
+          _this.handleDisplaySelected = void 0;
+          _this.dropdownEventLambda = void 0;
+          _this.editboxEventLambda = void 0;
+          _this.removeButtonEventLambda = void 0;
+          return _this;
+        }
+        var _proto = EditorObjectivesController.prototype;
+        //#endregion
+        //#region Initialization
+        _proto.initialize = function initialize(objectives) {
+          this.loadedObjectives = objectives;
+          this.dropdown.initialize(0);
+          this.toggleRuleAdditionMode(false);
+          this.setEvents();
+          this.createButtons(objectives);
+        };
+        _proto.setEvents = function setEvents() {
+          var _this2 = this;
+          this.handleDisplaySelected = function (num) {
+            _this2.onObjectiveSelected(num);
+          };
+          this.dropdownEventLambda = function (num) {
+            _this2.onNewRuleSelected(num);
+          };
+          this.editboxEventLambda = function (num) {
+            _this2.onObjectiveAmountChanged(num);
+          };
+          this.removeButtonEventLambda = function (num) {
+            _this2.onDeleteRule(num);
+          };
+          this.dropdown.onOptionSelected.addListener(this.dropdownEventLambda);
+        };
+        _proto.createButtons = function createButtons(objectives) {
+          for (var i = 0; i < objectives.length; i++) {
+            this.createObjectiveBlock(i, objectives[i].type, objectives[i].amount);
+          }
+        }
+        //#endregion
+        ;
 
-System.register("chunks:///_virtual/WaitCommand.ts",["./rollupPluginModLoBabelHelpers.js","cc","./index.ts","./AsyncCommand.ts","./ClassScanner.ts","./Wait.ts"],(function(n){var t,e,i,r,a,o,c,s,u,l,p;return{setters:[function(n){t=n.applyDecoratedDescriptor,e=n.inheritsLoose,i=n.initializerDefineProperty,r=n.assertThisInitialized,a=n.asyncToGenerator,o=n.regeneratorRuntime},function(n){c=n.cclegacy,s=n._decorator},null,function(n){u=n.AsyncCommand},function(n){l=n.commandclass},function(n){p=n.Wait}],execute:function(){var m,d,f,y,h;c._RF.push({},"e4716C0KHFAE6LB5HJkyUtM","WaitCommand",void 0);s.ccclass;var v=s.property;n("WaitCommand",(m=l("WaitCommand"),d=v({visible:function(){return!1}}),m((h=t((y=function(n){function t(){for(var t,e=arguments.length,a=new Array(e),o=0;o<e;o++)a[o]=arguments[o];return t=n.call.apply(n,[this].concat(a))||this,i(t,"waitUntilFinished",h,r(t)),t}return e(t,n),t.prototype.execute=function(){var n=a(o().mark((function n(){return o().wrap((function(n){for(;;)switch(n.prev=n.next){case 0:return n.next=2,p.seconds(this.duration);case 2:console.log("Executing async command");case 3:case"end":return n.stop()}}),n,this)})));return function(){return n.apply(this,arguments)}}(),t}(u)).prototype,"waitUntilFinished",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return!0}}),f=y))||f));c._RF.pop()}}}));
+        _proto.createObjectiveBlock = function createObjectiveBlock(id, objective, amount) {
+          //console.log(`EditorObjectivesController.createObjectiveBlock ${id}: ${ObjectiveType[objective]} `);
 
-System.register("chunks:///_virtual/WorldToUIPosition.ts",["./rollupPluginModLoBabelHelpers.js","cc"],(function(e){var t,i,n,r,o,a,s,c,l,u,f;return{setters:[function(e){t=e.applyDecoratedDescriptor,i=e.inheritsLoose,n=e.initializerDefineProperty,r=e.assertThisInitialized},function(e){o=e.cclegacy,a=e._decorator,s=e.Node,c=e.Camera,l=e.Vec3,u=e.UITransform,f=e.Component}],execute:function(){var m,p,d,h,b,g,y,C,v;o._RF.push({},"07b68cO7gBMRJ3mNKmUOc7y","WorldToUIPosition",void 0);var T=a.ccclass,w=a.property;e("WorldToUIPosition",(m=T("WorldToUIPosition"),p=w(s),d=w(c),h=w(l),m((y=t((g=function(e){function t(){for(var t,i=arguments.length,o=new Array(i),a=0;a<i;a++)o[a]=arguments[a];return t=e.call.apply(e,[this].concat(o))||this,n(t,"target3DObject",y,r(t)),n(t,"mainCamera",C,r(t)),n(t,"offset",v,r(t)),t.uiTransform=null,t}i(t,e);var o=t.prototype;return o.onLoad=function(){this.uiTransform=this.node.getComponent(u),this.mainCamera||(this.mainCamera=this.node.scene.getComponentInChildren(c))},o.update=function(){if(this.target3DObject&&this.mainCamera){var e=new l;if(this.mainCamera.worldToScreen(e,this.target3DObject.worldPosition),l.add(e,e,this.offset),e.z<0)this.node.active=!1;else{this.node.active=!0;var t=new l;this.mainCamera.screenToWorld(t,e),this.node.setPosition(t)}}},t}(f)).prototype,"target3DObject",[p],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),C=t(g.prototype,"mainCamera",[d],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return null}}),v=t(g.prototype,"offset",[h],{configurable:!0,enumerable:!0,writable:!0,initializer:function(){return new l(0,0,0)}}),b=g))||b));o._RF.pop()}}}));
+          var newButton = instantiate(this.displayPrefab);
+          newButton.parent = this.blockParent;
+          newButton.setSiblingIndex(id);
+          var objectiveDisplay = newButton.getComponent(EditorObjectivesDisplay);
+          objectiveDisplay.initialize(id, this.getSpriteFromObjective(objective), amount);
+          objectiveDisplay.onOptionSelected.addListener(this.handleDisplaySelected);
+          objectiveDisplay.onAmountChanged.addListener(this.editboxEventLambda);
+          objectiveDisplay.onRemovePressed.addListener(this.removeButtonEventLambda);
+          this.blocks.push(objectiveDisplay);
+        };
+        _proto.toggleRuleAdditionMode = function toggleRuleAdditionMode(active) {
+          this.dropdown.node.active = active;
+          this.addParent.active = !active;
+        }
+
+        //#region Add Rule
+        //This opens the Dropdown
+        ;
+
+        _proto.addRuleButton = function addRuleButton() {
+          this.toggleRuleAdditionMode(true);
+        }
+
+        //This is when the a dropdown option is selected
+        ;
+
+        _proto.onNewRuleSelected = function onNewRuleSelected(id) {
+          this.addRule(id);
+        };
+        _proto.addRule = function addRule(ruleId) {
+          this.dropdown.node.active = false;
+          console.log("EditorObjectivesController.addRule()");
+          var id = this.blocks.length;
+          var type = ruleId;
+          var amount = 1;
+          var newObjective = new ObjectiveData();
+          newObjective.amount = amount;
+          newObjective.type = type;
+          this.loadedObjectives.push(newObjective);
+          this.createObjectiveBlock(id, type, amount);
+          this.toggleRuleAdditionMode(false);
+          this.saveData();
+        };
+        _proto.onObjectiveSelected = function onObjectiveSelected(id) {
+          console.log("EditorObjectivesController.onObjectiveSelected() ", id);
+          this.selectedId = id;
+          for (var i = 0; i < this.blocks.length; i++) {
+            this.blocks[i].toggleSelection(false);
+          }
+          this.blocks[id].toggleSelection(true);
+        }
+        //#endregion
+        ;
+
+        _proto.onObjectiveAmountChanged = function onObjectiveAmountChanged(amount) {
+          console.log("EditorObjectivesController.onObjectiveAmountChanged(id: " + this.selectedId + " |" + amount + ") ");
+          this.loadedObjectives[this.selectedId].amount = amount;
+          this.saveData();
+        };
+        _proto.onDeleteRule = function onDeleteRule(id) {
+          //Remove from the data at ID
+          this.loadedObjectives.splice(id, 1);
+
+          //Delete all
+          for (var i = 0; i < this.blocks.length; i++) {
+            this.blocks[i].node.destroy();
+          }
+          this.blocks = new Array();
+
+          //Create them again          
+          for (var _i = 0; _i < this.loadedObjectives.length; _i++) {
+            this.createObjectiveBlock(_i, this.loadedObjectives[_i].type, this.loadedObjectives[_i].amount);
+          }
+          this.saveData();
+        };
+        _proto.getSpriteFromObjective = function getSpriteFromObjective(objective) {
+          //console.log(`getPrefabFromColor( ${PieceColor[color]} )`);
+          for (var _iterator = _createForOfIteratorHelperLoose(this.objectiveSprites), _step; !(_step = _iterator()).done;) {
+            var sprite = _step.value;
+            if (sprite.objective === objective) {
+              return sprite.sprite;
+            }
+          }
+          return null;
+        };
+        _proto.saveData = function saveData() {
+          console.log("EditorObjectivesController.saveData()");
+          Singleton.get(LevelEditorController).updateObjectives(this.loadedObjectives);
+        };
+        _proto.getListOfObjectives = function getListOfObjectives() {
+          var objectives = [];
+          for (var i = 0; i < this.loadedObjectives.length; i++) {
+            objectives.push(this.loadedObjectives[i].type);
+          }
+          return objectives;
+        };
+        return EditorObjectivesController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "selectedId", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "blocks", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "loadedObjectives", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "displayPrefab", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "addParent", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "blockParent", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "dropdown", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "objectiveSprites", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorObjectivesDisplay.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Button, EditBox, Sprite, Component, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Button = module.Button;
+      EditBox = module.EditBox;
+      Sprite = module.Sprite;
+      Component = module.Component;
+    }, null, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "cc808hXr1lIHbLkXfm0ixF4", "EditorObjectivesDisplay", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorObjectivesDisplay = exports('EditorObjectivesDisplay', (_dec = ccclass('EditorObjectivesDisplay'), _dec2 = property({
+        type: Number,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: Number,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec4 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: EditBox,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: Sprite,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorObjectivesDisplay, _Component);
+        function EditorObjectivesDisplay() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "id", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objectiveId", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "mainButton", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "deleteButton", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "amountInput", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "inputButton", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "displaySprite", _descriptor7, _assertThisInitialized(_this));
+          _this.onOptionSelected = new Action();
+          _this.onAmountChanged = new Action();
+          _this.onRemovePressed = new Action();
+          return _this;
+        }
+        var _proto = EditorObjectivesDisplay.prototype;
+        _proto.initialize = function initialize(id, sprite, amount) {
+          var _this2 = this;
+          this.id = id;
+          this.displaySprite.spriteFrame = sprite;
+          this.amountInput.string = amount.toString();
+          this.mainButton.node.on(Button.EventType.CLICK, function () {
+            return _this2.mainButtonClick();
+          }, this);
+          this.amountInput.node.on(EditBox.EventType.TEXT_CHANGED, this.amountChangedEvent, this);
+          this.inputButton.node.on(Button.EventType.CLICK, function () {
+            return _this2.mainButtonClick();
+          }, this);
+          this.deleteButton.node.on(Button.EventType.CLICK, function () {
+            return _this2.removeButtonPressed();
+          }, this);
+        };
+        _proto.mainButtonClick = function mainButtonClick() {
+          console.log("block selected()");
+          this.onOptionSelected.invoke(this.id);
+        };
+        _proto.amountChangedEvent = function amountChangedEvent() {
+          if (this.amountInput.string.length == 0) return;
+          this.onAmountChanged.invoke(Number.parseInt(this.amountInput.string));
+        };
+        _proto.removeButtonPressed = function removeButtonPressed() {
+          this.onRemovePressed.invoke(this.id);
+        };
+        _proto.toggleSelection = function toggleSelection(active) {
+          if (active) {
+            this.deleteButton.node.active = true;
+          } else {
+            this.deleteButton.node.active = false;
+          }
+        };
+        return EditorObjectivesDisplay;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "id", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "objectiveId", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "mainButton", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "deleteButton", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "amountInput", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "inputButton", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "displaySprite", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorRangeEditbox.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Vec2, Label, EditBox, math, Component, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Vec2 = module.Vec2;
+      Label = module.Label;
+      EditBox = module.EditBox;
+      math = module.math;
+      Component = module.Component;
+    }, null, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "d98164loEZKopn8yOhJPrV9", "EditorRangeEditbox", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorRangeEditbox = exports('EditorRangeEditbox', (_dec = ccclass('EditorRangeEditbox'), _dec2 = property({
+        type: Vec2
+      }), _dec3 = property({
+        type: Number
+      }), _dec4 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: EditBox,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorRangeEditbox, _Component);
+        function EditorRangeEditbox() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "valueRange", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentValue", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "minDisplay", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "maxDisplay", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "input", _descriptor5, _assertThisInitialized(_this));
+          _this.onInputChanged = new Action();
+          return _this;
+        }
+        var _proto = EditorRangeEditbox.prototype;
+        //#endregion
+        _proto.initialize = function initialize(currentValue, valueRange) {
+          this.setValueRange(valueRange.x, valueRange.y);
+          this.setCurrentValue(currentValue);
+          this.input.node.on(EditBox.EventType.TEXT_CHANGED, this.handleInputChanged, this);
+          this.input.node.on(EditBox.EventType.EDITING_DID_ENDED, this.handleEditingEnded, this);
+        };
+        _proto.setValueRange = function setValueRange(min, max) {
+          this.valueRange = new Vec2(min, max);
+          this.minDisplay.string = min.toString();
+          this.maxDisplay.string = max.toString();
+        };
+        _proto.setCurrentValue = function setCurrentValue(value) {
+          this.currentValue = value;
+          this.input.string = this.currentValue.toString();
+        };
+        _proto.handleInputChanged = function handleInputChanged() {
+          if (this.input.string.length == 0) return;
+          var value = Number.parseInt(this.input.string);
+          this.currentValue = value;
+          this.onInputChanged.invoke(value);
+        };
+        _proto.handleEditingEnded = function handleEditingEnded() {
+          //console.log("handleEditingEnded()")
+          var value = Number.parseInt(this.input.string);
+          value = math.clamp(value, this.valueRange.x, this.valueRange.y);
+          this.setCurrentValue(value);
+          this.onInputChanged.invoke(value);
+        };
+        _proto.updateRange = function updateRange(min, max) {
+          this.setValueRange(min, max);
+        };
+        _proto.updateCurrentValue = function updateCurrentValue(value) {
+          this.setCurrentValue(value);
+        };
+        return EditorRangeEditbox;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "valueRange", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2(1, 9);
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "currentValue", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "minDisplay", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "maxDisplay", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "input", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorRangeSelector.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EditBox, Toggle, Node, Vec2, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EditBox = module.EditBox;
+      Toggle = module.Toggle;
+      Node = module.Node;
+      Vec2 = module.Vec2;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "0fe4bnC8jBBr7MoSi2WG6zL", "EditorRangeSelector", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorRangeSelector = exports('EditorRangeSelector', (_dec = ccclass('EditorRangeSelector'), _dec2 = property({
+        type: EditBox,
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: EditBox,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Toggle,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorRangeSelector, _Component);
+        function EditorRangeSelector() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "minBox", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "maxBox", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "toggle", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "normalBlock", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "overrideBlock", _descriptor5, _assertThisInitialized(_this));
+          _this.callback = null;
+          return _this;
+        }
+        var _proto = EditorRangeSelector.prototype;
+        //#endregion
+        _proto.initialize = function initialize(min, max, isOverriden, callback) {
+          this.callback = callback;
+          this.minBox.node.on(EditBox.EventType.TEXT_CHANGED, this.onMinChanged, this);
+          this.maxBox.node.on(EditBox.EventType.TEXT_CHANGED, this.onMaxChanged, this);
+          this.toggle.node.on(Toggle.EventType.TOGGLE, this.onToggleChanged, this);
+          this.updateRange(min, max, isOverriden);
+        };
+        _proto.updateRange = function updateRange(min, max, isOverriden) {
+          //console.log(`updateRange: ${min} -> ${max}`);
+
+          this.minBox.string = min.toString();
+          this.maxBox.string = max.toString();
+        };
+        _proto.getRange = function getRange() {
+          return new Vec2(parseInt(this.minBox.string), parseInt(this.maxBox.string));
+        };
+        _proto.onMinChanged = function onMinChanged() {
+          if (this.minBox.string.length == 0) return;
+          //console.log(`onMinChanged: ${this.minBox.string}`);
+          if (this.callback) this.callback();
+        };
+        _proto.onMaxChanged = function onMaxChanged() {
+          if (this.maxBox.string.length == 0) return;
+          //console.log(`onMaxChanged: ${this.minBox.string}`);
+          if (this.callback) this.callback();
+        };
+        _proto.onToggleChanged = function onToggleChanged() {
+          if (this.toggle.isChecked) {
+            this.normalBlock.active = false;
+            this.overrideBlock.active = true;
+          } else {
+            this.normalBlock.active = true;
+            this.overrideBlock.active = false;
+          }
+          if (this.callback) this.callback();
+        };
+        return EditorRangeSelector;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "minBox", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "maxBox", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "toggle", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "normalBlock", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "overrideBlock", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorRuleButton.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, Button, Node, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      Button = module.Button;
+      Node = module.Node;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+      cclegacy._RF.push({}, "5bacbag4iVHdqNj6ayMTFh4", "EditorRuleButton", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorRuleButton = exports('EditorRuleButton', (_dec = ccclass('EditorRuleButton'), _dec2 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorRuleButton, _Component);
+        function EditorRuleButton() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "numberLabel", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "button", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "normalDisplay", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "selectedDisplay", _descriptor4, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = EditorRuleButton.prototype;
+        _proto.initialize = function initialize(id) {
+          if (this.numberLabel) {
+            this.numberLabel.string = (id + 1).toString();
+          }
+        };
+        _proto.toggleSelection = function toggleSelection(active) {
+          if (active) {
+            this.normalDisplay.active = false;
+            this.selectedDisplay.active = true;
+            this.button.interactable = false;
+          } else {
+            this.normalDisplay.active = true;
+            this.selectedDisplay.active = false;
+            this.button.interactable = true;
+          }
+        };
+        return EditorRuleButton;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "numberLabel", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "button", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "normalDisplay", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "selectedDisplay", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorRulesController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelAsset.ts', './EditorSingleRuleDisplay.ts', './EditorRuleButton.ts', './index.ts', './LevelEditorController.ts', './OptionsTray.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Prefab, Node, Button, instantiate, Component, LevelRuleSet, EditorSingleRuleDisplay, EditorRuleButton, LevelEditorController, OptionsTray, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Prefab = module.Prefab;
+      Node = module.Node;
+      Button = module.Button;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }, function (module) {
+      LevelRuleSet = module.LevelRuleSet;
+    }, function (module) {
+      EditorSingleRuleDisplay = module.EditorSingleRuleDisplay;
+    }, function (module) {
+      EditorRuleButton = module.EditorRuleButton;
+    }, null, function (module) {
+      LevelEditorController = module.LevelEditorController;
+    }, function (module) {
+      OptionsTray = module.OptionsTray;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8;
+      cclegacy._RF.push({}, "c466cqeplRNH4sN2f144W5f", "EditorRulesController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorRulesController = exports('EditorRulesController', (_dec = ccclass('EditorRulesController'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: EditorSingleRuleDisplay,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Prefab,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: EditorRuleButton,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: OptionsTray,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: [LevelRuleSet]
+      }), _dec9 = property({
+        type: [EditorRuleButton]
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorRulesController, _Component);
+        function EditorRulesController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "selectedId", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentRuleDisplay", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "ruleButtonPrefab", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "addRuleButton", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "sideBarParent", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "optionsTray", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "loadedRules", _descriptor7, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "ruleButtons", _descriptor8, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = EditorRulesController.prototype;
+        //#endregion
+        _proto.initialize = function initialize(optionTrayRules) {
+          var _this2 = this;
+          this.loadedRules = optionTrayRules;
+          this.createButtons();
+          this.currentRuleDisplay.initialize(this.loadedRules[0], this.loadedRules.length <= 1, function () {
+            return _this2.saveData();
+          }, function () {
+            return _this2.deleteCurrentRule();
+          });
+          this.selectedId = 0;
+          this.addRuleButton.button.node.on(Button.EventType.CLICK, function () {
+            return _this2.createNewRule();
+          }, this);
+          this.optionsTray.initialize();
+        };
+        _proto.createButtons = function createButtons() {
+          for (var i = 0; i < this.loadedRules.length; i++) {
+            this.createNewButton(i);
+          }
+          this.ruleButtons[this.selectedId].toggleSelection(true);
+        };
+        _proto.createNewButton = function createNewButton(id) {
+          var _this3 = this;
+          var newButton = instantiate(this.ruleButtonPrefab);
+          newButton.parent = this.sideBarParent;
+          newButton.name = "RuleButton " + (id + 1);
+          newButton.setSiblingIndex(id);
+          var ruleButon = newButton.getComponent(EditorRuleButton);
+          ruleButon.initialize(id);
+          ruleButon.button.node.on(Button.EventType.CLICK, function () {
+            return _this3.loadRulesById(id);
+          }, this);
+          this.ruleButtons.push(ruleButon);
+        };
+        _proto.saveData = function saveData() {
+          console.log("EditorRulesController.saveData()");
+          var rules = this.currentRuleDisplay.getRulesetData();
+          this.loadedRules[this.selectedId] = rules;
+          Singleton.get(LevelEditorController).updateRuleset(this.loadedRules);
+        };
+        _proto.createNewRule = function createNewRule() {
+          var newRule = new LevelRuleSet();
+          this.loadedRules.push(newRule);
+          this.createNewButton(this.loadedRules.length - 1);
+          Singleton.get(LevelEditorController).updateRuleset(this.loadedRules);
+
+          //Select new rule
+          this.loadRulesById(this.loadedRules.length - 1);
+        };
+        _proto.deleteCurrentRule = function deleteCurrentRule() {
+          console.log("EditorRulesController.deleteCurrentRule()");
+          if (this.loadedRules.length <= 1) return;
+          this.loadedRules.splice(this.selectedId, 1);
+          for (var i = 0; i < this.ruleButtons.length; i++) {
+            this.ruleButtons[i].node.destroy();
+          }
+          this.ruleButtons = new Array();
+          for (var _i = 0; _i < this.loadedRules.length; _i++) {
+            this.createNewButton(_i);
+          }
+          var newId = this.selectedId > 0 ? this.selectedId - 1 : 0;
+          Singleton.get(LevelEditorController).updateRuleset(this.loadedRules);
+          this.loadRulesById(newId);
+        };
+        _proto.generatePreview = function generatePreview() {
+          this.optionsTray.updateRuleSet(this.loadedRules[this.selectedId]);
+          this.optionsTray.generateNewOptionsTray();
+        };
+        _proto.loadRulesById = function loadRulesById(id) {
+          console.log("EditorRulesController.loadRulesById: ", id);
+          this.selectedId = id;
+          this.toggleButtonDisplay(id);
+          this.currentRuleDisplay.loadRuleSet(this.loadedRules[id], this.loadedRules.length <= 1);
+        };
+        _proto.toggleButtonDisplay = function toggleButtonDisplay(id) {
+          for (var i = 0; i < this.ruleButtons.length; i++) {
+            this.ruleButtons[i].toggleSelection(false);
+          }
+          this.ruleButtons[id].toggleSelection(true);
+        };
+        return EditorRulesController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "selectedId", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "currentRuleDisplay", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "ruleButtonPrefab", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "addRuleButton", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "sideBarParent", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "optionsTray", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "loadedRules", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "ruleButtons", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorSequenceButton.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, Button, Node, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      Button = module.Button;
+      Node = module.Node;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+      cclegacy._RF.push({}, "47577i8ntxMLoojIAADtVIW", "EditorSequenceButton", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorSequenceButton = exports('EditorSequenceButton', (_dec = ccclass('EditorSequenceButton'), _dec2 = property({
+        type: Number,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: Number,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec4 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorSequenceButton, _Component);
+        function EditorSequenceButton() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "buttonId", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "buttonValue", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "numberLabel", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "button", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "normalDisplay", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "selectedDisplay", _descriptor6, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = EditorSequenceButton.prototype;
+        _proto.initialize = function initialize(id, displayNumber) {
+          this.buttonId = id;
+          this.buttonValue = displayNumber;
+          if (this.numberLabel) {
+            this.numberLabel.string = displayNumber.toString();
+          }
+        };
+        _proto.toggleSelection = function toggleSelection(active) {
+          if (active) {
+            this.normalDisplay.active = false;
+            this.selectedDisplay.active = true;
+            this.button.interactable = false;
+          } else {
+            this.normalDisplay.active = true;
+            this.selectedDisplay.active = false;
+            this.button.interactable = true;
+          }
+        };
+        return EditorSequenceButton;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "buttonId", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "buttonValue", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "numberLabel", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "button", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "normalDisplay", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "selectedDisplay", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorSingleRuleDisplay.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelAsset.ts', './EditorColorSelector.ts', './EditorRangeSelector.ts', './EditorExpirationDisplay.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Button, Node, Component, LevelRuleSet, EditorColorSelector, EditorRangeSelector, EditorExpirationDisplay;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Button = module.Button;
+      Node = module.Node;
+      Component = module.Component;
+    }, function (module) {
+      LevelRuleSet = module.LevelRuleSet;
+    }, function (module) {
+      EditorColorSelector = module.EditorColorSelector;
+    }, function (module) {
+      EditorRangeSelector = module.EditorRangeSelector;
+    }, function (module) {
+      EditorExpirationDisplay = module.EditorExpirationDisplay;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "bbd9f7xA0RPlLUOP4WY+/3t", "EditorSingleRuleDisplay", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorSingleRuleDisplay = exports('EditorSingleRuleDisplay', (_dec = ccclass('EditorSingleRuleDisplay'), _dec2 = property({
+        type: EditorExpirationDisplay,
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: EditorColorSelector,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: EditorRangeSelector,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: EditorRangeSelector,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorSingleRuleDisplay, _Component);
+        function EditorSingleRuleDisplay() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "expireCondition", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "colorAllowedDisplay", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "combinationsAllowedDisplay", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "stackAmountAllowedDisplay", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "previewBtn", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "deleteBtn", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "popupDelete", _descriptor7, _assertThisInitialized(_this));
+          _this.deleteCallback = null;
+          return _this;
+        }
+        var _proto = EditorSingleRuleDisplay.prototype;
+        //#endregion
+        _proto.initialize = function initialize(ruleSet, isOnlyRule, saveCallback, deleteCallback) {
+          var _this2 = this;
+          this.deleteCallback = deleteCallback;
+          this.deleteBtn.node.on(Button.EventType.CLICK, function () {
+            return _this2.deleteButton();
+          }, this);
+          this.previewBtn.node.on(Button.EventType.CLICK, function () {
+            return _this2.previewButton();
+          }, this);
+          var id = ruleSet.type;
+          var availableColors = [];
+          for (var i = 0; i < ruleSet.colorsAllowed.length; i++) {
+            availableColors.push(ruleSet.colorsAllowed[i] - 1);
+          }
+
+          //console.log(`EditorSingleRuleDisplay.initialize(${id})`);
+
+          this.expireCondition.initialize(id, ruleSet.ruleValue, saveCallback);
+          this.colorAllowedDisplay.initialize(availableColors, saveCallback);
+          this.combinationsAllowedDisplay.initialize(ruleSet.colorCombinationsAllowed.x, ruleSet.colorCombinationsAllowed.y, false, saveCallback);
+          this.stackAmountAllowedDisplay.initialize(ruleSet.stackAmountAllowed.x, ruleSet.stackAmountAllowed.y, false, saveCallback);
+          this.deleteBtn.interactable = !isOnlyRule;
+        };
+        _proto.loadRuleSet = function loadRuleSet(ruleSet, isOnlyRule) {
+          var id = ruleSet.type;
+          var availableColors = [];
+
+          //console.log("colorArray: ", ruleSet.colorsAllowed);
+
+          for (var i = 0; i < ruleSet.colorsAllowed.length; i++) {
+            availableColors.push(ruleSet.colorsAllowed[i] - 1);
+          }
+
+          //console.log("numberArray: ", availableColors);
+
+          this.expireCondition.updateDisplay(id, ruleSet.ruleValue);
+          this.colorAllowedDisplay.updateAvailableColors(availableColors);
+          this.combinationsAllowedDisplay.updateRange(ruleSet.colorCombinationsAllowed.x, ruleSet.colorCombinationsAllowed.y, false);
+          this.stackAmountAllowedDisplay.updateRange(ruleSet.stackAmountAllowed.x, ruleSet.stackAmountAllowed.y, false);
+          this.deleteBtn.interactable = !isOnlyRule;
+        };
+        _proto.getRulesetData = function getRulesetData() {
+          var ruleSet = new LevelRuleSet();
+          ruleSet.type = this.expireCondition.getSelectedId();
+          ruleSet.ruleValue = this.expireCondition.getRuleValue();
+          ruleSet.colorsAllowed = this.convertToPieceColorArray(this.colorAllowedDisplay.getSelectedColors());
+          ruleSet.colorCombinationsAllowed = this.combinationsAllowedDisplay.getRange();
+          ruleSet.stackAmountAllowed = this.stackAmountAllowedDisplay.getRange();
+          return ruleSet;
+        };
+        _proto.deleteButton = function deleteButton() {
+          console.log("EditorSingleRuleDisplay.deleteButton()");
+          this.deleteBtn.interactable = false;
+          this.popupDelete.active = true;
+        };
+        _proto.confirmDelete = function confirmDelete() {
+          var _this$deleteCallback;
+          this.deleteBtn.interactable = true;
+          this.popupDelete.active = false;
+
+          //Delete rule
+          console.log("EditorSingleRuleDisplay.confirmDelete()");
+          (_this$deleteCallback = this.deleteCallback) == null || _this$deleteCallback.call(this);
+        };
+        _proto.cancelDelete = function cancelDelete() {
+          this.deleteBtn.interactable = true;
+          this.popupDelete.active = false;
+        };
+        _proto.previewButton = function previewButton() {};
+        _proto.convertToPieceColorArray = function convertToPieceColorArray(numberArray) {
+          console.log("numberArray: ", numberArray);
+          var colorArray = numberArray.map(function (num) {
+            return num;
+          });
+          for (var i = 0; i < colorArray.length; i++) {
+            colorArray[i] = colorArray[i] + 1;
+          }
+          console.log("colorArray: ", colorArray);
+          return colorArray;
+        };
+        return EditorSingleRuleDisplay;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "expireCondition", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "colorAllowedDisplay", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "combinationsAllowedDisplay", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "stackAmountAllowedDisplay", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "previewBtn", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "deleteBtn", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "popupDelete", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorSingleStack.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './EditorStackObstacleBlock.ts', './EditorStackColorBlock.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Toggle, Label, Button, Component, EditorStackObstacleBlock, EditorStackColorBlock;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Toggle = module.Toggle;
+      Label = module.Label;
+      Button = module.Button;
+      Component = module.Component;
+    }, function (module) {
+      EditorStackObstacleBlock = module.EditorStackObstacleBlock;
+    }, function (module) {
+      EditorStackColorBlock = module.EditorStackColorBlock;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8;
+      cclegacy._RF.push({}, "30f5dB4H3JINLg1jrTfrsGd", "EditorSingleStack", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorSingleStack = exports('EditorSingleStack', (_dec = ccclass('EditorSingleStack'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: Boolean
+      }), _dec4 = property({
+        type: Toggle,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: EditorStackColorBlock,
+        group: {
+          name: "Components"
+        }
+      }), _dec9 = property({
+        type: EditorStackObstacleBlock,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorSingleStack, _Component);
+        function EditorSingleStack() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "id", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isColor", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "toggle", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "typeTitle", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "moveUpBtn", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "moveDownBtn", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "colorBlock", _descriptor7, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "obstacleBlock", _descriptor8, _assertThisInitialized(_this));
+          _this.deleteCallback = null;
+          _this.moveCallback = null;
+          _this.saveCallback = null;
+          return _this;
+        }
+        var _proto = EditorSingleStack.prototype;
+        //#endregion
+        _proto.initialize = function initialize(id, colorId, amount, isColor, obstacleId, deleteCallback, moveCallback, saveCallback) {
+          var _this2 = this;
+          this.id = id;
+          this.isColor = isColor;
+          this.deleteCallback = deleteCallback;
+          this.moveCallback = moveCallback;
+          this.saveCallback = saveCallback;
+          this.toggle.isChecked = this.isColor;
+          this.toggle.node.on(Toggle.EventType.TOGGLE, this.onToggleChanged, this);
+          this.colorBlock.initialize(colorId, amount, function () {
+            return _this2.saveCallback();
+          });
+          this.obstacleBlock.initialize(obstacleId, amount, function () {
+            return _this2.saveCallback();
+          });
+          this.toggleIsColor(this.isColor, false);
+        };
+        _proto.removeBlock = function removeBlock() {
+          var _this$deleteCallback;
+          console.log("EditorSingleStack.removeBlock() ", this.id);
+          (_this$deleteCallback = this.deleteCallback) == null || _this$deleteCallback.call(this, this.id);
+        };
+        _proto.moveUp = function moveUp() {
+          var _this$moveCallback;
+          console.log("EditorSingleStack.moveUp() ", this.id);
+          (_this$moveCallback = this.moveCallback) == null || _this$moveCallback.call(this, this.id, true);
+        };
+        _proto.moveDown = function moveDown() {
+          var _this$moveCallback2;
+          console.log("EditorSingleStack.moveDown() ", this.id);
+          (_this$moveCallback2 = this.moveCallback) == null || _this$moveCallback2.call(this, this.id, false);
+        };
+        _proto.onToggleChanged = function onToggleChanged() {
+          var _this$saveCallback;
+          console.log("EditorSingleStack.onToggleChanged()");
+          this.isColor = !this.isColor;
+          this.toggleIsColor(this.isColor, true);
+          (_this$saveCallback = this.saveCallback) == null || _this$saveCallback.call(this);
+        };
+        _proto.toggleIsColor = function toggleIsColor(isColor, triggerSave) {
+          console.log("EditorSingleStack.toggleIsColor: " + isColor);
+          this.isColor = isColor;
+          //Bug seems to be here
+          this.colorBlock.toggleBlock(isColor);
+          this.obstacleBlock.toggleBlock(!isColor);
+          if (this.isColor) {
+            this.typeTitle.string = "Is color";
+          } else {
+            this.typeTitle.string = "Not color";
+          }
+        };
+        _proto.toggleCanMoveUp = function toggleCanMoveUp(canMove) {
+          this.moveUpBtn.interactable = canMove;
+        };
+        _proto.toggleCanMoveDown = function toggleCanMoveDown(canMove) {
+          this.moveDownBtn.interactable = canMove;
+        };
+        _proto.updateId = function updateId(id) {
+          this.id = id;
+        }
+
+        //#region Getters
+        ;
+
+        _proto.getIsColor = function getIsColor() {
+          return this.isColor;
+        };
+        _proto.getAmount = function getAmount() {
+          //if(this.isColor) return this.piecesAmount;
+          if (this.isColor) return this.colorBlock.piecesAmount;else return Math.max(1, this.obstacleBlock.amount);
+        };
+        _proto.getColorId = function getColorId() {
+          //return this.colorId+1;
+          return this.colorBlock.colorId + 1;
+        };
+        _proto.getObstacleTypeId = function getObstacleTypeId() {
+          return this.obstacleBlock.getObstacleTypeId() + 1;
+        }
+        //#endregion
+        ;
+
+        return EditorSingleStack;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "id", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "isColor", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "toggle", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "typeTitle", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "moveUpBtn", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "moveDownBtn", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "colorBlock", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "obstacleBlock", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorSliderControl.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Vec2, Slider, Label, math, Component, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Vec2 = module.Vec2;
+      Slider = module.Slider;
+      Label = module.Label;
+      math = module.math;
+      Component = module.Component;
+    }, null, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "101bcgzY45EIayD73GSMZH2", "EditorSliderControl", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorSliderControl = exports('EditorSliderControl', (_dec = ccclass('EditorSliderControl'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: Vec2
+      }), _dec4 = property({
+        type: Number
+      }), _dec5 = property({
+        type: Slider,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorSliderControl, _Component);
+        function EditorSliderControl() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "startValue", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "valueRange", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentValue", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "slider", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "minDisplay", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "maxDisplay", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentDisplay", _descriptor7, _assertThisInitialized(_this));
+          _this.onValueChanged = new Action();
+          return _this;
+        }
+        var _proto = EditorSliderControl.prototype;
+        //#endregion
+        _proto.initialize = function initialize(currentValue, valueRange) {
+          this.setValueRange(valueRange.x, valueRange.y);
+          this.setCurrentValue(currentValue);
+          this.slider.progress = math.inverseLerp(this.valueRange.x, this.valueRange.y, currentValue);
+          this.slider.node.on('slide', this.onSliderChanged, this);
+        };
+        _proto.updateRange = function updateRange(min, max) {
+          this.setValueRange(min, max);
+        };
+        _proto.updateCurrentValue = function updateCurrentValue(value) {
+          this.setCurrentValue(value);
+          this.slider.progress = math.inverseLerp(this.valueRange.x, this.valueRange.y, value);
+        };
+        _proto.setCurrentValue = function setCurrentValue(value) {
+          this.currentValue = value;
+          this.currentDisplay.string = value.toString();
+        };
+        _proto.setValueRange = function setValueRange(min, max) {
+          this.valueRange = new Vec2(min, max);
+          this.minDisplay.string = min.toString();
+          this.maxDisplay.string = max.toString();
+        };
+        _proto.convertPercentageToValue = function convertPercentageToValue(percentage) {
+          var hadIntegerChange = false;
+          var value = math.lerp(this.valueRange.x, this.valueRange.y, percentage);
+          value = Math.round(value);
+          if (value != this.currentValue) hadIntegerChange = true;
+          this.setCurrentValue(value);
+          return hadIntegerChange;
+        };
+        _proto.onSliderChanged = function onSliderChanged() {
+          var hadIntegerChange = this.convertPercentageToValue(this.slider.progress);
+          if (hadIntegerChange) {
+            this.onValueChanged.invoke(this.currentValue);
+          }
+        };
+        return EditorSliderControl;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "startValue", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "valueRange", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2(1, 9);
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "currentValue", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "slider", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "minDisplay", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "maxDisplay", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "currentDisplay", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorStackColorBlock.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './SimpleEditorDropdown.ts', './EditorSliderControl.ts', './EditorButtonSequence.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Vec2, math, Component, SimpleEditorDropdown, EditorSliderControl, EditorButtonSequence;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Vec2 = module.Vec2;
+      math = module.math;
+      Component = module.Component;
+    }, function (module) {
+      SimpleEditorDropdown = module.SimpleEditorDropdown;
+    }, function (module) {
+      EditorSliderControl = module.EditorSliderControl;
+    }, function (module) {
+      EditorButtonSequence = module.EditorButtonSequence;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+      cclegacy._RF.push({}, "56605XdEYVDnbL1DWhGO+gA", "EditorStackColorBlock", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorStackColorBlock = exports('EditorStackColorBlock', (_dec = ccclass('EditorStackColorBlock'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: Number
+      }), _dec4 = property({
+        type: Vec2
+      }), _dec5 = property({
+        type: SimpleEditorDropdown,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: EditorSliderControl,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: EditorButtonSequence,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorStackColorBlock, _Component);
+        function EditorStackColorBlock() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "colorId", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "piecesAmount", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "valueRange", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "colorDropdown", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "valuesSlider", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "buttonSequence", _descriptor6, _assertThisInitialized(_this));
+          _this.saveCallback = null;
+          _this.onDropdownEvent = void 0;
+          _this.onSliderEvent = void 0;
+          _this.buttonSelectionLambda = void 0;
+          return _this;
+        }
+        var _proto = EditorStackColorBlock.prototype;
+        _proto.initialize = function initialize(colorId, amount, saveCallback) {
+          this.saveCallback = saveCallback;
+          this.piecesAmount = amount;
+          this.colorId = colorId;
+          this.colorDropdown.initialize(colorId);
+          this.valuesSlider.initialize(amount, this.valueRange);
+          this.buttonSequence.initialize(amount, this.valueRange);
+          this.setEvents();
+        };
+        _proto.setEvents = function setEvents() {
+          var _this2 = this;
+          this.onDropdownEvent = function (num) {
+            _this2.onDropdownChanged(num);
+          };
+          this.onSliderEvent = function (num) {
+            _this2.onSliderChanged(num);
+          };
+          this.buttonSelectionLambda = function (num) {
+            _this2.handleButtonSelected(num);
+          };
+          this.colorDropdown.onOptionSelected.addListener(this.onDropdownEvent);
+          this.valuesSlider.onValueChanged.addListener(this.onSliderEvent);
+          this.buttonSequence.onOptionSelected.addListener(this.buttonSelectionLambda);
+        };
+        _proto.onDestroy = function onDestroy() {
+          if (this.colorDropdown.onOptionSelected !== null) this.colorDropdown.onOptionSelected.removeListener(this.onDropdownEvent);
+          if (this.valuesSlider.onValueChanged !== null) this.valuesSlider.onValueChanged.removeListener(this.onSliderEvent);
+        };
+        _proto.onDropdownChanged = function onDropdownChanged(id) {
+          var _this$saveCallback;
+          console.log("EditorSingleStack.onDropdownChanged() ", id);
+          this.colorId = id;
+          (_this$saveCallback = this.saveCallback) == null || _this$saveCallback.call(this);
+        };
+        _proto.onSliderChanged = function onSliderChanged(value) {
+          var _this$saveCallback2;
+          //console.log(`EditorSingleStack.onSliderChanged(${value}) id: ${this.id}`);
+          this.piecesAmount = value;
+          (_this$saveCallback2 = this.saveCallback) == null || _this$saveCallback2.call(this);
+        };
+        _proto.handleButtonSelected = function handleButtonSelected(value) {
+          var _this$saveCallback3;
+          //console.log(`EditorSingleStack.handleButtonSelected(${value}) id: ${this.id}`);
+          this.piecesAmount = value;
+          (_this$saveCallback3 = this.saveCallback) == null || _this$saveCallback3.call(this);
+        };
+        _proto.toggleBlock = function toggleBlock(active, triggerSave) {
+          if (triggerSave === void 0) {
+            triggerSave = false;
+          }
+          this.node.active = active;
+          if (active) {
+            var clampedValue = math.clamp(this.piecesAmount, this.valueRange.x, this.valueRange.y);
+            this.buttonSequence.setOptionByValue(clampedValue, triggerSave);
+          }
+        };
+        return EditorStackColorBlock;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "colorId", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "piecesAmount", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "valueRange", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2(1, 9);
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "colorDropdown", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "valuesSlider", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "buttonSequence", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorStackController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelAsset.ts', './EditorSingleStack.ts', './HexSlot.ts', './HexGridController.ts', './index.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Prefab, instantiate, Component, PieceColor, ObstacleType, EditorSingleStack, HexSlot, PieceStack, HexGridController, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }, function (module) {
+      PieceColor = module.PieceColor;
+      ObstacleType = module.ObstacleType;
+    }, function (module) {
+      EditorSingleStack = module.EditorSingleStack;
+    }, function (module) {
+      HexSlot = module.HexSlot;
+      PieceStack = module.PieceStack;
+    }, function (module) {
+      HexGridController = module.HexGridController;
+    }, null, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+      cclegacy._RF.push({}, "52ec2CMeZJO6YqQPCYvmmFI", "EditorStackController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorStackController = exports('EditorStackController', (_dec = ccclass('EditorStackController'), _dec2 = property({
+        type: HexSlot
+      }), _dec3 = property({
+        type: [PieceStack]
+      }), _dec4 = property({
+        type: PieceStack
+      }), _dec5 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Prefab,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: [EditorSingleStack]
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorStackController, _Component);
+        function EditorStackController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "selectedSlot", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "piecesStack", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentStack", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "stackParent", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "stackPrefab", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "blocks", _descriptor6, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = EditorStackController.prototype;
+        _proto.initialize = function initialize(currentLevelAsset) {
+          this.node.active = false;
+        };
+        _proto.selectSlot = function selectSlot(slot) {
+          this.selectedSlot = slot;
+          //Load data from slot to UI
+          var data = slot.data;
+
+          //this.debugHexSlotData(slot);
+          slot.debug_MarkSlotSelected = true;
+          this.loadData(data.piecesStack);
+          this.node.active = true;
+          this.refreshStackButtons();
+        };
+        _proto.addColor = function addColor() {
+          var previousColorId = -1;
+          if (this.blocks.length > 0) {
+            previousColorId = this.blocks[this.blocks.length - 1].getColorId();
+          }
+          var nextColorId = previousColorId + 1;
+          if (nextColorId >= 6) nextColorId = 0;
+          console.log("EditorStackController.AddColor() " + nextColorId + " | " + PieceColor[nextColorId + 1]);
+          this.createNewBlock(this.blocks.length, nextColorId, 1, true, 0);
+          console.log("EditorStackController.AddColor() saveData()");
+          this.saveData();
+        };
+        _proto.createNewBlock = function createNewBlock(id, colorId, amount, isColor, obstacleId) {
+          var _this2 = this;
+          console.log("createNewBlock: " + id + " | colorId: " + colorId + " |amount: " + amount + "| isColor: " + isColor + "| obstacleId: " + obstacleId);
+          var newButton = instantiate(this.stackPrefab);
+          newButton.parent = this.stackParent;
+          newButton.name = "StackBlock " + (id + 1);
+          newButton.setSiblingIndex(0);
+          var stackBlock = newButton.getComponent(EditorSingleStack);
+          stackBlock.initialize(id, colorId, amount, isColor, obstacleId, function (selectedId) {
+            return _this2.deleteStack(selectedId);
+          }, function (id, isUp) {
+            return _this2.moveStack(id, isUp);
+          }, function () {
+            return _this2.saveData();
+          });
+
+          // ruleButon.button.node.on(Button.EventType.CLICK, () => this.loadRulesById(id), this);
+          // this.ruleButtons.push(ruleButon);
+
+          this.blocks.push(stackBlock);
+          this.refreshStackButtons();
+        };
+        _proto.saveData = function saveData() {
+          console.log("EditorStackController.saveData()");
+
+          //Get All the data from the stacks and change it to the selecteSlot.Data
+          this.piecesStack = this.getPiecesStacks();
+          this.selectedSlot.updateData(true, this.piecesStack);
+
+          //Call the loadUpdatePiecesVisual
+          this.selectedSlot.loadUpdatePiecesVisual();
+
+          //Call the save method using a singleton
+          Singleton.get(HexGridController).saveGridData();
+        };
+        _proto.getPiecesStacks = function getPiecesStacks() {
+          var stacks = [];
+          for (var i = 0; i < this.blocks.length; i++) {
+            stacks.push(this.getCurrentStack(i));
+          }
+          return stacks;
+        };
+        _proto.getCurrentStack = function getCurrentStack(id) {
+          var stack = new PieceStack();
+          stack.amount = this.blocks[id].getAmount();
+          stack.pieceColor = this.blocks[id].getColorId();
+          stack.isColor = this.blocks[id].getIsColor();
+          stack.obstacleType = this.blocks[id].getObstacleTypeId();
+          return stack;
+        };
+        _proto.refreshStackButtons = function refreshStackButtons() {
+          for (var i = 0; i < this.blocks.length; i++) {
+            this.blocks[i].toggleCanMoveDown(true);
+            this.blocks[i].toggleCanMoveUp(true);
+          }
+          if (this.blocks.length > 0) {
+            this.blocks[0].toggleCanMoveDown(false);
+            this.blocks[this.blocks.length - 1].toggleCanMoveUp(false);
+          }
+        };
+        _proto.loadData = function loadData(piecesStack) {
+          console.log("EditorStackController.loadData() " + piecesStack.length);
+
+          //Clear all blocks
+          for (var i = 0; i < this.blocks.length; i++) {
+            this.blocks[i].node.destroy();
+          }
+          this.blocks = [];
+          for (var i = 0; i < piecesStack.length; i++) {
+            this.createNewBlock(i, piecesStack[i].pieceColor - 1, piecesStack[i].amount, piecesStack[i].isColor, piecesStack[i].obstacleType - 1);
+          }
+        };
+        _proto.deleteStack = function deleteStack(id) {
+          console.log("EditorStackController.deleteStack() ", id);
+          this.blocks[id].node.destroy();
+          this.blocks.splice(id, 1);
+
+          //Update id for new remaining blocks
+          for (var i = 0; i < this.blocks.length; i++) {
+            this.blocks[i].updateId(i);
+          }
+          this.refreshStackButtons();
+          this.saveData();
+        };
+        _proto.moveStack = function moveStack(id, isUp) {
+          console.log("EditorStackController.moveStack() ", id, isUp);
+
+          // 2 // 0
+          // 1 // 1
+          // 0 // 2
+
+          if (isUp) {
+            var stack1 = this.blocks[id];
+            var stack2 = this.blocks[id + 1];
+            this.swapStack(stack1, stack2);
+          } else {
+            var _stack = this.blocks[id];
+            var _stack2 = this.blocks[id - 1];
+            this.swapStack(_stack, _stack2);
+          }
+
+          //Update id for new remaining blocks
+          for (var i = 0; i < this.blocks.length; i++) {
+            this.blocks[i].updateId(i);
+          }
+          this.refreshStackButtons();
+          this.saveData();
+        };
+        _proto.swapStack = function swapStack(stack1, stack2) {
+          var listId1 = stack1.id;
+          var listId2 = stack2.id;
+          this.blocks[listId1] = stack2;
+          this.blocks[listId2] = stack1;
+          var sibId1 = stack1.node.getSiblingIndex();
+          var sibId2 = stack2.node.getSiblingIndex();
+          stack1.node.setSiblingIndex(sibId2);
+          stack2.node.setSiblingIndex(sibId1);
+        }
+
+        //#region Debug methods
+        ;
+
+        _proto.debugHexSlotData = function debugHexSlotData(slot) {
+          var debug = '';
+          debug += "(" + slot.data.x + " , " + slot.data.y + ") ";
+          if (slot.data.piecesStack.length > 0) {
+            debug += "isColor: " + slot.data.piecesStack[0].isColor + " | obstacle: " + ObstacleType[slot.data.piecesStack[0].obstacleType];
+            console.log("" + debug);
+          }
+        }
+
+        //#endregion
+        ;
+
+        return EditorStackController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "selectedSlot", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "piecesStack", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "currentStack", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "stackParent", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "stackPrefab", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "blocks", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EditorStackObstacleBlock.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './SimpleEditorDropdown.ts', './EditorSliderControl.ts', './LevelAsset.ts', './EditorRangeEditbox.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Vec2, Component, SimpleEditorDropdown, EditorSliderControl, ObstacleType, EditorRangeEditbox;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Vec2 = module.Vec2;
+      Component = module.Component;
+    }, function (module) {
+      SimpleEditorDropdown = module.SimpleEditorDropdown;
+    }, function (module) {
+      EditorSliderControl = module.EditorSliderControl;
+    }, function (module) {
+      ObstacleType = module.ObstacleType;
+    }, function (module) {
+      EditorRangeEditbox = module.EditorRangeEditbox;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "e688c5TjcFGWL/fzex7nI8b", "EditorStackObstacleBlock", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EditorStackObstacleBlock = exports('EditorStackObstacleBlock', (_dec = ccclass('EditorStackObstacleBlock'), _dec2 = property({
+        type: Number
+      }), _dec3 = property({
+        type: Number
+      }), _dec4 = property({
+        type: SimpleEditorDropdown,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: EditorSliderControl,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: EditorRangeEditbox,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EditorStackObstacleBlock, _Component);
+        function EditorStackObstacleBlock() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "obstacleId", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "amount", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "obstacleDropdown", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "valuesSlider", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "rangeBox", _descriptor5, _assertThisInitialized(_this));
+          _this.saveCallback = null;
+          _this.onDropdownEvent = void 0;
+          _this.sliderEventLambda = void 0;
+          return _this;
+        }
+        var _proto = EditorStackObstacleBlock.prototype;
+        //#endregion
+        _proto.initialize = function initialize(selectedId, amount, saveCallback) {
+          this.saveCallback = saveCallback;
+          this.obstacleId = selectedId;
+          this.amount = amount;
+          this.obstacleDropdown.initialize(this.obstacleId);
+          this.valuesSlider.initialize(this.amount, new Vec2(1, 200));
+          this.rangeBox.initialize(this.amount, new Vec2(1, 200));
+          this.setCorrectUI(selectedId + 1, this.amount);
+          this.setEvents();
+        };
+        _proto.setEvents = function setEvents() {
+          var _this2 = this;
+          this.onDropdownEvent = function (num) {
+            _this2.onDropdownChanged(num);
+          };
+          this.sliderEventLambda = function (num) {
+            _this2.onSliderChanged(num);
+          };
+          this.valuesSlider.onValueChanged.addListener(this.sliderEventLambda);
+          this.obstacleDropdown.onOptionSelected.addListener(this.onDropdownEvent);
+          this.rangeBox.onInputChanged.addListener(this.sliderEventLambda);
+        };
+        _proto.onDestroy = function onDestroy() {
+          if (this.obstacleDropdown.onOptionSelected !== null) this.obstacleDropdown.onOptionSelected.removeListener(this.onDropdownEvent);
+          if (this.valuesSlider.onValueChanged !== null) this.valuesSlider.onValueChanged.removeListener(this.sliderEventLambda);
+        };
+        _proto.onDropdownChanged = function onDropdownChanged(id) {
+          var _this$saveCallback;
+          console.log("EditorStackObstacleBlock.onDropdownChanged() ", id);
+          this.obstacleId = id;
+          this.setCorrectUI(this.obstacleId + 1, this.amount);
+
+          //Change color dropdown
+          (_this$saveCallback = this.saveCallback) == null || _this$saveCallback.call(this);
+        };
+        _proto.setCorrectUI = function setCorrectUI(obstacle, amount) {
+          if (obstacle == ObstacleType.Ad) {
+            this.valuesSlider.node.active = false;
+            this.rangeBox.node.active = false;
+          } else if (obstacle == ObstacleType.Lock) {
+            // this.valuesSlider.node.active =true;
+            // this.valuesSlider.updateRange(1,300);
+            // if(amount == 0) this.valuesSlider.updateCurrentValue(25);
+            // else this.valuesSlider.updateCurrentValue(amount);
+            this.valuesSlider.node.active = false;
+            this.rangeBox.node.active = true;
+            this.rangeBox.updateRange(1, 300);
+            if (amount == 0) this.rangeBox.updateCurrentValue(25);else this.rangeBox.updateCurrentValue(amount);
+          } else if (obstacle == ObstacleType.Wood) {
+            this.rangeBox.node.active = false;
+            this.valuesSlider.node.active = true;
+            this.valuesSlider.updateRange(1, 3);
+            if (amount == 0) this.valuesSlider.updateCurrentValue(3);else this.valuesSlider.updateCurrentValue(amount);
+          } else ;
+        };
+        _proto.onSliderChanged = function onSliderChanged(value) {
+          var _this$saveCallback2;
+          console.log("EditorSingleStack.onSliderChanged(" + value + ")");
+          this.amount = value;
+          (_this$saveCallback2 = this.saveCallback) == null || _this$saveCallback2.call(this);
+        };
+        _proto.toggleBlock = function toggleBlock(active, triggerSave) {
+          this.node.active = active;
+        };
+        _proto.getObstacleTypeId = function getObstacleTypeId() {
+          return this.obstacleId;
+        };
+        _proto.getLockValue = function getLockValue() {
+          return this.amount;
+        };
+        return EditorStackObstacleBlock;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "obstacleId", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "amount", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "obstacleDropdown", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "valuesSlider", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "rangeBox", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EventHandlerUtils.ts", ['cc'], function () {
+  var cclegacy, EventHandler;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      EventHandler = module.EventHandler;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "0b760x1LMVLopQgiKYrvoJQ", "EventHandlerUtils", undefined);
+
+      // Extend the EventHandler class to add the Invoke method
+
+      // Implement the Invoke method
+      EventHandler.prototype.Invoke = function () {
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+        this.emit(args);
+      };
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EventOnDelay.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Wait.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, EventHandler, Component, Wait;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EventHandler = module.EventHandler;
+      Component = module.Component;
+    }, null, function (module) {
+      Wait = module.Wait;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor, _descriptor2;
+      cclegacy._RF.push({}, "803b7MtAh5FQ5cS08hGO+wv", "EventOnDelay", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EventOnDelay = exports('EventOnDelay', (_dec = ccclass('EventOnDelay'), _dec2 = property({
+        type: EventHandler
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EventOnDelay, _Component);
+        function EventOnDelay() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "delay", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "onDelayFinished", _descriptor2, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = EventOnDelay.prototype;
+        _proto.onEnable = function onEnable() {
+          this.runAfterDelay(this.delay);
+        };
+        _proto.runAfterDelay = /*#__PURE__*/function () {
+          var _runAfterDelay = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(delay) {
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return Wait.seconds(delay);
+                case 2:
+                  this.onDelayFinished.Invoke();
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee, this);
+          }));
+          function runAfterDelay(_x) {
+            return _runAfterDelay.apply(this, arguments);
+          }
+          return runAfterDelay;
+        }();
+        return EventOnDelay;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "delay", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "onDelayFinished", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new EventHandler();
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EventOnNodeState.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EventHandler, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EventHandler = module.EventHandler;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10;
+      cclegacy._RF.push({}, "23998jdf2hDF4EmSbKChq2Q", "EventOnNodeState", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var EventOnNodeState = exports('EventOnNodeState', (_dec = ccclass('EventOnNodeState'), _dec2 = property(), _dec3 = property(), _dec4 = property(), _dec5 = property(), _dec6 = property(), _dec7 = property({
+        type: EventHandler,
+        group: {
+          name: 'Event'
+        },
+        visible: function visible() {
+          return this.runOnLoad;
+        }
+      }), _dec8 = property({
+        type: EventHandler,
+        group: {
+          name: 'Event'
+        },
+        visible: function visible() {
+          return this.runOnEnable;
+        }
+      }), _dec9 = property({
+        type: EventHandler,
+        group: {
+          name: 'Event'
+        },
+        visible: function visible() {
+          return this.runOnStart;
+        }
+      }), _dec10 = property({
+        type: EventHandler,
+        group: {
+          name: 'Event'
+        },
+        visible: function visible() {
+          return this.runOnUpdate;
+        }
+      }), _dec11 = property({
+        type: EventHandler,
+        group: {
+          name: 'Event'
+        },
+        visible: function visible() {
+          return this.runOnDisable;
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EventOnNodeState, _Component);
+        function EventOnNodeState() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "runOnLoad", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "runOnEnable", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "runOnStart", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "runOnUpdate", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "runOnDisable", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "onLoaded", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "onEnabled", _descriptor7, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "onStarted", _descriptor8, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "onUpdated", _descriptor9, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "onDisabled", _descriptor10, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = EventOnNodeState.prototype;
+        _proto.onLoad = function onLoad() {
+          if (this.runOnLoad) {
+            this.onLoaded.emit(null);
+          }
+        };
+        _proto.start = function start() {
+          if (this.runOnStart) {
+            this.onStarted.emit(null);
+          }
+        };
+        _proto.onEnable = function onEnable() {
+          if (this.runOnEnable) {
+            this.onEnabled.emit(null);
+          }
+        };
+        _proto.update = function update() {
+          if (this.runOnUpdate) {
+            this.onUpdated.emit(null);
+          }
+        };
+        _proto.onDisable = function onDisable() {
+          if (this.runOnDisable) {
+            this.onDisabled.emit(null);
+          }
+        };
+        return EventOnNodeState;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "runOnLoad", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "runOnEnable", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "runOnStart", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "runOnUpdate", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "runOnDisable", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "onLoaded", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new EventHandler();
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "onEnabled", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new EventHandler();
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "onStarted", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new EventHandler();
+        }
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "onUpdated", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new EventHandler();
+        }
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "onDisabled", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new EventHandler();
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/EventOnProgress.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _inheritsLoose, cclegacy, _decorator, Component;
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "e76c6LOf+1KNYHr+2EvHHOt", "EventOnProgress", undefined);
+      var ccclass = _decorator.ccclass;
+      var EventOnProgress = exports('EventOnProgress', (_dec = ccclass('EventOnProgress'), _dec(_class = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(EventOnProgress, _Component);
+        function EventOnProgress() {
+          return _Component.apply(this, arguments) || this;
+        }
+        return EventOnProgress;
+      }(Component)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/eventTestTrigger.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, EventHandler, Button, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      EventHandler = module.EventHandler;
+      Button = module.Button;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
+      cclegacy._RF.push({}, "ea08fr6/iNCtat0mKyhFXww", "eventTestTrigger", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var eventTestTrigger = exports('eventTestTrigger', (_dec = ccclass('eventTestTrigger'), _dec2 = property(EventHandler), _dec3 = property({
+        type: Button,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(eventTestTrigger, _Component);
+        function eventTestTrigger() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          // EventHandler => UnityEvent    
+          _initializerDefineProperty(_this, "onSomethingHappened", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "testButton", _descriptor2, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = eventTestTrigger.prototype;
+        // @property({
+        //     type: EventHandler,
+        //     group: { name: 'Event' },
+        //     visible: function (this) { return this.runOnDisable; }
+        // })
+        // testEvent: EventHandler = new EventHandler();
+        _proto.start = function start() {
+          var _this2 = this;
+          this.testButton.node.on(Button.EventType.CLICK, function () {
+            return _this2.deleteButton();
+          }, this);
+          this.onSomethingHappened.target = this.node; // The node that has the component with the callback function
+          this.onSomethingHappened.component = 'eventTestTrigger'; // The name of the component script
+          this.onSomethingHappened.handler = 'callbackFunction';
+        };
+        _proto.deleteButton = function deleteButton() {
+          var _this$onSomethingHapp;
+          (_this$onSomethingHapp = this.onSomethingHappened) == null || _this$onSomethingHapp.Invoke();
+        };
+        _proto.callbackFunction = function callbackFunction() {
+          console.log("CallbackFunction");
+        };
+        _proto.registerEvent = function registerEvent(node, component, handler, args) {};
+        return eventTestTrigger;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "onSomethingHappened", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "testButton", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/FilteredRaycastTest.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Layers, Camera, find, input, Input, EventMouse, Vec2, geometry, PhysicsSystem, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Layers = module.Layers;
+      Camera = module.Camera;
+      find = module.find;
+      input = module.input;
+      Input = module.Input;
+      EventMouse = module.EventMouse;
+      Vec2 = module.Vec2;
+      geometry = module.geometry;
+      PhysicsSystem = module.PhysicsSystem;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
+      cclegacy._RF.push({}, "202b0LXQJZFq7wMr31JQnq1", "FilteredRaycastTest", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var FilteredRaycastTest = exports('FilteredRaycastTest', (_dec = ccclass('FilteredRaycastTest'), _dec2 = property({
+        type: Layers.Enum,
+        group: {
+          name: "Layers"
+        },
+        tooltip: "Layer for raycasting"
+      }), _dec3 = property({
+        type: Camera,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(FilteredRaycastTest, _Component);
+        function FilteredRaycastTest() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "raycastLayer", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "camera", _descriptor2, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = FilteredRaycastTest.prototype;
+        _proto.start = function start() {
+          if (!this.camera) {
+            var cameraNode = find('Main Camera'); // Replace 'Main Camera' with the name of your camera node
+            if (cameraNode) {
+              this.camera = cameraNode.getComponent(Camera);
+              if (!this.camera) {
+                console.error("Camera component not found on the node.");
+              }
+            } else {
+              console.error("Camera node not found.");
+            }
+          }
+          input.on(Input.EventType.MOUSE_DOWN, this.mouseClick, this);
+        };
+        _proto.mouseClick = function mouseClick(event) {
+          if (event.getButton() === EventMouse.BUTTON_LEFT) {
+            //console.log("Button left pressed");
+            var currentMousePos = new Vec2(event.getLocationX(), event.getLocationY());
+            var isValid = this.checkForValidDrag2(currentMousePos);
+          }
+        };
+        _proto.checkForValidDrag = function checkForValidDrag(screenPos) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var outResult = {
+            result: null
+          };
+          //let outResult = null;
+          var distance = 500;
+          //const layerMask:number = 1 << this.raycastLayer; // ALL returns -2147483648
+          //const layerMask:number = this.raycastLayer; // ALL returns 4294967295
+          //const layerMask:number = 0x00000008; // ALL returns 4294967295
+          //const layerMask:number = 1 << 20; // Change this to the desired layer
+          //const layerMask:number = 0xffffffff; // 0xffffffff == 4294967295  == ALL
+          //const layerMask = Layers.nameToLayer("IGNORE_RAYCAST"); // 0x00000002 == IGNORE_RAYCAST // Return 20 |Unknown
+          // let layerMask = 0x00000001; // 0x00000001 == DEFAULT // Return 1 | Default
+          //layerMask = Layers.nameToLayer("DraggableSlot"); // 0x00000001 == DEFAULT // Return 1 | Default
+          // layerMask = Layers.BitMask.IGNORE_RAYCAST;
+          //const success = RaycastUtils.screenRaycast3D(screenPos, this.camera, outResult, distance, layerMask);
+
+          var layerMask = this.raycastLayer;
+          var ray = new geometry.Ray();
+          this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          var success = PhysicsSystem.instance.raycastClosest(ray, layerMask, distance, true);
+
+          //console.log(`RaycastExternal - CurrentLayer: ${layerMask} | ${RaycastUtils.getLayerName(layerMask)}`);
+          var convertedNumber = this.getLayerIndices(layerMask)[0];
+          console.log("RaycastExternal - CurrentLayer: " + layerMask + " | " + Layers.layerToName(convertedNumber));
+          if (success) {
+            outResult.result = PhysicsSystem.instance.raycastClosestResult;
+            //outResult.result = PhysicsSystem.instance.raycastClosest;
+          }
+
+          if (success && outResult.result) {
+            var node = outResult.result.collider.node;
+            if (!node) return false;
+            // console.log(`Found: ${node.name} in layer ${RaycastUtils.getLayerName(node.layer)}`);
+            console.log("Found: " + node.name + " in layer " + Layers.layerToName(node.layer));
+            //this.currentItem = draggableItem;
+          } else {
+            console.log("No object detected.");
+            //this.currentItem = null;
+            return false;
+          }
+          return true;
+        };
+        _proto.checkForValidDrag2 = function checkForValidDrag2(screenPos) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          return true;
+        }
+
+        /**
+        * Converts a layer bitmask to an array of layer indices (0 to 31).
+        */;
+        _proto.getLayerIndices = function getLayerIndices(layerBitmask) {
+          var indices = [];
+          for (var i = 0; i < 32; i++) {
+            if (layerBitmask & 1 << i) {
+              indices.push(i);
+            }
+          }
+          return indices;
+        };
+        return FilteredRaycastTest;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "raycastLayer", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return Layers.Enum.DEFAULT;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "camera", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/FollowWorldTests.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './CameraUtils.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Vec2, Vec3, Camera, Node, view, input, Input, UITransform, Component, CameraUtils;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Vec2 = module.Vec2;
+      Vec3 = module.Vec3;
+      Camera = module.Camera;
+      Node = module.Node;
+      view = module.view;
+      input = module.input;
+      Input = module.Input;
+      UITransform = module.UITransform;
+      Component = module.Component;
+    }, function (module) {
+      CameraUtils = module.CameraUtils;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12;
+      cclegacy._RF.push({}, "2c3774Ai5VAyoPAxkifnSAL", "FollowWorldTests", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var FollowWorldTests = exports('FollowWorldTests', (_dec = ccclass('FollowWorldTests'), _dec2 = property(), _dec3 = property({
+        type: Vec2,
+        visible: true
+      }), _dec4 = property({
+        type: Vec2,
+        visible: true
+      }), _dec5 = property({
+        type: Vec2,
+        visible: true
+      }), _dec6 = property({
+        type: Vec3,
+        visible: true
+      }), _dec7 = property({
+        type: Vec3,
+        visible: true
+      }), _dec8 = property({
+        type: Vec2,
+        visible: true
+      }), _dec9 = property({
+        type: Vec2,
+        visible: true
+      }), _dec10 = property({
+        type: Vec3,
+        visible: true
+      }), _dec11 = property({
+        type: Camera,
+        group: 'Components'
+      }), _dec12 = property({
+        type: Node,
+        group: 'Components'
+      }), _dec13 = property({
+        type: Node,
+        group: 'Components'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(FollowWorldTests, _Component);
+        function FollowWorldTests() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "updatePosition", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "screenRes", _descriptor2, _assertThisInitialized(_this));
+          // Public property to display in the editor
+          _initializerDefineProperty(_this, "viewPortRes", _descriptor3, _assertThisInitialized(_this));
+          // Public property to display in the editor
+          _initializerDefineProperty(_this, "currentMousePos", _descriptor4, _assertThisInitialized(_this));
+          // Public property to display in the editor
+          _initializerDefineProperty(_this, "worldPosition", _descriptor5, _assertThisInitialized(_this));
+          // Public property to display in the editor
+          _initializerDefineProperty(_this, "screenPosition", _descriptor6, _assertThisInitialized(_this));
+          // Public property to display in the editor
+          _initializerDefineProperty(_this, "currenPercentage", _descriptor7, _assertThisInitialized(_this));
+          // Public property to display in the editor
+          _initializerDefineProperty(_this, "relativePos", _descriptor8, _assertThisInitialized(_this));
+          // Public property to display in the editor
+          _initializerDefineProperty(_this, "uiPosition", _descriptor9, _assertThisInitialized(_this));
+          // Public property to display in the editor
+          _initializerDefineProperty(_this, "camera", _descriptor10, _assertThisInitialized(_this));
+          // Reference to the camera
+          _initializerDefineProperty(_this, "target3DObject", _descriptor11, _assertThisInitialized(_this));
+          // The 3D object to track
+          _initializerDefineProperty(_this, "uiElement", _descriptor12, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = FollowWorldTests.prototype;
+        // The UI element to position
+        _proto.start = function start() {
+          // Get the current screen resolution
+
+          var visibleSize = view.getVisibleSize();
+          this.screenRes.set(visibleSize.width, visibleSize.height);
+          console.log("Screen Resolution: " + this.screenRes.x + " x " + this.screenRes.y);
+          input.on(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
+        };
+        _proto.mouseMove = function mouseMove(event) {
+          this.currentMousePos = new Vec2(event.getLocationX(), event.getLocationY());
+        };
+        _proto.update = function update(deltaTime) {
+          //this.updateElementPosition_NotResposive();
+          //this.updateElementPosition_Responsive();
+          this.updateElementPosition_External();
+        };
+        _proto.checkForComponents = function checkForComponents() {
+          if (!this.camera || !this.target3DObject || !this.uiElement || !this.updatePosition) {
+            return false;
+          }
+          return true;
+        };
+        _proto.updateElementPosition_NotResposive = function updateElementPosition_NotResposive() {
+          if (!this.checkForComponents()) return;
+
+          // Get the current screen resolution
+          var visibleSize = view.getVisibleSize();
+          this.screenRes.set(visibleSize.width, visibleSize.height);
+
+          // Get the world position of the 3D object
+          this.worldPosition = this.target3DObject.worldPosition;
+
+          // Convert the world position to screen position
+          //this.camera.worldToScreen(this.worldPosition, this.screenPosition);
+          this.screenPosition = this.camera.worldToScreen(this.worldPosition);
+          console.log(this.screenPosition.toString());
+
+          //Convert screen position to UI space
+          var uiTransform = this.uiElement.parent.getComponent(UITransform);
+          //const uiPosition = new Vec3();
+          uiTransform.convertToNodeSpaceAR(new Vec3(this.screenPosition.x, this.screenPosition.y, 0), this.uiPosition);
+
+          //Update the UI element's position
+          this.uiElement.setPosition(this.uiPosition);
+        };
+        _proto.updateElementPosition_Responsive = function updateElementPosition_Responsive() {
+          //if (!this.checkForComponents()) return;
+          // Get the world position of the 3D object
+          this.worldPosition = this.target3DObject.worldPosition;
+
+          //const visibleSize: Size = view.getVisibleSize();
+          this.screenPosition = this.camera.worldToScreen(this.worldPosition);
+          //this.relativePos.set(this.screenPosition.x, this.screenPosition.y);
+
+          this.relativePos = this.convertToRelativeResolution();
+          var uiTransform = this.uiElement.parent.getComponent(UITransform);
+          //const uiPosition = new Vec3();
+          uiTransform.convertToNodeSpaceAR(new Vec3(this.relativePos.x, this.relativePos.y, 0), this.uiPosition);
+
+          //Update the UI element's position
+          this.uiElement.setPosition(this.uiPosition);
+
+          //console.log(`Screen Percentage: X=${(screenPercentageX * 100).toFixed(2)}%, Y=${(screenPercentageY * 100).toFixed(2)}%`);
+        };
+
+        _proto.updateElementPosition_External = function updateElementPosition_External() {
+          var uiTransform = this.uiElement.parent.getComponent(UITransform);
+
+          //Update the UI element's position
+          this.uiElement.setPosition(CameraUtils.worldToUIPosition(this.target3DObject, this.camera, uiTransform));
+        };
+        _proto.convertToRelativeResolution = function convertToRelativeResolution() {
+          //This works for editor, but in browser only works for scaling down
+          var viewportWidth = view.getViewportRect().width; // e.g., 1024 (scaled down due to zoom)
+          var viewportHeight = view.getViewportRect().height; // e.g., 576 (scaled down due to zoom)
+
+          this.viewPortRes.set(viewportWidth, viewportHeight);
+
+          // Convert screen position to percentage
+          var screenPercentageX = this.screenPosition.x / viewportWidth;
+          var screenPercentageY = this.screenPosition.y / viewportHeight;
+          this.currenPercentage.set(screenPercentageX * 100, screenPercentageY * 100);
+          console.log(this.screenPosition + " | " + this.viewPortRes + " |" + this.currenPercentage);
+          var converted = new Vec2();
+          converted.set(screenPercentageX * this.screenRes.x, screenPercentageY * this.screenRes.y);
+          return converted;
+        };
+        return FollowWorldTests;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "updatePosition", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "screenRes", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2();
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "viewPortRes", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2();
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "currentMousePos", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2();
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "worldPosition", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec3();
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "screenPosition", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec3();
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "currenPercentage", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2();
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "relativePos", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2();
+        }
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "uiPosition", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec3();
+        }
+      }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "camera", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "target3DObject", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor12 = _applyDecoratedDescriptor(_class2.prototype, "uiElement", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/Game.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _inheritsLoose, cclegacy, _decorator, director, Component;
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      director = module.director;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2;
+      cclegacy._RF.push({}, "1d891bdUpJOhYGw4HqkvZdJ", "Game", undefined);
+      var ccclass = _decorator.ccclass,
+        executionOrder = _decorator.executionOrder;
+      var Game = exports('Game', (_dec = ccclass('Game'), _dec2 = executionOrder(-9999), _dec(_class = _dec2(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(Game, _Component);
+        function Game() {
+          return _Component.apply(this, arguments) || this;
+        }
+        var _proto = Game.prototype;
+        _proto.onLoad = function onLoad() {};
+        _proto.start = function start() {
+          director.addPersistRootNode(this.node);
+        };
+        _proto.update = function update(dt) {
+          Game.deltaTime = dt;
+        };
+        return Game;
+      }(Component), _class2.deltaTime = void 0, _class2)) || _class) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/GameplayController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelAsset.ts', './index.ts', './DragInputManager.ts', './UI_GameplayHUD.ts', './LevelController.ts', './Action.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Camera, input, Input, find, KeyCode, Component, LevelAsset, DragInputManager, UI_GameplayHUD, LevelController, Action, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Camera = module.Camera;
+      input = module.input;
+      Input = module.Input;
+      find = module.find;
+      KeyCode = module.KeyCode;
+      Component = module.Component;
+    }, function (module) {
+      LevelAsset = module.LevelAsset;
+    }, null, function (module) {
+      DragInputManager = module.DragInputManager;
+    }, function (module) {
+      UI_GameplayHUD = module.UI_GameplayHUD;
+    }, function (module) {
+      LevelController = module.LevelController;
+    }, function (module) {
+      Action = module.Action;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "49099uog5JHUKRkQaJPPxCp", "GameplayController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var GameplayController = exports('GameplayController', (_dec = ccclass('GameplayController'), _dec2 = property({
+        type: LevelAsset
+      }), _dec3 = property({
+        type: LevelController,
+        group: 'Components'
+      }), _dec4 = property({
+        type: DragInputManager,
+        group: 'Components'
+      }), _dec5 = property({
+        type: UI_GameplayHUD,
+        group: 'Runtime'
+      }), _dec6 = property({
+        type: Camera,
+        group: 'Runtime'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(GameplayController, _Component);
+        function GameplayController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "currentLevelAsset", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "levelControl", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "dragInput", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "hudControl", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "mainCamera", _descriptor5, _assertThisInitialized(_this));
+          _this.onPause = new Action();
+          _this._isPaused = false;
+          return _this;
+        }
+        var _proto = GameplayController.prototype;
+        //#endregion
+        //TODO: Caio fica a vontade pra trabalhar aqui, criei essa classe so pra poder comitar a pasta "Game/Scripts" 
+        _proto.start = function start() {
+          Singleton.set(this);
+        };
+        _proto.initialize = function initialize() {
+          this.hudControl = Singleton.get(UI_GameplayHUD);
+          this.findComponents();
+          this.levelControl.initialize(this.currentLevelAsset);
+          this.hudControl.initialize(this.currentLevelAsset.objectives, this.mainCamera, this.levelControl.getLocks());
+
+          //cheat
+          input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
+        };
+        _proto.findComponents = function findComponents() {
+          if (!this.mainCamera) {
+            var cameraNode = find('Main Camera'); // Replace 'Main Camera' with the name of your camera node
+            if (cameraNode) {
+              this.mainCamera = cameraNode.getComponent(Camera);
+              if (!this.mainCamera) {
+                console.error("Camera component not found on the node.");
+              }
+            } else {
+              console.error("Camera node not found.");
+            }
+          }
+        };
+        _proto.togglePause = function togglePause(isPaused) {
+          console.log("GameplayController.togglePause(" + isPaused + ")");
+          this.onPause.invoke(isPaused);
+          this.isPaused = isPaused;
+
+          // if (active) Singleton.Get<API_Manager>().GameplayStopped();
+          //else Singleton.Get<API_Manager>().GameplayStarted();
+        };
+
+        _proto.onKeyDown = function onKeyDown(event) {
+          // if (this.isGameplayMode) return;
+          if (event.keyCode === KeyCode.SPACE) {
+            this.levelControl.nextRound();
+          }
+          if (event.keyCode === KeyCode.ARROW_RIGHT) {
+            this.levelControl.nextRuleSet();
+            this.levelControl.nextRound();
+          }
+        };
+        _proto.startLevel = function startLevel() {
+          console.log("GameplayController.startLevel()");
+          this.initialize();
+          this.levelControl.startLevel();
+          this.dragInput.initialize();
+        };
+        _createClass(GameplayController, [{
+          key: "isPaused",
+          get: function get() {
+            return this._isPaused;
+          },
+          set: function set(value) {
+            this._isPaused = value;
+          }
+        }]);
+        return GameplayController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "currentLevelAsset", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "levelControl", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "dragInput", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "hudControl", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "mainCamera", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/GameProgress.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './ProgressController.ts'], function (exports) {
+  var _createClass, cclegacy, ProgressController;
+  return {
+    setters: [function (module) {
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+    }, null, function (module) {
+      ProgressController = module.ProgressController;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "5811drjdkNNXZQ7Zi7H3UyK", "GameProgress", undefined);
+      var GameProgress = exports('GameProgress', /*#__PURE__*/function () {
+        function GameProgress(totalLevels) {
+          this.isNewGame = true;
+          this.currentLevelId = 0;
+          this.reachedLevel = 0;
+          this.levels = [];
+          this.customizations = [];
+          this.choices = [];
+          this.initialize(totalLevels);
+        }
+        var _proto = GameProgress.prototype;
+        _proto.initialize = function initialize(totalLevels) {
+          this.isNewGame = true;
+          this.choices = [];
+          this.levels = new Array(totalLevels).fill(null).map(function () {
+            return new Level();
+          });
+        };
+        // TODO: Probably move finishLevel(), addChoice() and getChoice() to the ProgressController class.
+        _proto.finishLevel = function finishLevel() {
+          this.currentLevelId++;
+          if (this.currentLevelId > this.reachedLevel) {
+            this.reachedLevel = this.currentLevelId;
+          }
+          ProgressController.save();
+          // SceneLoader.loadLevelSelectScene(); (You can implement scene loading separately)
+        };
+
+        _proto.addChoice = function addChoice(choice) {
+          var found = this.choices.find(function (c) {
+            return c.key === choice.key;
+          });
+          if (found) {
+            found.selectedId = choice.selectedId;
+          } else {
+            this.choices.push(choice);
+          }
+          ProgressController.save();
+        };
+        _proto.getChoice = function getChoice(key) {
+          return this.choices.find(function (choice) {
+            return choice.key === key;
+          }) || null;
+        };
+        _createClass(GameProgress, [{
+          key: "currentLevel",
+          get: function get() {
+            return this.levels[this.currentLevelId];
+          }
+        }, {
+          key: "hasFinishedTheGame",
+          get: function get() {
+            return this.reachedLevel >= this.levels.length;
+          }
+        }]);
+        return GameProgress;
+      }());
+      var Level = exports('Level', function Level() {
+        this.score = 0;
+        this.starAmount = 0;
+        this.duration = 0;
+      });
+      var Customization = exports('Customization', function Customization() {
+        this.name = "";
+        this.id = 0;
+      });
+      var Choice = exports('Choice', function Choice(key, selectedId) {
+        this.key = void 0;
+        this.selectedId = void 0;
+        this.key = key;
+        this.selectedId = selectedId;
+      });
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/HexGridController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './HexSlot.ts', './LevelAsset.ts', './index2.ts', './index.ts', './DragDropComponent.ts', './TurnController.ts', './LockObstacleSlot.ts', './GameplayController.ts', './Singleton.ts', './Wait.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _initializerDefineProperty, _inheritsLoose, _assertThisInitialized, _createForOfIteratorHelperLoose, _createClass, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, Prefab, Enum, Vec2, instantiate, Component, HexData, PieceStack, HexSlot, PieceColor, ObstacleType, LevelAsset, bh, DragDropMode, TurnController, LockObstacleSlot, GameplayController, Singleton, Wait;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _inheritsLoose = module.inheritsLoose;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+      _createClass = module.createClass;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Prefab = module.Prefab;
+      Enum = module.Enum;
+      Vec2 = module.Vec2;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }, function (module) {
+      HexData = module.HexData;
+      PieceStack = module.PieceStack;
+      HexSlot = module.HexSlot;
+    }, function (module) {
+      PieceColor = module.PieceColor;
+      ObstacleType = module.ObstacleType;
+      LevelAsset = module.LevelAsset;
+    }, function (module) {
+      bh = module.bh;
+    }, null, function (module) {
+      DragDropMode = module.DragDropMode;
+    }, function (module) {
+      TurnController = module.TurnController;
+    }, function (module) {
+      LockObstacleSlot = module.LockObstacleSlot;
+    }, function (module) {
+      GameplayController = module.GameplayController;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      Wait = module.Wait;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _dec4, _dec5, _dec6, _class4, _class5, _descriptor3, _descriptor4, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _class7, _class8, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10;
+      cclegacy._RF.push({}, "5d3e9MM/rRBVKeNVD7TnebP", "HexGridController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property,
+        executeInEditMode = _decorator.executeInEditMode;
+      var PrefabColor = exports('PrefabColor', (_dec = ccclass('PrefabColor'), _dec2 = property({
+        type: Prefab
+      }), _dec3 = property({
+        type: Enum(PieceColor)
+      }), _dec(_class = (_class2 = function PrefabColor() {
+        _initializerDefineProperty(this, "prefab", _descriptor, this);
+        _initializerDefineProperty(this, "color", _descriptor2, this);
+      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "prefab", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "color", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return PieceColor.Red;
+        }
+      })), _class2)) || _class));
+      var PrefabObstacle = exports('PrefabObstacle', (_dec4 = ccclass('PrefabObstacle'), _dec5 = property({
+        type: Prefab
+      }), _dec6 = property({
+        type: Enum(ObstacleType)
+      }), _dec4(_class4 = (_class5 = function PrefabObstacle() {
+        _initializerDefineProperty(this, "prefab", _descriptor3, this);
+        _initializerDefineProperty(this, "obstacleType", _descriptor4, this);
+      }, (_descriptor3 = _applyDecoratedDescriptor(_class5.prototype, "prefab", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class5.prototype, "obstacleType", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return ObstacleType.Ad;
+        }
+      })), _class5)) || _class4));
+      var HexGridController = exports('HexGridController', (_dec7 = ccclass('HexGridController'), _dec8 = property({
+        type: Prefab,
+        group: 'References'
+      }), _dec9 = property({
+        type: LevelAsset
+      }), _dec10 = property({
+        type: [PrefabColor],
+        group: 'References'
+      }), _dec11 = property({
+        type: [PrefabObstacle],
+        group: 'References'
+      }), _dec12 = property({
+        group: 'Debug'
+      }), _dec13 = property({
+        group: 'Debug'
+      }), _dec14 = property({
+        group: 'Debug'
+      }), _dec7(_class7 = executeInEditMode(_class7 = (_class8 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(HexGridController, _Component);
+        function HexGridController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "gridWidth", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "gridHeight", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "hexagonPrefab", _descriptor7, _assertThisInitialized(_this));
+          _this.grid = [];
+          _initializerDefineProperty(_this, "currentLevelAsset", _descriptor8, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "piecePrefabColors", _descriptor9, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "obstaclePrefabs", _descriptor10, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = HexGridController.prototype;
+        //#endregion
+        _proto.onLoad = function onLoad() {
+          Singleton.set(this);
+          this.generateGrid();
+        };
+        _proto.setLevelAsset = function setLevelAsset(currentLevelAsset) {
+          this.currentLevelAsset = currentLevelAsset;
+        };
+        _proto.saveGridData = function saveGridData() {
+          var gridData = [];
+          for (var y = 0; y < this.gridHeight; y++) {
+            for (var x = 0; x < this.gridWidth; x++) {
+              var slot = this.grid[y][x];
+              gridData.push(slot.data);
+            }
+          }
+          this.currentLevelAsset.gridSavedAsJson = JSON.stringify(gridData);
+          this.currentLevelAsset.saveAsset();
+        };
+        _proto.loadGridData = function loadGridData() {
+          var gridData = JSON.parse(this.currentLevelAsset.gridSavedAsJson);
+          for (var y = 0; y < this.gridHeight; y++) {
+            for (var x = 0; x < this.gridWidth; x++) {
+              var slot = this.grid[y][x];
+
+              //Convert a json object into a T object
+              var newData = new HexData();
+              var newPieceStackArray = [];
+              var jsonData = gridData.shift();
+              Object.assign(newData, jsonData);
+              Object.assign(newPieceStackArray, newData.piecesStack);
+              newData.piecesStack = newPieceStackArray;
+              if (newData.isActiveSlot) {
+                for (var i = 0; i < newPieceStackArray.length; i++) {
+                  var clonedStack = new PieceStack();
+
+                  // Copy properties from the current stack in newPieceStackArray to the clonedStack
+                  Object.assign(clonedStack, newPieceStackArray[i]);
+
+                  // Assign the cloned stack to newData.piecesStack[i]
+                  newData.piecesStack[i] = clonedStack;
+
+                  //console.log(clonedStack);
+                }
+              }
+
+              // Removes the first element from the temp data array and loads its data in the slot
+              slot.data = newData;
+              slot.loadUpdatePiecesVisual();
+              var suffix = '';
+              var preffix = '';
+              var stack = slot.getData().piecesStack;
+              if (stack.length > 0) {
+                if (stack[0].isColor) {
+                  suffix = "[" + slot.getTopStack().amount.toString() + " - " + PieceColor[slot.getTopStack().pieceColor] + "]";
+                } else {
+                  suffix = "[" + slot.getTopStack().amount.toString() + " - " + ObstacleType[slot.getTopStack().obstacleType] + "]";
+                }
+              }
+              slot.node.name = preffix + "(" + slot.data.x + ", " + slot.data.y + ") HexSlot " + suffix;
+              if (!slot.getData().isActiveSlot) {
+                slot.node.name = "(" + slot.data.x + ", " + slot.data.y + ") EMPTY";
+              }
+              if (slot.data.isActiveSlot && slot.data.piecesStack.length == 0) slot.setCurrentInteractionMode(DragDropMode.Drop);
+              if (slot.data.isActiveSlot && slot.data.piecesStack.length == 1) {
+                if (slot.data.piecesStack[0].obstacleType === ObstacleType.Ad) slot.setCurrentInteractionMode(DragDropMode.Clickable);
+                if (!slot.getTopStack().isColor && slot.getTopStack().obstacleType === ObstacleType.Lock) {
+                  slot.addComponent(LockObstacleSlot);
+                }
+              }
+            }
+          }
+        };
+        _proto.placeStacksOnSlot = function placeStacksOnSlot(origin, target) {
+          var piecesStack = origin.data.piecesStack;
+          target.setPiecesStack(piecesStack);
+          origin.data.piecesStack = [];
+          origin.setCurrentInteractionMode(DragDropMode.Disabled);
+          target.setCurrentInteractionMode(DragDropMode.Disabled);
+          origin.loadUpdatePiecesVisual();
+          target.loadUpdatePiecesVisual();
+
+          //Check merge?
+          Singleton.get(TurnController).startPlayerMovement(target);
+        };
+        _proto.watchAdPlaceholder = /*#__PURE__*/function () {
+          var _watchAdPlaceholder = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(removeAdCallback) {
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  Singleton.get(GameplayController).togglePause(true);
+                  _context.next = 3;
+                  return Wait.seconds(2);
+                case 3:
+                  Singleton.get(GameplayController).togglePause(false);
+                  //this.removeAd();
+                  if (removeAdCallback) removeAdCallback();
+                case 5:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee);
+          }));
+          function watchAdPlaceholder(_x) {
+            return _watchAdPlaceholder.apply(this, arguments);
+          }
+          return watchAdPlaceholder;
+        }();
+        _proto.moveTopPiecesToSlot = function moveTopPiecesToSlot(origin, target, callback) {
+          var _this2 = this;
+          console.log("HexGridController.moveTopPiecesToSlot() " + origin.node.name + " -> " + target.node.name);
+
+          //Animation, on the end of animation update values
+          var originStack = origin.getTopStack();
+          var targetNode = target.visualControl.getTopPiece().node;
+          origin.visualControl.movePieces(originStack.amount, targetNode, function () {
+            return _this2.onMovePieceAnimationEnded(origin, target, callback);
+          });
+        };
+        _proto.onMovePieceAnimationEnded = function onMovePieceAnimationEnded(origin, target, callback) {
+          //console.log("onMovePieceAnimationEnded");
+
+          var originStack = origin.getTopStack();
+          origin.removeTopStack();
+
+          //Move top stack to target
+          target.addTopStack(originStack);
+          origin.loadUpdatePiecesVisual();
+          target.loadUpdatePiecesVisual();
+          if (origin.isEmpty()) origin.setCurrentInteractionMode(DragDropMode.Drop);
+          target.setCurrentInteractionMode(DragDropMode.Disabled);
+          if (callback) callback();
+        };
+        _proto.generateGrid = function generateGrid() {
+          this.grid = [];
+          for (var y = 0; y < this.gridHeight; y++) {
+            var row = [];
+            for (var x = 0; x < this.gridWidth; x++) {
+              var slot = this.spawnHexagonVisualPrefab(x, y);
+              slot.node.name = "(" + slot.data.x + ", " + slot.data.y + ") HexSlot";
+              row.push(slot);
+            }
+            this.grid.push(row);
+          }
+          this.assignNeighbors();
+        };
+        _proto.assignNeighbors = function assignNeighbors() {
+          var evenTopLeft = new Vec2(-1, -1);
+          var evenTop = new Vec2(0, -1);
+          var evenTopRight = new Vec2(1, -1);
+          var evenBotLeft = new Vec2(-1, 0);
+          var evenBot = new Vec2(0, 1);
+          var evenBotRight = new Vec2(1, 0);
+          var directionsEven = [evenTopLeft, evenTop, evenTopRight, evenBotLeft, evenBot, evenBotRight];
+          var oddTopLeft = new Vec2(-1, 0);
+          var oddTop = new Vec2(0, -1);
+          var oddTopRight = new Vec2(1, 0);
+          var oddBotLeft = new Vec2(-1, 1);
+          var oddBot = new Vec2(0, 1);
+          var oddBotRight = new Vec2(1, 1);
+          var directionsOdd = [oddTopLeft, oddTop, oddTopRight, oddBotLeft, oddBot, oddBotRight];
+          for (var y = 0; y < this.gridHeight; y++) {
+            for (var x = 0; x < this.gridWidth; x++) {
+              var slot = this.grid[y][x];
+              var allArray = [];
+              var isEven = x % 2 === 0;
+              var directions = isEven ? directionsEven : directionsOdd;
+              for (var _iterator = _createForOfIteratorHelperLoose(directions), _step; !(_step = _iterator()).done;) {
+                var dir = _step.value;
+                var nx = x + dir.x;
+                var ny = y + dir.y;
+                if (ny >= 0 && ny < this.gridHeight && nx >= 0 && nx < this.gridWidth) {
+                  var thisNode = this.grid[ny][nx].node.getComponent(HexSlot);
+                  allArray.push(thisNode);
+                  //slot.neighbor.all.push(this.grid[ny][nx]);
+
+                  var thisDir = dir;
+                  if (isEven) {
+                    if (thisDir.x === evenTopLeft.x && thisDir.y === evenTopLeft.y) slot.neighbor.topLeft = thisNode;
+                    if (thisDir.x === evenTop.x && thisDir.y === evenTop.y) slot.neighbor.top = thisNode;
+                    if (thisDir.x === evenTopRight.x && thisDir.y === evenTopRight.y) slot.neighbor.topRight = thisNode;
+                    if (thisDir.x === evenBotLeft.x && thisDir.y === evenBotLeft.y) slot.neighbor.botLeft = thisNode;
+                    if (thisDir.x === evenBot.x && thisDir.y === evenBot.y) slot.neighbor.bot = thisNode;
+                    if (thisDir.x === evenBotRight.x && thisDir.y === evenBotRight.y) slot.neighbor.botRight = thisNode;
+                  } else {
+                    if (thisDir.x === oddTopLeft.x && thisDir.y === oddTopLeft.y) slot.neighbor.topLeft = thisNode;
+                    if (thisDir.x === oddTop.x && thisDir.y === oddTop.y) slot.neighbor.top = thisNode;
+                    if (thisDir.x === oddTopRight.x && thisDir.y === oddTopRight.y) slot.neighbor.topRight = thisNode;
+                    if (thisDir.x === oddBotLeft.x && thisDir.y === oddBotLeft.y) slot.neighbor.botLeft = thisNode;
+                    if (thisDir.x === oddBot.x && thisDir.y === oddBot.y) slot.neighbor.bot = thisNode;
+                    if (thisDir.x === oddBotRight.x && thisDir.y === oddBotRight.y) slot.neighbor.botRight = thisNode;
+                  }
+                }
+              }
+              slot.neighbor.assignAllNeighborsList(allArray);
+            }
+          }
+        };
+        _proto.getPrefabFromColor = function getPrefabFromColor(color) {
+          //console.log(`getPrefabFromColor( ${PieceColor[color]} )`);
+          for (var _iterator2 = _createForOfIteratorHelperLoose(this.piecePrefabColors), _step2; !(_step2 = _iterator2()).done;) {
+            var prefabColor = _step2.value;
+            if (prefabColor.color === color) {
+              return prefabColor.prefab;
+            }
+          }
+          return null;
+        };
+        _proto.getPrefabFromObstacle = function getPrefabFromObstacle(obstacle) {
+          //console.log(`getPrefabFromObstacle( ${ObstacleType[obstacle]} ) | id: ${obstacle}`);
+          for (var _iterator3 = _createForOfIteratorHelperLoose(this.obstaclePrefabs), _step3; !(_step3 = _iterator3()).done;) {
+            var prefabColor = _step3.value;
+            if (prefabColor.obstacleType === obstacle) {
+              return prefabColor.prefab;
+            }
+          }
+          return null;
+        };
+        _proto.spawnHexagonVisualPrefab = function spawnHexagonVisualPrefab(x, y) {
+          if (!this.hexagonPrefab) {
+            console.warn('Hexagon prefab not assigned');
+            return;
+          }
+          var hex = instantiate(this.hexagonPrefab);
+          var hexCell = hex.getComponent(HexSlot);
+          hexCell.initilize(x, y);
+          this.node.addChild(hex);
+          var hexWidth = 1; // Adjust based on prefab size
+          var hexHeight = Math.sqrt(3) * 0.5 * hexWidth;
+          var offsetX = x * hexWidth * 0.75;
+          var offsetY = y * hexHeight;
+
+          // Offset every second column
+          if (x % 2 === 1) {
+            hex.setPosition(offsetX, 0, offsetY + hexHeight / 2);
+          } else {
+            hex.setPosition(offsetX, 0, offsetY);
+          }
+          return hexCell;
+        };
+        _proto.createNewLevelAsset = /*#__PURE__*/function () {
+          var _createNewLevelAsset = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+            var levelAssetInstance, assetPath;
+            return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+              while (1) switch (_context2.prev = _context2.next) {
+                case 0:
+                  // Nao funciona ainda. E isso aqui vai ser necessario pra criar levels de fato. De inicio ate da pra ficar sem e so sair duplicando manualmente, mas vai ser impossivel pro longo prazo.
+                  // No PIOR DOS CASOS, se nao conseguirmos um jeito legal, a gente simplesmente duplica previamente tipo 200 levels, e deixa la parado so esperando os dados lol
+                  levelAssetInstance = bh.ScriptableAsset.createInstance(LevelAsset);
+                  assetPath = 'C:/Projects/gem-sort/assets/scenes/';
+                  console.log("Creating asset at path: " + assetPath);
+                  _context2.prev = 3;
+                  _context2.next = 6;
+                  return bh.ScriptableAsset.createAsset(levelAssetInstance, assetPath);
+                case 6:
+                  console.log("Asset created with UUID: " + levelAssetInstance.uuid);
+                  bh.ScriptableAsset.saveAsset(levelAssetInstance);
+                  console.log('Asset saved successfully');
+                  _context2.next = 14;
+                  break;
+                case 11:
+                  _context2.prev = 11;
+                  _context2.t0 = _context2["catch"](3);
+                  console.error('Error creating asset:', _context2.t0);
+                case 14:
+                case "end":
+                  return _context2.stop();
+              }
+            }, _callee2, null, [[3, 11]]);
+          }));
+          function createNewLevelAsset() {
+            return _createNewLevelAsset.apply(this, arguments);
+          }
+          return createNewLevelAsset;
+        }() // TODO: Proximo passo eh poder carregar um asset de level, e ele deixa esse exemplo abaixo de metodo aqui no git dele
+        // source aqui: https://github.com/AILHC/scriptableasset_example
+        /*
+        loadScriptableAsset() {
+            
+            assetManager.loadBundle('scriptable_asset_test_res', (err, bundle) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+                bundle.load(this.assetPath, (err, asset:CharSA) => {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+                    console.log(asset);
+                    this.charRender.setCharAsset(asset);
+                  });
+            });
+        }
+            */;
+
+        _createClass(HexGridController, [{
+          key: "debug_Save",
+          get:
+          //#region DEBUG
+          function get() {
+            return false;
+          },
+          set: function set(v) {
+            this.saveGridData();
+          }
+        }, {
+          key: "debug_Load",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            this.loadGridData();
+          }
+        }, {
+          key: "debug_DeselectAll",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            for (var y = 0; y < this.gridHeight; y++) {
+              for (var x = 0; x < this.gridWidth; x++) {
+                var slot = this.grid[y][x];
+                // Removes the first element from the temp data array and loads its data in the slot
+                slot.debug_MarkSlotNotSelect = true;
+              }
+            }
+          }
+        }]);
+        return HexGridController;
+      }(Component), (_descriptor5 = _applyDecoratedDescriptor(_class8.prototype, "gridWidth", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 7;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class8.prototype, "gridHeight", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 7;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class8.prototype, "hexagonPrefab", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class8.prototype, "currentLevelAsset", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor9 = _applyDecoratedDescriptor(_class8.prototype, "piecePrefabColors", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor10 = _applyDecoratedDescriptor(_class8.prototype, "obstaclePrefabs", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _applyDecoratedDescriptor(_class8.prototype, "debug_Save", [_dec12], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_Save"), _class8.prototype), _applyDecoratedDescriptor(_class8.prototype, "debug_Load", [_dec13], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_Load"), _class8.prototype), _applyDecoratedDescriptor(_class8.prototype, "debug_DeselectAll", [_dec14], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_DeselectAll"), _class8.prototype)), _class8)) || _class7) || _class7));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/HexPiece.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "26254OpfP5Dq6wpduXazEP3", "HexPiece", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var HexPiece = exports('HexPiece', (_dec = ccclass('HexPiece'), _dec2 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(HexPiece, _Component);
+        function HexPiece() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "visual", _descriptor, _assertThisInitialized(_this));
+          return _this;
+        }
+        /* DEPRECATED: Vou deletar depois. Hoje eh feito so diretamente com o material mesmo.
+        
+        @property()
+        color: Color = new Color(1, 1, 1, 1);
+          @property
+        public get pressBooleanButton() {
+            return false;
+        }
+        public set pressBooleanButton(v) {
+            this.setColor(this.color);
+        }
+          setColor(color: Color) {
+            const meshRenderer = this.visual.getComponent(MeshRenderer);
+            if (meshRenderer) {
+                // Save these when starting
+                const pass = meshRenderer.material.passes[0];
+                const hColor = pass.getHandle('albedo');
+                // inside update function
+                pass.setUniform(hColor, color);
+            }
+        }*/
+        return HexPiece;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "visual", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/HexSlot.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './NeighborController.ts', './LevelAsset.ts', './HexGridController.ts', './index.ts', './DragDropComponent.ts', './HexVisual.ts', './HexPiece.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _initializerDefineProperty, _inheritsLoose, _assertThisInitialized, _createClass, cclegacy, _decorator, Enum, Node, instantiate, MeshRenderer, Color, randomRange, randomRangeInt, Component, NeighborController, PieceColor, ObstacleType, HexGridController, DragDropComponent, DragDropMode, HexVisual, HexPiece, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _inheritsLoose = module.inheritsLoose;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Enum = module.Enum;
+      Node = module.Node;
+      instantiate = module.instantiate;
+      MeshRenderer = module.MeshRenderer;
+      Color = module.Color;
+      randomRange = module.randomRange;
+      randomRangeInt = module.randomRangeInt;
+      Component = module.Component;
+    }, function (module) {
+      NeighborController = module.NeighborController;
+    }, function (module) {
+      PieceColor = module.PieceColor;
+      ObstacleType = module.ObstacleType;
+    }, function (module) {
+      HexGridController = module.HexGridController;
+    }, null, function (module) {
+      DragDropComponent = module.DragDropComponent;
+      DragDropMode = module.DragDropMode;
+    }, function (module) {
+      HexVisual = module.HexVisual;
+    }, function (module) {
+      HexPiece = module.HexPiece;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _dec6, _dec7, _dec8, _dec9, _dec10, _class4, _class5, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _dec17, _dec18, _dec19, _dec20, _dec21, _dec22, _dec23, _dec24, _dec25, _dec26, _class7, _class8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19;
+      cclegacy._RF.push({}, "e4a5456GZREe4z7onEgwwEB", "HexSlot", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property,
+        executeInEditMode = _decorator.executeInEditMode;
+      var PieceStack = exports('PieceStack', (_dec = ccclass('PieceStack'), _dec2 = property(), _dec3 = property({
+        type: Enum(PieceColor),
+        visible: function visible() {
+          return this.isColor;
+        }
+      }), _dec4 = property({
+        type: Enum(ObstacleType),
+        visible: function visible() {
+          return !this.isColor;
+        }
+      }), _dec5 = property(), _dec(_class = executeInEditMode(_class = (_class2 = function PieceStack() {
+        _initializerDefineProperty(this, "isColor", _descriptor, this);
+        _initializerDefineProperty(this, "pieceColor", _descriptor2, this);
+        _initializerDefineProperty(this, "obstacleType", _descriptor3, this);
+        //@property({ min: 1, max: 9, step: 1, slide: true })
+        _initializerDefineProperty(this, "amount", _descriptor4, this);
+      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "isColor", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "pieceColor", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return PieceColor.Red;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "obstacleType", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return ObstacleType.Ad;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "amount", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      })), _class2)) || _class) || _class));
+      var HexData = exports('HexData', (_dec6 = ccclass('HexData'), _dec7 = property(), _dec8 = property(), _dec9 = property(), _dec10 = property({
+        type: [PieceStack]
+      }), _dec6(_class4 = (_class5 = function HexData() {
+        _initializerDefineProperty(this, "x", _descriptor5, this);
+        _initializerDefineProperty(this, "y", _descriptor6, this);
+        _initializerDefineProperty(this, "isActiveSlot", _descriptor7, this);
+        _initializerDefineProperty(this, "piecesStack", _descriptor8, this);
+      }, (_descriptor5 = _applyDecoratedDescriptor(_class5.prototype, "x", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class5.prototype, "y", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class5.prototype, "isActiveSlot", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class5.prototype, "piecesStack", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class5)) || _class4));
+      var HexSlot = exports('HexSlot', (_dec11 = ccclass('HexSlot'), _dec12 = property({
+        type: HexData
+      }), _dec13 = property({
+        type: NeighborController,
+        group: 'Components'
+      }), _dec14 = property({
+        type: HexVisual,
+        group: 'Components'
+      }), _dec15 = property({
+        type: Node,
+        group: 'Components'
+      }), _dec16 = property({
+        type: Node,
+        group: 'Components'
+      }), _dec17 = property({
+        type: Node,
+        group: 'Components'
+      }), _dec18 = property({
+        type: DragDropComponent,
+        group: 'Components'
+      }), _dec19 = property({
+        group: 'Debug'
+      }), _dec20 = property({
+        group: 'Debug'
+      }), _dec21 = property({
+        group: 'Debug'
+      }), _dec22 = property({
+        group: 'Debug'
+      }), _dec23 = property({
+        group: 'Debug'
+      }), _dec24 = property({
+        group: 'Debug'
+      }), _dec25 = property({
+        group: 'Debug'
+      }), _dec26 = property({
+        type: [HexSlot]
+      }), _dec11(_class7 = (_class8 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(HexSlot, _Component);
+        function HexSlot() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "data", _descriptor9, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "neighbor", _descriptor10, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "visualControl", _descriptor11, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "visual", _descriptor12, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "inactiveEditorVisual", _descriptor13, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "childPiecesStackNode", _descriptor14, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "dragComponent", _descriptor15, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "canMovePieceStack", _descriptor16, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "isAnimationLocked", _descriptor17, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "possibleMatches", _descriptor18, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "hasPossibleMatches", _descriptor19, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = HexSlot.prototype;
+        //#endregion   
+        _proto.initilize = function initilize(x, y) {
+          this.data.x = x;
+          this.data.y = y;
+        };
+        _proto.onLoad = function onLoad() {
+          this.setSlotActive(false);
+        };
+        _proto.loadUpdatePiecesVisual = function loadUpdatePiecesVisual() {
+          // Clear existing children
+          this.childPiecesStackNode.destroyAllChildren();
+          this.visualControl.clearVisual();
+          var thikness = 0.1;
+          var spawnedSomething = false;
+          var amountSpawned = 0;
+          // Instantiate pieces and add them to the childPiecesStackNode
+          for (var i = 0; i < this.data.piecesStack.length; i++) {
+            var pieceStack = this.data.piecesStack[i];
+            if (pieceStack !== null) {
+              if (pieceStack.isColor) {
+                for (var j = 0; j < pieceStack.amount; j++) {
+                  //console.log(`(${this.data.x},${this.data.y}) loadUpdatePiecesVisual() isColor: ${pieceStack.isColor}`);
+                  var piecePrefab = Singleton.get(HexGridController).getPrefabFromColor(pieceStack.pieceColor);
+                  var newPiece = instantiate(piecePrefab);
+                  amountSpawned++;
+                  this.visualControl.addPiece(newPiece.getComponent(HexPiece));
+                  newPiece.setParent(this.childPiecesStackNode);
+                  newPiece.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + thikness * amountSpawned, this.node.worldPosition.z);
+                  spawnedSomething = true;
+                }
+              } else {
+                var _piecePrefab = Singleton.get(HexGridController).getPrefabFromObstacle(pieceStack.obstacleType);
+                var _newPiece = instantiate(_piecePrefab);
+                amountSpawned++;
+                _newPiece.setParent(this.childPiecesStackNode);
+                _newPiece.setWorldPosition(this.node.worldPosition.x, this.node.worldPosition.y + thikness * amountSpawned, this.node.worldPosition.z);
+                spawnedSomething = true;
+              }
+            }
+          }
+          this.updateActiveSlotVisual(this.data.isActiveSlot);
+
+          // If this slot has pieces, make it active
+          if (spawnedSomething) {
+            this.setSlotActive(true);
+            this.updateNodeName();
+          }
+        };
+        _proto.setSlotActive = function setSlotActive(value) {
+          this.data.isActiveSlot = value;
+          this.updateActiveSlotVisual(value);
+        };
+        _proto.updateActiveSlotVisual = function updateActiveSlotVisual(value) {
+          this.visual.active = value;
+        };
+        _proto.setPiecesStack = function setPiecesStack(piecesStack) {
+          this.data.piecesStack = [];
+          this.data.piecesStack = piecesStack;
+          this.loadUpdatePiecesVisual();
+        };
+        _proto.getData = function getData() {
+          return this.data;
+        };
+        _proto.setData = function setData(data) {
+          this.data = data;
+        }
+
+        //#region Movement and Merge
+        ;
+
+        _proto.explodeTower = function explodeTower(callback) {
+          var _this2 = this;
+          //Lock this stack?
+          this.isAnimationLocked = true;
+
+          //Lock interaction
+          this.setCurrentInteractionMode(DragDropMode.Disabled);
+          this.visualControl.explodeTower(this.getTopStack().amount, function () {
+            return _this2.onExplodeAnimationFinished(callback);
+          });
+          this.updateNodeName();
+        };
+        _proto.onExplodeAnimationFinished = function onExplodeAnimationFinished(callback) {
+          this.removeTopStack();
+
+          //this.data.isActiveSlot = true;
+          this.isAnimationLocked = false;
+          if (this.data.piecesStack.length == 0) {
+            this.setCurrentInteractionMode(DragDropMode.Drop);
+          }
+          this.updateNodeName();
+          if (callback) callback();
+        };
+        _proto.getTopStack = function getTopStack() {
+          return this.data.piecesStack[this.data.piecesStack.length - 1];
+        };
+        _proto.removeTopStack = function removeTopStack() {
+          this.data.piecesStack.splice(this.data.piecesStack.length - 1);
+          this.updateNodeName();
+        };
+        _proto.removeLock = function removeLock() {
+          this.removeTopStack();
+          //this.visualControl.
+          this.loadUpdatePiecesVisual();
+          if (this.data.piecesStack.length == 0) this.setCurrentInteractionMode(DragDropMode.Drop);
+        };
+        _proto.addTopStack = function addTopStack(stack) {
+          if (this.getTopStack().pieceColor === stack.pieceColor) {
+            this.getTopStack().amount += stack.amount;
+          } else {
+            this.data.piecesStack.push(stack);
+          }
+          this.updateNodeName();
+        };
+        _proto.isSingleColor = function isSingleColor() {
+          if (this.data.piecesStack.length == 1) return true;else return false;
+        };
+        _proto.isMultiColor = function isMultiColor() {
+          if (this.data.piecesStack.length > 1) return true;else return false;
+        };
+        _proto.getColorAmount = function getColorAmount() {
+          return this.data.piecesStack.length;
+        };
+        _proto.isEmpty = function isEmpty() {
+          return this.getColorAmount() == 0;
+        };
+        _proto.updatePossibleNeighborMatches = function updatePossibleNeighborMatches() {
+          //acho que vou passar isso pro NeightborController
+          this.hasPossibleMatches = false;
+          this.possibleMatches = [];
+
+          //If it is "locked"
+          if (this.isAnimationLocked) return;
+          if (this.getTopStack() == null) return;
+
+          //Doesn't check neighboors for obstacles?
+          if (!this.getTopStack().isColor) return;
+          var thisTopColor = this.getTopStack().pieceColor;
+          var allWithStacks = this.neighbor.getAllContainingStacks();
+          for (var i = 0; i < allWithStacks.length; i++) {
+            var element = allWithStacks[i];
+            var neighborTopStack = element.getTopStack();
+            var isLocked = element.isAnimationLocked;
+            if (neighborTopStack.isColor && neighborTopStack.pieceColor === thisTopColor && !isLocked) {
+              this.possibleMatches.push(element);
+              // Mark this as a slot with possible matches
+              this.hasPossibleMatches = true;
+            }
+          }
+        }
+
+        //#endregion
+        ;
+
+        _proto.clickSlot = function clickSlot() {
+          var _this3 = this;
+          console.log("clickSlot() Clicked on slot: " + this.node.name);
+          Singleton.get(HexGridController).watchAdPlaceholder(function () {
+            return _this3.removeAd();
+          });
+        };
+        _proto.removeAd = function removeAd() {
+          //Put animation here?
+          this.data.piecesStack = [];
+          this.loadUpdatePiecesVisual();
+          this.setCurrentInteractionMode(DragDropMode.Drop);
+        };
+        _proto.updateData = function updateData(isActiveSlot, piecesStack) {
+          this.data.isActiveSlot = isActiveSlot;
+          this.data.piecesStack = [];
+          this.data.piecesStack = piecesStack;
+        };
+        _proto.setCurrentInteractionMode = function setCurrentInteractionMode(mode) {
+          this.dragComponent.setCurrenMode(mode);
+        };
+        _proto.debugToggleSelection = function debugToggleSelection(active) {
+          var meshRenderer = this.visual.getComponent(MeshRenderer);
+          if (meshRenderer) {
+            // Save these when starting
+            var pass = meshRenderer.material.passes[0];
+            var hColor = pass.getHandle('albedo');
+            // inside update function
+
+            if (active) pass.setUniform(hColor, Color.CYAN);else pass.setUniform(hColor, Color.WHITE);
+          }
+        };
+        _proto.updateNodeName = function updateNodeName() {
+          return;
+        };
+        _createClass(HexSlot, [{
+          key: "debug_RandomizePieces",
+          get:
+          //#endregion
+          //#region DEBUG
+          function get() {
+            return false;
+          },
+          set: function set(v) {
+            var randomColorCombinations = randomRange(2, 3);
+            for (var i = 0; i < randomColorCombinations; i++) {
+              var newPieceStack = new PieceStack();
+              newPieceStack.pieceColor = randomRangeInt(1, 6);
+              newPieceStack.amount = randomRangeInt(2, 5);
+              this.data.piecesStack.push(newPieceStack);
+            }
+            this.loadUpdatePiecesVisual();
+          }
+        }, {
+          key: "debug_ClearStack",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            this.data.piecesStack = [];
+            this.loadUpdatePiecesVisual();
+          }
+        }, {
+          key: "debug_MarkSlotActive",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            this.setSlotActive(true);
+          }
+        }, {
+          key: "debug_loadUpdatePiecesVisual",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            this.loadUpdatePiecesVisual();
+          }
+        }, {
+          key: "debug_MarkSlotSelected",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            return;
+          }
+        }, {
+          key: "debug_MarkSlotNotSelect",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            return;
+          }
+        }, {
+          key: "debug_ShowData",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            console.log(this.data);
+            //console.log(`[${this.data.x}, ${this.data.y}] | ${this.data.piecesStack[ 0 ].amount} - ${PieceColor[ this.data.piecesStack[ 0 ].pieceColor ]}`);
+          }
+        }]);
+
+        return HexSlot;
+      }(Component), (_descriptor9 = _applyDecoratedDescriptor(_class8.prototype, "data", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new HexData();
+        }
+      }), _descriptor10 = _applyDecoratedDescriptor(_class8.prototype, "neighbor", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor11 = _applyDecoratedDescriptor(_class8.prototype, "visualControl", [_dec14], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor12 = _applyDecoratedDescriptor(_class8.prototype, "visual", [_dec15], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor13 = _applyDecoratedDescriptor(_class8.prototype, "inactiveEditorVisual", [_dec16], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor14 = _applyDecoratedDescriptor(_class8.prototype, "childPiecesStackNode", [_dec17], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor15 = _applyDecoratedDescriptor(_class8.prototype, "dragComponent", [_dec18], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor16 = _applyDecoratedDescriptor(_class8.prototype, "canMovePieceStack", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor17 = _applyDecoratedDescriptor(_class8.prototype, "isAnimationLocked", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _applyDecoratedDescriptor(_class8.prototype, "debug_RandomizePieces", [_dec19], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_RandomizePieces"), _class8.prototype), _applyDecoratedDescriptor(_class8.prototype, "debug_ClearStack", [_dec20], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_ClearStack"), _class8.prototype), _applyDecoratedDescriptor(_class8.prototype, "debug_MarkSlotActive", [_dec21], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_MarkSlotActive"), _class8.prototype), _applyDecoratedDescriptor(_class8.prototype, "debug_loadUpdatePiecesVisual", [_dec22], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_loadUpdatePiecesVisual"), _class8.prototype), _applyDecoratedDescriptor(_class8.prototype, "debug_MarkSlotSelected", [_dec23], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_MarkSlotSelected"), _class8.prototype), _applyDecoratedDescriptor(_class8.prototype, "debug_MarkSlotNotSelect", [_dec24], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_MarkSlotNotSelect"), _class8.prototype), _applyDecoratedDescriptor(_class8.prototype, "debug_ShowData", [_dec25], Object.getOwnPropertyDescriptor(_class8.prototype, "debug_ShowData"), _class8.prototype), _descriptor18 = _applyDecoratedDescriptor(_class8.prototype, "possibleMatches", [_dec26], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor19 = _applyDecoratedDescriptor(_class8.prototype, "hasPossibleMatches", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      })), _class8)) || _class7));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/HexVisual.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './HexPiece.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _asyncToGenerator, _regeneratorRuntime, _createForOfIteratorHelperLoose, cclegacy, _decorator, tween, Vec3, math, Component, director, HexPiece;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      tween = module.tween;
+      Vec3 = module.Vec3;
+      math = module.math;
+      Component = module.Component;
+      director = module.director;
+    }, function (module) {
+      HexPiece = module.HexPiece;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "afea9ggvM1J9YNwZRyzNVxP", "HexVisual", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var HexVisual = exports('HexVisual', (_dec = ccclass('HexVisual'), _dec2 = property(), _dec3 = property(), _dec4 = property({
+        type: [HexPiece]
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(HexVisual, _Component);
+        function HexVisual() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "animationDuration", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "explodePieceDuration", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "pieces", _descriptor3, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = HexVisual.prototype;
+        _proto.clearVisual = function clearVisual() {
+          this.pieces = [];
+        };
+        _proto.addPiece = function addPiece(piece) {
+          this.pieces.push(piece);
+        };
+        _proto.getTopPiece = function getTopPiece() {
+          return this.pieces[this.pieces.length - 1];
+        }
+
+        //#region Explode Tower
+        ;
+
+        _proto.explodeTower = function explodeTower(size, callback) {
+          //console.log("HexVisual.explodeTower()");
+
+          var objs = [];
+          var length = this.pieces.length - 1;
+          for (var i = 0; i < size; i++) {
+            var element = this.pieces[length - i].node;
+            objs.push(element);
+          }
+          this.explodeTowerAnimation(objs, this.explodePieceDuration, callback);
+        };
+        _proto.explodeTowerAnimation = /*#__PURE__*/function () {
+          var _explodeTowerAnimation = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(objs, duration, callback) {
+            var _iterator, _step, obj, _iterator2, _step2, _obj, length, i, element;
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  _iterator = _createForOfIteratorHelperLoose(objs);
+                case 1:
+                  if ((_step = _iterator()).done) {
+                    _context.next = 7;
+                    break;
+                  }
+                  obj = _step.value;
+                  _context.next = 5;
+                  return this.explodePiece(obj, duration);
+                case 5:
+                  _context.next = 1;
+                  break;
+                case 7:
+                  //destroy all objs
+                  for (_iterator2 = _createForOfIteratorHelperLoose(objs); !(_step2 = _iterator2()).done;) {
+                    _obj = _step2.value;
+                    _obj.destroy();
+                  }
+                  length = this.pieces.length - 1;
+                  for (i = 0; i < objs.length; i++) {
+                    element = this.pieces[length - i];
+                    this.pieces.remove(element);
+                  }
+                  if (callback) {
+                    callback();
+                  }
+                case 11:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee, this);
+          }));
+          function explodeTowerAnimation(_x, _x2, _x3) {
+            return _explodeTowerAnimation.apply(this, arguments);
+          }
+          return explodeTowerAnimation;
+        }();
+        _proto.explodePiece = function explodePiece(obj, duration) {
+          return new Promise(function (resolve) {
+            tween(obj).parallel(
+            // Scale the object down to 0
+            tween().to(duration, {
+              scale: new Vec3(0, 0, 0)
+            }, {
+              easing: 'quadIn'
+            }) // Scale down
+            ).call(function () {
+              resolve(); // Resolve the promise
+            }).start();
+          });
+        }
+
+        //#endregion
+
+        //#region Move Pieces
+        ;
+
+        _proto.movePieces = function movePieces(size, targetPos, callback) {
+          //console.log("HexVisual.movePieces()");
+
+          var objs = [];
+          var length = this.pieces.length - 1;
+          for (var i = 0; i < size; i++) {
+            var element = this.pieces[length - i].node;
+            objs.push(element);
+          }
+          this.moveObjectsToPosition(objs, targetPos.worldPosition, this.animationDuration, callback);
+        };
+        _proto.moveObjectsToPosition = /*#__PURE__*/function () {
+          var _moveObjectsToPosition = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(objs, targetPos, duration, callback) {
+            var _iterator3, _step3, obj, currentWorldPos, _iterator4, _step4, _obj2;
+            return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+              while (1) switch (_context2.prev = _context2.next) {
+                case 0:
+                  _iterator3 = _createForOfIteratorHelperLoose(objs);
+                case 1:
+                  if ((_step3 = _iterator3()).done) {
+                    _context2.next = 11;
+                    break;
+                  }
+                  obj = _step3.value;
+                  obj.scale = new Vec3(1, 1, 1);
+
+                  //console.log(`Moving object: ${obj.name} to ${targetPos}`);
+                  currentWorldPos = obj.worldPosition.clone(); // Get the current global position
+                  obj.setParent(director.getScene()); // Ensure the object is in the root of the scene
+                  targetPos.y += 0.1;
+                  _context2.next = 9;
+                  return this.moveObjectToPosition(obj, currentWorldPos, targetPos, duration);
+                case 9:
+                  _context2.next = 1;
+                  break;
+                case 11:
+                  //console.log("All objects have been moved in sequence.");
+
+                  //destroy all objs
+                  for (_iterator4 = _createForOfIteratorHelperLoose(objs); !(_step4 = _iterator4()).done;) {
+                    _obj2 = _step4.value;
+                    _obj2.destroy();
+                  }
+                  if (callback) {
+                    callback();
+                  }
+                case 13:
+                case "end":
+                  return _context2.stop();
+              }
+            }, _callee2, this);
+          }));
+          function moveObjectsToPosition(_x4, _x5, _x6, _x7) {
+            return _moveObjectsToPosition.apply(this, arguments);
+          }
+          return moveObjectsToPosition;
+        }();
+        _proto.moveObjectToPosition = function moveObjectToPosition(obj, startPos, targetPos, duration) {
+          var peakPos = targetPos.clone();
+          peakPos.x = math.lerp(startPos.x, targetPos.x, 0.75); // Calculate peak position for a smooth jump
+          peakPos.y += 0.3;
+          var targetRotation = obj.eulerAngles.clone();
+          targetRotation.z -= 180; // Rotate 180 degrees around the Z-axis
+
+          return new Promise(function (resolve) {
+            obj.setWorldPosition(startPos); // Ensure the object starts at the correct global position
+            tween(obj).parallel(tween().to(duration * 0.75, {
+              worldPosition: peakPos
+            }, {
+              easing: 'quadOut'
+            }) // Move up
+            .to(duration * 0.25, {
+              worldPosition: targetPos
+            }, {
+              easing: 'quadIn'
+            }),
+            // Move down
+            tween().to(duration, {
+              eulerAngles: targetRotation
+            }, {
+              easing: 'linear'
+            }) // Rotate
+            ).call(function () {
+              //console.log(`Destroying object: ${obj.name}`);
+              //obj.destroy(); // Destroy the object after the animation ends
+              resolve(); // Resolve the promise
+            }).start();
+          });
+        }
+        //#endregion
+        ;
+
+        return HexVisual;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "animationDuration", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0.20;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "explodePieceDuration", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0.20;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "pieces", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index.ts", ['cc', './Singleton.ts', './Game.ts', './AudioController.ts', './TweenSequence.ts', './EventOnNodeState.ts', './ProgressController.ts', './GameProgress.ts', './SimplePool.ts', './ObjectPool.ts', './LocalizedLabel.ts', './LocalizedRichText.ts', './LocalizationExtensions.ts', './InputKey.ts', './EventOnProgress.ts', './EventOnDelay.ts', './SfxPlayer.ts', './Wait.ts', './RaycastUtils.ts', './JsonUtils.ts', './CameraUtils.ts', './Action.ts', './Polymorphism.ts'], function (exports) {
+  var cclegacy;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }, function (module) {
+      exports('Singleton', module.Singleton);
+    }, function (module) {
+      exports('Game', module.Game);
+    }, function (module) {
+      exports('AudioController', module.AudioController);
+    }, function (module) {
+      exports('TweenSequence', module.TweenSequence);
+    }, function (module) {
+      exports('EventOnNodeState', module.EventOnNodeState);
+    }, function (module) {
+      exports('ProgressController', module.ProgressController);
+    }, function (module) {
+      exports('GameProgress', module.GameProgress);
+    }, function (module) {
+      exports('SimplePool', module.SimplePool);
+    }, function (module) {
+      exports('ObjectPool', module.ObjectPool);
+    }, function (module) {
+      exports('LocalizedLabel', module.LocalizedLabel);
+    }, function (module) {
+      exports('LocalizedRichText', module.LocalizedRichText);
+    }, function (module) {
+      exports('LocalizationExtensions', module.LocalizationExtensions);
+    }, function (module) {
+      exports('InputKey', module.InputKey);
+    }, function (module) {
+      exports('EventOnProgress', module.EventOnProgress);
+    }, function (module) {
+      exports('EventOnDelay', module.EventOnDelay);
+    }, function (module) {
+      exports('SfxPlayer', module.SfxPlayer);
+    }, function (module) {
+      exports('Wait', module.Wait);
+    }, function (module) {
+      exports('RaycastUtils', module.RaycastUtils);
+    }, function (module) {
+      exports('JsonUtils', module.JsonUtils);
+    }, function (module) {
+      exports('CameraUtils', module.CameraUtils);
+    }, function (module) {
+      exports('Action', module.Action);
+    }, function (module) {
+      exports('polymorphism', module.polymorphism);
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "69769WrZ+dEvbUGbcjk0n2t", "index", undefined);
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index2.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, Script, js, Asset;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Script = module.Script;
+      js = module.js;
+      Asset = module.Asset;
+    }],
+    execute: function () {
+      exports('bh', void 0);
+      cclegacy._RF.push({}, "92ec6nW85hK3pRCxzJ+nj+u", "index", undefined);
+      var serializable = _decorator.serializable,
+        property = _decorator.property,
+        ccclass = _decorator.ccclass;
+      var bh;
+      (function (_bh, _dec, _dec2, _class, _class2, _descriptor) {
+        /**
+         * 标记类为scriptable
+         * @param name 
+         * @returns 
+         */
+        function scriptable(name) {
+          var cccdec = ccclass(name);
+          return function (target) {
+            var decedClas = cccdec(target);
+            if (js.isChildClassOf(decedClas, bh.ScriptableAsset)) {
+              // @ts-ignore
+              var frame = cc._RF.peek();
+              if (frame.uuid) {
+                js._setClassId(frame.uuid, decedClas);
+                // end.prototype["__scriptUuid"] = EditorExtends.UuidUtils.decompressUuid(frame.uuid);
+              }
+            }
+
+            return decedClas;
+          };
+        }
+        _bh.scriptable = scriptable;
+        /**
+         * 用于ScriptableAsset字段的属性装饰器
+         */
+        function scriptableAsset(target, propertyKey, descriptorOrInitializer, opt) {
+          opt = Object.assign(opt ? opt : {}, {
+            type: bh.ScriptableAsset
+          });
+          if (target && propertyKey) {
+            // @scriptableAsset
+            property(opt)(target, propertyKey, descriptorOrInitializer);
+            return undefined;
+          } else if (target === undefined) {
+            // @scriptableAsset()
+            return property(opt);
+          } else if (typeof target === "boolean") {
+            //  @scriptableAsset(true|false)
+
+            if (target) {
+              opt = Object.assign(opt ? opt : {}, {
+                type: [bh.ScriptableAsset]
+              });
+              return property(opt);
+            }
+            return property(opt);
+          } else {
+            //  @scriptableAsset(any)
+            return property(opt);
+          }
+        }
+        _bh.scriptableAsset = scriptableAsset;
+        function createAssetMenu(fileName, menuPath, desc, order) {
+          return function (ctor) {
+            // 
+
+            return;
+            // console.log(`注册创建资源菜单项完成,${className}`, TI.saEditor);
+          };
+        }
+
+        _bh.createAssetMenu = createAssetMenu;
+        var ScriptableAsset = (_dec = ccclass("ScriptableAsset"), _dec2 = property({
+          displayName: "Script",
+          type: Script,
+          tooltip: "scriptable_asset_script",
+          animatable: false
+        }), _dec(_class = (_class2 = /*#__PURE__*/function (_Asset) {
+          _inheritsLoose(ScriptableAsset, _Asset);
+          function ScriptableAsset() {
+            var _this;
+            for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+              args[_key] = arguments[_key];
+            }
+            _this = _Asset.call.apply(_Asset, [this].concat(args)) || this;
+            _initializerDefineProperty(_this, "__scriptUuid", _descriptor, _assertThisInitialized(_this));
+            return _this;
+          }
+          ScriptableAsset.createInstance = function createInstance(clas) {
+            return clas ? new clas() : new this();
+          }
+          /**
+           * 运行时保存asset，需要有uuid
+           * @param asset 
+           */;
+          ScriptableAsset.saveAsset = function saveAsset(asset) {
+            {
+              console.warn("env is not in Editor,please use api in Editor");
+            }
+          }
+          /**
+           * 创建指定类型的ScriptableAsset
+           * @param assetType 
+           * @param filePath 无需后缀
+           */;
+          ScriptableAsset.createAsset = /*#__PURE__*/
+          function () {
+            var _createAsset = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(assetType, filePath) {
+              var pkgJson, pkgName, scriptable_asset_ext, url;
+              return _regeneratorRuntime().wrap(function _callee$(_context) {
+                while (1) switch (_context.prev = _context.next) {
+                  case 0:
+                    {
+                      _context.next = 14;
+                      break;
+                    }
+                  case 4:
+                    pkgJson = require("../../../package.json");
+                    pkgName = pkgJson.name || "scriptable-asset";
+                    scriptable_asset_ext = pkgJson.__scriptable_asset_ext || ".asset";
+                    url = "db://assets/" + filePath + scriptable_asset_ext;
+                    _context.next = 10;
+                    return Editor.Message.request('scene', 'execute-scene-script', {
+                      name: pkgName,
+                      method: "createScriptableAsset",
+                      args: [url, js.getClassName(assetType)]
+                    });
+                  case 10:
+                    _context.sent;
+                    return _context.abrupt("return");
+                  case 14:
+                    console.warn("env is not in Editor,please use api in Editor");
+                  case 15:
+                  case "end":
+                    return _context.stop();
+                }
+              }, _callee);
+            }));
+            function createAsset(_x, _x2) {
+              return _createAsset.apply(this, arguments);
+            }
+            return createAsset;
+          }()
+          /**
+           * 将资源保存到磁盘
+           */;
+
+          var _proto = ScriptableAsset.prototype;
+          _proto.saveAsset = function saveAsset() {
+            ScriptableAsset.saveAsset(this);
+          };
+          _createClass(ScriptableAsset, [{
+            key: "__scriptAsset",
+            get: function get() {
+              return null;
+            }
+          }]);
+          return ScriptableAsset;
+        }(Asset), (_applyDecoratedDescriptor(_class2.prototype, "__scriptAsset", [_dec2], Object.getOwnPropertyDescriptor(_class2.prototype, "__scriptAsset"), _class2.prototype), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "__scriptUuid", [serializable], {
+          configurable: true,
+          enumerable: true,
+          writable: true,
+          initializer: null
+        })), _class2)) || _class);
+        _bh.ScriptableAsset = ScriptableAsset;
+      })(bh || (bh = exports('bh', {})));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/InputKey.ts", ['cc'], function (exports) {
+  var cclegacy, Input;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      Input = module.Input;
+    }],
+    execute: function () {
+      var _class;
+      cclegacy._RF.push({}, "42306Phc9hKXJUydQByTR3d", "InputKey", undefined);
+      var InputKey = exports('InputKey', function InputKey() {});
+      _class = InputKey;
+      InputKey.inputInstance = new Input();
+      InputKey.Up = {
+        on: function on(keyCode, callback) {
+          _class.inputInstance.on(Input.EventType.KEY_UP, function (event) {
+            if (event.keyCode === keyCode) {
+              callback();
+            }
+          }, _class);
+        }
+      };
+      InputKey.Down = {
+        on: function on(keyCode, callback) {
+          _class.inputInstance.on(Input.EventType.KEY_DOWN, function (event) {
+            if (event.keyCode === keyCode) {
+              callback();
+            }
+          }, _class);
+        }
+      };
+      InputKey.Pressing = {
+        on: function on(keyCode, callback) {
+          _class.inputInstance.on(Input.EventType.KEY_PRESSING, function (event) {
+            if (event.keyCode === keyCode) {
+              callback();
+            }
+          }, _class);
+        }
+      };
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/JsonUtils.ts", ['cc'], function (exports) {
+  var cclegacy, _decorator;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "2fd5dThZoxBzJIrg3jddLHN", "JsonUtils", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var JsonUtils = exports('JsonUtils', (_dec = ccclass('JsonUtils'), _dec(_class = function JsonUtils() {}) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LayerCheckerTest.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Node, Layers, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Layers = module.Layers;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+      cclegacy._RF.push({}, "1f4027+dCFAla6NQlMuUfB2", "LayerCheckerTest", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var LayerCheckerTest = exports('LayerCheckerTest', (_dec = ccclass('LayerCheckerTest'), _dec2 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: Number,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: Number,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: String,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(LayerCheckerTest, _Component);
+        function LayerCheckerTest() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "currentNode", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "layerCode", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "layerNumber", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "layerName", _descriptor4, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = LayerCheckerTest.prototype;
+        _proto.start = function start() {
+          this.checkLayer();
+        };
+        _proto.checkLayer = function checkLayer() {
+          var code = this.node.layer;
+          var numberString = this.getLayerIndices(code);
+          var name = Layers.layerToName(numberString[0]); // 0 == Custom0 == DraggableSlot
+          console.log(this.node.name + " Layer number is: " + code + " |" + numberString + "| Layer name: " + name);
+          this.layerCode = code;
+          this.layerName = "" + name;
+          this.node.name = this.node.name + " [" + name + " - " + code + "]";
+        };
+        _proto.getLayerName = function getLayerName(layer) {
+          for (var key in Layers.Enum) {
+            if (Layers.Enum[key] === layer) {
+              return key;
+            }
+          }
+          return "Unknown";
+        }
+
+        /**
+        * Converts a layer bitmask to an array of layer indices (0 to 31).
+        */;
+        _proto.getLayerIndices = function getLayerIndices(layerBitmask) {
+          var indices = [];
+          for (var i = 0; i < 32; i++) {
+            if (layerBitmask & 1 << i) {
+              indices.push(i);
+            }
+          }
+          return indices;
+        };
+        _createClass(LayerCheckerTest, [{
+          key: "pressBooleanButton",
+          get:
+          // Example of a simple type of "editor button" we can use
+          function get() {
+            return false;
+          },
+          set: function set(v) {
+            this.checkLayer();
+          }
+        }]);
+        return LayerCheckerTest;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "currentNode", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "layerCode", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "layerNumber", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "layerName", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 'Null';
+        }
+      }), _applyDecoratedDescriptor(_class2.prototype, "pressBooleanButton", [property], Object.getOwnPropertyDescriptor(_class2.prototype, "pressBooleanButton"), _class2.prototype)), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LevelAsset.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index2.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _createClass, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Enum, Vec2, bh;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _createClass = module.createClass;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Enum = module.Enum;
+      Vec2 = module.Vec2;
+    }, function (module) {
+      bh = module.bh;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class4, _class5, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _class7, _class8, _descriptor8, _descriptor9, _descriptor10;
+      cclegacy._RF.push({}, "7a38eQYqfRFmJyEs+YSnUwu", "LevelAsset", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var AddRule = exports('AddRule', /*#__PURE__*/function (AddRule) {
+        AddRule[AddRule["None"] = 0] = "None";
+        AddRule[AddRule["AddNewRule"] = 1] = "AddNewRule";
+        return AddRule;
+      }({}));
+      var ObstacleType = exports('ObstacleType', /*#__PURE__*/function (ObstacleType) {
+        ObstacleType[ObstacleType["Ad"] = 1] = "Ad";
+        ObstacleType[ObstacleType["Lock"] = 2] = "Lock";
+        ObstacleType[ObstacleType["Wood"] = 3] = "Wood";
+        return ObstacleType;
+      }({}));
+      var ObjectiveType = exports('ObjectiveType', /*#__PURE__*/function (ObjectiveType) {
+        ObjectiveType[ObjectiveType["MergePieces"] = 0] = "MergePieces";
+        ObjectiveType[ObjectiveType["DestroyWood"] = 1] = "DestroyWood";
+        return ObjectiveType;
+      }({}));
+      var ObjectiveData = exports('ObjectiveData', (_dec = ccclass('ObjectiveData'), _dec2 = property({
+        type: Enum(ObjectiveType)
+      }), _dec3 = property({
+        type: Number
+      }), _dec(_class = (_class2 = function ObjectiveData() {
+        _initializerDefineProperty(this, "type", _descriptor, this);
+        _initializerDefineProperty(this, "amount", _descriptor2, this);
+      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "type", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return ObjectiveType.MergePieces;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "amount", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      })), _class2)) || _class));
+      var PieceColor = exports('PieceColor', /*#__PURE__*/function (PieceColor) {
+        PieceColor[PieceColor["Red"] = 1] = "Red";
+        PieceColor[PieceColor["Blue"] = 2] = "Blue";
+        PieceColor[PieceColor["Green"] = 3] = "Green";
+        PieceColor[PieceColor["Purple"] = 4] = "Purple";
+        PieceColor[PieceColor["Orange"] = 5] = "Orange";
+        PieceColor[PieceColor["Black"] = 6] = "Black";
+        return PieceColor;
+      }({}));
+      var RuleExpiritionType = exports('RuleExpiritionType', /*#__PURE__*/function (RuleExpiritionType) {
+        RuleExpiritionType[RuleExpiritionType["Never"] = 0] = "Never";
+        RuleExpiritionType[RuleExpiritionType["AfterNumberOfMatchedPieces"] = 1] = "AfterNumberOfMatchedPieces";
+        RuleExpiritionType[RuleExpiritionType["AfterNumberOfOptionTrays"] = 2] = "AfterNumberOfOptionTrays";
+        RuleExpiritionType[RuleExpiritionType["AfterTheObjectiveReacherPercentage"] = 3] = "AfterTheObjectiveReacherPercentage";
+        RuleExpiritionType[RuleExpiritionType["AfterSpecificObjectiveIsCompleted"] = 4] = "AfterSpecificObjectiveIsCompleted";
+        return RuleExpiritionType;
+      }({})); // this rule expires after a specific objective is completed
+      var LevelRuleSet = exports('LevelRuleSet', (_dec4 = ccclass('LevelRuleSet'), _dec5 = property({
+        type: Enum(RuleExpiritionType)
+      }), _dec6 = property({
+        type: Number
+      }), _dec7 = property({
+        type: [Enum(PieceColor)]
+      }), _dec8 = property({
+        type: Vec2
+      }), _dec9 = property({
+        type: Vec2
+      }), _dec4(_class4 = (_class5 = function LevelRuleSet() {
+        _initializerDefineProperty(this, "type", _descriptor3, this);
+        _initializerDefineProperty(this, "ruleValue", _descriptor4, this);
+        _initializerDefineProperty(this, "colorsAllowed", _descriptor5, this);
+        _initializerDefineProperty(this, "colorCombinationsAllowed", _descriptor6, this);
+        _initializerDefineProperty(this, "stackAmountAllowed", _descriptor7, this);
+      }, (_descriptor3 = _applyDecoratedDescriptor(_class5.prototype, "type", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return RuleExpiritionType.Never;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class5.prototype, "ruleValue", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class5.prototype, "colorsAllowed", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [PieceColor.Red];
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class5.prototype, "colorCombinationsAllowed", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2(1, 1);
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class5.prototype, "stackAmountAllowed", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec2(3, 5);
+        }
+      })), _class5)) || _class4));
+      var LevelAsset = exports('LevelAsset', (_dec10 = bh.createAssetMenu("level-0001", "LevelEditor/LevelAsset"), _dec11 = bh.scriptable('LevelAsset'), _dec12 = property({
+        multiline: true
+      }), _dec13 = property({
+        type: [ObjectiveData]
+      }), _dec14 = property({
+        type: [LevelRuleSet]
+      }), _dec15 = property({
+        type: Enum(AddRule)
+      }), _dec10(_class7 = _dec11(_class7 = (_class8 = /*#__PURE__*/function (_bh$ScriptableAsset) {
+        _inheritsLoose(LevelAsset, _bh$ScriptableAsset);
+        function LevelAsset() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _bh$ScriptableAsset.call.apply(_bh$ScriptableAsset, [this].concat(args)) || this;
+          // As pieces do grid foram salvas aqui de alguma forma//
+          _initializerDefineProperty(_this, "gridSavedAsJson", _descriptor8, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objectives", _descriptor9, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "optionTrayRules", _descriptor10, _assertThisInitialized(_this));
+          return _this;
+        }
+        _createClass(LevelAsset, [{
+          key: "Action",
+          get: function get() {
+            return AddRule.None;
+          },
+          set: function set(value) {
+            switch (value) {
+              case AddRule.AddNewRule:
+                var wrapper = new LevelRuleSet();
+                if (this.optionTrayRules.length > 0) {
+                  var last = this.optionTrayRules[this.optionTrayRules.length - 1];
+                  wrapper = last;
+                }
+                this.optionTrayRules.push(wrapper);
+                console.log("New rule added");
+                break;
+            }
+            this.saveAsset();
+          }
+        }]);
+        return LevelAsset;
+      }(bh.ScriptableAsset), (_descriptor8 = _applyDecoratedDescriptor(_class8.prototype, "gridSavedAsJson", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return '';
+        }
+      }), _descriptor9 = _applyDecoratedDescriptor(_class8.prototype, "objectives", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [new ObjectiveData()];
+        }
+      }), _descriptor10 = _applyDecoratedDescriptor(_class8.prototype, "optionTrayRules", [_dec14], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _applyDecoratedDescriptor(_class8.prototype, "Action", [_dec15], Object.getOwnPropertyDescriptor(_class8.prototype, "Action"), _class8.prototype)), _class8)) || _class7) || _class7));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LevelController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './ObjectivesController.ts', './OptionsTray.ts', './ObstaclesController.ts', './LevelAsset.ts', './TurnController.ts', './ComboController.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Component, ObjectivesController, OptionsTray, ObstaclesController, LevelAsset, LevelRuleSet, RuleExpiritionType, ObjectiveType, TurnController, ComboController, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }, null, function (module) {
+      ObjectivesController = module.ObjectivesController;
+    }, function (module) {
+      OptionsTray = module.OptionsTray;
+    }, function (module) {
+      ObstaclesController = module.ObstaclesController;
+    }, function (module) {
+      LevelAsset = module.LevelAsset;
+      LevelRuleSet = module.LevelRuleSet;
+      RuleExpiritionType = module.RuleExpiritionType;
+      ObjectiveType = module.ObjectiveType;
+    }, function (module) {
+      TurnController = module.TurnController;
+    }, function (module) {
+      ComboController = module.ComboController;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9;
+      cclegacy._RF.push({}, "779e3e9blVLa6hCrN8DoTgR", "LevelController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var LevelController = exports('LevelController', (_dec = ccclass('LevelController'), _dec2 = property({
+        type: LevelAsset
+      }), _dec3 = property({
+        type: LevelRuleSet
+      }), _dec4 = property(), _dec5 = property({
+        type: [LevelRuleSet]
+      }), _dec6 = property({
+        type: ObjectivesController,
+        group: 'Components'
+      }), _dec7 = property({
+        type: ObstaclesController,
+        group: 'Components'
+      }), _dec8 = property({
+        type: OptionsTray,
+        group: 'Components'
+      }), _dec9 = property({
+        type: TurnController,
+        group: 'Components'
+      }), _dec10 = property({
+        type: ComboController,
+        group: 'Components'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(LevelController, _Component);
+        function LevelController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "currentLevelAsset", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentRuleSet", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentRuleId", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "loadedRules", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objectivesControl", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "obstaclesControl", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "optionsTray", _descriptor7, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "turnControl", _descriptor8, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "comboControl", _descriptor9, _assertThisInitialized(_this));
+          _this.onNewOptiontrayGeneratedLambda = void 0;
+          _this.onMergedPiecesAmountUpdateLambda = void 0;
+          _this.onMergedPiecesPercentUpdateLambda = void 0;
+          _this.onSpecificObjetiveCompletedLambda = void 0;
+          return _this;
+        }
+        var _proto = LevelController.prototype;
+        _proto.initialize = function initialize(levelAsset) {
+          Singleton.set(this);
+          this.currentLevelAsset = levelAsset;
+          this.loadedRules = this.currentLevelAsset.optionTrayRules;
+          this.optionsTray.initialize();
+          this.turnControl.initialize();
+          this.comboControl.initialize();
+          this.objectivesControl.initialize(this.currentLevelAsset.objectives);
+          this.obstaclesControl.initialize(this.objectivesControl);
+          this.setEvents();
+        };
+        _proto.setEvents = function setEvents() {
+          var _this2 = this;
+          this.onNewOptiontrayGeneratedLambda = function (num) {
+            _this2.handleOnNewOptiontrayGenerated(num);
+          };
+          this.onMergedPiecesAmountUpdateLambda = function (num) {
+            _this2.handleOnMergedPiecesAmountUpdate(num);
+          };
+          this.onMergedPiecesPercentUpdateLambda = function (num) {
+            _this2.handleOnObjectivesPercentUpdate(num);
+          };
+          this.onSpecificObjetiveCompletedLambda = function (num) {
+            _this2.handleOnObjectivesCompleted(num);
+          };
+        };
+        _proto.getLocks = function getLocks() {
+          return this.obstaclesControl.getLocks();
+        };
+        _proto.startLevel = function startLevel() {
+          console.log("GameplayController.startLevel()");
+          this.currentRuleId = 0;
+          this.updateRuleSet();
+          this.optionsTray.generateNewOptionsTray();
+        };
+        _proto.nextRound = function nextRound() {
+          //RoundId ++
+          //Load another options Tray
+          //Maybe make a round controller
+
+          this.optionsTray.generateNewOptionsTray();
+        };
+        _proto.nextRuleSet = function nextRuleSet() {
+          this.endCurrentRuleSet();
+          this.currentRuleId++;
+          this.updateRuleSet();
+        };
+        _proto.updateRuleSet = function updateRuleSet() {
+          this.currentRuleSet = this.currentLevelAsset.optionTrayRules[this.currentRuleId];
+          this.optionsTray.updateRuleSet(this.currentRuleSet);
+          if (this.currentRuleSet.type == RuleExpiritionType.AfterNumberOfOptionTrays) {
+            this.optionsTray.onNewTrayGenerated.addListener(this.onNewOptiontrayGeneratedLambda);
+          } else if (this.currentRuleSet.type == RuleExpiritionType.AfterNumberOfMatchedPieces) {
+            var objetiveId = this.objectivesControl.getIdByObjective(ObjectiveType.MergePieces);
+            this.objectivesControl.trackedObjectives[objetiveId].onAmountChanged.addListener(this.onMergedPiecesAmountUpdateLambda);
+          } else if (this.currentRuleSet.type == RuleExpiritionType.AfterTheObjectiveReacherPercentage) {
+            var _objetiveId = this.objectivesControl.getIdByObjective(ObjectiveType.MergePieces);
+            this.objectivesControl.trackedObjectives[_objetiveId].onPercentChanged.addListener(this.onMergedPiecesPercentUpdateLambda);
+          } else if (this.currentRuleSet.type == RuleExpiritionType.AfterSpecificObjectiveIsCompleted) {
+            var firstConvertion = this.currentLevelAsset.objectives[this.currentRuleSet.ruleValue - 1].type;
+            var _objetiveId2 = this.objectivesControl.getIdByObjective(firstConvertion);
+            this.objectivesControl.trackedObjectives[_objetiveId2].onObjectiveCompleted.addListener(this.onSpecificObjetiveCompletedLambda);
+          }
+        };
+        _proto.endCurrentRuleSet = function endCurrentRuleSet() {
+          if (this.currentRuleSet.type == RuleExpiritionType.AfterNumberOfOptionTrays) {
+            this.optionsTray.onNewTrayGenerated.removeListener(this.onNewOptiontrayGeneratedLambda);
+          } else if (this.currentRuleSet.type == RuleExpiritionType.AfterNumberOfMatchedPieces) {
+            var objetiveId = this.objectivesControl.getIdByObjective(ObjectiveType.MergePieces);
+            this.objectivesControl.trackedObjectives[objetiveId].onAmountChanged.removeListener(this.onMergedPiecesAmountUpdateLambda);
+          } else if (this.currentRuleSet.type == RuleExpiritionType.AfterTheObjectiveReacherPercentage) {
+            var _objetiveId3 = this.objectivesControl.getIdByObjective(ObjectiveType.MergePieces);
+            this.objectivesControl.trackedObjectives[_objetiveId3].onPercentChanged.removeListener(this.onMergedPiecesPercentUpdateLambda);
+          } else if (this.currentRuleSet.type == RuleExpiritionType.AfterSpecificObjectiveIsCompleted) {
+            var firstConvertion = this.currentLevelAsset.objectives[this.currentRuleSet.ruleValue - 1].type;
+            var _objetiveId4 = this.objectivesControl.getIdByObjective(firstConvertion);
+            this.objectivesControl.trackedObjectives[_objetiveId4].onObjectiveCompleted.removeListener(this.onSpecificObjetiveCompletedLambda);
+          }
+        }
+
+        //#region Events
+        ;
+
+        _proto.handleOnNewOptiontrayGenerated = function handleOnNewOptiontrayGenerated(count) {
+          console.log("LevelController.handleOnNewOptiontrayGenerated " + count);
+          if (this.currentRuleSet.type == RuleExpiritionType.AfterNumberOfOptionTrays) {
+            if (count === this.currentRuleSet.ruleValue) {
+              //Move to next rule  
+              this.nextRuleSet();
+            }
+          }
+        };
+        _proto.handleOnMergedPiecesAmountUpdate = function handleOnMergedPiecesAmountUpdate(amount) {
+          console.log("LevelController.handleOnMergedPiecesAmountUpdate " + amount);
+          if (amount >= this.currentRuleSet.ruleValue) {
+            this.nextRuleSet();
+          }
+        };
+        _proto.handleOnObjectivesPercentUpdate = function handleOnObjectivesPercentUpdate(percent) {
+          var convertedPercent = percent * 100;
+          console.log("LevelController.handleOnObjectivesPercentUpdate " + percent + " = " + convertedPercent + "%");
+          if (convertedPercent >= this.currentRuleSet.ruleValue) {
+            this.nextRuleSet();
+          }
+        };
+        _proto.handleOnObjectivesCompleted = function handleOnObjectivesCompleted(id) {
+          var convertedName = id;
+          console.log("LevelController.handleOnObjectivesCompleted " + id + " = " + ObjectiveType[convertedName]);
+          if (convertedName == this.currentRuleSet.ruleValue) {
+            this.nextRuleSet();
+          }
+        }
+        //#endregion
+        ;
+
+        return LevelController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "currentLevelAsset", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "currentRuleSet", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "currentRuleId", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "loadedRules", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "objectivesControl", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "obstaclesControl", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "optionsTray", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "turnControl", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "comboControl", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LevelEditorController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelAsset.ts', './EditorRulesController.ts', './index.ts', './HexSlot.ts', './EditorStackController.ts', './HexGridController.ts', './EditorObjectivesController.ts', './GameplayController.ts', './OptionsTray.ts', './UI_GameplayHUD.ts', './Singleton.ts', './RaycastUtils.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Camera, Node, input, Input, KeyCode, find, EventMouse, Layers, Component, LevelAsset, EditorRulesController, HexSlot, EditorStackController, HexGridController, EditorObjectivesController, GameplayController, OptionsTray, UI_GameplayHUD, Singleton, RaycastUtils;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Camera = module.Camera;
+      Node = module.Node;
+      input = module.input;
+      Input = module.Input;
+      KeyCode = module.KeyCode;
+      find = module.find;
+      EventMouse = module.EventMouse;
+      Layers = module.Layers;
+      Component = module.Component;
+    }, function (module) {
+      LevelAsset = module.LevelAsset;
+    }, function (module) {
+      EditorRulesController = module.EditorRulesController;
+    }, null, function (module) {
+      HexSlot = module.HexSlot;
+    }, function (module) {
+      EditorStackController = module.EditorStackController;
+    }, function (module) {
+      HexGridController = module.HexGridController;
+    }, function (module) {
+      EditorObjectivesController = module.EditorObjectivesController;
+    }, function (module) {
+      GameplayController = module.GameplayController;
+    }, function (module) {
+      OptionsTray = module.OptionsTray;
+    }, function (module) {
+      UI_GameplayHUD = module.UI_GameplayHUD;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      RaycastUtils = module.RaycastUtils;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9;
+      cclegacy._RF.push({}, "010e1uVH+NGaaJWBZCUd+XU", "LevelEditorController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var LevelEditorController = exports('LevelEditorController', (_dec = ccclass('LevelEditorController'), _dec2 = property({
+        type: Boolean,
+        group: 'Debug'
+      }), _dec3 = property({
+        group: 'Debug'
+      }), _dec4 = property({
+        type: LevelAsset
+      }), _dec5 = property({
+        type: EditorRulesController,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: EditorStackController,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: EditorObjectivesController,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: OptionsTray,
+        group: {
+          name: "Components"
+        }
+      }), _dec9 = property({
+        type: Camera,
+        group: 'Runtime'
+      }), _dec10 = property({
+        type: HexGridController,
+        group: 'Runtime'
+      }), _dec11 = property({
+        type: Node,
+        group: 'Runtime'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(LevelEditorController, _Component);
+        function LevelEditorController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region DEBUG
+          _initializerDefineProperty(_this, "isGameplayMode", _descriptor, _assertThisInitialized(_this));
+          //#endregion
+          //#region Variables
+          _initializerDefineProperty(_this, "currentLevelAsset", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "rulesController", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "stackController", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objectivesController", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "previewTray", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "camera", _descriptor7, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "hexGridController", _descriptor8, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "uiParent", _descriptor9, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = LevelEditorController.prototype;
+        //#endregion
+        _proto.onLoad = function onLoad() {
+          Singleton.set(this);
+        };
+        _proto.start = function start() {
+          this.findComponents();
+          this.objectivesController.initialize(this.currentLevelAsset.objectives);
+          this.rulesController.initialize(this.currentLevelAsset.optionTrayRules);
+          this.stackController.initialize(this.currentLevelAsset);
+          this.hexGridController.setLevelAsset(this.currentLevelAsset);
+          this.hexGridController.loadGridData();
+          input.on(Input.EventType.MOUSE_DOWN, this.mouseClick, this);
+          input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
+          if (this.isGameplayMode) {
+            this.start_level = true;
+          } else {
+            this.uiParent.active = false;
+          }
+        };
+        _proto.onKeyDown = function onKeyDown(event) {
+          if (this.isGameplayMode) return;
+          if (event.keyCode === KeyCode.SPACE) {
+            this.start_level = true;
+          }
+        };
+        _proto.findComponents = function findComponents() {
+          if (!this.camera) {
+            var cameraNode = find('Main Camera'); // Replace 'Main Camera' with the name of your camera node
+            if (cameraNode) {
+              this.camera = cameraNode.getComponent(Camera);
+              if (!this.camera) {
+                console.error("Camera component not found on the node.");
+              }
+            } else {
+              console.error("Camera node not found.");
+            }
+          }
+          this.hexGridController = Singleton.get(HexGridController);
+          this.uiParent = Singleton.get(UI_GameplayHUD).node.parent;
+        };
+        _proto.saveLevelConfigs = function saveLevelConfigs(saveGrid) {
+          if (saveGrid === void 0) {
+            saveGrid = false;
+          }
+          if (!this.currentLevelAsset) {
+            return;
+          }
+          console.log("<SAVE> LevelEditorController.saveLevelConfigs()");
+          if (saveGrid) Singleton.get(HexGridController).saveGridData();
+          this.currentLevelAsset.saveAsset();
+        };
+        _proto.updateRuleset = function updateRuleset(loadedRules) {
+          if (loadedRules === void 0) {
+            loadedRules = [];
+          }
+          //console.log("LevelEditorController.updateRuleset()");
+          this.currentLevelAsset.optionTrayRules = loadedRules;
+          this.saveLevelConfigs();
+        };
+        _proto.updateObjectives = function updateObjectives(objectives) {
+          this.currentLevelAsset.objectives = objectives;
+          this.saveLevelConfigs();
+        };
+        _proto.getListOfObjectives = function getListOfObjectives() {
+          var objectives = [];
+          for (var i = 0; i < this.currentLevelAsset.objectives.length; i++) {
+            objectives.push(this.currentLevelAsset.objectives[i].type);
+          }
+          return objectives;
+        }
+
+        //#region Inputs
+        ;
+
+        _proto.mouseClick = function mouseClick(event) {
+          if (this.isGameplayMode) return;
+          if (event.getButton() === EventMouse.BUTTON_LEFT) {
+            var slot = this.performRaycastExternal(event);
+            if (slot !== null) {
+              if (slot.getData().piecesStack.length > 0) return;
+              slot.setSlotActive(!slot.data.isActiveSlot);
+              this.saveLevelConfigs(true);
+            }
+          } else if (event.getButton() === EventMouse.BUTTON_RIGHT) {
+            var _slot = this.performRaycastExternal(event);
+            if (_slot !== null) {
+              //TODO: Aqui vai ser pra abrir o menu de "editar stack de pieces"
+              this.hexGridController.debug_DeselectAll = true;
+              this.stackController.selectSlot(_slot);
+            } else {
+              this.hexGridController.debug_DeselectAll = true;
+            }
+          } else if (event.getButton() === EventMouse.BUTTON_MIDDLE) {
+            var _slot2 = this.performRaycastExternal(event);
+            if (_slot2 !== null) {
+              //TODO: Aqui vai ser pra abrir o menu de "editar stack de pieces"
+              _slot2.debug_RandomizePieces = true;
+            }
+          }
+        }
+
+        // TODO: Remover essa logica daqui e colocar dentro de um "LevelEditorController"
+        ;
+
+        _proto.performRaycastExternal = function performRaycastExternal(event) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var outResult = {
+            result: null
+          };
+          var distance = 500;
+          var layerMask = Layers.Enum.ALL; // Change this to the desired layer
+          var success = RaycastUtils.mousePositionRaycast3D(event, this.camera, outResult, distance, layerMask);
+          if (success && outResult.result) {
+            var collider = outResult.result.collider;
+            return collider.node.parent.getComponent(HexSlot);
+          }
+          return null;
+        }
+        //#endregion
+        ;
+
+        _createClass(LevelEditorController, [{
+          key: "start_level",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            this.isGameplayMode = true;
+            this.rulesController.node.active = false;
+            this.stackController.node.active = false;
+            this.previewTray.node.active = false;
+            this.objectivesController.node.active = false;
+            Singleton.get(GameplayController).currentLevelAsset = this.currentLevelAsset;
+            Singleton.get(GameplayController).startLevel();
+            this.uiParent.active = true;
+          }
+        }]);
+        return LevelEditorController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "isGameplayMode", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _applyDecoratedDescriptor(_class2.prototype, "start_level", [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "start_level"), _class2.prototype), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "currentLevelAsset", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "rulesController", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "stackController", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "objectivesController", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "previewTray", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "camera", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "hexGridController", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "uiParent", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LocalizationExtensions.ts", ['cc'], function (exports) {
+  var cclegacy, _decorator, assetManager, JsonAsset;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      assetManager = module.assetManager;
+      JsonAsset = module.JsonAsset;
+    }],
+    execute: function () {
+      var _dec, _class, _class2;
+      cclegacy._RF.push({}, "e8a0dW9iulH17or5AxbdUPh", "LocalizationExtensions", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var LanguageFunctionType = exports('LanguageFunctionType', /*#__PURE__*/function (LanguageFunctionType) {
+        LanguageFunctionType[LanguageFunctionType["None"] = 0] = "None";
+        LanguageFunctionType[LanguageFunctionType["Save"] = 1] = "Save";
+        LanguageFunctionType[LanguageFunctionType["Load"] = 2] = "Load";
+        LanguageFunctionType[LanguageFunctionType["CreateNewRandomKey"] = 3] = "CreateNewRandomKey";
+        return LanguageFunctionType;
+      }({}));
+      var LocalizationExtensions = exports('LocalizationExtensions', (_dec = ccclass('LocalizationExtensions'), _dec(_class = (_class2 = /*#__PURE__*/function () {
+        function LocalizationExtensions() {}
+        LocalizationExtensions.getLanguageJson = function getLanguageJson(callback, langCode) {
+          if (langCode === void 0) {
+            langCode = 'en';
+          }
+          if (LocalizationExtensions.loadedLanguage !== null) {
+            console.log('Already Loaded stuff:', LocalizationExtensions.loadedLanguage);
+            if (callback) callback();
+            return;
+          }
+          var bundleName = 'resources'; // Name of the bundle
+          var jsonPath = 'language'; // Path within the bundle without the .json extension
+
+          // Load the bundle
+          assetManager.loadBundle(bundleName, function (err, bundle) {
+            if (err) {
+              console.error('Failed to load bundle:', err);
+              return;
+            }
+            console.log('Bundle loaded successfully:', bundleName);
+
+            // Load the JSON file from the bundle
+            bundle.load(jsonPath, JsonAsset, function (err, jsonAsset) {
+              if (err) {
+                console.error('Failed to load JSON file:', err);
+                return;
+              }
+
+              //console.log('JSON file loaded successfully:', jsonPath);
+              // Assuming the JSON file is loaded as a JsonAsset
+              var languageData = jsonAsset.json;
+              LocalizationExtensions.loadedJson = jsonAsset;
+              LocalizationExtensions.loadedLanguage = languageData[langCode];
+              console.log('Loaded language data:', languageData);
+              if (callback) callback();
+            });
+          });
+        };
+        LocalizationExtensions.localizeText = function localizeText(key) {
+          console.log("LocalizationExtensions.localizeText() key " + key);
+          if (LocalizationExtensions.loadedLanguage === null) {
+            LocalizationExtensions.getLanguageJson(function () {
+              return LocalizationExtensions.localizeText(key);
+            });
+            return "TNF " + key;
+          }
+          var mainText = "TNF " + key;
+          if (LocalizationExtensions.loadedLanguage && LocalizationExtensions.loadedLanguage[key]) {
+            mainText = LocalizationExtensions.loadedLanguage[key];
+          }
+          console.log("LocalizationExtensions.localizeText() text content: " + mainText);
+          return mainText;
+        };
+        LocalizationExtensions.editorSaveToLanguageJson = function editorSaveToLanguageJson(key, value, langCode) {
+          if (langCode === void 0) {
+            langCode = 'en';
+          }
+          LocalizationExtensions.getLanguageJson(function () {
+            var json = LocalizationExtensions.loadedJson.json;
+            var node = json[langCode];
+            node[key] = value;
+            ///const languageJSONFilePath = 'language.json';
+            //const langFilePath = join(assetManager.cacheManager.cacheDir, languageJSONFilePath);
+            //if (existsSync(langFilePath)) {
+            //    writeFileSync(langFilePath, JSON.stringify(json, null, 2));
+            //
+            console.log("<color=cyan>File language.json was updated</color>: <color=white>[" + key + "]: " + node[key] + "</color>");
+            LocalizationExtensions.loadedJson.json = json;
+            //}
+          }, langCode);
+        };
+        return LocalizationExtensions;
+      }(), _class2.loadedJson = null, _class2.loadedLanguage = null, _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LocalizedLabel.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './LocalizationExtensions.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Enum, Label, LanguageFunctionType, LocalizationExtensions;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Enum = module.Enum;
+      Label = module.Label;
+    }, null, function (module) {
+      LanguageFunctionType = module.LanguageFunctionType;
+      LocalizationExtensions = module.LocalizationExtensions;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "9d0eamA2tdEYoRyhY5Gyo6x", "LocalizedLabel", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var LocalizedLabel = exports('LocalizedLabel', (_dec = ccclass('LocalizedLabel'), _dec2 = property({
+        group: 'Localization',
+        tooltip: 'The key to use for localization'
+      }), _dec3 = property({
+        type: Enum(LanguageFunctionType),
+        group: 'Localization',
+        tooltip: 'Localization and language functions'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Label) {
+        _inheritsLoose(LocalizedLabel, _Label);
+        function LocalizedLabel() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Label.call.apply(_Label, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "key", _descriptor, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = LocalizedLabel.prototype;
+        _proto.onEnable = function onEnable() {
+          var _this2 = this;
+          _Label.prototype.onEnable.call(this);
+          LocalizationExtensions.getLanguageJson(function () {
+            _this2.updateText();
+          });
+        };
+        _proto.updateText = function updateText() {
+          this.string = LocalizationExtensions.localizeText(this.key);
+        };
+        _proto.setKey = function setKey(key) {
+          this.key = key;
+          this.updateText();
+        };
+        _createClass(LocalizedLabel, [{
+          key: "runLanguageFunction",
+          get: function get() {
+            return LanguageFunctionType.None;
+          },
+          set: function set(value) {
+            switch (value) {
+              case LanguageFunctionType.Save:
+                LocalizationExtensions.editorSaveToLanguageJson(this.key, this.string);
+                console.log('Saved text!');
+                break;
+              case LanguageFunctionType.Load:
+                this.updateText();
+                console.log('Load text!');
+                break;
+              case LanguageFunctionType.CreateNewRandomKey:
+                console.log('Random Key Created!');
+                break;
+            }
+          }
+        }]);
+        return LocalizedLabel;
+      }(Label), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "key", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return '';
+        }
+      }), _applyDecoratedDescriptor(_class2.prototype, "runLanguageFunction", [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "runLanguageFunction"), _class2.prototype)), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LocalizedRichText.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './LocalizationExtensions.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Enum, RichText, LanguageFunctionType, LocalizationExtensions;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Enum = module.Enum;
+      RichText = module.RichText;
+    }, null, function (module) {
+      LanguageFunctionType = module.LanguageFunctionType;
+      LocalizationExtensions = module.LocalizationExtensions;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "2cb59hISJtPCYbmFKDID13+", "LocalizedRichText", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var LocalizedRichText = exports('LocalizedRichText', (_dec = ccclass('LocalizedRichText'), _dec2 = property({
+        group: 'Localization',
+        tooltip: 'The key to use for localization'
+      }), _dec3 = property({
+        type: Enum(LanguageFunctionType),
+        group: 'Localization',
+        tooltip: 'Localization and language functions'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_RichText) {
+        _inheritsLoose(LocalizedRichText, _RichText);
+        function LocalizedRichText() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _RichText.call.apply(_RichText, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "key", _descriptor, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = LocalizedRichText.prototype;
+        _proto.onEnable = function onEnable() {
+          var _this2 = this;
+          _RichText.prototype.onEnable.call(this);
+          LocalizationExtensions.getLanguageJson(function () {
+            _this2.updateText();
+          });
+        };
+        _proto.updateText = function updateText() {
+          this.string = LocalizationExtensions.localizeText(this.key);
+        };
+        _proto.setKey = function setKey(key) {
+          this.key = key;
+          this.updateText();
+        };
+        _createClass(LocalizedRichText, [{
+          key: "runLanguageFunction",
+          get: function get() {
+            return LanguageFunctionType.None;
+          },
+          set: function set(value) {
+            switch (value) {
+              case LanguageFunctionType.Save:
+                LocalizationExtensions.editorSaveToLanguageJson(this.key, this.string);
+                console.log('Saved text!');
+                break;
+              case LanguageFunctionType.Load:
+                this.updateText();
+                console.log('Load text!');
+                break;
+              case LanguageFunctionType.CreateNewRandomKey:
+                console.log('Random Key Created!');
+                break;
+            }
+          }
+        }]);
+        return LocalizedRichText;
+      }(RichText), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "key", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return '';
+        }
+      }), _applyDecoratedDescriptor(_class2.prototype, "runLanguageFunction", [_dec3], Object.getOwnPropertyDescriptor(_class2.prototype, "runLanguageFunction"), _class2.prototype)), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/LockObstacleSlot.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './HexSlot.ts', './index.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Component, HexSlot, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }, function (module) {
+      HexSlot = module.HexSlot;
+    }, null, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+      cclegacy._RF.push({}, "6203ajoAVpOw5Xt+Z+JKYUN", "LockObstacleSlot", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var LockObstacleSlot = exports('LockObstacleSlot', (_dec = ccclass('LockObstacleSlot'), _dec2 = property(), _dec3 = property(), _dec4 = property(), _dec5 = property({
+        type: HexSlot
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(LockObstacleSlot, _Component);
+        function LockObstacleSlot() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "currentAmount", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "mergedAmount", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "maxAmount", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "targetSlot", _descriptor4, _assertThisInitialized(_this));
+          //onPausedLambda: (num: boolean) => void;
+          _this.onCurrentAmountUpdate = new Action();
+          return _this;
+        }
+        var _proto = LockObstacleSlot.prototype;
+        _proto.initialize = function initialize(lockAmount) {
+          this.maxAmount = lockAmount;
+          this.currentAmount = lockAmount;
+          this.mergedAmount = 0;
+          this.targetSlot = this.node.getComponent(HexSlot);
+        };
+        _proto.updateCurrentMergedAmount = function updateCurrentMergedAmount(amount) {
+          this.mergedAmount = amount;
+          this.currentAmount = Math.max(0, this.maxAmount - this.mergedAmount);
+          //console.log(`LockObstacleSlot.updateCurrentMergedAmount: ${amount}`);
+          this.onCurrentAmountUpdate.invoke(this.currentAmount);
+        };
+        return LockObstacleSlot;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "currentAmount", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "mergedAmount", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "maxAmount", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "targetSlot", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/main", ['./AudioController.ts', './SfxPlayer.ts', './CommandSequence.ts', './SetActiveCommand.ts', './TweenPositionCommand.ts', './TweenScaleCommand.ts', './WaitCommand.ts', './AsyncCommand.ts', './Command.ts', './ClassScanner.ts', './CommandDecorator.ts', './EventOnDelay.ts', './EventOnNodeState.ts', './EventOnProgress.ts', './DummyReferenceScript.ts', './Game.ts', './index.ts', './InputKey.ts', './LocalizationExtensions.ts', './LocalizedLabel.ts', './LocalizedRichText.ts', './Polymorphism.ts', './PolymorphismDemo.ts', './ObjectPool.ts', './SimplePool.ts', './GameProgress.ts', './ProgressController.ts', './Singleton.ts', './TweenSequence.ts', './Action.ts', './ArrayUtils.ts', './CameraUtils.ts', './EventHandlerUtils.ts', './JsonUtils.ts', './NodeUtils.ts', './RaycastUtils.ts', './Wait.ts', './HexGridController.ts', './HexPiece.ts', './HexSlot.ts', './NeighborController.ts', './OptionsTray.ts', './ComboController.ts', './GameplayController.ts', './LevelController.ts', './ObjectivesController.ts', './ObstaclesController.ts', './TurnController.ts', './HexVisual.ts', './LockObstacleSlot.ts', './DragDropComponent.ts', './DragInputManager.ts', './LevelAsset.ts', './LevelEditorController.ts', './EditorObjectivesController.ts', './EditorObjectivesDisplay.ts', './EditorColorButton.ts', './EditorColorSelector.ts', './EditorDropdownOption.ts', './EditorExpirationDisplay.ts', './EditorRangeSelector.ts', './EditorRuleButton.ts', './EditorRulesController.ts', './EditorSingleRuleDisplay.ts', './SimpleEditorDropdown.ts', './EditorExpirationAmount.ts', './EditorExpirationId.ts', './EditorExpirationPercent.ts', './EditorSingleStack.ts', './EditorSliderControl.ts', './EditorStackColorBlock.ts', './EditorStackController.ts', './EditorStackObstacleBlock.ts', './EditorButtonSequence.ts', './EditorSequenceButton.ts', './EditorRangeEditbox.ts', './UI_GameplayHUD.ts', './UI_ObjectivesDisplay.ts', './UI_SingleObjective.ts', './UI_LockDisplay.ts', './BundleLoad2.ts', './BundleLoadTest.ts', './eventTestTrigger.ts', './DraggableItem.ts', './DraggableSlot.ts', './DraggableComponent.ts', './FilteredRaycastTest.ts', './LayerCheckerTest.ts', './PlaneIntersectionExample.ts', './RaycastTests.ts', './SelectNode.ts', './SimpleDragTest.ts', './SimpleMouseTest.ts', './SimpleRaycastTest.ts', './tweenMovementTests.ts', './FollowWorldTests.ts', './WorldToUIPosition.ts', './index2.ts'], function () {
+  return {
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    execute: function () {}
+  };
+});
+
+System.register("chunks:///_virtual/NeighborController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './HexSlot.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createForOfIteratorHelperLoose, cclegacy, _decorator, MeshRenderer, Component, HexSlot;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      MeshRenderer = module.MeshRenderer;
+      Component = module.Component;
+    }, function (module) {
+      HexSlot = module.HexSlot;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "00372GRf3hAIo0/UDf/Oc7f", "NeighborController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property,
+        executeInEditMode = _decorator.executeInEditMode;
+      var NeighborController = exports('NeighborController', (_dec = ccclass('NeighborController'), _dec2 = property({
+        type: [HexSlot]
+      }), _dec(_class = executeInEditMode(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(NeighborController, _Component);
+        function NeighborController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "allActive", _descriptor, _assertThisInitialized(_this));
+          //all neighbors that are active for this level
+          _this.topLeft = null;
+          _this.top = null;
+          _this.topRight = null;
+          _this.botLeft = null;
+          _this.bot = null;
+          _this.botRight = null;
+          return _this;
+        }
+        var _proto = NeighborController.prototype;
+        _proto.assignAllNeighborsList = function assignAllNeighborsList(array) {
+          this.allActive = array;
+        };
+        _proto.getAllContainingStacks = function getAllContainingStacks() {
+          var slots = [];
+          for (var _iterator = _createForOfIteratorHelperLoose(this.allActive), _step; !(_step = _iterator()).done;) {
+            var hexSlot = _step.value;
+            if (hexSlot.getData().piecesStack.length > 0) {
+              slots.push(hexSlot);
+            }
+          }
+          return slots;
+        };
+        _proto.debugNeighbors = function debugNeighbors(color) {
+          this.allActive.forEach(function (neighbor) {
+            if (neighbor) {
+              var meshRenderer = neighbor.getComponentInChildren(MeshRenderer);
+              if (meshRenderer) {
+                // Save these when starting
+                var pass = meshRenderer.material.passes[0];
+                var hColor = pass.getHandle('albedo');
+                // inside update function
+                pass.setUniform(hColor, color);
+              }
+            }
+          });
+        };
+        return NeighborController;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "allActive", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _class2)) || _class) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/NodeUtils.ts", ['cc'], function () {
+  var cclegacy, Node, Vec3;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      Node = module.Node;
+      Vec3 = module.Vec3;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "68bf2ZTUhVCAbkagNMvGu1q", "NodeUtils", undefined);
+
+      // Extending the Node class to add a "move" method
+
+      // Adding the move method to Node prototype
+      Node.prototype.move = function (direction, distance) {
+        // Create a new Vec3 from the direction to avoid modifying the original vector
+        var movement = new Vec3().set(direction.x, direction.y, direction.z);
+
+        // Multiply the direction vector by the distance
+        movement.multiplyScalar(distance);
+
+        // Add the movement vector to the current position
+        var newPosition = this.position.clone().add(movement);
+
+        // Update the node's position
+        this.setPosition(newPosition);
+      };
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/ObjectivesController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelAsset.ts', './index.ts', './Singleton.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Component, ObjectiveData, ObjectiveType, Singleton, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }, function (module) {
+      ObjectiveData = module.ObjectiveData;
+      ObjectiveType = module.ObjectiveType;
+    }, null, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _dec3, _dec4, _dec5, _dec6, _class4, _class5, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "7928bDu5TxFBor4qqVHxMy7", "ObjectivesController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var ActiveObjectiveTracker = exports('ActiveObjectiveTracker', (_dec = ccclass('ActiveObjectiveTracker'), _dec2 = property({
+        type: ObjectiveData
+      }), _dec(_class = (_class2 = /*#__PURE__*/function () {
+        function ActiveObjectiveTracker(objectiveData) {
+          _initializerDefineProperty(this, "loadedObjectives", _descriptor, this);
+          _initializerDefineProperty(this, "currentAmount", _descriptor2, this);
+          //Will it need objectiveId?
+          _initializerDefineProperty(this, "objetiveId", _descriptor3, this);
+          _initializerDefineProperty(this, "isCompleted", _descriptor4, this);
+          this.onAmountChanged = new Action();
+          this.onPercentChanged = new Action();
+          this.onObjectiveCompleted = new Action();
+          this.loadedObjectives = objectiveData;
+          this.currentAmount = 0;
+        }
+        var _proto = ActiveObjectiveTracker.prototype;
+        _proto.updateCurrentAmount = function updateCurrentAmount(amount) {
+          if (this.isCompleted) return;
+          this.currentAmount = amount;
+          if (this.currentAmount >= this.loadedObjectives.amount) {
+            console.log("ActiveObjectiveTracker.Completed Objetive " + ObjectiveType[this.loadedObjectives.type]);
+            this.currentAmount = this.loadedObjectives.amount;
+            this.isCompleted = true;
+          }
+          this.onAmountChanged.invoke(this.currentAmount);
+          this.onPercentChanged.invoke(this.currentAmount / this.loadedObjectives.amount);
+          if (this.isCompleted) this.onObjectiveCompleted.invoke(this.loadedObjectives.type);
+        };
+        return ActiveObjectiveTracker;
+      }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "loadedObjectives", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "currentAmount", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "objetiveId", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "isCompleted", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      })), _class2)) || _class));
+      var ObjectivesController = exports('ObjectivesController', (_dec3 = ccclass('ObjectivesController'), _dec4 = property({
+        type: [ObjectiveData]
+      }), _dec5 = property({
+        type: [ActiveObjectiveTracker]
+      }), _dec6 = property({
+        type: [Number]
+      }), _dec3(_class4 = (_class5 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(ObjectivesController, _Component);
+        function ObjectivesController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "loadedObjectives", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "trackedObjectives", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "progressList", _descriptor7, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto2 = ObjectivesController.prototype;
+        // @property({ type: HexGridController, group: 'Runtime' })
+        // hexGrid: HexGridController | null = null;
+        //public onMergePieces = new Action<number>();
+        //Figure out how I'll identify the objetive ids for an expanding list of objectives
+        _proto2.initialize = function initialize(objectives) {
+          Singleton.set(this);
+          this.loadedObjectives = objectives;
+          for (var i = 0; i < objectives.length; i++) {
+            this.trackedObjectives.push(new ActiveObjectiveTracker(objectives[i]));
+          }
+        };
+        _proto2.addObjectiveProgress = function addObjectiveProgress(objective, score) {
+          console.log("ObjectivesController.addObjectiveProgress(" + ObjectiveType[objective] + " , " + score + ")");
+          var equivalentId = this.getIdByObjective(objective);
+          var newValue = this.trackedObjectives[equivalentId].currentAmount + score;
+          this.trackedObjectives[equivalentId].updateCurrentAmount(newValue);
+
+          //Check if objective completed
+
+          //Update Locks?
+          // if (objective === ObjectiveType.MergePieces) {
+          //     this.onMergePieces.invoke();
+          // }
+        }
+
+        //#region gets
+        ;
+
+        _proto2.getIdByObjective = function getIdByObjective(objective) {
+          for (var i = 0; i < this.loadedObjectives.length; i++) {
+            var current = this.loadedObjectives[i];
+            if (current.type === objective) {
+              return i;
+            }
+          }
+          return -1;
+        };
+        _proto2.getProgressById = function getProgressById(id) {
+          return this.progressList[id];
+        }
+        //#endregion
+        ;
+
+        return ObjectivesController;
+      }(Component), (_descriptor5 = _applyDecoratedDescriptor(_class5.prototype, "loadedObjectives", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class5.prototype, "trackedObjectives", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class5.prototype, "progressList", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class5)) || _class4));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/ObjectPool.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _createClass, cclegacy, instantiate;
+  return {
+    setters: [function (module) {
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      instantiate = module.instantiate;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "f60bawcN1pBYpA6OoWoUPNh", "ObjectPool", undefined);
+      var ObjectPool = exports('ObjectPool', /*#__PURE__*/function () {
+        function ObjectPool(prefab, parent, defaultPoolCount, componentType) {
+          this.prefab = void 0;
+          this.parent = void 0;
+          this.pooledObjects = [];
+          this.componentType = void 0;
+          console.log("Component Type:", componentType);
+          this.prefab = prefab;
+          this.parent = parent;
+          this.componentType = componentType;
+          for (var i = 0; i < defaultPoolCount; i++) {
+            this.createNew();
+          }
+        }
+        var _proto = ObjectPool.prototype;
+        _proto.spawn = function spawn() {
+          var objectToBorrow = this.pooledObjects.find(function (o) {
+            return !o.IsSpawned;
+          });
+          if (objectToBorrow != null) {
+            return objectToBorrow.spawn();
+          }
+          return this.createNew().spawn();
+        };
+        _proto.despawn = function despawn(object) {
+          var objectToDespawn = this.pooledObjects.find(function (o) {
+            return o.Equals(object);
+          });
+          if (objectToDespawn == null) {
+            throw new Error("Object " + this.prefab.name + " is not a member of the pool");
+          }
+          objectToDespawn.despawn();
+        };
+        _proto.createNew = function createNew() {
+          var newPooledObject = new PooledObject(this.prefab, this.parent, this.componentType);
+          this.pooledObjects.push(newPooledObject);
+          newPooledObject.instancedNode.name = this.prefab.name + " (Pooled " + this.pooledObjects.length + ")";
+          return newPooledObject;
+        };
+        return ObjectPool;
+      }());
+      var PooledObject = /*#__PURE__*/function () {
+        function PooledObject(prefab, defaultParent, componentType) {
+          this.isSpawned = false;
+          this.defaultParent = void 0;
+          this.instancedNode = void 0;
+          this.instancedComponent = void 0;
+          this.defaultParent = defaultParent;
+          this.instancedNode = instantiate(prefab);
+          this.instancedComponent = this.instancedNode.getComponent(componentType);
+          if (!this.instancedComponent) {
+            console.error("Object " + prefab.name + " does not have component " + componentType.name);
+          }
+          this.clear();
+        }
+        var _proto2 = PooledObject.prototype;
+        _proto2.Equals = function Equals(component) {
+          return this.instancedComponent == component;
+        };
+        _proto2.spawn = function spawn() {
+          this.isSpawned = true;
+          this.instancedNode.active = true;
+          return this.instancedComponent;
+        };
+        _proto2.despawn = function despawn() {
+          this.clear();
+        };
+        _proto2.clear = function clear() {
+          this.instancedNode.active = false;
+          this.instancedNode.parent = this.defaultParent;
+          this.isSpawned = false;
+        };
+        _createClass(PooledObject, [{
+          key: "IsSpawned",
+          get: function get() {
+            return this.isSpawned;
+          }
+        }]);
+        return PooledObject;
+      }();
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/ObstaclesController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LockObstacleSlot.ts', './HexGridController.ts', './Singleton.ts', './LevelAsset.ts', './ObjectivesController.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Component, LockObstacleSlot, HexGridController, Singleton, ObstacleType, ObjectiveType, ObjectivesController;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }, function (module) {
+      LockObstacleSlot = module.LockObstacleSlot;
+    }, function (module) {
+      HexGridController = module.HexGridController;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      ObstacleType = module.ObstacleType;
+      ObjectiveType = module.ObjectiveType;
+    }, function (module) {
+      ObjectivesController = module.ObjectivesController;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "e94eerds6ZJ+aE8UM6gcrSZ", "ObstaclesController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var ObstaclesController = exports('ObstaclesController', (_dec = ccclass('ObstaclesController'), _dec2 = property({
+        type: [LockObstacleSlot]
+      }), _dec3 = property({
+        type: HexGridController,
+        group: 'Runtime'
+      }), _dec4 = property({
+        type: ObjectivesController,
+        group: 'Runtime'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(ObstaclesController, _Component);
+        function ObstaclesController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "locks", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "hexGrid", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objectivesControl", _descriptor3, _assertThisInitialized(_this));
+          _this.onMergeUpdateLambda = void 0;
+          return _this;
+        }
+        var _proto = ObstaclesController.prototype;
+        _proto.initialize = function initialize(objControl) {
+          this.objectivesControl = objControl;
+          this.hexGrid = Singleton.get(HexGridController);
+          this.initializeObstacles();
+          this.setEvents();
+        };
+        _proto.initializeObstacles = function initializeObstacles() {
+          for (var y = 0; y < this.hexGrid.gridHeight; y++) {
+            for (var x = 0; x < this.hexGrid.gridWidth; x++) {
+              var slot = this.hexGrid.grid[y][x];
+              if (slot.data.isActiveSlot) {
+                var topStack = slot.getTopStack();
+                if (topStack != null) {
+                  if (!topStack.isColor && topStack.obstacleType === ObstacleType.Lock) {
+                    var lock = slot.getComponent(LockObstacleSlot);
+                    lock.initialize(topStack.amount);
+                    this.locks.push(lock);
+                  }
+                }
+              }
+            }
+          }
+        };
+        _proto.setEvents = function setEvents() {
+          var _this2 = this;
+          this.onMergeUpdateLambda = function (num) {
+            _this2.handleOnMergedPiecesAmountUpdate(num);
+          };
+          var objectivesControl = Singleton.get(ObjectivesController);
+          var mergeId = objectivesControl.getIdByObjective(ObjectiveType.MergePieces);
+          objectivesControl.trackedObjectives[mergeId].onAmountChanged.addListener(this.onMergeUpdateLambda);
+        };
+        _proto.handleOnMergedPiecesAmountUpdate = function handleOnMergedPiecesAmountUpdate(amount) {
+          var toRemove = [];
+          for (var i = 0; i < this.locks.length; i++) {
+            var element = this.locks[i];
+            element.updateCurrentMergedAmount(amount);
+            if (element.currentAmount === 0) {
+              toRemove.push(element);
+            }
+          }
+          for (var _i = 0, _toRemove = toRemove; _i < _toRemove.length; _i++) {
+            var _element = _toRemove[_i];
+            var slot = _element.targetSlot;
+            this.locks.remove(_element);
+
+            //remove component?
+            slot.removeLock();
+          }
+        };
+        _proto.getLocks = function getLocks() {
+          return this.locks;
+        };
+        return ObstaclesController;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "locks", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "hexGrid", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "objectivesControl", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/OptionsTray.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './HexSlot.ts', './LevelAsset.ts', './DragDropComponent.ts', './index.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Prefab, Node, instantiate, Vec3, randomRangeInt, Component, HexSlot, PieceStack, LevelRuleSet, PieceColor, DragDropMode, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Prefab = module.Prefab;
+      Node = module.Node;
+      instantiate = module.instantiate;
+      Vec3 = module.Vec3;
+      randomRangeInt = module.randomRangeInt;
+      Component = module.Component;
+    }, function (module) {
+      HexSlot = module.HexSlot;
+      PieceStack = module.PieceStack;
+    }, function (module) {
+      LevelRuleSet = module.LevelRuleSet;
+      PieceColor = module.PieceColor;
+    }, function (module) {
+      DragDropMode = module.DragDropMode;
+    }, null, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "a29787S+uJCfZTj7+SlDqoK", "OptionsTray", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var OptionsTray = exports('OptionsTray', (_dec = ccclass('OptionsTray'), _dec2 = property(), _dec3 = property({
+        type: [HexSlot]
+      }), _dec4 = property({
+        type: [LevelRuleSet]
+      }), _dec5 = property({
+        type: Prefab,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: [Node],
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(OptionsTray, _Component);
+        function OptionsTray() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "traysCount", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "hexOptions", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentRuleset", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "slotPrefab", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "optionsPositions", _descriptor5, _assertThisInitialized(_this));
+          _this.onNewTrayGenerated = new Action();
+          return _this;
+        }
+        var _proto = OptionsTray.prototype;
+        _proto.initialize = function initialize() {
+          this.generateEmptySlots();
+        };
+        _proto.updateRuleSet = function updateRuleSet(ruleset) {
+          console.log("OptionsTray.generateNewOptions()");
+          this.currentRuleset = ruleset;
+        };
+        _proto.generateNewOptionsTray = function generateNewOptionsTray() {
+          console.log("OptionsTray.refreshOptionsTray()");
+          for (var i = 0; i < this.hexOptions.length; i++) {
+            this.hexOptions[i].setPiecesStack(this.generatePiecesStack(this.currentRuleset));
+            this.hexOptions[i].canMovePieceStack = true;
+            this.hexOptions[i].setCurrentInteractionMode(DragDropMode.Drag);
+          }
+          this.traysCount++;
+          this.onNewTrayGenerated.invoke(this.traysCount);
+        };
+        _proto.generateEmptySlots = function generateEmptySlots() {
+          this.hexOptions = [];
+          for (var i = 0; i < this.optionsPositions.length; i++) {
+            var slot = instantiate(this.slotPrefab);
+            slot.parent = this.optionsPositions[i];
+            slot.position = new Vec3(0, 0, 0);
+            this.hexOptions.push(slot.getComponent(HexSlot));
+          }
+        };
+        _proto.generatePiecesStack = function generatePiecesStack(ruleset) {
+          var pieceStack = [];
+
+          //Maximum amount of pieces in the stack //+1 because max is exclusive
+          var totalAmount = randomRangeInt(ruleset.stackAmountAllowed.x, ruleset.stackAmountAllowed.y + 1);
+
+          //Number of different colors in the stack
+          var clampedColorMin = Math.min(ruleset.colorCombinationsAllowed.x, totalAmount, ruleset.colorsAllowed.length);
+          var clampedColorMax = Math.min(ruleset.colorCombinationsAllowed.y, totalAmount, ruleset.colorsAllowed.length);
+          var randomColorCombinations = randomRangeInt(clampedColorMin, clampedColorMax + 1);
+          var validColors = this.generateColorOptions(randomColorCombinations, ruleset.colorsAllowed);
+          var remainingPieces = totalAmount;
+          var remainingSlots = randomColorCombinations;
+
+          //console.log(`total: ${totalAmount} | colors: ${randomColorCombinations}`);
+
+          //Generate the color options
+          for (var i = 0; i < randomColorCombinations; i++) {
+            var newPieceStack = new PieceStack();
+            newPieceStack.pieceColor = validColors[i];
+
+            //+1 because max is exclusive
+            var amount = 1;
+            if (randomColorCombinations != totalAmount) {
+              //amount = randomRangeInt(1, (remainingPieces-1)+1);            
+              //let max = (remainingPieces - 1);
+              var max = remainingPieces - remainingSlots + 1;
+              //console.log(`remainingPieces: ${remainingPieces} | remainingSlots: ${remainingSlots} = [${max}]`);
+              amount = randomRangeInt(1, max + 1);
+              if (i == randomColorCombinations - 1) {
+                amount = remainingPieces;
+              }
+            }
+            newPieceStack.amount = amount;
+            remainingPieces -= amount;
+            remainingSlots--;
+            pieceStack.push(newPieceStack);
+          }
+
+          //console.log(`generatePiecesStack() totalAmount: ${totalAmount} colors: ${randomColorCombinations}| ${this.debug_PrintPiecesArray(pieceStack)}`);
+          return pieceStack;
+        };
+        _proto.generateColorOptions = function generateColorOptions(amount, allOptions) {
+          var colors = [];
+          //let possibleColors:number[] = [];
+
+          allOptions = this.shuffleArray(allOptions);
+          for (var i = 0; i < amount; i++) {
+            //colors.push(randomRangeInt(1, 6));
+            colors.push(allOptions[i]);
+          }
+          return colors;
+        };
+        _proto.shuffleArray = function shuffleArray(array) {
+          for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var _ref = [array[j], array[i]];
+            array[i] = _ref[0];
+            array[j] = _ref[1];
+          }
+          return array;
+        };
+        _proto.debug_PrintPiecesArray = function debug_PrintPiecesArray(pieceStack) {
+          var str = "";
+          for (var i = 0; i < pieceStack.length; i++) {
+            str += PieceColor[pieceStack[i].pieceColor] + " - " + pieceStack[i].amount + " |";
+          }
+          return str;
+        };
+        return OptionsTray;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "traysCount", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "hexOptions", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "currentRuleset", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "slotPrefab", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "optionsPositions", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/PlaneIntersectionExample.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Prefab, Camera, input, Input, EventMouse, Vec3, geometry, instantiate, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Prefab = module.Prefab;
+      Camera = module.Camera;
+      input = module.input;
+      Input = module.Input;
+      EventMouse = module.EventMouse;
+      Vec3 = module.Vec3;
+      geometry = module.geometry;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "338d7JC1A1OE4d0513IM3rf", "PlaneIntersectionExample", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var PlaneIntersectionExample = exports('PlaneIntersectionExample', (_dec = ccclass('PlaneIntersectionExample'), _dec2 = property({
+        type: Prefab,
+        group: {
+          name: "Components"
+        }
+      }), _dec3 = property({
+        type: Camera,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property(Number), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(PlaneIntersectionExample, _Component);
+        function PlaneIntersectionExample() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "simpleNodePrefab", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "camera", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "planeHeight", _descriptor3, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = PlaneIntersectionExample.prototype;
+        _proto.start = function start() {
+          console.log("start() is the last one before update.");
+          input.on(Input.EventType.MOUSE_DOWN, this.mouseClick, this);
+        };
+        _proto.mouseClick = function mouseClick(event) {
+          if (event.getButton() === EventMouse.BUTTON_LEFT) {
+            this.checkIntersction(event);
+          }
+        };
+        _proto.checkIntersction = function checkIntersction(event) {
+          var planeNormal = new Vec3(0, 1, 0); // Plane facing upwards
+          var pointOnPlane = new Vec3(0, this.planeHeight, 0); // Any point on the plane
+
+          // Define the ray (origin and direction)
+          // const rayOrigin = new Vec3(0, 0, 0); // Ray starts at the origin
+          // const rayDirection = new Vec3(0, -1, 0); // Ray pointing upwards
+
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(event.getLocationX(), event.getLocationY(), 0);
+          this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          var rayOrigin = ray.o; // Ray starts at the origin
+          var rayDirection = ray.d; // Ray pointing upwards
+
+          // Calculate the intersection point
+          var intersectionPoint = this.rayPlaneIntersection(rayOrigin, rayDirection, pointOnPlane, planeNormal);
+          if (intersectionPoint) {
+            console.log("Intersection point:", intersectionPoint);
+            var newNode = instantiate(this.simpleNodePrefab);
+            newNode.setPosition(intersectionPoint);
+            this.node.scene.addChild(newNode);
+          } else {
+            console.log("Ray does not intersect the plane.");
+          }
+        }
+
+        /*
+         * Calculates the intersection point between a ray and a plane.
+         * @param rayOrigin - Origin of the ray.
+         * @param rayDirection - Direction of the ray (normalized).
+         * @param pointOnPlane - A point on the plane.
+         * @param planeNormal - Normal vector of the plane.
+         * @returns The intersection point, or null if there is no intersection.
+         */;
+        _proto.rayPlaneIntersection = function rayPlaneIntersection(rayOrigin, rayDirection, pointOnPlane, planeNormal) {
+          var denominator = Vec3.dot(rayDirection, planeNormal);
+
+          // Check if the ray is parallel to the plane
+          if (Math.abs(denominator) < 1e-6) {
+            return null; // No intersection (ray is parallel to the plane)
+          }
+
+          // Calculate the distance along the ray to the intersection point
+          var t = Vec3.dot(Vec3.subtract(new Vec3(), pointOnPlane, rayOrigin), planeNormal) / denominator;
+
+          // Check if the intersection is in front of the ray
+          if (t >= 0) {
+            // Calculate the intersection point
+            var intersectionPoint = new Vec3();
+            Vec3.scaleAndAdd(intersectionPoint, rayOrigin, rayDirection, t);
+            return intersectionPoint;
+          }
+          return null; // Intersection is behind the ray
+        };
+
+        return PlaneIntersectionExample;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "simpleNodePrefab", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "camera", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "planeHeight", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 10;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/Polymorphism.ts", ['cc'], function (exports) {
+  var cclegacy, js, ccenum, _decorator;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      js = module.js;
+      ccenum = module.ccenum;
+      _decorator = module._decorator;
+    }],
+    execute: function () {
+      exports('polymorphism', polymorphism);
+      cclegacy._RF.push({}, "edea7gkzGRDIrybnBCAOHFw", "Polymorphism", undefined);
+      function polymorphism(_ref) {
+        var types = _ref.types,
+          displayName = _ref.displayName,
+          baseClass = _ref.baseClass;
+        return function (target, propertyKey) {
+          if (typeof propertyKey !== 'string') {
+            throw new Error("Only string named fields are supported.");
+          }
+
+          // Map types to constructors
+          var resolvedTypes = types.map(function (type) {
+            if (typeof type === 'string') {
+              var cls = js.getClassByName(type);
+              return cls;
+            } else if (Array.isArray(type)) {
+              return null;
+            } else {
+              return type;
+            }
+          }).filter(function (result) {
+            var isValid = result && typeof result === 'function';
+            return isValid;
+          });
+
+          // Early return if no valid types
+          if (!resolvedTypes.length) {
+            console.warn('No valid types resolved');
+            return;
+          }
+          var typePropertyKey = propertyKey + "__type";
+          var typePropertyDescriptor = {
+            get: function get() {
+              var currentValue = this[propertyKey];
+              var typeIndex = resolvedTypes.findIndex(function (constructor) {
+                return currentValue.constructor === constructor;
+              });
+              if (typeIndex < 0) {
+                throw new Error(currentValue + " is not a registered type.");
+              }
+              return typeIndex;
+            },
+            set: function set(value) {
+              var constructor = resolvedTypes[value];
+              if (this[propertyKey].constructor === constructor) {
+                return;
+              }
+              var object = new constructor();
+              this[propertyKey] = object;
+            }
+          };
+          var formatCamelCase = function formatCamelCase(str) {
+            var _baseClass$name;
+            if (!str) {
+              console.warn('Received undefined class name');
+              return 'Unknown';
+            }
+            // Remove the base class name if present
+            var baseClassName = (_baseClass$name = baseClass == null ? void 0 : baseClass.name) != null ? _baseClass$name : '';
+            var withoutBase = str.replace(baseClassName, '');
+            // Add spaces before capital letters and trim extra whitespace
+            return withoutBase.replace(/([A-Z])/g, ' $1').trim();
+          };
+          var typeEnums = resolvedTypes.reduce(function (result, constructor, index) {
+            // Use the formatted class name with safety check
+            var className = constructor == null ? void 0 : constructor.name;
+            var displayName = formatCamelCase(className);
+            result[displayName] = index;
+            return result;
+          }, {});
+          ccenum(typeEnums);
+          _decorator.property({
+            displayName: displayName != null ? displayName : "Type",
+            type: typeEnums
+          })(target, typePropertyKey, typePropertyDescriptor);
+          Object.defineProperty(target, typePropertyKey, typePropertyDescriptor);
+        };
+      }
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/PolymorphismDemo.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _class, _class2, _descriptor, _dec2, _class4, _class5, _descriptor2, _descriptor3, _dec3, _class7, _class8, _descriptor4, _dec4, _dec5, _dec6, _class10, _class11, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "9eb74BGnaJGaJeqAC5j57Bx", "PolymorphismDemo", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var Shape = function Shape() {};
+      var Circle = (_dec = ccclass('Circle'), _dec(_class = (_class2 = /*#__PURE__*/function (_Shape) {
+        _inheritsLoose(Circle, _Shape);
+        function Circle() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Shape.call.apply(_Shape, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "radius", _descriptor, _assertThisInitialized(_this));
+          return _this;
+        }
+        return Circle;
+      }(Shape), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "radius", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0.0;
+        }
+      }), _class2)) || _class);
+      var Rectangle = (_dec2 = ccclass('Rectangle'), _dec2(_class4 = (_class5 = /*#__PURE__*/function (_Shape2) {
+        _inheritsLoose(Rectangle, _Shape2);
+        function Rectangle() {
+          var _this2;
+          for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            args[_key2] = arguments[_key2];
+          }
+          _this2 = _Shape2.call.apply(_Shape2, [this].concat(args)) || this;
+          _initializerDefineProperty(_this2, "width", _descriptor2, _assertThisInitialized(_this2));
+          _initializerDefineProperty(_this2, "height", _descriptor3, _assertThisInitialized(_this2));
+          return _this2;
+        }
+        return Rectangle;
+      }(Shape), (_descriptor2 = _applyDecoratedDescriptor(_class5.prototype, "width", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0.0;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class5.prototype, "height", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0.0;
+        }
+      })), _class5)) || _class4);
+      var CustomCollider = (_dec3 = ccclass('CustomCollider'), _dec3(_class7 = (_class8 = function CustomCollider() {
+        _initializerDefineProperty(this, "shape", _descriptor4, this);
+      }, _descriptor4 = _applyDecoratedDescriptor(_class8.prototype, "shape", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Circle();
+        }
+      }), _class8)) || _class7);
+      var PolymorphismDemo = exports('PolymorphismDemo', (_dec4 = ccclass('PolymorphismDemo'), _dec5 = property({
+        type: CustomCollider
+      }), _dec6 = property({
+        type: [CustomCollider]
+      }), _dec4(_class10 = (_class11 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(PolymorphismDemo, _Component);
+        function PolymorphismDemo() {
+          var _this3;
+          for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+            args[_key3] = arguments[_key3];
+          }
+          _this3 = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this3, "shape", _descriptor5, _assertThisInitialized(_this3));
+          _initializerDefineProperty(_this3, "customCollider", _descriptor6, _assertThisInitialized(_this3));
+          _initializerDefineProperty(_this3, "shapesArray", _descriptor7, _assertThisInitialized(_this3));
+          return _this3;
+        }
+        _createClass(PolymorphismDemo, [{
+          key: "AddNewShape",
+          get: function get() {
+            return false;
+          },
+          set: function set(value) {
+            var customCollider = new CustomCollider();
+            customCollider.shape = new Shape();
+            this.shapesArray.push(customCollider);
+            console.log("adsajidsjhai");
+          }
+
+          /*
+                  // Dropwdown "Button" to add new tweens
+                  @property({ type: Enum(MyShapeType) })
+                  get addToSequence() {
+                      return MyShapeType.None;
+                  }
+                  set addToSequence(value: MyShapeType) {
+                      const customCollider = new CustomCollider();
+                      switch (value) {
+                          case MyShapeType.Circle:
+                              customCollider.shapeB = new Circle();
+              
+                              break;
+                          case MyShapeType.Rectangle:
+                              customCollider.shapeB = new Rectangle();
+                              break;
+                      }        
+                      this.shapesAArray.push(customCollider);
+                  }*/
+
+          /*
+          @property
+          @polymorphism({
+              types: [
+                  [Circle, 'Circulo'],
+                  [Rectangle, 'Retangulo'],
+              ]
+          })
+          public shapeA: Shape = new Circle();
+          /*
+          @property
+          @polymorphism({
+              types: [
+                  [Circle, 'Circulo'],
+                  [Rectangle, 'Retangulo'],
+              ]
+          })
+          public shapeB: Shape = new Circle();
+            @property
+          @polymorphism({
+              types: [
+                  [Circle, 'Circulo'],
+                  [Rectangle, 'Retangulo'],
+              ],
+              displayName: 'Lista de Formas',
+          })
+          public shapesArray: Shape[] = [new Circle(), new Rectangle()];*/
+        }]);
+
+        return PolymorphismDemo;
+      }(Component), (_descriptor5 = _applyDecoratedDescriptor(_class11.prototype, "shape", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Circle();
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class11.prototype, "customCollider", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new CustomCollider();
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class11.prototype, "shapesArray", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [new CustomCollider()];
+        }
+      }), _applyDecoratedDescriptor(_class11.prototype, "AddNewShape", [property], Object.getOwnPropertyDescriptor(_class11.prototype, "AddNewShape"), _class11.prototype)), _class11)) || _class10));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/ProgressController.ts", ['cc', './index.ts', './GameProgress.ts'], function (exports) {
+  var cclegacy, director, Director, sys, GameProgress;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      director = module.director;
+      Director = module.Director;
+      sys = module.sys;
+    }, null, function (module) {
+      GameProgress = module.GameProgress;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "feea3k1EkROS71fhwvMoaiH", "ProgressController", undefined);
+      var ProgressController = exports('ProgressController', /*#__PURE__*/function () {
+        function ProgressController() {} // Prevent instantiation
+        ProgressController.initialize = function initialize() {
+          console.log(">>> ProgressController: initialized!");
+          if (!this.gameProgress) {
+            // TODO: The number of levels of the games should come from somewhere else (in Unity, we checked the number of levels in the levels folder)
+            // Maybe here on Cocos, since levels will come from the level editor json, we can get the number of levels from the list of levels in the json
+            // but we should update it on BUILD TIME and/or on pre-initialize on editor.
+            this.gameProgress = this.load() || new GameProgress(10);
+            director.on(Director.EVENT_AFTER_SCENE_LAUNCH, this.onSceneChanged, this);
+          }
+        };
+        ProgressController.onSceneChanged = function onSceneChanged() {
+          console.log(">>> ProgressController: Scene was changed!");
+        };
+        ProgressController.save = function save() {
+          if (this.gameProgress) {
+            sys.localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.gameProgress));
+            console.log(">>> ProgressController: SAVE!");
+          }
+        };
+        ProgressController.load = function load() {
+          var data = sys.localStorage.getItem(this.STORAGE_KEY);
+          console.log(">>> ProgressController: LOAD!");
+          return data ? Object.assign(new GameProgress(10), JSON.parse(data)) : null;
+        };
+        return ProgressController;
+      }());
+
+      // TODO: Make sure the "Director.EVENT_BEFORE_SCENE_LAUNCH" event below is only run once even after changing to other scenes.
+      // Test that by making the "loading" scene that will be the first scene of the game.
+
+      // *Auto-run when game starts*
+      ProgressController.STORAGE_KEY = "gameProgress";
+      ProgressController.gameProgress = void 0;
+      director.once(Director.EVENT_BEFORE_SCENE_LAUNCH, function () {
+        ProgressController.initialize();
+      });
+
+      /*
+      // *Auto-run when game starts*
+      director.once(Director.EVENT_BEFORE_SCENE_LAUNCH, () => {
+          if (EDITOR_NOT_IN_PREVIEW) return;
+          resources.load('audio_manager', (err, prefab) => {
+              if (err) {
+                  console.error('Failed to load AudioManager prefab:', err);
+                  return;
+              }
+              const audioManager = instantiate(prefab) as unknown as Node;
+              director.getScene().addChild(audioManager);
+          });
+      });
+      */
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/RaycastTests.ts", ['cc'], function (exports) {
+  var cclegacy, _decorator, geometry, Vec3, PhysicsSystem, Layers;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      geometry = module.geometry;
+      Vec3 = module.Vec3;
+      PhysicsSystem = module.PhysicsSystem;
+      Layers = module.Layers;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "47e71aRxcVBnbEi1zuSHG+G", "RaycastTests", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var RaycastTests = exports('RaycastTests', (_dec = ccclass('RaycastTests'), _dec(_class = /*#__PURE__*/function () {
+        function RaycastTests() {}
+        RaycastTests.screenRaycast3D = function screenRaycast3D(event, camera, outResult, distance, layerMask) {
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(event.getLocationX(), event.getLocationY(), 0);
+          camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          var cResult = PhysicsSystem.instance.raycastClosest(ray, layerMask, distance);
+          console.log("Layer mask: " + layerMask + " | Layer name: " + this.getLayerName(layerMask));
+          if (cResult) {
+            var raycastClosestResult = PhysicsSystem.instance.raycastClosestResult;
+            outResult.result = raycastClosestResult;
+            return true;
+          } else {
+            console.log("RaycastClosest: No object detected.");
+            outResult.result = null;
+            return false;
+          }
+        };
+        RaycastTests.rayPlaneIntersection = function rayPlaneIntersection(rayOrigin, rayDirection, pointOnPlane, planeNormal) {
+          var denominator = Vec3.dot(rayDirection, planeNormal);
+
+          // Check if the ray is parallel to the plane
+          if (Math.abs(denominator) < 1e-6) {
+            return null; // No intersection (ray is parallel to the plane)
+          }
+
+          // Calculate the distance along the ray to the intersection point
+          var t = Vec3.dot(Vec3.subtract(new Vec3(), pointOnPlane, rayOrigin), planeNormal) / denominator;
+
+          // Check if the intersection is in front of the ray
+          if (t >= 0) {
+            // Calculate the intersection point
+            var intersectionPoint = new Vec3();
+            Vec3.scaleAndAdd(intersectionPoint, rayOrigin, rayDirection, t);
+            return intersectionPoint;
+          }
+          return null; // Intersection is behind the ray
+        };
+
+        RaycastTests.getLayerName = function getLayerName(layer) {
+          for (var key in Layers.Enum) {
+            if (Layers.Enum[key] === layer) {
+              return key;
+            }
+          }
+          return "Unknown";
+        };
+        return RaycastTests;
+      }()) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/RaycastUtils.ts", ['cc'], function (exports) {
+  var cclegacy, _decorator, geometry, Vec3, PhysicsSystem, Layers;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      geometry = module.geometry;
+      Vec3 = module.Vec3;
+      PhysicsSystem = module.PhysicsSystem;
+      Layers = module.Layers;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "80cc4YjvXlJ8aVCZZiZBFqm", "RaycastUtils", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var RaycastUtils = exports('RaycastUtils', (_dec = ccclass('RaycastUtils'), _dec(_class = /*#__PURE__*/function () {
+        function RaycastUtils() {}
+        RaycastUtils.mousePositionRaycast3D = function mousePositionRaycast3D(event, camera, outResult, distance, layerMask) {
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(event.getLocationX(), event.getLocationY(), 0);
+          camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          return this.filteredRaycast3D(ray, outResult, distance, layerMask);
+        };
+        RaycastUtils.screenRaycast3D = function screenRaycast3D(screenPos, camera, outResult, distance, layerMask) {
+          var ray = new geometry.Ray();
+          camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          return this.filteredRaycast3D(ray, outResult, distance, layerMask);
+        };
+        RaycastUtils.raycast3D = function raycast3D(ray, outResult, distance, layerMask) {
+          var queryTrigger = true;
+          var cResult = PhysicsSystem.instance.raycastClosest(ray, layerMask, distance, queryTrigger);
+          if (cResult) {
+            var raycastClosestResult = PhysicsSystem.instance.raycastClosestResult;
+            outResult.result = raycastClosestResult;
+            return true;
+          } else {
+            outResult.result = null;
+            return false;
+          }
+        };
+        RaycastUtils.filteredRaycast3D = function filteredRaycast3D(ray, outResult, distance, layerMask) {
+          var queryTrigger = true;
+          var cResult = PhysicsSystem.instance.raycast(ray, 1 << Layers.Enum.DEFAULT, distance, queryTrigger);
+          if (cResult) {
+            var raycastClosestResult = PhysicsSystem.instance.raycastResults;
+            var validResults = [];
+            for (var i = 0; i < raycastClosestResult.length; i++) {
+              var collider = raycastClosestResult[i].collider;
+              var convertedNumber = this.getLayerIndices(collider.node.layer)[0];
+              if (collider.node.layer == layerMask || layerMask == Layers.Enum.ALL) {
+                outResult.result = raycastClosestResult[i];
+                validResults.push(raycastClosestResult[i]);
+              }
+              outResult.result = raycastClosestResult[i];
+            }
+            if (validResults.length == 0) {
+              outResult.result = null;
+              return false;
+            } else if (validResults.length == 1) {
+              outResult.result = validResults[0];
+              return true;
+            } else {
+              validResults.sort(function (a, b) {
+                var distanceA = Vec3.distance(ray.o, a.hitPoint);
+                var distanceB = Vec3.distance(ray.o, b.hitPoint);
+                return distanceA - distanceB;
+              });
+              outResult.result = validResults[0];
+              return true;
+            }
+          } else {
+            outResult.result = null;
+            return false;
+          }
+        };
+        RaycastUtils.rayPlaneIntersection = function rayPlaneIntersection(rayOrigin, rayDirection, pointOnPlane, planeNormal) {
+          var denominator = Vec3.dot(rayDirection, planeNormal);
+          // Check if the ray is parallel to the plane
+          if (Math.abs(denominator) < 1e-6) {
+            return null; // No intersection (ray is parallel to the plane)
+          }
+
+          // Calculate the distance along the ray to the intersection point
+          var t = Vec3.dot(Vec3.subtract(new Vec3(), pointOnPlane, rayOrigin), planeNormal) / denominator;
+
+          // Check if the intersection is in front of the ray
+          if (t >= 0) {
+            // Calculate the intersection point
+            var intersectionPoint = new Vec3();
+            Vec3.scaleAndAdd(intersectionPoint, rayOrigin, rayDirection, t);
+            return intersectionPoint;
+          }
+          return null; // Intersection is behind the ray
+        };
+
+        RaycastUtils.getLayerName = function getLayerName(layer) {
+          for (var key in Layers.Enum) {
+            if (Layers.Enum[key] === layer) {
+              return key;
+            }
+          }
+          return "Unknown";
+        };
+        RaycastUtils.getLayerIndices = function getLayerIndices(layerBitmask) {
+          var indices = [];
+          for (var i = 0; i < 32; i++) {
+            if (layerBitmask & 1 << i) {
+              indices.push(i);
+            }
+          }
+          return indices;
+        };
+        return RaycastUtils;
+      }()) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SelectNode.ts", ['cc'], function () {
+  var cclegacy;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "df9bai2V+9PPYqVVifFgn2X", "SelectNode", undefined);
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SetActiveCommand.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Command.ts', './CommandDecorator.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Command, commandclass;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+    }, function (module) {
+      Command = module.Command;
+    }, function (module) {
+      commandclass = module.commandclass;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor, _descriptor2;
+      cclegacy._RF.push({}, "1237eLIpBhHm7yfbUWqsJ6N", "SetActiveCommand", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var SetActiveCommand = exports('SetActiveCommand', (_dec = commandclass('SetActiveCommand'), _dec2 = property({
+        type: Node
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Command) {
+        _inheritsLoose(SetActiveCommand, _Command);
+        function SetActiveCommand() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Command.call.apply(_Command, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "node", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "active", _descriptor2, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = SetActiveCommand.prototype;
+        _proto.execute = function execute() {
+          this.node.active = this.active;
+        };
+        return SetActiveCommand;
+      }(Command), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "node", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "active", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SfxPlayer.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Singleton.ts', './AudioController.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, AudioClip, randomRangeInt, Component, Singleton, AudioController;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      AudioClip = module.AudioClip;
+      randomRangeInt = module.randomRangeInt;
+      Component = module.Component;
+    }, null, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      AudioController = module.AudioController;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "f16c9qsoehL5Zf/CNMW5XkA", "SfxPlayer", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var SfxPlayer = exports('SfxPlayer', (_dec = ccclass('SfxPlayer'), _dec2 = property({
+        type: [AudioClip],
+        tooltip: 'Play() function will choose a random Sfx from this list.'
+      }), _dec3 = property({
+        type: Number,
+        range: [0, 1]
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SfxPlayer, _Component);
+        function SfxPlayer() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "playOnEnable", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "audioClips", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "volumeScale", _descriptor3, _assertThisInitialized(_this));
+          _this.audioController = void 0;
+          return _this;
+        }
+        var _proto = SfxPlayer.prototype;
+        _proto.onEnable = function onEnable() {
+          var _this$audioController;
+          (_this$audioController = this.audioController) != null ? _this$audioController : this.audioController = Singleton.get(AudioController);
+          if (this.playOnEnable) {
+            this.play();
+          }
+        };
+        _proto.play = function play() {
+          if (this.audioClips.length > 0) {
+            var clip = this.audioClips[randomRangeInt(0, this.audioClips.length)];
+            console.log("Play " + clip.name);
+            this.audioController.playSFX(clip, this.volumeScale);
+          }
+        };
+        _proto.playSelectedIndex = function playSelectedIndex(index) {
+          if (this.audioClips.length > index) {
+            var clip = this.audioClips[index];
+            this.audioController.playSFX(clip, this.volumeScale);
+          }
+        };
+        return SfxPlayer;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "playOnEnable", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "audioClips", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "volumeScale", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SimpleDragTest.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './RaycastUtils.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Layers, Camera, Prefab, Node, Vec3, input, Input, EventMouse, geometry, PhysicsSystem, instantiate, Component, RaycastUtils;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Layers = module.Layers;
+      Camera = module.Camera;
+      Prefab = module.Prefab;
+      Node = module.Node;
+      Vec3 = module.Vec3;
+      input = module.input;
+      Input = module.Input;
+      EventMouse = module.EventMouse;
+      geometry = module.geometry;
+      PhysicsSystem = module.PhysicsSystem;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }, null, function (module) {
+      RaycastUtils = module.RaycastUtils;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "757eef5KHpIm4Y4R5msoAQs", "SimpleDragTest", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var SimpleDragTest = exports('SimpleDragTest', (_dec = ccclass('SimpleDragTest'), _dec2 = property({
+        type: Layers.Enum,
+        group: {
+          name: "Layers"
+        },
+        tooltip: "Layer for raycasting"
+      }), _dec3 = property({
+        type: Number,
+        group: {
+          name: "Layers"
+        }
+      }), _dec4 = property({
+        type: Layers.Enum,
+        group: {
+          name: "Layers"
+        },
+        tooltip: "Layer for instantiated objects"
+      }), _dec5 = property({
+        type: Camera,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Prefab,
+        group: {
+          name: "Components"
+        }
+      }), _dec7 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SimpleDragTest, _Component);
+        function SimpleDragTest() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "raycastLayer", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "layerNumber", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "instantiateLayer", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "camera", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objectPrefab", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "heightPlane", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "selectedNode", _descriptor7, _assertThisInitialized(_this));
+          _this.originalY = null;
+          _this.currentMousePos = new Vec3();
+          return _this;
+        }
+        var _proto = SimpleDragTest.prototype;
+        _proto.start = function start() {
+          console.log("start() is the last one before update.");
+          input.on(Input.EventType.MOUSE_DOWN, this.mouseClick, this);
+          input.on(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
+        };
+        _proto.mouseClick = function mouseClick(event) {
+          if (event.getButton() === EventMouse.BUTTON_LEFT) {
+            this.performRaycastExternal(event);
+          } else if (event.getButton() === EventMouse.BUTTON_RIGHT) {
+            //this.instantiateObjectAtScreenPosition(event);
+            this.selectedNode = null;
+          }
+        };
+        _proto.mouseMove = function mouseMove(event) {
+          this.currentMousePos.set(event.getLocationX(), event.getLocationY(), 0);
+        };
+        _proto.performRaycastExternal = function performRaycastExternal(event) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var outResult = {
+            result: null
+          };
+          var distance = 500;
+          var layerMask = 1 << Layers.Enum.DEFAULT; // Change this to the desired layer
+          var success = RaycastUtils.mousePositionRaycast3D(event, this.camera, outResult, distance, layerMask);
+          if (success && outResult.result) {
+            var collider = outResult.result.collider;
+            console.log("RaycastExternal - Found obj: " + collider.node.name + " in layer " + this.getLayerName(collider.node.layer));
+            this.originalY = collider.node.worldPosition.y; // Store the original y position
+            this.selectedNode = collider.node;
+          } else {
+            console.log("RaycastExternal: No object detected.");
+            this.selectedNode = null;
+          }
+        }
+
+        //Cocos doesn't add colliders to 3d objects by default
+        ;
+
+        _proto.performRaycastClosest = function performRaycastClosest(event) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(event.getLocationX(), event.getLocationY(), 0);
+          this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+
+          //1 << 20 = ignore raycast
+          //const layerMask = this.raycastLayer; // Explicitly convert to number
+          // const layerMask = 0xffffffff; // All layers
+          //const layerMask = 1 << 0; // All layers
+          //const layerMask = 1 << Layers.Enum.DEFAULT; // Only the default layer
+          //const layerMask = 1 << this.raycastLayer;  // 1 << 20 = ignore raycast
+          //console.log(`Layer mask: ${layerMask} | Layer name: ${this.getLayerName(layerMask)}`);
+
+          var layerMask = 1 << 0;
+          var maxDistance = 500;
+          console.log("Layer mask: " + layerMask + " | Layer name: " + this.getLayerName(layerMask));
+          var physics = PhysicsSystem.instance;
+          var cResult = physics.raycastClosest(ray, layerMask, maxDistance);
+          if (cResult) {
+            var raycastClosestResult = physics.raycastClosestResult;
+            var hitPoint = raycastClosestResult.hitPoint;
+            //const hitNormal = raycastClosestResult.hitNormal;
+            var collider = raycastClosestResult.collider;
+            //const distance = raycastClosestResult.distance;
+
+            console.log("RaycastClosest - Found obj: " + collider.node.name + " in layer " + this.getLayerName(collider.node.layer));
+            this.originalY = collider.node.worldPosition.y; // Store the original y position
+            this.selectedNode = collider.node;
+          } else {
+            console.log("RaycastClosest: No object detected.");
+          }
+        };
+        _proto.performLayerRaycast = function performLayerRaycast(event) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var layerMask = 1 << Layers.Enum.DEFAULT; // Change this to the desired layer
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(event.getLocationX(), event.getLocationY(), 0);
+          this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          var maxDistance = 500;
+          var bResult = PhysicsSystem.instance.raycast(ray, layerMask, maxDistance);
+          console.log("Layer mask: " + layerMask + " | Layer name: " + this.getLayerName(layerMask));
+          if (bResult) {
+            console.log("Found objs.");
+            var results = PhysicsSystem.instance.raycastResults;
+            for (var i = 0; i < results.length; i++) {
+              var result = results[i];
+              if (result.collider.node.layer == layerMask) {
+                console.log("Hit object:", result.collider.node.name);
+              }
+              //console.log("Hit object:", result.collider.node.name);
+            }
+          } else {
+            console.log("RaycastAll: No objects detected.");
+          }
+        };
+        _proto.instantiateObjectAtScreenPosition = function instantiateObjectAtScreenPosition(event) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          if (!this.objectPrefab) {
+            console.error("Object prefab is not assigned.");
+            return;
+          }
+          var screenPos = new Vec3(event.getLocationX(), event.getLocationY(), 0);
+          var worldPos = new Vec3();
+          this.camera.screenToWorld(screenPos, worldPos);
+          var predefinedY = -2.5; // Set your predefined Y position here
+          worldPos.y = predefinedY;
+          var newNode = instantiate(this.objectPrefab);
+          newNode.setPosition(worldPos);
+          this.node.scene.addChild(newNode);
+          console.log("Instantiated object at world position:", worldPos);
+        };
+        _proto.update = function update() {
+          if (this.selectedNode) {
+            var worldPos = this.getDragPosition();
+            if (worldPos) this.selectedNode.setWorldPosition(worldPos);
+          }
+
+          // if (this.selectedNode && this.originalY !== null) {
+          //     const screenPos = new Vec3();
+          //     this.camera?.worldToScreen(this.selectedNode.worldPosition, screenPos);
+          //     screenPos.z = 0;
+          //     const targetPos = this.camera?.screenToWorld(screenPos);
+          //     if (targetPos) {
+          //         targetPos.y = this.originalY; // Keep the original y position
+          //         this.selectedNode.setPosition(targetPos);
+          //     }
+          // }
+        };
+
+        _proto.getDragPosition = function getDragPosition() {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(this.currentMousePos.x, this.currentMousePos.y, 0);
+          this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+
+          //Old version
+          // let rayEnd = new Vec3();
+          // const maxDistance = 10;
+          // Vec3.scaleAndAdd(rayEnd, ray.o, ray.d, maxDistance); // Assuming a distance of 500 units
+          // rayEnd.y = this.originalY; // Keep the original y position
+
+          var rayOrigin = ray.o; // Ray starts at the origin
+          var rayDirection = ray.d; // Ray pointing upwards
+
+          var planeNormal = new Vec3(0, 1, 0); // Plane facing upwards
+          var pointOnPlane = new Vec3(0, this.originalY, 0); // Any point on the plane
+
+          // Calculate the intersection point
+          var intersectionPoint = RaycastUtils.rayPlaneIntersection(rayOrigin, rayDirection, pointOnPlane, planeNormal);
+          if (intersectionPoint) {
+            //console.log("Intersection point:", intersectionPoint);
+            return intersectionPoint;
+          } else {
+            console.log("Ray does not intersect the plane.");
+            return null;
+          }
+
+          //return rayEnd;
+        };
+
+        _proto.getLayerName = function getLayerName(layer) {
+          for (var key in Layers.Enum) {
+            if (Layers.Enum[key] === layer) {
+              return key;
+            }
+          }
+          return "Unknown";
+        };
+        return SimpleDragTest;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "raycastLayer", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return Layers.Enum.DEFAULT;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "layerNumber", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "instantiateLayer", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return Layers.Enum.DEFAULT;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "camera", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "objectPrefab", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "heightPlane", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "selectedNode", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SimpleEditorDropdown.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './EditorDropdownOption.ts', './index.ts', './Action.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Node, Label, Component, Button, EditorDropdownOption, Action;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Label = module.Label;
+      Component = module.Component;
+      Button = module.Button;
+    }, function (module) {
+      EditorDropdownOption = module.EditorDropdownOption;
+    }, null, function (module) {
+      Action = module.Action;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8;
+      cclegacy._RF.push({}, "a465etGkWdMmYX9dp5ECSGu", "SimpleEditorDropdown", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var SimpleEditorDropdown = exports('SimpleEditorDropdown', (_dec = ccclass('SimpleEditorDropdown'), _dec2 = property({
+        type: Boolean,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: Number,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec4 = property({
+        type: Boolean,
+        group: {
+          name: "Configs"
+        }
+      }), _dec5 = property({
+        type: Node,
+        visible: function visible() {
+          return this.canExpandLayout;
+        },
+        group: {
+          name: "Configs"
+        }
+      }), _dec6 = property({
+        type: Node,
+        visible: function visible() {
+          return this.canExpandLayout;
+        },
+        group: {
+          name: "Configs"
+        }
+      }), _dec7 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec9 = property({
+        type: [EditorDropdownOption],
+        group: {
+          name: "Components"
+        }
+      }), _dec10 = property({
+        group: 'Debug'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SimpleEditorDropdown, _Component);
+        function SimpleEditorDropdown() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          //#region Variables
+          _initializerDefineProperty(_this, "isExpanded", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "selectedId", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "canExpandLayout", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expandedParent", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expandAfterNode", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "expandedBlock", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "defaultLabel", _descriptor7, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "dropdownOption", _descriptor8, _assertThisInitialized(_this));
+          _this.onOptionSelected = new Action();
+          return _this;
+        }
+        var _proto = SimpleEditorDropdown.prototype;
+        //#endregion
+        _proto.initialize = function initialize(loadedId) {
+          var _this2 = this;
+          var _loop = function _loop() {
+            _this2.dropdownOption[i].initialize(i);
+            var id = _this2.dropdownOption[i].id;
+            _this2.dropdownOption[i].button.node.on(Button.EventType.CLICK, function () {
+              return _this2.selectOption(id);
+            }, _this2);
+          };
+          //this.callback = callback;
+          for (var i = 0; i < this.dropdownOption.length; i++) {
+            _loop();
+          }
+          this.updateDisplay(loadedId);
+          this.isExpanded = true;
+          this.toggleDropdownBlock();
+        };
+        _proto.selectOption = function selectOption(id, toggleBlock, runCallback) {
+          if (toggleBlock === void 0) {
+            toggleBlock = true;
+          }
+          if (runCallback === void 0) {
+            runCallback = true;
+          }
+          // console.log("selectOption: ", id);
+          this.updateDisplay(id);
+          if (toggleBlock) this.toggleDropdownBlock();
+          if (runCallback) {
+            //console.log("beforeOnOptionSelected: ", id);
+            this.onOptionSelected.invoke(id);
+          }
+        };
+        _proto.updateDisplay = function updateDisplay(id) {
+          this.selectedId = id;
+          this.defaultLabel.string = this.dropdownOption[id].getText();
+        };
+        _proto.toggleDropdownBlock = function toggleDropdownBlock() {
+          this.isExpanded = !this.isExpanded;
+          if (this.expandedBlock) {
+            this.expandedBlock.active = this.isExpanded;
+            if (this.canExpandLayout) {
+              if (this.isExpanded) {
+                this.expandedBlock.parent = this.expandedParent;
+                //this.expandedBlock.setSiblingIndex(this.node.getSiblingIndex() + 1);
+                this.expandedBlock.setSiblingIndex(this.expandAfterNode.getSiblingIndex() + 1);
+              } else {
+                this.expandedBlock.parent = this.node;
+              }
+            }
+          }
+        };
+        _createClass(SimpleEditorDropdown, [{
+          key: "debug_ToggleCollapseDropdown",
+          get: function get() {
+            return false;
+          },
+          set: function set(v) {
+            console.log("debug_ToggleCollapseDropdown");
+            if (this.expandedBlock.active) this.isExpanded = true;else this.isExpanded = false;
+            this.toggleDropdownBlock();
+          }
+        }]);
+        return SimpleEditorDropdown;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "isExpanded", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "selectedId", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "canExpandLayout", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "expandedParent", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "expandAfterNode", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "expandedBlock", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "defaultLabel", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "dropdownOption", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _applyDecoratedDescriptor(_class2.prototype, "debug_ToggleCollapseDropdown", [_dec10], Object.getOwnPropertyDescriptor(_class2.prototype, "debug_ToggleCollapseDropdown"), _class2.prototype)), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SimpleMouseTest.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Camera, Prefab, input, Input, KeyCode, EventMouse, geometry, Vec3, Layers, PhysicsSystem, instantiate, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Camera = module.Camera;
+      Prefab = module.Prefab;
+      input = module.input;
+      Input = module.Input;
+      KeyCode = module.KeyCode;
+      EventMouse = module.EventMouse;
+      geometry = module.geometry;
+      Vec3 = module.Vec3;
+      Layers = module.Layers;
+      PhysicsSystem = module.PhysicsSystem;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2;
+      cclegacy._RF.push({}, "e8f80ZNyVtHBLOhzwTem47V", "SimpleMouseTest", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var SimpleMouseTest = exports('SimpleMouseTest', (_dec = ccclass('SimpleMouseTest'), _dec2 = property(Camera), _dec3 = property(Prefab), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SimpleMouseTest, _Component);
+        function SimpleMouseTest() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "camera", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "simpleNodePrefab", _descriptor2, _assertThisInitialized(_this));
+          _this.rayStart = null;
+          _this.rayEnd = null;
+          return _this;
+        }
+        var _proto = SimpleMouseTest.prototype;
+        _proto.start = function start() {
+          console.log("start() is the last one before update.");
+          input.on(Input.EventType.KEY_UP, this.keyUp, this);
+          input.on(Input.EventType.MOUSE_DOWN, this.mouseClick, this);
+        };
+        _proto.keyUp = function keyUp(event) {
+          if (event.keyCode == KeyCode.ARROW_UP) {
+            console.log("Up arrow key is pressed.");
+          }
+        };
+        _proto.mouseClick = function mouseClick(event) {
+          if (event.getButton() === EventMouse.BUTTON_LEFT) {
+            console.log("Left mouse button clicked.");
+            this.performRaycastClosest(event);
+          } else if (event.getButton() === EventMouse.BUTTON_RIGHT) {
+            console.log("Right Mouse button clicked.");
+            this.performRaycastAll(event);
+          }
+        }
+
+        //Cocos doesn't add colliders to 3d objects by default
+        ;
+
+        _proto.performRaycastAll = function performRaycastAll(event) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(event.getLocationX(), event.getLocationY(), 0);
+          this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          this.rayStart = ray.o.clone();
+          this.rayEnd = new Vec3();
+          var layerMask = 1 << Layers.Enum.DEFAULT; // Change this to the desired layer
+          var maxDistance = 500;
+          var queryTrigger = true;
+          Vec3.scaleAndAdd(this.rayEnd, ray.o, ray.d, maxDistance); // Assuming a distance of 500 units
+
+          var bResult = PhysicsSystem.instance.raycast(ray, layerMask, maxDistance, queryTrigger);
+          if (bResult) {
+            console.log("Found objs.");
+            var results = PhysicsSystem.instance.raycastResults;
+            for (var i = 0; i < results.length; i++) {
+              var result = results[i];
+              console.log("Hit object:", result.collider.node.name);
+            }
+          } else {
+            console.log("RaycastAll: No objects detected.");
+            this.instantiateNodeAtRayTip(ray);
+            this.instantiateNodesAlongRay(ray, 0.5);
+          }
+        }
+
+        //Cocos doesn't add colliders to 3d objects by default
+        ;
+
+        _proto.performRaycastClosest = function performRaycastClosest(event) {
+          if (!this.camera) {
+            console.error("Camera is not assigned.");
+            return;
+          }
+          var ray = new geometry.Ray();
+          var screenPos = new Vec3(event.getLocationX(), event.getLocationY(), 0);
+          this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+          this.rayStart = ray.o.clone();
+          this.rayEnd = new Vec3();
+          var layerMask = 1 << Layers.Enum.DEFAULT; // Change this to the desired layer
+          var maxDistance = 500;
+          var queryTrigger = true;
+          Vec3.scaleAndAdd(this.rayEnd, ray.o, ray.d, maxDistance); // Assuming a distance of 500 units
+
+          var cResult = PhysicsSystem.instance.raycastClosest(ray, layerMask, maxDistance, queryTrigger);
+          if (cResult) {
+            var raycastClosestResult = PhysicsSystem.instance.raycastClosestResult;
+            var hitPoint = raycastClosestResult.hitPoint;
+            var hitNormal = raycastClosestResult.hitNormal;
+            var collider = raycastClosestResult.collider;
+            var distance = raycastClosestResult.distance;
+            console.log("RaycastClosest - Found obj: ", collider.node.name);
+          } else {
+            console.log("RaycastClosest: No object detected.");
+            this.instantiateNodeAtRayTip(ray);
+            this.instantiateNodesAlongRay(ray, 0.5);
+          }
+        };
+        _proto.instantiateNodeAtRayTip = function instantiateNodeAtRayTip(ray) {
+          if (!this.simpleNodePrefab) {
+            console.error("Simple node prefab is not assigned.");
+            return;
+          }
+          var newNode = instantiate(this.simpleNodePrefab);
+          var originNode = instantiate(this.simpleNodePrefab);
+          originNode.setPosition(ray.o);
+          newNode.setPosition(this.rayEnd);
+          this.node.scene.addChild(newNode);
+          this.node.scene.addChild(originNode);
+        };
+        _proto.instantiateNodesAlongRay = function instantiateNodesAlongRay(ray, distance) {
+          if (!this.simpleNodePrefab) {
+            console.error("Simple node prefab is not assigned.");
+            return;
+          }
+          var rayDirection = ray.d.clone().normalize();
+          var totalDistance = 1000; // Assuming a total distance of 1000 units
+          var numNodes = Math.floor(totalDistance / distance);
+          for (var i = 0; i <= numNodes; i++) {
+            var position = new Vec3();
+            Vec3.scaleAndAdd(position, ray.o, rayDirection, i * distance);
+            var newNode = instantiate(this.simpleNodePrefab);
+            newNode.setPosition(position);
+            this.node.scene.addChild(newNode);
+          }
+        };
+        return SimpleMouseTest;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "camera", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "simpleNodePrefab", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SimplePool.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _createForOfIteratorHelperLoose, cclegacy, Pool, instantiate, director;
+  return {
+    setters: [function (module) {
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      Pool = module.Pool;
+      instantiate = module.instantiate;
+      director = module.director;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "f8854BpXKRD+JooN98gGgkj", "SimplePool", undefined);
+
+      /**
+       * Simple pooling for Cocos Creator.
+       * 
+       * Usage:
+       * - Instead of calling `instantiate()`, use:
+       *   `SimplePool.spawn(somePrefab, somePosition, someRotation);`
+       * - Instead of destroying an object, use:
+       *   `SimplePool.despawn(myNode);`
+       * - To preload the pool with instances:
+       *   `SimplePool.preload(somePrefab, 20);`
+       */
+
+      var SimplePool = exports('SimplePool', /*#__PURE__*/function () {
+        function SimplePool() {}
+        /**
+         * Initialize the pool for a specific prefab.
+         * @param prefab - The prefab to initialize the pool for.
+         * @param qty - The initial size of the pool.
+         */
+        SimplePool.init = function init(prefab, qty) {
+          if (qty === void 0) {
+            qty = SimplePool.DEFAULT_POOL_SIZE;
+          }
+          var prefabId = prefab.data.uuid;
+          if (!this._pools.has(prefabId)) {
+            var poolData = {
+              pool: null,
+              // Temporary placeholder
+              memberIds: new Set(),
+              // Track nodes in this pool using their UUIDs (strings)
+              counter: 0 // Initialize the counter
+            };
+
+            poolData.pool = new Pool(function () {
+              var node = instantiate(prefab);
+              node.name = prefab.name + " (Pooled " + (poolData.counter + 1) + ")";
+              poolData.counter++;
+              return node;
+            }, qty);
+            this._pools.set(prefabId, poolData);
+          }
+        }
+
+        /**
+         * Preload a number of instances of a prefab into the pool.
+         * @param prefab - The prefab to preload.
+         * @param qty - The number of instances to preload.
+         */;
+        SimplePool.preload = function preload(prefab, qty) {
+          if (qty === void 0) {
+            qty = 1;
+          }
+          this.init(prefab, qty);
+          var nodes = [];
+          for (var i = 0; i < qty; i++) {
+            nodes.push(this.spawn(prefab));
+          }
+          for (var _i = 0; _i < qty; _i++) {
+            this.despawn(nodes[_i]);
+          }
+        }
+
+        /**
+         * Spawn a node from the pool (or instantiate a new one if the pool is empty).
+         * @param prefab - The prefab to spawn.
+         * @param position - The position to spawn the node at.
+         * @param rotation - The rotation to spawn the node with.
+         * @param parent - The parent node to attach the spawned node to (defaults to the current scene).
+         * @returns The spawned node.
+         */;
+        SimplePool.spawn = function spawn(prefab, position, rotation, parent) {
+          this.init(prefab);
+          var poolData = this._pools.get(prefab.data.uuid);
+          var node = poolData.pool.alloc();
+
+          // Track this node as belonging to the pool
+          poolData.memberIds.add(node.uuid);
+
+          // Set the parent to the current scene if not provided
+          if (!parent) {
+            parent = director.getScene();
+          }
+          node.parent = parent;
+          if (position) {
+            node.position = position;
+          }
+          if (rotation) {
+            node.rotation = rotation;
+          }
+          node.active = true;
+          return node;
+        }
+
+        /**
+         * Despawn a node back into the pool.
+         * @param node - The node to despawn.
+         */;
+        SimplePool.despawn = function despawn(node) {
+          if (!node || !node.isValid) return;
+          var poolFound = false;
+          for (var _iterator = _createForOfIteratorHelperLoose(this._pools), _step; !(_step = _iterator()).done;) {
+            var _step$value = _step.value,
+              prefabId = _step$value[0],
+              poolData = _step$value[1];
+            if (poolData.memberIds.has(node.uuid)) {
+              node.active = false;
+              poolData.pool.free(node);
+              poolData.memberIds["delete"](node.uuid); // Remove from tracking
+              poolFound = true;
+              break;
+            }
+          }
+          if (!poolFound) {
+            console.warn("Object '" + node.name + "' wasn't spawned from a pool. Destroying it instead.");
+            node.destroy();
+          }
+        };
+        return SimplePool;
+      }());
+
+      /**
+       * Data structure to hold pool and member tracking.
+       */
+      // Default pool size for preloading
+      SimplePool.DEFAULT_POOL_SIZE = 3;
+      // Dictionary to hold pools for each prefab
+      SimplePool._pools = new Map();
+      /**
+       * Extension method for Node to allow `node.despawn()` syntax.
+       */
+      /*Node.prototype.despawn = function (): void {
+          SimplePool.despawn(this);
+      };*/
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/SimpleRaycastTest.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _inheritsLoose, cclegacy, _decorator, Node, Component;
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _class;
+      cclegacy._RF.push({}, "c2d20ydHtVM2atsCS9URq9P", "SimpleRaycastTest", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var SimpleRaycastTest = exports('SimpleRaycastTest', (_dec = ccclass('SimpleRaycastTest'), _dec(_class = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(SimpleRaycastTest, _Component);
+        function SimpleRaycastTest() {
+          return _Component.apply(this, arguments) || this;
+        }
+        var _proto = SimpleRaycastTest.prototype;
+        _proto.start = function start() {
+          // this.node.on(Node.EventType.MOUSE_DOWN, this.onMouseClick, this);
+
+          this.node.on(Node.EventType.MOUSE_DOWN, function (event) {
+            console.log('Mouse down');
+          }, this);
+        }
+
+        // onMouseClick(event: EventMouse) {
+        //     console.log("Mouse clicked on node:", this.node.name);
+        // }
+        ;
+
+        return SimpleRaycastTest;
+      }(Component)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/Singleton.ts", ['cc'], function (exports) {
+  var cclegacy, director, Node;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      director = module.director;
+      Node = module.Node;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "803d1pv0ZdLsJdTra2OKgEv", "Singleton", undefined);
+      var Singleton = exports('Singleton', /*#__PURE__*/function () {
+        function Singleton() {}
+        /**
+         * Get an instance of a component type.
+         * If it doesn't exist, try to find it in the scene.
+         */
+        Singleton.get = function get(type) {
+          var _director$getScene;
+          var instance = this.instances.get(type);
+
+          // If instance exists but is no longer valid, remove it
+          if (instance && !instance.isValid) {
+            this.instances["delete"](type);
+            return null;
+          }
+
+          // If instance is found, return it
+          if (instance) {
+            return instance;
+          }
+
+          // Try to find the component in the scene
+          var foundInstance = (_director$getScene = director.getScene()) == null ? void 0 : _director$getScene.getComponentInChildren(type);
+          if (foundInstance) {
+            this.instances.set(type, foundInstance);
+            return foundInstance;
+          }
+          return null;
+        }
+
+        /**
+         * Store an instance in the singleton dictionary.
+         * Will only store if no valid instance exists.
+         */;
+        Singleton.set = function set(instance) {
+          var _this = this;
+          var type = instance.constructor;
+          var existingInstance = this.instances.get(type);
+
+          // Only set if there's no existing valid instance
+          if (!existingInstance || !existingInstance.isValid) {
+            this.instances.set(type, instance);
+
+            // Attach an event to remove it when it's destroyed
+            instance.node.once(Node.EventType.NODE_DESTROYED, function () {
+              _this.instances["delete"](type);
+            });
+          }
+        };
+        return Singleton;
+      }());
+      Singleton.instances = new Map();
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/TurnController.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './HexSlot.ts', './index.ts', './HexGridController.ts', './ComboController.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _initializerDefineProperty, _inheritsLoose, _assertThisInitialized, cclegacy, _decorator, Component, HexSlot, HexGridController, ComboController, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _inheritsLoose = module.inheritsLoose;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Component = module.Component;
+    }, function (module) {
+      HexSlot = module.HexSlot;
+    }, null, function (module) {
+      HexGridController = module.HexGridController;
+    }, function (module) {
+      ComboController = module.ComboController;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _dec4, _dec5, _dec6, _dec7, _class5, _class6, _descriptor3, _descriptor4, _descriptor5, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _class8, _class9, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10;
+      cclegacy._RF.push({}, "0e97bYuTPhAk7jPaXZr/V6i", "TurnController", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+
+      //#region External Classes
+      var SingleMovementData = exports('SingleMovementData', (_dec = ccclass('SingleMovementData'), _dec2 = property({
+        type: HexSlot
+      }), _dec3 = property({
+        type: HexSlot
+      }), _dec(_class = (_class2 = function SingleMovementData(initialHex, targetHex) {
+        _initializerDefineProperty(this, "initialHex", _descriptor, this);
+        _initializerDefineProperty(this, "targetHex", _descriptor2, this);
+        this.initialHex = initialHex;
+        this.targetHex = targetHex;
+      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "initialHex", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "targetHex", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+      var Rule = function Rule(condition, origin, target) {
+        this.origin = void 0;
+        this.target = void 0;
+        this.contition = function () {
+          return true;
+        };
+        this.origin = origin;
+        this.target = target;
+        this.contition = condition;
+      };
+      var TurnSortingData = exports('TurnSortingData', (_dec4 = ccclass('TurnSortingData'), _dec5 = property({
+        type: HexSlot
+      }), _dec6 = property(), _dec7 = property(), _dec4(_class5 = (_class6 = function TurnSortingData() {
+        _initializerDefineProperty(this, "slot", _descriptor3, this);
+        _initializerDefineProperty(this, "connections", _descriptor4, this);
+        _initializerDefineProperty(this, "colorAmount", _descriptor5, this);
+      }, (_descriptor3 = _applyDecoratedDescriptor(_class6.prototype, "slot", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class6.prototype, "connections", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class6.prototype, "colorAmount", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      })), _class6)) || _class5));
+      //#endregion
+
+      var TurnController = exports('TurnController', (_dec8 = ccclass('TurnController'), _dec9 = property({
+        type: HexGridController,
+        group: 'Runtime'
+      }), _dec10 = property({
+        type: [HexSlot]
+      }), _dec11 = property({
+        type: [TurnSortingData]
+      }), _dec12 = property({
+        type: [SingleMovementData]
+      }), _dec13 = property({
+        type: [HexSlot]
+      }), _dec8(_class8 = (_class9 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(TurnController, _Component);
+        function TurnController() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "hexGrid", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "listOfSlotsExpectedToMove", _descriptor7, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "turnSorting", _descriptor8, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "currentMovement", _descriptor9, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "towers", _descriptor10, _assertThisInitialized(_this));
+          //@property({ type: [ HexSlot ] })
+          _this.placedSlotQueue = [];
+          //null this after everything runs
+          _this.lastPlacedSlot = void 0;
+          return _this;
+        }
+        var _proto = TurnController.prototype;
+        _proto.initialize = function initialize() {
+          Singleton.set(this);
+          this.hexGrid = Singleton.get(HexGridController);
+        }
+
+        //player movement -> checkMovementAroundSlot -> updateListOfSlotsExpectedToMove -> decideNextStackToMove -> movementFinishedCallback
+
+        //This will be only for player movement?
+        ;
+
+        _proto.startPlayerMovement = function startPlayerMovement(hex) {
+          console.log("TurnController.startPlayerMovement()");
+          if (this.turnSorting.length > 0) {
+            //console.log("TurnController.startPlayerMovement() QUEUE NEXT MOVEMENT");
+            this.placedSlotQueue.push(hex);
+          } else {
+            this.lastPlacedSlot = hex;
+            this.checkMovementAroundSlot(this.lastPlacedSlot);
+          }
+        };
+        _proto.checkMovementAroundSlot = function checkMovementAroundSlot(hex) {
+          //console.log("TurnController.checkMovementAroundSlot()");
+
+          var data = hex.getData();
+          console.log("startTurnSequence: [" + data.x + ", " + data.y + "]");
+
+          // After the slot was placed, we update the list of those that are expected to move
+          this.updateListOfSlotsExpectedToMove();
+
+          //Decide next piece/stack to move
+          var movement = this.decideNextStackToMove(hex);
+          if (movement !== null) {
+            this.executeMovement(movement);
+          }
+        }
+
+        //#region Base Rules
+        ;
+
+        _proto.executeMovement = function executeMovement(movement) {
+          var _this2 = this;
+          //console.log(`createTurn: [${data.x}, ${data.y}]`);
+          this.currentMovement = movement;
+          Singleton.get(HexGridController).moveTopPiecesToSlot(this.currentMovement.initialHex, this.currentMovement.targetHex, function () {
+            return _this2.movementFinishedCallback(_this2.currentMovement);
+          });
+          Singleton.get(ComboController).cancelTowerExplosion();
+        };
+        _proto.runRules = function runRules(placed, neighbor) {
+          //peça vai pra onde foi colocada a nova, somente um vizinho
+          var origin = null;
+          var target = null;
+
+          //var placed = movement.initialHex;
+          //var neighbor = movement.targetHex;
+          var ruleStack = this.defineRules(placed, neighbor);
+          // Run rules
+          for (var index = 0; index < ruleStack.length; index++) {
+            var element = ruleStack[index];
+            if (element.contition()) {
+              origin = element.origin;
+              target = element.target;
+              break;
+            }
+          }
+          var movement = new SingleMovementData(origin, target);
+          return movement;
+          //Singleton.get(HexGridController).moveTopPiecesToSlot(origin, target, () => this.movementFinishedCallback());
+        };
+
+        _proto.defineRules = function defineRules(placed, neighbor) {
+          var ruleStack = [];
+
+          // Rules added here first will be checked first, from top to bottom.
+          var placedMultiNeighborSingleRule = new Rule(function () {
+            return placed.isMultiColor() && neighbor.isSingleColor();
+          }, placed, neighbor);
+          ruleStack.push(placedMultiNeighborSingleRule);
+
+          // Base rule will always run if no other rules are met.
+          var baseRule = new Rule(function () {
+            return true;
+          }, neighbor, placed);
+          ruleStack.push(baseRule);
+          return ruleStack;
+        }
+        //#endregion
+
+        //Maybe filter this by color?
+        //Will be called when certain external events happen (merge, player movement, lock destroyed, other)
+        ;
+
+        _proto.updateListOfSlotsExpectedToMove = function updateListOfSlotsExpectedToMove() {
+          this.listOfSlotsExpectedToMove = [];
+          for (var y = 0; y < this.hexGrid.gridHeight; y++) {
+            for (var x = 0; x < this.hexGrid.gridWidth; x++) {
+              var slot = this.hexGrid.grid[y][x];
+              // Ignore if this is not an active slot
+              if (!slot.data.isActiveSlot) continue;
+              slot.debug_MarkSlotSelected = false;
+              // Then if we have a valid slot, we check if this slot has possible merge-able neighbors                
+              slot.updatePossibleNeighborMatches();
+              // Then, assign the list with the new updated values
+              if (slot.hasPossibleMatches) {
+                slot.debug_MarkSlotSelected = true;
+                this.listOfSlotsExpectedToMove.push(slot);
+              }
+            }
+          }
+
+          //Toda vez que o turnSorting mudar ele vai mover a peca de maior prioridade
+          this.createTurnSortingList();
+
+          //Sort by color amount by descending order
+          this.turnSorting.sort(function (a, b) {
+            return b.colorAmount - a.colorAmount;
+          });
+
+          // Sort the turnSorting list by the `connections` parameter in ascending order
+          this.turnSorting.sort(function (a, b) {
+            return a.connections - b.connections;
+          });
+
+          //Priority/weight to the placed piece
+          //No final disso, a peca de maior prioridade se move
+        }
+
+        //Preenche a lista de turnSorting
+        ;
+
+        _proto.createTurnSortingList = function createTurnSortingList() {
+          console.log("createTurnSortingList()");
+          var turnSorting = Singleton.get(TurnController).turnSorting;
+          turnSorting.clear();
+          var listOfSlotsExpectedToMove = Singleton.get(TurnController).listOfSlotsExpectedToMove;
+
+          //Itera em todos os slots que estao previstos para se mover, para checar quem pode realmente mover, caso nao quebre um link com algum vizinho
+          for (var i = 0; i < listOfSlotsExpectedToMove.length; i++) {
+            var thisPiece = listOfSlotsExpectedToMove[i];
+            var iWillMoveToThisSlot = thisPiece.possibleMatches[0];
+            var thisPieceCanMove = true;
+
+            // Todos os vizinhos permitem que thisPiece se mova?
+            for (var j = 0; j < thisPiece.possibleMatches.length; j++) {
+              var neighbor = thisPiece.possibleMatches[j];
+              var movementIsFarFromNeighbor = !neighbor.possibleMatches.contains(iWillMoveToThisSlot);
+              var movementIsNotToNeighbor = neighbor != iWillMoveToThisSlot;
+              if (movementIsFarFromNeighbor && movementIsNotToNeighbor) {
+                // Esse vizinho nao permitiu que a piece se mova pois ela ficaria longe dele
+                thisPieceCanMove = false;
+                break;
+              }
+            }
+            // Esse vizinho pode se mover com sucesso?
+            if (thisPieceCanMove) {
+              var turn = new TurnSortingData();
+              turn.slot = thisPiece;
+              turn.connections = thisPiece.possibleMatches.length;
+              turn.colorAmount = thisPiece.getColorAmount();
+              turnSorting.push(turn);
+            }
+          }
+          if (turnSorting.length > 1) {
+            //Singleton.get(ComboController).delayTowerExplosion();
+            Singleton.get(ComboController).cancelTowerExplosion();
+          }
+        };
+        _proto.decideNextStackToMove = function decideNextStackToMove(origin) {
+          if (this.listOfSlotsExpectedToMove.length <= 1) {
+            //console.log(`TurnController.decideNextStackToMove() Length: ${this.turnSorting.length}`);
+            this.movementFinishedCallback(null);
+            return null;
+          }
+          if (this.listOfSlotsExpectedToMove.length == 2) {
+            //console.log(`TurnController.decideNextStackToMove() Length: ${this.turnSorting.length}`);
+
+            //identify which is the placed one
+            var placed = this.turnSorting[0].slot;
+            var neighbor = this.turnSorting[1].slot;
+            if (this.lastPlacedSlot === this.turnSorting[1].slot) {
+              placed = this.turnSorting[1].slot;
+              neighbor = this.turnSorting[0].slot;
+            }
+            var movement = this.runRules(placed, neighbor);
+            //Do default rule
+            this.executeMovement(movement); // maybe change for the equivalent turnSorting?
+          } else {
+            //console.log(`TurnController.decideNextStackToMove() Length: ${this.turnSorting.length}`);
+            if (this.turnSorting[0].connections == 1) {
+              var _origin = this.turnSorting[0].slot;
+              var target = _origin.possibleMatches[0];
+              var _movement = new SingleMovementData(_origin, target);
+              this.executeMovement(_movement); // maybe change for the equivalent turnSorting?
+            } else {
+              // //Maybe this rule is wrong, because the turnsorting[1] could be far away
+              // //Check what can move
+              // const movement = this.runRules(this.turnSorting[ 0 ].slot, this.turnSorting[ 1 ].slot);
+              // this.executeMovement(movement); // maybe change for the equivalent turnSorting?
+
+              var _origin2 = this.turnSorting[0].slot;
+              var _target = _origin2.possibleMatches[0];
+              var _movement2 = new SingleMovementData(_origin2, _target);
+              this.executeMovement(_movement2); // maybe change for the equivalent turnSorting?
+            }
+          }
+
+          return null;
+        }
+
+        //#region Movement Finish
+        ;
+
+        _proto.movementFinishedCallback = function movementFinishedCallback(movement) {
+          //console.log("TurnController.turnFinishedCallback()");
+
+          this.lastPlacedSlot = this.placedSlotQueue.pop();
+          this.placedSlotQueue.clear();
+          if (this.turnSorting.length > 0) {
+            this.checkMovementAroundSlot(this.turnSorting[0].slot);
+          } else {
+            console.log("TurnController.turnFinishedCallback() EXPLODE NOW?");
+            this.checkForTowers();
+          }
+        };
+        _proto.checkForTowers = function checkForTowers() {
+          this.towers.clear();
+          for (var y = 0; y < this.hexGrid.gridHeight; y++) {
+            for (var x = 0; x < this.hexGrid.gridWidth; x++) {
+              var slot = this.hexGrid.grid[y][x];
+              if (slot.data.isActiveSlot) {
+                if (slot.getTopStack() != null) {
+                  // console.log(`TurnController.checkForTowers() 2 [${y},${x}] [${slot.getTopStack().amount}]`);
+
+                  if (slot.getTopStack().isColor && slot.getTopStack().amount >= 10) {
+                    //console.log("TurnController.checkForTowers() FOUND TOWER");
+                    this.towers.push(slot);
+                  }
+                }
+              }
+            }
+          }
+          Singleton.get(ComboController).updateTowers(this.towers);
+          //console.log(`TurnController.checkForTowers() SIZE 2 [${this.hexGrid.gridHeight},${this.hexGrid.gridWidth}] | count: ${count}`);
+        };
+
+        _proto.explodeAnimationStarted = function explodeAnimationStarted() {
+          //Clear this.listOfSlotsExpectedToMove
+          for (var i = 0; i < this.towers.length; i++) {
+            this.listOfSlotsExpectedToMove.remove(this.towers[i]);
+          }
+
+          //this.towers.clear();
+
+          // for (let i = 0; i < this.turnSorting.length; i++) {
+          //     //if(this.turnSorting[i].slot ===)
+          //     this.listOfSlotsExpectedToMove.remove(this.towers[ i ]);
+          // }
+        }
+
+        //#endregion
+        ;
+
+        return TurnController;
+      }(Component), (_descriptor6 = _applyDecoratedDescriptor(_class9.prototype, "hexGrid", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class9.prototype, "listOfSlotsExpectedToMove", [_dec10], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class9.prototype, "turnSorting", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor9 = _applyDecoratedDescriptor(_class9.prototype, "currentMovement", [_dec12], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor10 = _applyDecoratedDescriptor(_class9.prototype, "towers", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class9)) || _class8));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/tweenMovementTests.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _asyncToGenerator, _regeneratorRuntime, _createForOfIteratorHelperLoose, cclegacy, _decorator, Node, math, tween, Component, RealCurve, director;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      math = module.math;
+      tween = module.tween;
+      Component = module.Component;
+      RealCurve = module.RealCurve;
+      director = module.director;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "80de0r4uf9CMZOrMJndCW94", "tweenMovementTests", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var tweenMovementTests = exports('tweenMovementTests', (_dec = ccclass('tweenMovementTests'), _dec2 = property({
+        type: Node,
+        group: 'Components'
+      }), _dec3 = property({
+        type: [Node],
+        group: 'Components'
+      }), _dec4 = property({
+        type: Node,
+        group: 'Components'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(tweenMovementTests, _Component);
+        function tweenMovementTests() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "realCurve", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "duration", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "singleObj", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objects", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "targetNode", _descriptor5, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = tweenMovementTests.prototype;
+        _proto.start = function start() {
+          var _this2 = this;
+          this.moveObjectsToPosition(this.objects, this.targetNode.worldPosition, this.duration, function () {
+            return _this2.afterAnimationMethod();
+          });
+        };
+        _proto.moveObjectsToPosition = /*#__PURE__*/function () {
+          var _moveObjectsToPosition = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(objs, targetPos, duration, callback) {
+            var _iterator, _step, obj, currentWorldPos;
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  _iterator = _createForOfIteratorHelperLoose(objs);
+                case 1:
+                  if ((_step = _iterator()).done) {
+                    _context.next = 11;
+                    break;
+                  }
+                  obj = _step.value;
+                  console.log("Moving object: " + obj.name);
+                  currentWorldPos = obj.worldPosition.clone(); // Get the current global position
+                  obj.setParent(director.getScene()); // Ensure the object is in the root of the scene
+                  //const adjustedTargetPos = targetPos.clone();
+                  //adjustedTargetPos.y += 0.1; // Slightly adjust the target position for each object
+
+                  targetPos.y += 0.1;
+                  _context.next = 9;
+                  return this.moveObjectToPosition(obj, currentWorldPos, targetPos, duration);
+                case 9:
+                  _context.next = 1;
+                  break;
+                case 11:
+                  console.log("All objects have been moved in sequence.");
+
+                  // Callback here
+                  if (callback) {
+                    callback();
+                  }
+                case 13:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee, this);
+          }));
+          function moveObjectsToPosition(_x, _x2, _x3, _x4) {
+            return _moveObjectsToPosition.apply(this, arguments);
+          }
+          return moveObjectsToPosition;
+        }();
+        _proto.moveObjectToPosition = function moveObjectToPosition(obj, startPos, targetPos, duration) {
+          var peakPos = targetPos.clone();
+          peakPos.x = math.lerp(startPos.x, targetPos.x, 0.75); // Calculate peak position for a smooth jump
+          peakPos.y += 0.3;
+          var targetRotation = obj.eulerAngles.clone();
+          targetRotation.z -= 180; // Rotate 180 degrees around the Z-axis
+
+          return new Promise(function (resolve) {
+            obj.setWorldPosition(startPos); // Ensure the object starts at the correct global position
+            tween(obj).parallel(tween().to(duration * 0.75, {
+              worldPosition: peakPos
+            }, {
+              easing: 'quadOut'
+            }) // Move up
+            .to(duration * 0.25, {
+              worldPosition: targetPos
+            }, {
+              easing: 'quadIn'
+            }),
+            // Move down
+            tween().to(duration, {
+              eulerAngles: targetRotation
+            }, {
+              easing: 'linear'
+            }) // Rotate
+            ).call(function () {
+              return resolve();
+            }) // Resolve the promise when the tween completes
+            .start();
+          });
+        }
+
+        // async moveObjectsToPosition(objs: Node[], targetPos: Vec3, duration: number, callback?: () => void) {
+        //     for (const obj of objs) {
+        //         console.log(`Moving object: ${obj.name}`);
+        //         obj.setParent(director.getScene());
+        //         targetPos.y += 0.1;
+        //         await this.moveObjectToPosition(obj, targetPos, duration);
+        //     }
+        //     console.log("All objects have been moved in sequence.");
+        //     //Callback here
+
+        //     if (callback) {
+        //         callback();
+        //     }
+        // }
+
+        // moveObjectToPosition(obj: Node, targetPos: Vec3, duration: number): Promise<void> {
+
+        //     const peakPos = targetPos.clone();
+        //     peakPos.x = math.lerp(obj.worldPosition.x, targetPos.x, 0.75);
+        //     peakPos.y += 0.3;
+
+        //     const targetRotation = obj.eulerAngles.clone();
+        //     targetRotation.z -= 180; // Rotate 180 degrees around the Y-axis
+
+        //     return new Promise(resolve => {
+        //         tween(obj)
+        //             .parallel(
+        //                 tween().to(duration * 0.75, { position: peakPos }, { easing: 'quadOut' }) // Move up
+        //                     .to(duration * 0.25, { position: targetPos }, { easing: 'quadIn' }), // Move down
+        //                 tween().to(duration, { eulerAngles: targetRotation }, { easing: 'linear' }) // Rotate
+        //             )
+        //             .call(() => resolve()) // Resolve the promise when the tween completes
+        //             .start();
+        //     });
+        // }
+        ;
+
+        _proto.afterAnimationMethod = function afterAnimationMethod() {
+          console.log("afterAnimationMethod() All objects have been moved in sequence.");
+        };
+        return tweenMovementTests;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "realCurve", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new RealCurve();
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "duration", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 1;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "singleObj", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "objects", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "targetNode", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/TweenPositionCommand.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './AsyncCommand.ts', './CommandDecorator.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, Vec3, AsyncCommand, commandclass;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Vec3 = module.Vec3;
+    }, function (module) {
+      AsyncCommand = module.AsyncCommand;
+    }, function (module) {
+      commandclass = module.commandclass;
+    }],
+    execute: function () {
+      var _dec, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "5a861RJ+3dHT7Q8Bt15LCPn", "TweenPositionCommand", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var TweenPositionCommand = exports('TweenPositionCommand', (_dec = commandclass('TweenPositionCommand'), _dec(_class = (_class2 = /*#__PURE__*/function (_AsyncCommand) {
+        _inheritsLoose(TweenPositionCommand, _AsyncCommand);
+        function TweenPositionCommand() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _AsyncCommand.call.apply(_AsyncCommand, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "targetPosition", _descriptor, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = TweenPositionCommand.prototype;
+        _proto.execute = /*#__PURE__*/function () {
+          var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee);
+          }));
+          function execute() {
+            return _execute.apply(this, arguments);
+          }
+          return execute;
+        }();
+        return TweenPositionCommand;
+      }(AsyncCommand), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "targetPosition", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec3();
+        }
+      }), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/TweenScaleCommand.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './AsyncCommand.ts', './CommandDecorator.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, RealCurve, Node, Vec3, tween, AsyncCommand, commandclass;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      RealCurve = module.RealCurve;
+      Node = module.Node;
+      Vec3 = module.Vec3;
+      tween = module.tween;
+    }, function (module) {
+      AsyncCommand = module.AsyncCommand;
+    }, function (module) {
+      commandclass = module.commandclass;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "59ee5ipcOlBY7geSJpHc/2i", "TweenScaleCommand", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var TweenScaleCommand = exports('TweenScaleCommand', (_dec = commandclass('TweenScaleCommand'), _dec2 = property({
+        type: RealCurve
+      }), _dec3 = property({
+        type: Node
+      }), _dec4 = property(), _dec5 = property({
+        type: Node,
+        visible: function visible() {
+          return this.useNodeAsTarget;
+        }
+      }), _dec6 = property({
+        visible: function visible() {
+          return !this.useNodeAsTarget;
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_AsyncCommand) {
+        _inheritsLoose(TweenScaleCommand, _AsyncCommand);
+        function TweenScaleCommand() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _AsyncCommand.call.apply(_AsyncCommand, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "easeCurve", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "nodeToTween", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "useNodeAsTarget", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "toTarget", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "targetScale", _descriptor5, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = TweenScaleCommand.prototype;
+        _proto.execute = /*#__PURE__*/function () {
+          var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+            var _this2 = this;
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  return _context.abrupt("return", new Promise(function (resolve) {
+                    var targetScale = _this2.useNodeAsTarget ? _this2.toTarget.scale : _this2.targetScale;
+                    tween(_this2.nodeToTween).to(_this2.duration, {
+                      scale: targetScale
+                    }, {
+                      easing: function easing(t) {
+                        return _this2.easeCurve.evaluate(t);
+                      }
+                    }).call(function () {
+                      console.log('Tween scale completed');
+                      resolve();
+                    }).start();
+                    if (!_this2.waitUntilFinished) {
+                      resolve();
+                    }
+                  }));
+                case 1:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee);
+          }));
+          function execute() {
+            return _execute.apply(this, arguments);
+          }
+          return execute;
+        }();
+        return TweenScaleCommand;
+      }(AsyncCommand), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "easeCurve", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return function () {
+            var curve = new RealCurve();
+            curve.addKeyFrame(0, 0);
+            curve.addKeyFrame(1, 1);
+            return curve;
+          }();
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "nodeToTween", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "useNodeAsTarget", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "toTarget", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "targetScale", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec3();
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/TweenSequence.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './Wait.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, _asyncToGenerator, _regeneratorRuntime, _createForOfIteratorHelperLoose, cclegacy, _decorator, Enum, RealCurve, Node, EventHandler, Vec3, Component, tween, Wait;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createClass = module.createClass;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Enum = module.Enum;
+      RealCurve = module.RealCurve;
+      Node = module.Node;
+      EventHandler = module.EventHandler;
+      Vec3 = module.Vec3;
+      Component = module.Component;
+      tween = module.tween;
+    }, null, function (module) {
+      Wait = module.Wait;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _dec10, _dec11, _dec12, _dec13, _dec14, _class4, _class5, _descriptor9, _descriptor10, _descriptor11, _descriptor12;
+      cclegacy._RF.push({}, "e35b6aVV7lFibMdNCj8qoiy", "TweenSequence", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property,
+        executeInEditMode = _decorator.executeInEditMode;
+      var TweenType = /*#__PURE__*/function (TweenType) {
+        TweenType[TweenType["None"] = 0] = "None";
+        TweenType[TweenType["Wait"] = 1] = "Wait";
+        TweenType[TweenType["Position"] = 2] = "Position";
+        TweenType[TweenType["Scale"] = 3] = "Scale";
+        TweenType[TweenType["Rotation"] = 4] = "Rotation";
+        TweenType[TweenType["Angle"] = 5] = "Angle";
+        return TweenType;
+      }(TweenType || {});
+      var Tween = exports('Tween', (_dec = ccclass('Tween'), _dec2 = property({
+        type: Enum(TweenType)
+      }), _dec3 = property({
+        visible: function visible() {
+          return this.tweenType != TweenType.None;
+        }
+      }), _dec4 = property({
+        visible: function visible() {
+          return this.tweenType != TweenType.None && this.tweenType != TweenType.Wait;
+        }
+      }), _dec5 = property({
+        type: RealCurve,
+        visible: function visible() {
+          return this.tweenType != TweenType.None && this.tweenType != TweenType.Wait;
+        }
+      }), _dec6 = property({
+        visible: function visible() {
+          return this.canUseNodeAsTarget();
+        }
+      }), _dec7 = property({
+        type: Node,
+        visible: function visible() {
+          return this.useNodeAsTarget && this.canUseNodeAsTarget();
+        }
+      }), _dec8 = property({
+        visible: function visible() {
+          return !this.useNodeAsTarget && (this.tweenType == TweenType.Position || this.tweenType == TweenType.Scale || this.tweenType == TweenType.Rotation);
+        }
+      }), _dec9 = property({
+        visible: function visible() {
+          return !this.useNodeAsTarget && this.tweenType == TweenType.Angle;
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function () {
+        function Tween() {
+          _initializerDefineProperty(this, "tweenType", _descriptor, this);
+          _initializerDefineProperty(this, "duration", _descriptor2, this);
+          _initializerDefineProperty(this, "waitUntilFinished", _descriptor3, this);
+          _initializerDefineProperty(this, "easeCurve", _descriptor4, this);
+          _initializerDefineProperty(this, "useNodeAsTarget", _descriptor5, this);
+          _initializerDefineProperty(this, "targetNode", _descriptor6, this);
+          _initializerDefineProperty(this, "targetVec3", _descriptor7, this);
+          _initializerDefineProperty(this, "targetAngle", _descriptor8, this);
+        }
+        var _proto = Tween.prototype;
+        _proto.canUseNodeAsTarget = function canUseNodeAsTarget() {
+          return this.tweenType == TweenType.Position || this.tweenType == TweenType.Scale || this.tweenType == TweenType.Rotation || this.tweenType == TweenType.Angle;
+        };
+        return Tween;
+      }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "tweenType", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return TweenType.None;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "duration", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0.25;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "waitUntilFinished", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "easeCurve", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return function () {
+            var curve = new RealCurve();
+            curve.addKeyFrame(0, 0);
+            curve.addKeyFrame(1, 1);
+            return curve;
+          }();
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "useNodeAsTarget", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return false;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "targetNode", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "targetVec3", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec3(1, 1, 1);
+        }
+      }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "targetAngle", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      })), _class2)) || _class));
+      var TweenSequence = exports('TweenSequence', (_dec10 = ccclass('TweenSequence'), _dec11 = property({
+        type: Enum(TweenType)
+      }), _dec12 = property({
+        type: Enum(TweenType)
+      }), _dec13 = property({
+        type: [Tween],
+        visible: function visible() {
+          return this.tweenSequence.length > 0;
+        }
+      }), _dec14 = property({
+        type: [EventHandler],
+        visible: function visible() {
+          return this.tweenSequence.length > 0;
+        }
+      }), _dec10(_class4 = executeInEditMode(_class4 = (_class5 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(TweenSequence, _Component);
+        function TweenSequence() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "playOnEnable", _descriptor9, _assertThisInitialized(_this));
+          // Dropwdown "Button" to add new tweens
+          _initializerDefineProperty(_this, "_addToSequence", _descriptor10, _assertThisInitialized(_this));
+          // Tween list
+          _initializerDefineProperty(_this, "tweenSequence", _descriptor11, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "onSequenceComplete", _descriptor12, _assertThisInitialized(_this));
+          // Cache the original values    
+          _this.originalValuesSet = false;
+          _this.originalPosition = new Vec3();
+          _this.originalScale = new Vec3();
+          _this.originalEuler = new Vec3();
+          _this.originalAngle = 0;
+          return _this;
+        }
+        var _proto2 = TweenSequence.prototype;
+        _proto2.onEnable = function onEnable() {
+          this.cacheOriginalValues();
+          if (this.playOnEnable) {
+            this.playTween();
+          }
+        };
+        _proto2.cacheOriginalValues = function cacheOriginalValues() {
+          if (this.originalValuesSet) return;
+          this.originalValuesSet = true;
+          this.originalAngle = this.node.angle;
+          this.originalPosition.set(this.node.position);
+          this.originalScale.set(this.node.scale);
+          this.originalEuler.set(this.node.eulerAngles);
+        };
+        _proto2.resetToOriginalValues = function resetToOriginalValues() {
+          // In case this is called before the original values are set
+          this.cacheOriginalValues();
+          this.node.angle = this.originalAngle;
+          this.node.position = this.originalPosition;
+          this.node.scale = this.originalScale;
+          this.node.eulerAngles = this.originalEuler;
+        }
+
+        // Play the tweens in the list
+        ;
+
+        _proto2.playTween = /*#__PURE__*/
+        function () {
+          var _playTween = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+            var _this2 = this;
+            var _loop, _iterator, _step;
+            return _regeneratorRuntime().wrap(function _callee$(_context2) {
+              while (1) switch (_context2.prev = _context2.next) {
+                case 0:
+                  _loop = /*#__PURE__*/_regeneratorRuntime().mark(function _loop() {
+                    var thisTween, targetPos, targetScale, targetEuler, targetAngle;
+                    return _regeneratorRuntime().wrap(function _loop$(_context) {
+                      while (1) switch (_context.prev = _context.next) {
+                        case 0:
+                          thisTween = _step.value;
+                          _context.t0 = thisTween.tweenType;
+                          _context.next = _context.t0 === TweenType.Position ? 4 : _context.t0 === TweenType.Scale ? 7 : _context.t0 === TweenType.Rotation ? 10 : _context.t0 === TweenType.Angle ? 13 : 16;
+                          break;
+                        case 4:
+                          targetPos = thisTween.useNodeAsTarget ? thisTween.targetNode.position : thisTween.targetVec3;
+                          tween(_this2.node).to(thisTween.duration, {
+                            position: targetPos
+                          }, {
+                            easing: function easing(t) {
+                              return thisTween.easeCurve.evaluate(t);
+                            }
+                          }).start();
+                          return _context.abrupt("break", 16);
+                        case 7:
+                          targetScale = thisTween.useNodeAsTarget ? thisTween.targetNode.scale : thisTween.targetVec3;
+                          tween(_this2.node).to(thisTween.duration, {
+                            scale: targetScale
+                          }, {
+                            easing: function easing(t) {
+                              return thisTween.easeCurve.evaluate(t);
+                            }
+                          }).start();
+                          return _context.abrupt("break", 16);
+                        case 10:
+                          // 3D rotation - Rotation
+                          targetEuler = thisTween.useNodeAsTarget ? thisTween.targetNode.eulerAngles : thisTween.targetVec3;
+                          tween(_this2.node).to(thisTween.duration, {
+                            eulerAngles: targetEuler
+                          }, {
+                            easing: function easing(t) {
+                              return thisTween.easeCurve.evaluate(t);
+                            }
+                          }).start();
+                          return _context.abrupt("break", 16);
+                        case 13:
+                          // 2D rotation - Angle
+                          targetAngle = thisTween.useNodeAsTarget ? thisTween.targetNode.angle : thisTween.targetAngle;
+                          tween(_this2.node).to(thisTween.duration, {
+                            angle: targetAngle
+                          }, {
+                            easing: function easing(t) {
+                              return thisTween.easeCurve.evaluate(t);
+                            }
+                          }).start();
+                          return _context.abrupt("break", 16);
+                        case 16:
+                          if (!(thisTween.tweenType === TweenType.Wait || thisTween.waitUntilFinished)) {
+                            _context.next = 19;
+                            break;
+                          }
+                          _context.next = 19;
+                          return Wait.seconds(thisTween.duration);
+                        case 19:
+                        case "end":
+                          return _context.stop();
+                      }
+                    }, _loop);
+                  });
+                  _iterator = _createForOfIteratorHelperLoose(this.tweenSequence);
+                case 2:
+                  if ((_step = _iterator()).done) {
+                    _context2.next = 6;
+                    break;
+                  }
+                  return _context2.delegateYield(_loop(), "t0", 4);
+                case 4:
+                  _context2.next = 2;
+                  break;
+                case 6:
+                  // Emit event for sequence completion
+                  this.onSequenceComplete.emit([]);
+                case 7:
+                case "end":
+                  return _context2.stop();
+              }
+            }, _callee, this);
+          }));
+          function playTween() {
+            return _playTween.apply(this, arguments);
+          }
+          return playTween;
+        }();
+        _createClass(TweenSequence, [{
+          key: "addToSequence",
+          get: function get() {
+            return this._addToSequence;
+          },
+          set: function set(value) {
+            var tween = new Tween();
+            tween.tweenType = value;
+            this.tweenSequence.push(tween);
+            // Reset selection
+            this._addToSequence = TweenType.None;
+          }
+        }]);
+        return TweenSequence;
+      }(Component), (_descriptor9 = _applyDecoratedDescriptor(_class5.prototype, "playOnEnable", [property], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _descriptor10 = _applyDecoratedDescriptor(_class5.prototype, "_addToSequence", [_dec11], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return TweenType.None;
+        }
+      }), _applyDecoratedDescriptor(_class5.prototype, "addToSequence", [_dec12], Object.getOwnPropertyDescriptor(_class5.prototype, "addToSequence"), _class5.prototype), _descriptor11 = _applyDecoratedDescriptor(_class5.prototype, "tweenSequence", [_dec13], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor12 = _applyDecoratedDescriptor(_class5.prototype, "onSequenceComplete", [_dec14], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new EventHandler();
+        }
+      })), _class5)) || _class4) || _class4));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/UI_GameplayHUD.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './UI_ObjectivesDisplay.ts', './GameplayController.ts', './UI_LockDisplay.ts', './Singleton.ts', './CameraUtils.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Prefab, UITransform, Camera, instantiate, Component, UI_ObjectivesDisplay, GameplayController, UI_LockDisplay, Singleton, CameraUtils;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Prefab = module.Prefab;
+      UITransform = module.UITransform;
+      Camera = module.Camera;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }, null, function (module) {
+      UI_ObjectivesDisplay = module.UI_ObjectivesDisplay;
+    }, function (module) {
+      GameplayController = module.GameplayController;
+    }, function (module) {
+      UI_LockDisplay = module.UI_LockDisplay;
+    }, function (module) {
+      Singleton = module.Singleton;
+    }, function (module) {
+      CameraUtils = module.CameraUtils;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "51a67KSUQ9Ne5WIFL5B3tJy", "UI_GameplayHUD", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var UI_GameplayHUD = exports('UI_GameplayHUD', (_dec = ccclass('UI_GameplayHUD'), _dec2 = property({
+        type: UI_ObjectivesDisplay,
+        group: 'Components'
+      }), _dec3 = property({
+        type: Node,
+        group: 'Components'
+      }), _dec4 = property({
+        type: Prefab,
+        group: 'Components'
+      }), _dec5 = property({
+        type: UITransform,
+        group: 'Components'
+      }), _dec6 = property({
+        type: UITransform,
+        group: 'Components'
+      }), _dec7 = property({
+        type: Camera,
+        group: 'Runtime'
+      }), _dec8 = property({
+        type: [UI_LockDisplay],
+        group: 'Runtime'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(UI_GameplayHUD, _Component);
+        function UI_GameplayHUD() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "objectivesDisplay", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "clickblock", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "lockDisplayPrefab", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "lockParentTransform", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "canvasTransform", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "mainCamera", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "lockDisplays", _descriptor7, _assertThisInitialized(_this));
+          _this.onPausedLambda = void 0;
+          return _this;
+        }
+        var _proto = UI_GameplayHUD.prototype;
+        _proto.initialize = function initialize(objectives, cam, locks) {
+          var _this2 = this;
+          Singleton.set(this);
+          this.mainCamera = cam;
+          this.objectivesDisplay.initialize(objectives);
+          this.onPausedLambda = function (_boolean) {
+            _this2.handleOnPaused(_boolean);
+          };
+          Singleton.get(GameplayController).onPause.addListener(this.onPausedLambda);
+          this.setUpLocks(locks);
+        };
+        _proto.handleOnPaused = function handleOnPaused(isPaused) {
+          //this.isPaused = isPaused;
+          this.clickblock.active = isPaused;
+        };
+        _proto.setUpLocks = function setUpLocks(locks) {
+          for (var i = 0; i < locks.length; i++) {
+            var element = locks[i].node;
+
+            // Instantiate the lock display prefab
+            var lockDisplay = instantiate(this.lockDisplayPrefab);
+
+            // Set the parent to the lockParentTransform node
+            lockDisplay.setParent(this.lockParentTransform.node);
+            lockDisplay.setPosition(CameraUtils.worldToUIPosition(element, this.mainCamera, this.canvasTransform));
+            var uiComponent = lockDisplay.getComponent(UI_LockDisplay);
+            uiComponent.initialize(locks[i]);
+            this.lockDisplays.push(uiComponent);
+            //this.lockDisplays[ this.lockDisplays.length - 1 ].initialize(locks[ i ]);
+          }
+        };
+
+        return UI_GameplayHUD;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "objectivesDisplay", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "clickblock", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "lockDisplayPrefab", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "lockParentTransform", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "canvasTransform", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "mainCamera", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "lockDisplays", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/UI_LockDisplay.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Label, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Label = module.Label;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "f3fe050QWBE8qigE1EkDqNa", "UI_LockDisplay", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var UI_LockDisplay = exports('UI_LockDisplay', (_dec = ccclass('UI_LockDisplay'), _dec2 = property({
+        type: Label,
+        group: 'Components'
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(UI_LockDisplay, _Component);
+        function UI_LockDisplay() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "display", _descriptor, _assertThisInitialized(_this));
+          _this.onValueUpdatedLambda = void 0;
+          return _this;
+        }
+        var _proto = UI_LockDisplay.prototype;
+        _proto.initialize = function initialize(lock) {
+          var _this2 = this;
+          this.display.string = lock.currentAmount.toString();
+          this.onValueUpdatedLambda = function (num) {
+            _this2.handleOnValueUpdate(num);
+          };
+          lock.onCurrentAmountUpdate.addListener(this.onValueUpdatedLambda);
+        };
+        _proto.handleOnValueUpdate = function handleOnValueUpdate(amount) {
+          //console.log("UI_LockDisplay.handleOnValueUpdate: ", amount);
+          this.display.string = amount.toString();
+          if (amount === 0) {
+            this.display.node.active = false;
+          }
+        };
+        return UI_LockDisplay;
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "display", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: null
+      }), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/UI_ObjectivesDisplay.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './LevelAsset.ts', './UI_SingleObjective.ts', './ObjectivesController.ts', './index.ts', './Singleton.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _initializerDefineProperty, _inheritsLoose, _assertThisInitialized, _createForOfIteratorHelperLoose, cclegacy, _decorator, SpriteFrame, Enum, Prefab, Node, instantiate, Component, ObjectiveType, ObjectiveData, UI_SingleObjective, ObjectivesController, Singleton;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _inheritsLoose = module.inheritsLoose;
+      _assertThisInitialized = module.assertThisInitialized;
+      _createForOfIteratorHelperLoose = module.createForOfIteratorHelperLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      SpriteFrame = module.SpriteFrame;
+      Enum = module.Enum;
+      Prefab = module.Prefab;
+      Node = module.Node;
+      instantiate = module.instantiate;
+      Component = module.Component;
+    }, function (module) {
+      ObjectiveType = module.ObjectiveType;
+      ObjectiveData = module.ObjectiveData;
+    }, function (module) {
+      UI_SingleObjective = module.UI_SingleObjective;
+    }, function (module) {
+      ObjectivesController = module.ObjectivesController;
+    }, null, function (module) {
+      Singleton = module.Singleton;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _class, _class2, _descriptor, _descriptor2, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _class4, _class5, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7;
+      cclegacy._RF.push({}, "ed034FINgpB0LhKhvdIR5Dq", "UI_ObjectivesDisplay", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var ObjectiveSprite = exports('ObjectiveSprite', (_dec = ccclass('ObjectiveSprite'), _dec2 = property({
+        type: SpriteFrame
+      }), _dec3 = property({
+        type: Enum(ObjectiveType)
+      }), _dec(_class = (_class2 = function ObjectiveSprite() {
+        _initializerDefineProperty(this, "sprite", _descriptor, this);
+        _initializerDefineProperty(this, "objective", _descriptor2, this);
+      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "sprite", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "objective", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return ObjectiveType.MergePieces;
+        }
+      })), _class2)) || _class));
+      var UI_ObjectivesDisplay = exports('UI_ObjectivesDisplay', (_dec4 = ccclass('UI_ObjectivesDisplay'), _dec5 = property({
+        type: [ObjectiveData]
+      }), _dec6 = property({
+        type: [UI_SingleObjective]
+      }), _dec7 = property({
+        type: Prefab,
+        group: {
+          name: "Components"
+        }
+      }), _dec8 = property({
+        type: Node,
+        group: {
+          name: "Components"
+        }
+      }), _dec9 = property({
+        type: [ObjectiveSprite],
+        group: {
+          name: "Components"
+        }
+      }), _dec4(_class4 = (_class5 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(UI_ObjectivesDisplay, _Component);
+        function UI_ObjectivesDisplay() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "loadedObjectives", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "blocks", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "displayPrefab", _descriptor5, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "blockParent", _descriptor6, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "objectiveSprites", _descriptor7, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = UI_ObjectivesDisplay.prototype;
+        _proto.initialize = function initialize(objectives) {
+          this.loadedObjectives = objectives;
+          this.setEvents();
+          this.createButtons(objectives);
+        };
+        _proto.setEvents = function setEvents() {
+
+          //Register self on event in some objectives controller class
+          // this.handleDisplaySelected = (num) => {
+          //     this.onObjectiveSelected(num);
+          // }
+
+          // this.dropdown.onOptionSelected.addListener(this.dropdownEventLambda);
+        };
+        _proto.createButtons = function createButtons(objectives) {
+          for (var i = 0; i < objectives.length; i++) {
+            this.createObjectiveBlock(i, objectives[i].type, objectives[i].amount);
+          }
+        };
+        _proto.createObjectiveBlock = function createObjectiveBlock(id, objective, amount) {
+          //console.log(`EditorObjectivesController.createObjectiveBlock ${id}: ${ObjectiveType[objective]} `);
+
+          var newButton = instantiate(this.displayPrefab);
+          newButton.parent = this.blockParent;
+          newButton.setSiblingIndex(id);
+          var objectiveDisplay = newButton.getComponent(UI_SingleObjective);
+          objectiveDisplay.initialize(id, this.getSpriteFromObjective(objective), amount);
+          Singleton.get(ObjectivesController).trackedObjectives[id].onAmountChanged.addListener(objectiveDisplay.amountUpdatedLambda);
+          this.blocks.push(objectiveDisplay);
+        };
+        _proto.getSpriteFromObjective = function getSpriteFromObjective(objective) {
+          //console.log(`getPrefabFromColor( ${PieceColor[color]} )`);
+          for (var _iterator = _createForOfIteratorHelperLoose(this.objectiveSprites), _step; !(_step = _iterator()).done;) {
+            var sprite = _step.value;
+            if (sprite.objective === objective) {
+              return sprite.sprite;
+            }
+          }
+          return null;
+        };
+        return UI_ObjectivesDisplay;
+      }(Component), (_descriptor3 = _applyDecoratedDescriptor(_class5.prototype, "loadedObjectives", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class5.prototype, "blocks", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class5.prototype, "displayPrefab", [_dec7], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor6 = _applyDecoratedDescriptor(_class5.prototype, "blockParent", [_dec8], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor7 = _applyDecoratedDescriptor(_class5.prototype, "objectiveSprites", [_dec9], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return [];
+        }
+      })), _class5)) || _class4));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/UI_SingleObjective.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Sprite, ProgressBar, Label, math, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Sprite = module.Sprite;
+      ProgressBar = module.ProgressBar;
+      Label = module.Label;
+      math = module.math;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+      cclegacy._RF.push({}, "b703dlEEGhA777xuJYP5EKZ", "UI_SingleObjective", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var UI_SingleObjective = exports('UI_SingleObjective', (_dec = ccclass('UI_SingleObjective'), _dec2 = property({
+        type: Number,
+        group: {
+          name: "Runtime"
+        }
+      }), _dec3 = property({
+        type: Sprite,
+        group: {
+          name: "Components"
+        }
+      }), _dec4 = property({
+        type: ProgressBar,
+        group: {
+          name: "Components"
+        }
+      }), _dec5 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec6 = property({
+        type: Label,
+        group: {
+          name: "Components"
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(UI_SingleObjective, _Component);
+        function UI_SingleObjective() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "id", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "displaySprite", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "progressBar", _descriptor3, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "minDisplay", _descriptor4, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "maxDisplay", _descriptor5, _assertThisInitialized(_this));
+          _this.maxAmount = 0;
+          _this.currentAmount = 0;
+          _this.amountUpdatedLambda = void 0;
+          return _this;
+        }
+        var _proto = UI_SingleObjective.prototype;
+        _proto.initialize = function initialize(id, sprite, amount) {
+          var _this2 = this;
+          this.id = id;
+          this.displaySprite.spriteFrame = sprite;
+          this.maxDisplay.string = amount.toString();
+          this.maxAmount = amount;
+          this.minDisplay.string = this.currentAmount.toString();
+          this.updateCurrentAmount(this.currentAmount);
+          this.amountUpdatedLambda = function (num) {
+            _this2.updateCurrentAmount(num);
+          };
+        };
+        _proto.updateCurrentAmount = function updateCurrentAmount(amount) {
+          this.currentAmount = amount;
+          this.minDisplay.string = amount.toString();
+          this.updateCurrentPercentage();
+        };
+        _proto.updateCurrentPercentage = function updateCurrentPercentage() {
+          var percentage = math.inverseLerp(0, this.maxAmount, this.currentAmount);
+          this.progressBar.progress = percentage;
+        };
+        return UI_SingleObjective;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "id", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return 0;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "displaySprite", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "progressBar", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "minDisplay", [_dec5], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "maxDisplay", [_dec6], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/Wait.ts", ['cc'], function (exports) {
+  var cclegacy;
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+    }],
+    execute: function () {
+      cclegacy._RF.push({}, "657060zw8dJbo3z/8IvaK/H", "Wait", undefined);
+      var Wait = exports('Wait', /*#__PURE__*/function () {
+        function Wait() {}
+        /**
+         * Waits for the specified number of seconds.
+         * @param seconds - The delay duration in seconds.
+         * @returns A promise that resolves after the delay.
+         */
+        Wait.seconds = function seconds(_seconds) {
+          return new Promise(function (resolve) {
+            return setTimeout(resolve, _seconds * 1000);
+          });
+        }
+
+        /**
+         * Waits for the specified number of milliseconds.
+         * @param milliseconds - The delay duration in milliseconds.
+         * @returns A promise that resolves after the delay.
+         */;
+        Wait.milliseconds = function milliseconds(_milliseconds) {
+          return new Promise(function (resolve) {
+            return setTimeout(resolve, _milliseconds);
+          });
+        }
+
+        /**
+         * Waits until a condition is met.
+         * @param condition - A function that returns a boolean.
+         * @param interval - The interval (in milliseconds) to check the condition.
+         * @returns A promise that resolves when the condition is met.
+         */;
+        Wait.until = function until(condition, interval) {
+          if (interval === void 0) {
+            interval = 100;
+          }
+          return new Promise(function (resolve) {
+            var check = function check() {
+              if (condition()) {
+                resolve();
+              } else {
+                setTimeout(check, interval);
+              }
+            };
+            check();
+          });
+        };
+        return Wait;
+      }());
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/WaitCommand.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './index.ts', './AsyncCommand.ts', './CommandDecorator.ts', './Wait.ts'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _asyncToGenerator, _regeneratorRuntime, cclegacy, _decorator, AsyncCommand, commandclass, Wait;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+      _asyncToGenerator = module.asyncToGenerator;
+      _regeneratorRuntime = module.regeneratorRuntime;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }, null, function (module) {
+      AsyncCommand = module.AsyncCommand;
+    }, function (module) {
+      commandclass = module.commandclass;
+    }, function (module) {
+      Wait = module.Wait;
+    }],
+    execute: function () {
+      var _dec, _dec2, _class, _class2, _descriptor;
+      cclegacy._RF.push({}, "e4716C0KHFAE6LB5HJkyUtM", "WaitCommand", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var WaitCommand = exports('WaitCommand', (_dec = commandclass('WaitCommand'), _dec2 = property({
+        visible: function visible() {
+          return false;
+        }
+      }), _dec(_class = (_class2 = /*#__PURE__*/function (_AsyncCommand) {
+        _inheritsLoose(WaitCommand, _AsyncCommand);
+        function WaitCommand() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _AsyncCommand.call.apply(_AsyncCommand, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "waitUntilFinished", _descriptor, _assertThisInitialized(_this));
+          return _this;
+        }
+        var _proto = WaitCommand.prototype;
+        _proto.execute = /*#__PURE__*/function () {
+          var _execute = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+            return _regeneratorRuntime().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return Wait.seconds(this.duration);
+                case 2:
+                  console.log('Executing async command');
+                case 3:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee, this);
+          }));
+          function execute() {
+            return _execute.apply(this, arguments);
+          }
+          return execute;
+        }();
+        return WaitCommand;
+      }(AsyncCommand), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "waitUntilFinished", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return true;
+        }
+      }), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/WorldToUIPosition.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Camera, Vec3, UITransform, Component;
+  return {
+    setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
+      _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      Node = module.Node;
+      Camera = module.Camera;
+      Vec3 = module.Vec3;
+      UITransform = module.UITransform;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3;
+      cclegacy._RF.push({}, "07b68cO7gBMRJ3mNKmUOc7y", "WorldToUIPosition", undefined);
+      var ccclass = _decorator.ccclass,
+        property = _decorator.property;
+      var WorldToUIPosition = exports('WorldToUIPosition', (_dec = ccclass('WorldToUIPosition'), _dec2 = property(Node), _dec3 = property(Camera), _dec4 = property(Vec3), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(WorldToUIPosition, _Component);
+        function WorldToUIPosition() {
+          var _this;
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _initializerDefineProperty(_this, "target3DObject", _descriptor, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "mainCamera", _descriptor2, _assertThisInitialized(_this));
+          _initializerDefineProperty(_this, "offset", _descriptor3, _assertThisInitialized(_this));
+          _this.uiTransform = null;
+          return _this;
+        }
+        var _proto = WorldToUIPosition.prototype;
+        _proto.onLoad = function onLoad() {
+          this.uiTransform = this.node.getComponent(UITransform);
+          if (!this.mainCamera) {
+            this.mainCamera = this.node.scene.getComponentInChildren(Camera);
+          }
+        };
+        _proto.update = function update() {
+          if (!this.target3DObject || !this.mainCamera) return;
+
+          // 1. Convert world position to screen position
+          var screenPos = new Vec3();
+          this.mainCamera.worldToScreen(screenPos, this.target3DObject.worldPosition);
+
+          // 2. Apply offset
+          Vec3.add(screenPos, screenPos, this.offset);
+
+          // 3. Handle object behind camera case
+          if (screenPos.z < 0) {
+            this.node.active = false;
+            return;
+          }
+          this.node.active = true;
+
+          // 4. Convert screen coordinates to UI space (NEW CORRECT WAY)
+          // const uiPos = new Vec3(
+          //     screenPos.x - screen.windowSize.width * 0.5,
+          //     screenPos.y - screen.windowSize.height * 0.5,
+          //     0
+          // );
+
+          // Alternative conversion method
+          var uiPos = new Vec3();
+          this.mainCamera.screenToWorld(uiPos, screenPos);
+
+          // 5. Update UI position
+          this.node.setPosition(uiPos);
+        };
+        return WorldToUIPosition;
+      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "target3DObject", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "mainCamera", [_dec3], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "offset", [_dec4], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return new Vec3(0, 0, 0);
+        }
+      })), _class2)) || _class));
+      cclegacy._RF.pop();
+    }
+  };
+});
 
 (function(r) {
   r('virtual:///prerequisite-imports/main', 'chunks:///_virtual/main'); 
