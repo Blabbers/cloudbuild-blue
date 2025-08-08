@@ -1,0 +1,4 @@
+# Compacted files after build post process
+*.zip
+*.rar
+*.7zip

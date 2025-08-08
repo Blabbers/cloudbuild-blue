@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Awakening Embedded | Math Survivors</title>
+    <link rel="stylesheet" href="https://game-cdn.legendsoflearning.com/assets/lol-awk_embed.css" />
+    <script src="https://game-cdn.legendsoflearning.com/assets/lol-awk_embed.js"></script>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas"></canvas>
+    <script src="Build/math-survivors.loader.js"></script>
+    <script>
+      const getQueryParams = () => {
+        const url = window.location.href;
+        let queryParams = {};
+        //create an anchor tag to use the property called search
+        let anchor = document.createElement('a');
+        //assigning url to href of anchor tag
+        anchor.href = url;
+        //search property returns the query string of url
+        let queryStrings = anchor.search.substring(1);
+        let params = queryStrings.split('&');
+
+        for (var i = 0; i < params.length; i++) {
+            var pair = params[i].split('=');
+            queryParams[pair[0]] = decodeURIComponent(pair[1]);
+        }
+        return queryParams;
+      };
+
+      var unityCanvas = document.getElementById("unity-canvas");
+
+      createUnityInstance(unityCanvas, {
+        dataUrl: "Build/math-survivors.data.unityweb",
+        frameworkUrl: "Build/math-survivors.framework.js.unityweb",
+        codeUrl: "Build/math-survivors.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Blabbers",
+        productName: "Math Survivors",
+        productVersion: "0.1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((unityInstance) =>
+      {
+        onUnityInitialized(unityInstance, unityCanvas); //calls lol-awk_embed.js
+      });
+    </script>
+  </body>
+</html>

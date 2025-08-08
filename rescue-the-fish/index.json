@@ -1,0 +1,34 @@
+{
+	"poki_template_version": 1,
+	"extra_html": {
+	  "head": [
+		"<!-- will be copied to the resulting head //-->"
+	  ],
+	  "body": [
+		"<!-- will be copied to the resulting body //-->",
+		"<!-- will also be copied to the resulting body //-->"
+	  ]
+	},
+	"background_color": "#231F20",
+	"background_filename": "",
+	"code_filename": "5f1564d391797f9a1916917c16cd881f.wasm",
+	"company_name": "Blabbers",
+	"data_filename": "513aa185a8c0308daf7fa0477b831d25.data",
+	"decompression_fallback": "Disabled",
+	"development_player": "false",
+	"framework_filename": "254957afc1f409d16c9f07362c263141.framework.js",
+	"height": "600",
+	"loader_filename": "7bf34013a7f7da6a58f8da3519c97c81.loader.js",
+	"memory_filename": "",
+	"product_name": "fish-rescue",
+	"product_version": "0.1",
+	"splash_screen_style": "Dark",
+	"symbols_filename": "",
+	"unity_version": "2022.3.47f1",
+	"use_data_caching": "true",
+	"use_threads": "false",
+	"use_wasm": "true",
+	"use_webgl_1_0": "true",
+	"use_webgl_2_0": "true",
+	"width": "960"
+  }

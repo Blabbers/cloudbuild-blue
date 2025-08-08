@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Legends of Learning | Geometry Slicer</title>
+    <link rel="stylesheet" href="https://game-cdn.legendsoflearning.com/assets/lol.css" />
+    <script src="https://game-cdn.legendsoflearning.com/assets/lol.js"></script>
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/9853637125e801e9aae48e78dbbdcfca.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/b86e71fd2f04823ac7684a1bffc55bf0.data.unityweb",
+        frameworkUrl: buildUrl + "/eb8e2f02da04c026087b7d9b7c52790a.framework.js.unityweb",
+        codeUrl: buildUrl + "/be03c5d6700139e0601d7aa69f074fd8.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Geometry Slicer",
+        productVersion: "0.1",
+      };
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "1024px";
+        canvas.style.height = "576px";
+      }
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+        }).then((unityInstance) => {
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>

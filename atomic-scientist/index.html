@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Legends of Learning | atomic-scientist</title>
+    <link rel="stylesheet" href="https://game-cdn.legendsoflearning.com/assets/lol.css" />
+    <script src="https://game-cdn.legendsoflearning.com/assets/lol.js"></script>
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/9853637125e801e9aae48e78dbbdcfca.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/32e926c81e443e74f7d87dc9af6f5aa6.data.unityweb",
+        frameworkUrl: buildUrl + "/efc4ba2e29eb042ebd20f140eabc723e.framework.js.unityweb",
+        codeUrl: buildUrl + "/00e96ce2c86e85ff209ad16aee5e0694.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Blabbers",
+        productName: "atomic-scientist",
+        productVersion: "1.0",
+      };
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "1024px";
+        canvas.style.height = "576px";
+      }
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+        }).then((unityInstance) => {
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>

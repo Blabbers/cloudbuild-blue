@@ -1,0 +1,32 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "prefabs",
+    "deps": [
+        "main"
+    ],
+    "uuids": [
+        "1ee9d3bb-3136-45a6-b62b-980736b7e44e"
+    ],
+    "paths": {
+        "1ee9d3bb-3136-45a6-b62b-980736b7e44e": [
+            "GlobalPrefab",
+            "cc.Prefab",
+            1
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [
+        "1ee9d3bb-3136-45a6-b62b-980736b7e44e",
+        "0"
+    ],
+    "debug": true,
+    "extensionMap": {},
+    "hasPreloadScript": true,
+    "dependencyRelationships": {}
+}

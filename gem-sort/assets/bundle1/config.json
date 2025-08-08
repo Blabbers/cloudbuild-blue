@@ -1,0 +1,57 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "bundle1",
+    "deps": [],
+    "uuids": [
+        "02b5c9a93",
+        "b164f4cc-8240-4696-be4b-09239f0424f3",
+        "b164f4cc-8240-4696-be4b-09239f0424f3@6c48a",
+        "b164f4cc-8240-4696-be4b-09239f0424f3@f9941",
+        "c98b14b7-e2d0-41fa-9112-2f41dc06a218",
+        "c98b14b7-e2d0-41fa-9112-2f41dc06a218@6c48a"
+    ],
+    "paths": {
+        "b164f4cc-8240-4696-be4b-09239f0424f3": [
+            "loaded",
+            "cc.ImageAsset",
+            1
+        ],
+        "b164f4cc-8240-4696-be4b-09239f0424f3@6c48a": [
+            "loaded/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "b164f4cc-8240-4696-be4b-09239f0424f3@f9941": [
+            "loaded/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
+        "c98b14b7-e2d0-41fa-9112-2f41dc06a218": [
+            "texture1",
+            "cc.ImageAsset",
+            1
+        ],
+        "c98b14b7-e2d0-41fa-9112-2f41dc06a218@6c48a": [
+            "texture1/texture",
+            "cc.Texture2D",
+            1
+        ]
+    },
+    "scenes": {},
+    "packs": {
+        "02b5c9a93": [
+            "b164f4cc-8240-4696-be4b-09239f0424f3@6c48a",
+            "c98b14b7-e2d0-41fa-9112-2f41dc06a218@6c48a"
+        ]
+    },
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {},
+    "hasPreloadScript": true,
+    "dependencyRelationships": {}
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Legends of Learning | math-fish</title>
+    <link rel="stylesheet" href="https://game-cdn.legendsoflearning.com/assets/lol.css" />
+    <script src="https://game-cdn.legendsoflearning.com/assets/lol.js"></script>
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/9853637125e801e9aae48e78dbbdcfca.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/c711f15dab5f80e758b86a6551c4d943.data.unityweb",
+        frameworkUrl: buildUrl + "/d4c8b9d543a68dbf64d5df683cabcc23.framework.js.unityweb",
+        codeUrl: buildUrl + "/073a4f52049af20829696a0de629a7f9.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Blabbers",
+        productName: "math-fish",
+        productVersion: "1.0",
+      };
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "1024px";
+        canvas.style.height = "576px";
+      }
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+        }).then((unityInstance) => {
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
