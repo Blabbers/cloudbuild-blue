@@ -26,7 +26,7 @@
   "titleTryAgain": "TRY AGAIN",
   "visualQuiz_TryAgain": "Try again",
   "titleFinalScore": "YOUR FINAL SCORE",
-  "star_dontRepeatLevel": "Try completing the level without resetting to checkpoints...",
+  "star_dontRepeatLevel": "Try completing the level in one attempt...",
   "titlePressAnyKey": "Press any key to continue...",
   "star_correctAnswer": "Answer the question correctly...",
   "titleNo": "NO",
@@ -82,7 +82,8 @@
   "83a12cb6": "Click to pop the bubble",
   "c5865647": "Don't let the candy leave the box",
   "3ecd9dc5": "You can cut more than one rope at once.",
-  "e4825f09": "Some rope hoocks can be moved with your finger",
-  "93b7f4ce": "Keep the candy away from spikes"
+  "e4825f09": "Some rope hooks can be moved with your finger",
+  "93b7f4ce": "Keep the candy away from spikes",
+  "8ba0b6bf": "HINT"
  }
 }
