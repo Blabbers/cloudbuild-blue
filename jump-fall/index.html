@@ -1,41 +1,69 @@
+<!-- Play on Poki -->
+<!-- NOTE:
+	this HTML will not be used on Poki.com, the HTML will be auto generated from the index.json.
+	If you wish to add custom HTML you can add this in the "extra_html" part of the JSON.
+-->
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | jump-fall-game</title>
-  </head>
-  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=576 height=1024 tabindex="-1" style="width: 576px; height: 1024px; background: #231F20"></canvas>
-    <script src="Build/60cdcd9bf8905d4badfae7c3266eb9b0.loader.js"></script>
-    <script>
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-        var canvas = document.querySelector("#unity-canvas");
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-        canvas.style.position = "fixed";
+	<title>jump-fall-game - Play on Poki</title>
 
-        document.body.style.textAlign = "left";
-      }
+	<script>
+	var buildUrl = 'Build';
+	window.config = {
+		loader: 'unity-2020',
+		debug: false,
+		maxRatio: 16 / 9,
+		minRatio: 9 / 16,
 
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        arguments: [],
-        dataUrl: "Build/8c2ae1adb35c491466cf48dc09be2365.data.unityweb",
-        frameworkUrl: "Build/e598626a90d9ea34ed56529e42e57654.framework.js.unityweb",
-        codeUrl: "Build/a494b0453a2e8815eec87726ecb7dbe6.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Blabbers Games",
-        productName: "jump-fall-game",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-    </script>
-  </body>
+		title: 'jump-fall-game',
+
+		thumbnail: 'https://img.poki-cdn.com/cdn-cgi/image/quality=80,width=100,height=100,fit=cover,g=0.5x0.5,f=auto/a398cd4e645b76810031bd97f8697414.png',
+		numScreenshots: 4,
+
+		metadata:{
+			"poki_template_version": 1,
+			"extra_html": {
+				"head": [
+					"<!-- will be copied to the resulting head //-->"
+				],
+				"body": [
+					"<!-- will be copied to the resulting body //-->",
+					"<!-- will also be copied to the resulting body //-->"
+				]
+			},
+			"background_color": "#231F20",
+			"background_filename": "",
+			"code_filename": "118f6118bc013ac4d5385bcc3f1947fa.wasm.unityweb",
+			"company_name": "Blabbers Games",
+			"data_filename": "e487d475ee783aef88414b257ec29a5d.data.unityweb",
+			"decompression_fallback": "Brotli",
+			"development_player": "false",
+			"framework_filename": "cd8da7c3d7bf68adbb1a50a334c77323.framework.js.unityweb",
+			"height": "1024",
+			"loader_filename": "c520e63b4839d4f089f48b3043b8a9ca.loader.js",
+			"memory_filename": "",
+			"product_name": "jump-fall-game",
+			"product_version": "1.0",
+			"splash_screen_style": "Dark",
+			"symbols_filename": "",
+			"unity_version": "6000.0.47f1",
+			"use_data_caching": "true",
+			"use_threads": "false",
+			"use_wasm": "true",
+			"use_webgl_1_0": "false",
+			"use_webgl_2_0": "true",
+			"width": "576"
+		}
+	};
+	</script>
+</head>
+<body>
+	<script src="https://game-cdn.poki.com/loaders/v3/master-loader.js"></script>
+	<div style="position:absolute;top:0px;left:0px;z-index:9999;margin:10px">
+		This HTML will not be used on Poki.com. A new HTML will be auto generated from the JSON.
+	</div>
+</body>
 </html>

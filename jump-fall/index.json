@@ -1,0 +1,34 @@
+{
+	"poki_template_version": 1,
+	"extra_html": {
+	  "head": [
+		"<!-- will be copied to the resulting head //-->"
+	  ],
+	  "body": [
+		"<!-- will be copied to the resulting body //-->",
+		"<!-- will also be copied to the resulting body //-->"
+	  ]
+	},
+	"background_color": "#231F20",
+	"background_filename": "",
+	"code_filename": "118f6118bc013ac4d5385bcc3f1947fa.wasm.unityweb",
+	"company_name": "Blabbers Games",
+	"data_filename": "e487d475ee783aef88414b257ec29a5d.data.unityweb",
+	"decompression_fallback": "Brotli",
+	"development_player": "false",
+	"framework_filename": "cd8da7c3d7bf68adbb1a50a334c77323.framework.js.unityweb",
+	"height": "1024",
+	"loader_filename": "c520e63b4839d4f089f48b3043b8a9ca.loader.js",
+	"memory_filename": "",
+	"product_name": "jump-fall-game",
+	"product_version": "1.0",
+	"splash_screen_style": "Dark",
+	"symbols_filename": "",
+	"unity_version": "6000.0.47f1",
+	"use_data_caching": "true",
+	"use_threads": "false",
+	"use_wasm": "true",
+	"use_webgl_1_0": "false",
+	"use_webgl_2_0": "true",
+	"width": "576"
+  }
