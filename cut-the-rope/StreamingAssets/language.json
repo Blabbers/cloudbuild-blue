@@ -91,6 +91,11 @@
   "9ed411d1": "Current Total:",
   "c4c91209": "Add the digits in each column to complete the addition.",
   "91c3ebca": "Pay attention to the column we are adding here, what is the result?",
-  "2bbb1d33": "Start the addition from this column!"
+  "2bbb1d33": "Start the addition from this column!",
+  "04b250ba": "Now note that since the sum is larger than 9, the place value will change",
+  "d4ea856d": "Ten Tens will become One Hundred",
+  "1937a151": "Note that",
+  "9e5fd06b": "Note that the Tens place value also can't be greater than 9",
+  "b4410f1b": "Ten Tens will become One Hundred"
  }
 }
