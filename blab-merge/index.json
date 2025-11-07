@@ -1,0 +1,34 @@
+{
+	"poki_template_version": 1,
+	"extra_html": {
+	  "head": [
+		"<!-- will be copied to the resulting head //-->"
+	  ],
+	  "body": [
+		"<!-- will be copied to the resulting body //-->",
+		"<!-- will also be copied to the resulting body //-->"
+	  ]
+	},
+	"background_color": "#231F20",
+	"background_filename": "",
+	"code_filename": "d717bddf452fb7da4fe8a98cac0acbea.wasm.unityweb",
+	"company_name": "Blabbers Games",
+	"data_filename": "c8cda23850f0548919fb3ee87a2c43b7.data.unityweb",
+	"decompression_fallback": "Brotli",
+	"development_player": "false",
+	"framework_filename": "7714828611cac327d73ad1a4862d20f8.framework.js.unityweb",
+	"height": "1024",
+	"loader_filename": "a3a61d9bf1ea647da2e8f6f55776e35c.loader.js",
+	"memory_filename": "",
+	"product_name": "blab-merge",
+	"product_version": "1.0",
+	"splash_screen_style": "Dark",
+	"symbols_filename": "",
+	"unity_version": "6000.2.6f2",
+	"use_data_caching": "true",
+	"use_threads": "false",
+	"use_wasm": "true",
+	"use_webgl_1_0": "false",
+	"use_webgl_2_0": "true",
+	"width": "576"
+  }
