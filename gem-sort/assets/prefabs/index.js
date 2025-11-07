@@ -1,8 +1,4 @@
-System.register("chunks:///_virtual/prefabs", [], function () {
-  return {
-    execute: function () {}
-  };
-});
+System.register("chunks:///_virtual/prefabs",[],(function(){return{execute:function(){}}}));
 
 (function(r) {
   r('virtual:///prerequisite-imports/prefabs', 'chunks:///_virtual/prefabs'); 

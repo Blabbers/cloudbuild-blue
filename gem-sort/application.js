@@ -14,43 +14,70 @@ System.register([], function (_export, _context) {
       _export("Application", Application = /*#__PURE__*/function () {
         function Application() {
           _classCallCheck(this, Application);
-          this.settingsPath = 'src/settings.json';
-          this.showFPS = true;
+          this.settingsPath = 'src/settings.json'; // settings.json file path, usually passed in by the editor when building, you can also specify your own path
+          this.showFPS = false; // Whether or not to open the profiler, usually passed in when the editor is built, but you can also specify the value you want
         }
         _createClass(Application, [{
           key: "init",
           value: function init(engine) {
             cc = engine;
-            cc.game.onPostBaseInitDelegate.add(this.onPostInitBase.bind(this));
-            cc.game.onPostSubsystemInitDelegate.add(this.onPostSystemInit.bind(this));
+            cc.game.onPostBaseInitDelegate.add(this.onPostInitBase.bind(this)); // Listening for engine start process events onPostBaseInitDelegate
+            cc.game.onPostSubsystemInitDelegate.add(this.onPostSystemInit.bind(this)); // Listening for engine start process events onPostSubsystemInitDelegate
+            cc.game.onPostProjectInitDelegate.add(this.onProjectDataEvent.bind(this));
+
+            //inform the poki sdk that the game is loading.
+            PokiSDK.gameLoadingStart();
           }
         }, {
           key: "onPostInitBase",
           value: function onPostInitBase() {
             // cc.settings.overrideSettings('assets', 'server', '');
-            // do custom logic
+
+            //Set the debug value in pokisdk based on the build settings.
+            PokiSDK.setDebug(cc.settings.debug);
           }
         }, {
           key: "onPostSystemInit",
           value: function onPostSystemInit() {
-            // do custom logic
+            // Implement some custom logic
+            console.log("OnPostSystemInit");
+          }
+        }, {
+          key: "onProjectDataEvent",
+          value: function onProjectDataEvent() {
+            console.log("Project Data Loaded");
           }
         }, {
           key: "start",
           value: function start() {
+            // Kick off Poki init early, but don’t wait for it to finish
+            var pokiInit = PokiSDK.init().then(function () {
+              var _cc$settings$debug, _cc;
+              console.log("Poki SDK initialized early");
+              PokiSDK.setDebug((_cc$settings$debug = (_cc = cc) === null || _cc === void 0 || (_cc = _cc.settings) === null || _cc === void 0 ? void 0 : _cc.debug) !== null && _cc$settings$debug !== void 0 ? _cc$settings$debug : false);
+            })["catch"](function () {
+              return console.warn("Poki SDK init failed or adblock present");
+            });
+
+            // Start Cocos engine immediately
             return cc.game.init({
-              debugMode: true ? cc.DebugMode.INFO : cc.DebugMode.ERROR,
+              debugMode: false ? cc.DebugMode.INFO : cc.DebugMode.ERROR,
               settingsPath: this.settingsPath,
               overrideSettings: {
-                // assets: {
-                //      preloadBundles: [{ bundle: 'main', version: 'xxx' }],
-                // }
                 profiling: {
                   showFPS: this.showFPS
                 }
               }
             }).then(function () {
-              return cc.game.run();
+              // Hide loader *as soon as engine is ready*
+              var loader = document.getElementById('loader');
+              if (loader) loader.style.display = 'none';
+              cc.game.run(function () {
+                // Tell Poki the game is loaded, even if its init is still resolving
+                pokiInit["finally"](function () {
+                  return PokiSDK.gameLoadingFinished();
+                });
+              });
             });
           }
         }]);
