@@ -1,0 +1,34 @@
+{
+	"poki_template_version": 1,
+	"extra_html": {
+	  "head": [
+		"<!-- will be copied to the resulting head //-->"
+	  ],
+	  "body": [
+		"<!-- will be copied to the resulting body //-->",
+		"<!-- will also be copied to the resulting body //-->"
+	  ]
+	},
+	"background_color": "#231F20",
+	"background_filename": "",
+	"code_filename": "037d9487aa5caae051946ebea167e5da.wasm.unityweb",
+	"company_name": "Blabbers Games",
+	"data_filename": "b4eabed2fbb5a606a4cf16182fcadc34.data.unityweb",
+	"decompression_fallback": "Brotli",
+	"development_player": "false",
+	"framework_filename": "30a64b46b20a6c5f92cc69adb191de51.framework.js.unityweb",
+	"height": "1024",
+	"loader_filename": "c2ac74d41ca8570c89373f057906ae7e.loader.js",
+	"memory_filename": "",
+	"product_name": "gem-sort",
+	"product_version": "1.0",
+	"splash_screen_style": "Dark",
+	"symbols_filename": "",
+	"unity_version": "6000.2.6f2",
+	"use_data_caching": "true",
+	"use_threads": "false",
+	"use_wasm": "true",
+	"use_webgl_1_0": "false",
+	"use_webgl_2_0": "true",
+	"width": "576"
+  }
