@@ -89,7 +89,9 @@
   "170258be" : "CONGRATULATIONS!!",
   "60255437" : "Thanks for completing the game! \n\nMore levels will be added in the future",
   "6f908f2a" : "Finish",
-  "df9ee2b7" : "PAUSED"
+  "df9ee2b7" : "PAUSED",
+  "f157f17f" : "Floor",
+  "f157f17f_description" : "This is a floor objective image"
  },
  "es" : {
   "titlePlay" : "¡Jugar!",
