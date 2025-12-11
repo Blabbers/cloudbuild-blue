@@ -1,69 +1,45 @@
-<!-- Play on Poki -->
-<!-- NOTE:
-	this HTML will not be used on Poki.com, the HTML will be auto generated from the index.json.
-	If you wish to add custom HTML you can add this in the "extra_html" part of the JSON.
--->
 <!DOCTYPE html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity Web Player | gem-sort</title>
+  </head>
+  <body style="text-align: center; padding: 0; border: 0; margin: 0;">
+    <canvas id="unity-canvas" width=576 height=1024 tabindex="-1" style="width: 576px; height: 1024px; background: #231F20"></canvas>
+    <script src="Build/4801cf0ff22d64b6a005e6ef411ff2fb.loader.js"></script>
+    <script>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
 
-	<title>gem-sort - Play on Poki</title>
+        var canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
 
-	<script>
-	var buildUrl = 'Build';
-	window.config = {
-		loader: 'unity-2020',
-		debug: false,
-		maxRatio: 16 / 9,
-		minRatio: 9 / 16,
+        document.body.style.textAlign = "left";
 
-		title: 'gem-sort',
+      }
 
-		thumbnail: 'https://img.poki-cdn.com/cdn-cgi/image/quality=80,width=100,height=100,fit=cover,g=0.5x0.5,f=auto/a398cd4e645b76810031bd97f8697414.png',
-		numScreenshots: 4,
-
-		metadata:{
-			"poki_template_version": 1,
-			"extra_html": {
-				"head": [
-					"<!-- will be copied to the resulting head //-->"
-				],
-				"body": [
-					"<!-- will be copied to the resulting body //-->",
-					"<!-- will also be copied to the resulting body //-->"
-				]
-			},
-			"background_color": "#231F20",
-			"background_filename": "",
-			"code_filename": "5cd9a2e3498ac5302412cc91bc23a86c.wasm.unityweb",
-			"company_name": "Blabbers Games",
-			"data_filename": "7637ae7aa2e66c8a7764e79e9e0e13ca.data.unityweb",
-			"decompression_fallback": "Brotli",
-			"development_player": "false",
-			"framework_filename": "6cc941eab11edf451ebe9d49740bafec.framework.js.unityweb",
-			"height": "1024",
-			"loader_filename": "cf5d1265651f7f638ade73c11d9574c5.loader.js",
-			"memory_filename": "",
-			"product_name": "gem-sort",
-			"product_version": "1.0",
-			"splash_screen_style": "Dark",
-			"symbols_filename": "",
-			"unity_version": "6000.2.6f2",
-			"use_data_caching": "true",
-			"use_threads": "false",
-			"use_wasm": "true",
-			"use_webgl_1_0": "false",
-			"use_webgl_2_0": "true",
-			"width": "576"
-		}
-	};
-	</script>
-</head>
-<body>
-	<script src="https://game-cdn.poki.com/loaders/v3/master-loader.js"></script>
-	<div style="position:absolute;top:0px;left:0px;z-index:9999;margin:10px">
-		This HTML will not be used on Poki.com. A new HTML will be auto generated from the JSON.
-	</div>
-</body>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        arguments: [],
+        dataUrl: "Build/3c196850f51c63fa25adf4a77e7ec0b6.data.br",
+        frameworkUrl: "Build/6cc941eab11edf451ebe9d49740bafec.framework.js.br",
+        codeUrl: "Build/573f1b3cbe852f94b3d3c7d4acb84ee1.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Blabbers Games",
+        productName: "gem-sort",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((unityInstance) => {
+      }).catch((message) => {
+        alert(message);
+      });
+    </script>
+  </body>
 </html>
