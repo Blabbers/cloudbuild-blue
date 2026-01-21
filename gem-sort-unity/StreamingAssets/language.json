@@ -58,7 +58,7 @@
   "515fd7cb" : "Here, have a free booster, try it out!",
   "3941a764" : "Free Booster!",
   "4336b1a9" : "Skip",
-  "65cc3165" : "Não, obrigado",
+  "65cc3165" : "No, thanks",
   "adbe5ae8" : "Get x2",
   "2513b912_description" : "Tap on any pile on the field to remove it",
   "2513b912" : "Hammer",
@@ -91,7 +91,9 @@
   "6f908f2a" : "Finish",
   "df9ee2b7" : "PAUSED",
   "f157f17f" : "Floor",
-  "f157f17f_description" : "This is a floor objective image"
+  "f157f17f_description" : "This is a floor objective image",
+  "b015626d" : "Insufficient Coins",
+  "16f2afee" : "Earn coins by winning more levels."
  },
  "es" : {
   "titlePlay" : "¡Jugar!",
