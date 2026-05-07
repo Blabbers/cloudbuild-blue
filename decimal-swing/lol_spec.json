@@ -1,0 +1,17 @@
+{
+    "unity_version": "2022.3.20f1",
+    "lol_sdk_version": "5.3",
+    "lol_lua_sdk_version": "0.3",
+    "build_dir_size": 1111111,
+    "build_uncompressed_dir_size": 11111111,
+    "build_compression_format": "Brotli",
+    "streaming_assets_dir_size": 0,
+    "bundle_file_paths": {
+    	"webgl": "webgl",
+    	"ios": "ios",
+    	"android": "android",
+    	"windows": "windows",
+    	"macos": "macos",
+    	"linux": "linux"
+    }
+}
