@@ -1,0 +1,123 @@
+{
+    "buildDateTime": "2026-06-22 15:45:00",
+    "buildScriptVersion": "1.4.0",
+    "sdkVersion": "5.31.0",
+    "unityVersion": "6000.2.6f2",
+    "buildVariant": "Release",
+    "additionalOptions": {
+        "supportsMobile": true
+    },
+    "buildResult": "Succeeded",
+    "totalTime": 502.96955499999998,
+    "buildOptimizations": [
+        {
+            "optimization": "il2CppCodeGeneration",
+            "initialValue": "OptimizeSize",
+            "buildValue": "OptimizeSize"
+        },
+        {
+            "optimization": "showSplashScreen",
+            "initialValue": "False",
+            "buildValue": "False"
+        },
+        {
+            "optimization": "showUnityLogo",
+            "initialValue": "False",
+            "buildValue": "False"
+        },
+        {
+            "optimization": "compressionFormat",
+            "initialValue": "Brotli",
+            "buildValue": "Brotli"
+        },
+        {
+            "optimization": "exceptionSupport",
+            "initialValue": "ExplicitlyThrownExceptionsOnly",
+            "buildValue": "ExplicitlyThrownExceptionsOnly"
+        },
+        {
+            "optimization": "debugSymbolMode",
+            "initialValue": "Off",
+            "buildValue": "Off"
+        },
+        {
+            "optimization": "dataCaching",
+            "initialValue": "True",
+            "buildValue": "True"
+        },
+        {
+            "optimization": "nameFilesAsHashes",
+            "initialValue": "True",
+            "buildValue": "True"
+        },
+        {
+            "optimization": "stripEngineCode",
+            "initialValue": "True",
+            "buildValue": "True"
+        },
+        {
+            "optimization": "codeOptimization",
+            "initialValue": "DiskSizeLTO",
+            "buildValue": "DiskSizeLTO"
+        },
+        {
+            "optimization": "webAssemblyBigInt",
+            "initialValue": "True",
+            "buildValue": "True"
+        },
+        {
+            "optimization": "webAssemblyTable",
+            "initialValue": "True",
+            "buildValue": "True"
+        },
+        {
+            "optimization": "wasm2023",
+            "initialValue": "True",
+            "buildValue": "True"
+        }
+    ],
+    "generatedFiles": [
+        {
+            "filename": "b91baaa4557a56c91ce8eb963992fd17.data.br",
+            "type": "data",
+            "uncompressedSize": 6550087,
+            "size": 2613730
+        },
+        {
+            "filename": "89e27444307ee00006deefc3b473ecbd.framework.js.br",
+            "type": "framework",
+            "uncompressedSize": 583214,
+            "size": 97118
+        },
+        {
+            "filename": "4ae05763fdd0e791f1190ed54b3a106b.loader.js",
+            "type": "loader",
+            "uncompressedSize": 26693,
+            "size": 26693
+        },
+        {
+            "filename": "e82be25d70f5d99b2c62c18aa8969cba.wasm.br",
+            "type": "wasm",
+            "uncompressedSize": 15763373,
+            "size": 3999170
+        },
+        {
+            "filename": "astc_cd7fbeede5c249fed5b2e28ee9a0727d.data.br",
+            "type": "data_astc",
+            "uncompressedSize": 6550087,
+            "size": 2613641
+        },
+        {
+            "filename": "max_512mb_6222469dac38640b02885c1600ea24dd.wasm.br",
+            "type": "wasm_max_512mb",
+            "uncompressedSize": 15763372,
+            "size": 3999438
+        },
+        {
+            "filename": "max_1024mb_bb1eba5da8b6226faee431113e44b0a6.wasm.br",
+            "type": "wasm_max_1024mb",
+            "uncompressedSize": 15763373,
+            "size": 3999063
+        }
+    ]
+}
